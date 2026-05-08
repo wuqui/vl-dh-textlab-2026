@@ -51,7 +51,7 @@ TextLab ist keine neutrale Suchbox, sondern eine Kette von Entscheidungen: Korpu
 | Korpus | Wofür geeignet? | Einschränkung |
 |---|---|---|
 | `dta_full_uncapped` | historisches Deutsch, diachrone Muster, KWIC/Frequency/Word Sketch/Semantic Search | Workshop-Snapshot, technische Chunks |
-| `deRed_mini_memes` | deutschsprachige Reddit-Meme-Kommunikation, Subreddit-Vergleich, Metadatenfilter | `created_utc` fehlt im aktuellen Index |
+| `deRed_mini` | deutschsprachige Reddit-Kommunikation, Subreddit-Vergleich, Metadatenfilter, Plattformdaten | Semantic Search erst nach RAG-Index |
 | `enRed_mid` | englische regionale Reddit-Varietäten, Subreddit-Vergleich | Semantic Search erst nach RAG-Index |
 
 ## Was ist TextLab?
@@ -233,8 +233,8 @@ Die Kurve ist ein Hinweis auf eine Quellefrage, nicht schon die Antwort.
 
 | Korpus | Query | Filter / Gruppierung |
 |---|---|---|
-| `deRed_mini_memes` | `[lemma="ich"]` | `subreddit`, `doc_type`, `is_image` |
-| `deRed_mini_memes` | `[lemma="deutsch"]` | `subreddit: ich_iel` vs. `aeiou` |
+| `deRed_mini` | `[lemma="deutsch"]` | `subreddit`, `doc_type`, `lang_group` |
+| `deRed_mini` | `[lemma="ich"]` | `subreddit`, `is_image`, `score` |
 | `enRed_mid` | `[lemma="home"]` | `subreddit`, `lang`, `doc_type` |
 | `enRed_mid` | `[word="Wales"]` | Subreddit-Vergleich |
 
