@@ -1,0 +1,15 @@
+_site/
+.quarto/
+.playwright-mcp/
+.DS_Store
+*.log
+*.tmp
+*.bak
+node_modules/
+.venv/
+.uv-cache/
+exports/
+data/
+
+/.quarto/
+**/*.quarto_ipynb

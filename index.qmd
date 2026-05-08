@@ -1,0 +1,18 @@
+---
+title: "TextLab in den Digital Humanities"
+subtitle: "Ringvorlesung Digital Humanities, LMU"
+---
+
+## Materialien
+
+- [Folien: TextLab in den Digital Humanities](slides/textlab-ringvorlesung.qmd)
+
+## Arbeitsstand
+
+Dieses Repo sammelt die Vorlesungsmaterialien. Die Folien werden zunächst als ein integriertes Deck entwickelt; separate Übungsblätter, Query-Dateien, Exporte oder Datenordner werden erst angelegt, wenn sie konkret gebraucht werden.
+
+## Quellen
+
+- TextLab: `/Users/quirin/proj/mcl-textlab`
+- ITG/IDK-Workshop Text Analysis: `/Users/quirin/itg/idk-workshops/2_text-analysis`
+- MCL/NoSkE-Korpusbestände: `/Users/quirin/proj/mcl`
