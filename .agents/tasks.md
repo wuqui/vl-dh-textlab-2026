@@ -8,6 +8,7 @@
 - [ ] entscheiden, welche Module live gezeigt werden und welche nur als Screenshot/Architekturfolie.
 - [ ] Quarto-Render regelmäßig prüfen.
 - [ ] Live-Demo-Smoke am Vorlesungstag durchführen: Login, DTA Query, Frequency, Word Sketch, Reddit-Korpusauswahl.
+- [ ] Vorlesungsaccount am Montag vor der Sitzung nochmal mit Login im UI prüfen.
 
 ## In Arbeit
 
@@ -25,3 +26,4 @@
 - [x] Collocation- und Annotation-Fallback-Screenshots aus dem Workshopdeck übernommen.
 - [x] `quarto render` nach Folienerweiterung erfolgreich ausgeführt.
 - [x] Browser-Check mit Chrome DevTools durchgeführt: keine Console-Fehler, Screenshot-Assets laden, kritische Folien visuell geprüft.
+- [x] Vorlesungsaccount `textlab-vl-dh-2026@localhost` angelegt, freigegeben und per `/auth/me` validiert; Passwort liegt nur serverseitig in `/etc/textlab/textlab_lecture_auth.env`.
