@@ -13,7 +13,7 @@ Ein fokussiertes Quarto-/RevealJS-Deck für eine 90-minütige Ringvorlesung übe
 - TextLab-Fixes, Korpusimporte und Reddit-Korpusplanung werden im TextLab-Repo und dessen PM bearbeitet.
 - Die Folien dürfen zunächst als integriertes Arbeitsdeck wachsen.
 - Hands-on-Schritte werden vorerst direkt in den Slides geführt.
-- Workshop-Screenshots dienen als Fallback-Visuals, bis frische Ringvorlesungs-Screenshots erzeugt werden.
+- Workshop-Screenshots dienen als Fallback-Visuals; der finale Live-Smoke hat die Montag-MVP-Pfade zusätzlich im laufenden UI bestätigt.
 
 ## Vorläufige Vorlesungsstruktur
 
@@ -28,7 +28,7 @@ Ein fokussiertes Quarto-/RevealJS-Deck für eine 90-minütige Ringvorlesung übe
 - Soll der Schwerpunkt stärker auf Reddit-Korpora oder stärker auf DTA/TextLab allgemein liegen?
 - Welche TextLab-Module sind live stabil genug für Vorführung statt Screenshot?
 - Gibt es Raum-/Netz-/Account-Anforderungen für die Hands-on-Anteile?
-- Werden frische Screenshots nach dem finalen UI-Smoke benötigt oder reichen Workshop-Fallbacks?
+- Reichen Workshop-Fallbacks für Montag, oder sollen nachträglich noch frische UI-Screenshots ins Deck?
 
 ## Risiken
 

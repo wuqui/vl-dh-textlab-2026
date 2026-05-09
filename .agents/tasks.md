@@ -6,7 +6,7 @@
 - [ ] vorhandene Workshop-Folien nach wiederverwendbaren Slides, Screenshots und Formulierungen durchsuchen.
 - [ ] TextLab-Dokumentation zu Architektur, Korpus-Onboarding, Word Sketches, Semantic Analysis und LLM Classification in Vorlesungssprache übersetzen.
 - [ ] Quarto-Render regelmäßig prüfen.
-- [ ] Live-Demo-Smoke am Vorlesungstag durchführen: Login, DTA Query, Frequency, Word Sketch, Reddit-Korpusauswahl.
+- [ ] Montag-Kurzsmoke vor der Sitzung: Login, DTA Query, Frequency, Reddit-Korpusauswahl, ggf. Word Sketch als Bonuspfad.
 - [ ] Vorlesungsaccount am Montag vor der Sitzung nochmal mit Login im UI prüfen.
 
 ## In Arbeit
@@ -29,3 +29,4 @@
 - [x] Montag-MVP für die Vorlesung festgelegt: DTA-Pfad als Pflichtdemo, Reddit als kontrollierter Kontrast, Collocations/Word Sketch/Semantic/LLM als Bonus oder Screenshot.
 - [x] Folien auf robuste Demo-Erzählung verdichtet und interne Card-Headings so umgebaut, dass Reveal-Navigation nicht auf den Titel zurückspringt.
 - [x] `quarto render` und Playwright-Navigation durch das gesamte Deck geprüft; nur nicht-blockierende Quarto/Reveal-Metawarnung.
+- [x] Live-UI-Smoke mit Vorlesungsaccount durchgeführt: Login, Tokenlabels im Korpusmenü, DTA-KWIC/Frequency, German Reddit und English Reddit geprüft.

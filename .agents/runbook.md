@@ -25,6 +25,20 @@ Confirmed demo queries through authenticated TextLab API:
 | `deRed_mini` | `[lemma="deutsch"]` | 33,122 | `subreddit`: top `de` = 10,990, `ich_iel` = 5,976 |
 | `enRed_mid` | `[word="Wales"]` | 46,003 | `subreddit`: top `Wales` = 43,258 |
 
+Confirmed through live UI with the lecture account:
+
+- Login as `dh@lmu.de` succeeds in the browser.
+- Corpus selector shows token counts, not document counts:
+  - DTA: `238.3M tokens`
+  - English Reddit: `41.3M tokens`
+  - German Reddit memes: `4.4M tokens`
+  - German Reddit: `61.2M tokens`
+- DTA UI path works: `[lemma="Demokratie"]`, concordance `Showing hits 1-10 of 2486`, frequency by `year`, top `1848` = `1.252`.
+- German Reddit UI path works: `[lemma="deutsch"]`, frequency by `subreddit`, total hits `33.122`, top `de` = `10.990`, `ich_iel` = `5.976`, `FragReddit` = `5.410`.
+- English Reddit UI path works: `[word="Wales"]`, concordance `Showing hits 1-10 of 46003`, frequency by `subreddit`, total hits `46.003`, top `Wales` = `43.258`, `Scotland` = `1.478`, `AskUK` = `665`.
+
+Live input hygiene: after running a query, check `Last executed query` before interpreting results. If a tab still shows old controls after switching corpora, rerun the active result tab explicitly.
+
 Live-demo rule: show DTA first; only show Reddit after DTA query + distribution are stable. Use screenshot fallback for Collocations, Word Sketch and Annotation if runtime or room conditions are weak.
 
 ## Lokale Arbeitsreihenfolge
