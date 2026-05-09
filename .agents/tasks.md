@@ -8,12 +8,11 @@
 - [ ] Quarto-Render regelmäßig prüfen.
 - [ ] Montag-Kurzsmoke vor der Sitzung: Login, DTA Query, Frequency, Reddit-Korpusauswahl, ggf. Word Sketch als Bonuspfad.
 - [ ] Vorlesungsaccount am Montag vor der Sitzung nochmal mit Login im UI prüfen.
-- [ ] COHA-Integration am Montag kurz prüfen, falls der BlackLab-Vollindex vor der Vorlesung fertig und live stabil ist.
+- [ ] COHA-Integration am Montag kurz gegenprüfen: Korpusauswahl, `[lemma="computer"]`, Frequency nach `decade`.
 
 ## In Arbeit
 
 - [ ] Timing nach Probedurchlauf prüfen.
-- [ ] COHA als optionalen diachronen Demo-Pfad in TextLab und Slides absichern.
 
 ## Erledigt
 
@@ -33,3 +32,4 @@
 - [x] `quarto render` und Playwright-Navigation durch das gesamte Deck geprüft; nur nicht-blockierende Quarto/Reveal-Metawarnung.
 - [x] Live-UI-Smoke mit Vorlesungsaccount durchgeführt: Login, Tokenlabels im Korpusmenü, DTA-KWIC/Frequency, German Reddit und English Reddit geprüft.
 - [x] Korpuslinguistik-Grundlagenblock mit einschlägigen Literaturverweisen ins Deck eingebaut.
+- [x] COHA als live verfügbares diachrones Bonuskorpus in TextLab und Folien eingebaut.
