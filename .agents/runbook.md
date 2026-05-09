@@ -15,7 +15,7 @@ TextLab live:
 - Auth route: `/auth/login` routed to `textlab-api.service`
 - Services: `textlab-api.service`, `nginx.service`, `blacklab.service` active
 - Probe account: server-side in `/etc/textlab/textlab_probe_auth.env`
-- Vorlesungsaccount: `textlab-vl-dh-2026@localhost`, approved non-admin user, credentials server-side in `/etc/textlab/textlab_lecture_auth.env`
+- Vorlesungsaccount: `dh@lmu.de`, approved non-admin user, credentials server-side in `/etc/textlab/textlab_lecture_auth.env`
 
 Confirmed demo queries through authenticated TextLab API:
 
