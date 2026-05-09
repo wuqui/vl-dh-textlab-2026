@@ -12,487 +12,1050 @@ execute:
   echo: false
 ---
 
-## TextLab in den Digital Humanities {#title-slide background-color="#f6f8fb"}
+## TextLab in den Digital Humanities {#title-slide .custom-title-slide background-color="#eef4f8"}
 
-<div class="subtitle">Ringvorlesung Digital Humanities · LMU · Sommersemester 2026</div>
+::: {.notes}
+0-2
+:::
 
-Quirin Würschinger
+<img class="title-logo" src="../assets/img/lmu-logo.png" alt="LMU-Logo">
 
-<!-- Speaker note: TextLab nicht nur als Tool zeigen, sondern als Beispiel dafür, wie DH-Infrastruktur entsteht: Korpora, Annotation, Suche, Analyse, KI-Module und methodische Grenzen. -->
+<div class="title-subtitle">Ringvorlesung Digital Humanities · LMU · Sommersemester 2026</div>
 
-## Leitfrage
+<div class="title-author">Quirin Würschinger · LMU München · 11. Mai 2026</div>
 
-Wie wird aus Textsammlungen eine Umgebung, in der man philologische und linguistische Fragen suchen, zählen, vergleichen und modellgestützt explorieren kann?
+<div class="title-email">q.wuerschinger@lmu.de</div>
 
-::: {.takeaway}
-TextLab ist keine neutrale Suchbox, sondern eine Kette von Entscheidungen: Korpusauswahl, Datenmodell, Annotation, Indexierung, UI, Analyseverfahren und Interpretation.
+## Zwei Leitfragen
+
+::: {.notes}
+2-4
+:::
+
+::: {.question-pair}
+::: {.question-card .fragment}
+### Methodisch
+
+Wie wird aus einer Textsammlung ein kontrollierbarer Befund?
+:::
+
+::: {.question-card .fragment}
+### Infrastrukturell
+
+Welche technischen Entscheidungen machen diesen Befund überhaupt möglich?
+:::
+:::
+
+::: {.callout-fragment .fragment}
+TextLab ist heute zugleich Fallbeispiel, Werkzeug und Gegenstand der Kritik.
+:::
+
+## Das zentrale Argument
+
+::: {.notes}
+4-6
+:::
+
+::: {.takeaway-lines}
+::: {}
+Keine Suche ohne Korpusmodell.
+:::
+
+::: {}
+Keine Zahl ohne Belegarbeit.
+:::
+
+::: {}
+Kein KI-Modul ohne dokumentierte Operationalisierung.
+:::
 :::
 
 ## 90 Minuten
 
-::: {.timeline}
-<span>0-10</span> Einstieg: Was leistet ein DH-Korpuslabor?
-
-<span>10-25</span> Architektur, Registry und Korpus-Ingestion
-
-<span>25-45</span> Live-Demo 1: DTA von Query zu Beleg zu Frequenz
-
-<span>45-60</span> Hands-on 1: dieselbe Pipeline selbst nachvollziehen
-
-<span>60-75</span> Reddit als Kontrast und explorative Module
-
-<span>75-90</span> Hands-on 2: Mini-Aussage formulieren und diskutieren
+::: {.notes}
+6-8
 :::
 
-<!-- Speaker note: Wenn Live-Demo oder Login Zeit kostet, Reddit nur als kurzer Kontrast zeigen und Collocations/Word Sketch/Annotation über Screenshots behandeln. -->
+::: {.schedule-grid}
+::: {.schedule-session}
+<div class="schedule-title">Block 1 · Korpus, Suche, Beleg</div>
 
-## Demo-Korpora
-
-| Korpus | Wofür geeignet? | Einschränkung |
-|---|---|---|
-| `dta_full_uncapped`<br>238M Tokens | historisches Deutsch, diachrone Muster, KWIC/Frequency/Word Sketch/Semantic Search | Workshop-Snapshot, technische Chunks |
-| `deRed_mini`<br>61M Tokens | deutschsprachige Reddit-Kommunikation, Subreddit-Vergleich, Metadatenfilter, Plattformdaten | Semantic Search erst nach RAG-Index |
-| `enRed_mid`<br>41M Tokens | englische regionale Reddit-Varietäten, Subreddit-Vergleich | Semantic Search erst nach RAG-Index |
-
-## Zugang und Demo-Regel
-
-::: {.two-column}
-::: {.column}
-<h3>Live</h3>
-
-- TextLab: <https://www.wuerschinger.org/textlab/>
-Zugangsdaten stehen im Raum an der Tafel
-- Korpora: DTA, German Reddit, English Reddit
+::: {.schedule-items}
+::: {.schedule-item}
+<span>0-10</span> **Einstieg** <em>TextLab als DH-Korpuslabor.</em>
 :::
-
-::: {.column}
-<h3>Fallback</h3>
-
-- dieselben Schritte sind als Screenshots in den Folien
-- bei WLAN/Auth-Problemen: gemeinsam vorne durchgehen
-- methodische Aufgabe bleibt gleich: Query, Beleg, Verteilung, Grenze
+::: {.schedule-item}
+<span>10-25</span> **Infrastruktur** <em>Architektur, Registry, Ingestion.</em>
+:::
+::: {.schedule-item}
+<span>25-45</span> **Live-Demo** <em>DTA: Query, KWIC, Frequenz.</em>
+:::
+::: {.schedule-item .is-main}
+<span>45-60</span> **Hands-on** <em>Dieselbe Pipeline selbst nachvollziehen.</em>
+:::
 :::
 :::
 
-<!-- Speaker note: Die Live-Demo ist nicht das Ziel. Ziel ist, die Operationen so transparent zu machen, dass sie als DH-Methoden diskutierbar werden. -->
+::: {.schedule-session}
+<div class="schedule-title">Block 2 · Vergleich, Exploration, Modellierung</div>
 
-## MVP-Demo für Montag {#mvp-demo-montag}
+::: {.schedule-items}
+::: {.schedule-item}
+<span>60-70</span> **Kontrast** <em>Reddit, Plattformdaten, Subreddit-Verteilungen.</em>
+:::
+::: {.schedule-item}
+<span>70-80</span> **Module** <em>Kollokationen, Word Sketches, Semantik, LLMs.</em>
+:::
+::: {.schedule-item .is-main}
+<span>80-90</span> **Hands-on + Diskussion** <em>Mini-Aussage mit Einschränkung formulieren.</em>
+:::
+:::
+:::
+:::
 
-<div class="demo-script">
-<div class="demo-card">
-<h3>Muss live funktionieren</h3>
-<ol>
-<li>DTA: <code>[lemma="Demokratie"]</code>.</li>
-<li>KWIC lesen: Was ist ein Treffer?</li>
-<li>Frequency nach <code>year</code>: Was ist ein Muster?</li>
-<li>Mini-Aussage: Was können wir sagen, was nicht?</li>
-</ol>
-</div>
+::: {.caption-note}
+Regel für Montag: Der DTA-Pfad ist Pflicht. Reddit und KI-Module sind kontrollierte Erweiterungen, nicht Live-Abhängigkeiten.
+:::
 
-<div class="demo-card">
-<h3>Bonus, wenn stabil</h3>
-<ul>
-<li>Reddit-Kontrast: <code>[lemma="deutsch"]</code> in <code>deRed_mini</code>, Gruppierung nach <code>subreddit</code>.</li>
-<li>Word Sketch oder Collocations als Übergang zu explorativen Modulen.</li>
-<li>Semantic Search/LLM als Methodenblick, nicht als Live-Abhängigkeit.</li>
-</ul>
-</div>
-</div>
+## Kernpfad der Vorlesung
+
+::: {.notes}
+8-10
+:::
+
+::: {.workflow .core-workflow}
+::: {.workflow-step .is-dark .fragment}
+**1**<br>
+Frage operationalisieren<br>
+<span>Was zählt als Treffer?</span>
+:::
+
+::: {.workflow-step .fragment}
+**2**<br>
+Query ausführen<br>
+<span>Korpus, Query, Trefferzahl notieren</span>
+:::
+
+::: {.workflow-step .fragment}
+**3**<br>
+KWIC lesen<br>
+<span>Belege, False Positives, Kontexte</span>
+:::
+
+::: {.workflow-step .fragment}
+**4**<br>
+Metadaten vergleichen<br>
+<span>Jahr, Genre, Subreddit, Dokumenttyp</span>
+:::
+
+::: {.workflow-step .is-dark .fragment}
+**5**<br>
+vorsichtige Aussage<br>
+<span>Muster + Belege + Grenze</span>
+:::
+:::
+
+## Laufendes Beispiel
+
+::: {.notes}
+10-12
+:::
+
+::: {.case-thread}
+::: {.case-card .fragment}
+### Query
+
+`[lemma="Demokratie"]`
+:::
+
+::: {.case-card .fragment}
+### Muster
+
+Die Treffer clustern stark um 1848.
+:::
+
+::: {.case-card .fragment}
+### Frage
+
+Was erlaubt dieses Muster zu behaupten, und was nicht?
+:::
+:::
 
 ## Was ist TextLab?
 
-::: {.module-grid}
-::: {.module-card}
-<h3>Arbeitsumgebung</h3>
-
-Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, Semantic Search und Annotation in einer Oberfläche.
+::: {.notes}
+12-14
 :::
 
-::: {.module-card}
-<h3>Infrastruktur</h3>
+::: {.tool-facts}
+::: {.tool-fact .fragment}
+**Arbeitsumgebung**<br>
+Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, semantische Suche und Annotation.
+:::
 
+::: {.tool-fact .fragment}
+**Infrastruktur**<br>
 React-Frontend, FastAPI-Backend, BlackLab-Indizes, Analysejobs und Registry-Konfiguration.
 :::
 
-::: {.module-card}
-<h3>Methode</h3>
-
-Jede Zahl und jedes Modellresultat muss zu Korpus, Query, Filter und Belegen zurückgeführt werden.
+::: {.tool-fact .fragment}
+**Methode**<br>
+Jedes Resultat muss zu Korpus, Query, Filter, Parametern und Belegen zurückgeführt werden.
+:::
 :::
 
-::: {.module-card}
-<h3>Lehre</h3>
-
-Die Oberfläche macht technische Schritte sichtbar genug, um methodische Entscheidungen zu diskutieren.
+::: {.callout-fragment .fragment}
+TextLab ist interessant, weil die methodische Kette sichtbar bleibt: von Datenmodellierung bis Interpretation.
 :::
+
+## Ein Korpus ist eine bearbeitete Quelle
+
+::: {.notes}
+14-16
+:::
+
+::: {.source-criticism}
+::: {.source-question .fragment}
+**Text**
+
+Was wurde gesammelt, transkribiert, normalisiert oder ausgeschlossen?
+:::
+
+::: {.source-question .fragment}
+**Metadaten**
+
+Welche Kategorien ordnen das Material, bevor wir es durchsuchen?
+:::
+
+::: {.source-question .fragment}
+**Annotation**
+
+Welche Tokens, Lemmas, POS-Tags, Dependencies und Entitäten werden berechnet?
+:::
+
+::: {.source-question .fragment}
+**Interface**
+
+Welche Resultatansichten machen Muster sichtbar oder unsichtbar?
+:::
+:::
+
+::: {.callout-fragment .fragment}
+Korpuskritik erweitert Quellenkritik in die Suchoberfläche hinein.
 :::
 
 ## Architektur in fünf Schichten
 
-```{mermaid}
-flowchart LR
-  A["Rohdaten<br/>XML, Reddit, PDFs, Text"] --> B["Normalisierung<br/>Dokumente, Metadaten"]
-  B --> C["NLP-Annotation<br/>Token, Lemma, POS, Dependency, NER"]
-  C --> D["BlackLab-Index<br/>BCQL, KWIC, Gruppen"]
-  D --> E["TextLab API + UI<br/>Suche, Module, Export, Annotation"]
-  B --> F["Corpus Registry<br/>Labels, Attribute, Werte, Limits"]
-  F --> E
-```
+::: {.notes}
+16-18
+:::
+
+::: {.architecture-flow}
+::: {.architecture-step}
+**1 Rohdaten**<br>
+XML, Reddit, PDF, Text
+:::
+
+::: {.architecture-arrow}
+→
+:::
+
+::: {.architecture-step}
+**2 Normalisierung**<br>
+Dokumente, Chunks, Metadaten
+:::
+
+::: {.architecture-arrow}
+→
+:::
+
+::: {.architecture-step}
+**3 Annotation**<br>
+Token, Lemma, POS, Dep, NER
+:::
+
+::: {.architecture-arrow}
+→
+:::
+
+::: {.architecture-step}
+**4 Index**<br>
+BlackLab, BCQL, KWIC, Groups
+:::
+
+::: {.architecture-arrow}
+→
+:::
+
+::: {.architecture-step .is-dark}
+**5 TextLab**<br>
+API, UI, Module, Export, Annotation
+:::
+:::
+
+::: {.registry-strip}
+**Corpus Registry:** Labels, Attribute, Werte, Capabilities und bekannte Einschränkungen verbinden Normalisierung, Index und UI.
+:::
+
+::: {.caption-note}
+Die Registry ergänzt den Index: BlackLab bleibt Quelle für vorhandene Felder; die Registry beschreibt, wie diese Felder sinnvoll genutzt werden.
+:::
 
 ## Warum Registry?
 
-::: {.two-column}
-::: {.column}
-<h3>Ohne Registry</h3>
-
-- UI rät, welche Attribute existieren.
-- Dokumentation, Query Builder und QA driften auseinander.
-- Korpusgrenzen stehen in Köpfen oder Notizen.
+::: {.notes}
+18-20
 :::
 
-::: {.column}
-<h3>Mit Registry</h3>
+::: {.translation-strip}
+::: {.translation-step .fragment}
+**Problem**
 
-- `corpora.yml` ist Single Source of Truth.
-- BlackLab liefert reale Felder; Registry ergänzt Labels, Werte, Capabilities und Limitations.
-- UI, Docs und QA können dieselben Korpusprofile nutzen.
+Attribute existieren technisch, aber ihre Bedeutung ist nicht automatisch klar.
+:::
+
+::: {.translation-step .fragment}
+**Risiko**
+
+Query Builder, Dokumentation und QA driften auseinander.
+:::
+
+::: {.translation-step .fragment}
+**Lösung**
+
+`corpora.yml` wird Single Source of Truth für Korpusprofile.
+:::
+
+::: {.translation-step .is-dark .fragment}
+**Nutzen**
+
+UI, Docs und Tests sprechen über dieselben Felder, Werte und Grenzen.
 :::
 :::
 
 ## Korpus-Ingestion
 
-::: {.compact-list}
-- Rohdaten sichern und dokumentieren: Herkunft, Rechte, Sampling, Zeiträume, Sprachen.
-- Dokumentmodell festlegen: Was ist ein Dokument, was ein Chunk, was ein Satz?
-- Metadaten normalisieren: Datum, Quelle, Genre/Subreddit, Autor:in, Titel.
-- NLP laufen lassen: Tokenisierung, Lemma, POS, Dependency, NER, Morphologie.
-- Vertikalformat und BlackLab-Index bauen.
-- Registry ergänzen: Felder, Werte, Capabilities, bekannte Einschränkungen.
+::: {.notes}
+20-23
 :::
 
-## Ingestion als Interpretationsentscheidung
-
-::: {.demo-script}
-::: {.demo-card}
-<h3>Technische Entscheidung</h3>
-
-- Was zählt als Dokument?
-- Welche Metadaten werden bewahrt?
-- Welche Annotationen werden indexiert?
-- Welche Felder sind später filterbar?
+::: {.workflow}
+::: {.workflow-step .fragment}
+**01**<br>
+Herkunft<br>
+<span>Rechte, Sampling, Zeitraum, Sprache</span>
 :::
 
-::: {.warning-card}
-<h3>Methodische Folge</h3>
+::: {.workflow-step .fragment}
+**02**<br>
+Dokumentmodell<br>
+<span>Dokument, Chunk, Satz, Token</span>
+:::
 
-Wer später nach `year`, `subreddit`, `doc_type`, POS oder Dependency gruppiert, arbeitet mit genau diesen früheren Modellierungsentscheidungen.
+::: {.workflow-step .fragment}
+**03**<br>
+Metadaten<br>
+<span>Jahr, Quelle, Genre, Subreddit, Typ</span>
+:::
+
+::: {.workflow-step .fragment}
+**04**<br>
+NLP<br>
+<span>Token, Lemma, POS, Dep, NER</span>
+:::
+
+::: {.workflow-step .fragment}
+**05**<br>
+Index<br>
+<span>Vertikalformat, BlackLab, Capabilities</span>
+:::
+
+::: {.workflow-step .is-dark .fragment}
+**06**<br>
+Registry<br>
+<span>Felder, Werte, Labels, Limits</span>
 :::
 :::
 
-## Beispiel: DTA
+## Demo-Korpora
 
-::: {.two-column}
-::: {.column}
-<h3>Frage</h3>
-
-Wie verändern sich politische oder gesellschaftliche Begriffe im 19. Jahrhundert?
-
-<h3>Query-Ideen</h3>
-
-- `[lemma="Demokratie"]`
-- `[lemma="Freiheit"]`
-- `[lemma="Volk"]`
+::: {.notes}
+23-25
 :::
 
-::: {.column}
-<h3>Methodische Kontrolle</h3>
+| Korpus | Größe | Wofür heute gut? | Grenze |
+|---|---:|---|---|
+| DTA | 238.3M Tokens | historisches Deutsch, diachrone Muster, KWIC, Frequency, Word Sketch | Werk-/Editionslogik und technische Chunks beachten |
+| German Reddit | 61.2M Tokens | Plattformkommunikation, Subreddits, Gegenwartssprache | Sampling, Moderation, Meme-Konventionen |
+| English Reddit | 41.3M Tokens | regionale Communities, Subreddit-Kontrast | Plattformeffekte statt direkter Varietätenmessung |
 
-- KWIC vor Frequenzinterpretation.
-- Peaks nach Jahr mit Textklasse/Genre prüfen.
-- Wortbedeutung nicht aus Trefferzahl ableiten.
-- Normalisierung und Korpuszusammensetzung als offene Frage markieren.
+::: {.caption-note}
+Im UI werden Tokenzahlen angezeigt; Trefferzahlen entstehen erst aus Korpus + Query + Filter.
 :::
+
+## Zugang und Demo-Regel
+
+::: {.notes}
+25
+:::
+
+::: {.question-pair}
+::: {.question-card}
+### Live
+
+- <https://www.wuerschinger.org/textlab/>
+Zugangsdaten stehen im Raum an der Tafel
+- zuerst DTA, dann erst Reddit
+:::
+
+::: {.question-card}
+### Fallback
+
+- Screenshots zeigen dieselben Schritte
+- bei WLAN/Auth-Problemen gemeinsam vorne durchgehen
+- Aufgabe bleibt: Query, Beleg, Verteilung, Grenze
+:::
+:::
+
+## Teil 1: Von Query zu Beleg {.section-slide}
+
+::: {.notes}
+25
+:::
+
+::: {.section-question}
+Wie wird eine Suchanfrage zu kontrollierbarer Evidenz?
+:::
+
+## Von Begriff zu Query
+
+::: {.notes}
+25-27
+:::
+
+::: {.operationalization-grid}
+::: {.concept-box .fragment}
+### Konzept
+
+Demokratie als politischer, historischer und semantisch mehrdeutiger Begriff.
+:::
+
+::: {.arrow-box .fragment}
+→
+:::
+
+::: {.query-box .fragment}
+### Operationalisierung
+
+`[lemma="Demokratie"]`
+
+ein Suchweg, nicht der Begriff selbst.
+:::
+
+::: {.arrow-box .fragment}
+→
+:::
+
+::: {.evidence-box .fragment}
+### Evidenz
+
+Treffer, KWIC-Kontexte, Jahre, Genres, Quellen.
+:::
+:::
+
+## Query-Syntax
+
+::: {.notes}
+27-29
+:::
+
+Wir nutzen einfache BlackLab/BCQL-Queries:
+
+::: {.query-examples}
+`[lemma="Demokratie"]`
+
+`[lemma="Freiheit"]`
+
+`[word="Teutsch.*"]`
+:::
+
+::: {.syntax-reference}
+`lemma` gruppiert flektierte Formen. `word` sucht konkrete Wortformen. `.*` erweitert die Suche regulär. Jede Erweiterung verändert, was später als Treffer gilt.
 :::
 
 ## TextLab: Query Setup
 
-![](../assets/screenshots/textlab/01-query-setup.png){.screenshot-wide fig-alt="TextLab query setup with DTA corpus and a Demokratie query"}
-
-::: {.screenshot-caption}
-Konkreter Workflow: Korpus wählen, Query formulieren, Kontext- und Sampling-Parameter dokumentieren.
+::: {.notes}
+29-30
 :::
 
-## Concordance
+<div class="screenshot-frame">
+<img src="../assets/screenshots/textlab/01-query-setup.png" alt="TextLab query setup with DTA corpus and a Demokratie query" class="screenshot-wide">
+<div class="screenshot-caption">Korpus, Query und Suchmodus sind Teil des Befunds und müssen dokumentiert werden.</div>
+</div>
 
-Konkordanzen übersetzen Suchabfragen in Belegarbeit.
+## Concordance / KWIC
 
-::: {.method-card}
-**Was kann man damit machen?**  
-Treffer lesen, Muster erkennen, False Positives finden, Quellen vergleichen.
+::: {.notes}
+30-32
+:::
 
-**Technisch**  
-BlackLab gibt KWIC-Kontexte plus Tokenattribute und Dokumentmetadaten zurück. TextLab normalisiert sie zu Zeilen, Details, Exporten und Annotation Targets.
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Was kann man damit machen?</div>
+
+Treffer in Kontext lesen, Bedeutungen unterscheiden, False Positives erkennen, Quellen prüfen.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Technisch</div>
+
+BlackLab liefert Tokenkontext, Annotationen und Dokumentmetadaten; TextLab macht daraus KWIC-Zeilen, Details, Export und Annotation Targets.
+:::
+
+::: {.example-panel}
+<div class="panel-title">DTA-Beispiel</div>
+
+`[lemma="Demokratie"]`: politische Argumente, Zeitungskontexte und metasprachliche Verwendungen müssen getrennt gelesen werden.
+:::
+:::
+
+::: {.callout-fragment .fragment}
+Eine Trefferliste ist noch kein Resultat. Sie ist ein Leseinstrument.
 :::
 
 ## Concordance-Beispiel
 
-![](../assets/screenshots/textlab/02-kwic-demokratie.png){.screenshot-wide fig-alt="TextLab concordance for a Demokratie query"}
+::: {.notes}
+32-33
+:::
 
-::: {.screenshot-caption}
-Belegarbeit beginnt mit Kontext: Was steht links/rechts, welche Quelle, welches Jahr, welche Textklasse?
+<div class="screenshot-frame screenshot-full">
+<img src="../assets/screenshots/textlab/02-kwic-demokratie.png" alt="TextLab concordance for a Demokratie query" class="screenshot-wide">
+<div class="screenshot-caption">Belegarbeit beginnt im Kontext: links/rechts, Quelle, Jahr, Dokumenttyp, Trefferqualität.</div>
+</div>
+
+## Lesen, bevor man zählt
+
+::: {.notes}
+33-35
+:::
+
+::: {.truth-grid}
+::: {.truth-card .fragment}
+**True positive**<br>
+relevanter Treffer
+:::
+
+::: {.truth-card .fragment}
+**False positive**<br>
+technisch getroffen, aber interpretativ falsch
+:::
+
+::: {.truth-card .fragment}
+**False negative**<br>
+relevant, aber von dieser Query verfehlt
+:::
+:::
+
+::: {.reading-standard .fragment}
+Erst genug lesen, um zu wissen, was man zählt.
 :::
 
 ## Frequency
 
-Frequenzen machen Verteilungen sichtbar, aber nicht automatisch interpretierbar.
-
-::: {.method-card}
-**Was kann man damit machen?**  
-Treffer nach Jahr, Genre, Subreddit, POS, NER oder anderen Feldern gruppieren.
-
-**Technisch**  
-TextLab sendet eine BlackLab-Gruppierung oder abgeleitete Distribution; Ergebnis sind Buckets mit Trefferzahl, ggf. Dokumentzahl und Normalisierung.
+::: {.notes}
+35-37
 :::
 
-## Frequency-Beispiel
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Was kann man damit machen?</div>
 
-![](../assets/screenshots/textlab/03-frequency-demokratie.png){.screenshot-wide fig-alt="TextLab frequency chart for Demokratie by year"}
-
-::: {.screenshot-caption}
-Die Kurve ist ein Hinweis auf eine Quellefrage, nicht schon die Antwort.
+Treffer nach Jahr, Genre, Textklasse, Subreddit, POS, NER oder anderen Feldern gruppieren.
 :::
+
+::: {.detail-panel}
+<div class="panel-title">Technisch</div>
+
+TextLab ruft BlackLab-Gruppierungen oder abgeleitete Distributionen ab: Buckets, Trefferzahlen, Dokumentzahlen und Normalisierung.
+:::
+
+::: {.example-panel}
+<div class="panel-title">DTA-Beispiel</div>
+
+Der Peak um 1848 ist ein Hinweis auf eine Quellenfrage, nicht automatisch eine begriffsgeschichtliche Erklärung.
+:::
+:::
+
+## Beispiel: Demokratie nach Jahr
+
+::: {.notes}
+37-39
+:::
+
+::: {.bar-chart .chronology-chart}
+::: {.bar-row .fragment}
+<span class="bar-label">1848</span><span class="bar-track"><span class="bar-fill is-primary" style="width: 100%"></span></span><span class="bar-value">1252</span>
+:::
+
+::: {.bar-row .fragment}
+<span class="bar-label">1893</span><span class="bar-track"><span class="bar-fill" style="width: 14%"></span></span><span class="bar-value">174</span>
+:::
+
+::: {.bar-row .fragment}
+<span class="bar-label">1875</span><span class="bar-track"><span class="bar-fill" style="width: 10%"></span></span><span class="bar-value">125</span>
+:::
+
+::: {.bar-row .fragment}
+<span class="bar-label">1856</span><span class="bar-track"><span class="bar-fill" style="width: 8%"></span></span><span class="bar-value">100</span>
+:::
+
+::: {.bar-row .fragment}
+<span class="bar-label">1850</span><span class="bar-track"><span class="bar-fill" style="width: 7%"></span></span><span class="bar-value">90</span>
+:::
+:::
+
+::: {.callout-fragment .fragment}
+Interpretationsschritt: erst Jahrgang sehen, dann Genre, dominante Quellen und KWIC-Kontexte prüfen.
+:::
+
+## Frequency-Beispiel im UI
+
+::: {.notes}
+39-40
+:::
+
+<div class="screenshot-frame screenshot-full">
+<img src="../assets/screenshots/textlab/03-frequency-demokratie.png" alt="TextLab frequency chart for Demokratie by year" class="screenshot-wide">
+<div class="screenshot-caption">Die Kurve ist ein Hinweis auf eine Quellenfrage, nicht schon die Antwort.</div>
+</div>
 
 ## Live-Demo 1: DTA
 
-::: {.demo-script}
-::: {.demo-card}
-<h3>Schritte</h3>
-
-1. Korpus `dta_full_uncapped` wählen.
-2. Query Builder oder manuell: `[lemma="Demokratie"]`.
-3. KWIC öffnen und zwei Treffer lesen.
-4. Trefferzahl nennen: ca. 2.486.
-5. Frequency nach `year`: Peak 1848.
-6. Zurück zur KWIC: Welche Texte erklären den Peak?
+::: {.notes}
+40-45
 :::
 
-::: {.demo-card}
-<h3>Sprechspur</h3>
+::: {.exercise-brief}
+::: {.exercise-main}
+**Pflichtpfad**
 
-- Query ist Operationalisierung, nicht Begriff.
-- KWIC prüft Bedeutung und False Positives.
-- Frequenz zeigt ein Muster.
-- Interpretation braucht Quellen-/Genreprüfung.
+`dta_full_uncapped` · `[lemma="Demokratie"]`
 :::
+
+::: {.exercise-steps}
+1. Query ausführen und Trefferzahl notieren: ca. `2.486`.<br>
+2. Zwei KWIC-Zeilen lesen: Was ist der Treffer?<br>
+3. Frequency nach `year`: Peak `1848`.<br>
+4. Zurück zur KWIC: Welche Quellen erklären das Muster?
+:::
+:::
+
+::: {.status-note}
+Sprechspur: Query ist Operationalisierung, KWIC prüft Bedeutung, Frequenz zeigt ein Muster, Interpretation braucht Quellenprüfung.
 :::
 
 ## Hands-on 1
 
-::: {.hands-on-card}
-<h3>Von der Frage zum Beleg</h3>
-
-1. Korpus: `dta_full_uncapped`
-2. Query: `[lemma="Demokratie"]` oder `[lemma="Freiheit"]`
-3. KWIC: drei Treffer lesen und eine Beobachtung notieren.
-4. Frequency: nach `year` gruppieren.
-5. Aussage: Was sieht man, und welche Einschränkung muss genannt werden?
+::: {.notes}
+45-60
 :::
 
-<!-- Speaker note: Hands-on 1 maximal 15 Minuten. Wenn die Gruppe langsam ist, alle dieselbe Query wählen und nur zwei KWIC-Zeilen plus Frequency diskutieren. -->
+::: {.exercise-brief}
+::: {.exercise-main}
+**Output**
+
+Eine Evidenznotiz zu einer DTA-Query.
+:::
+
+::: {.exercise-steps}
+1. Korpus: `dta_full_uncapped`<br>
+2. Query: `[lemma="Demokratie"]` oder `[lemma="Freiheit"]`<br>
+3. drei KWIC-Treffer lesen<br>
+4. Frequency nach `year`<br>
+5. eine Beobachtung und eine Einschränkung formulieren
+:::
+:::
+
+## Teil 2: Von Muster zu Modell {.section-slide}
+
+::: {.notes}
+60
+:::
+
+::: {.section-question}
+Was passiert, wenn wir vergleichen, explorieren und modellgestützt klassifizieren?
+:::
 
 ## Reddit als Kontrast
 
-::: {.two-column}
-::: {.column}
-<h3>DTA</h3>
+::: {.notes}
+60-63
+:::
 
-- historischer Kanon/Snapshot
+::: {.question-pair}
+::: {.question-card .fragment}
+### DTA
+
+- historischer Korpus-Snapshot
 - Werk- und Editionslogik
 - diachrone Interpretation
+- starke Nähe zu Quellenkritik
 :::
 
-::: {.column}
-<h3>Reddit</h3>
+::: {.question-card .fragment}
+### Reddit
 
 - Plattform- und Community-Daten
-- Sampling, Moderation, Meme- und Kommentarlogik
-- Metadatenfilter wie `subreddit`, `doc_type`, `is_image`
+- Subreddit- und Moderationslogik
+- Gegenwartssprache, Meme- und Kommentarformate
+- Sampling als zentrale Grenze
 :::
 :::
 
-## Reddit-Demo-Ideen
+## Reddit-Livedemo
 
-| Korpus | Query | Filter / Gruppierung |
-|---|---|---|
-| `deRed_mini` | `[lemma="deutsch"]` | `subreddit`, `doc_type`, `lang_group` |
-| `enRed_mid` | `[word="Wales"]` | Subreddit-Vergleich |
-
-::: {.takeaway}
-Für die Vorlesung reicht ein Reddit-Pfad: Er soll DTA kontrastieren, nicht ein zweites vollständiges Forschungsprojekt eröffnen.
+::: {.notes}
+63-68
 :::
 
-## Live-Demo 2: Reddit {#live-demo-reddit}
+::: {.exercise-brief}
+::: {.exercise-main}
+**Deutsch**
 
-::: {.demo-script}
-::: {.demo-card}
-<h3>Deutsches Reddit</h3>
+`German Reddit` · `[lemma="deutsch"]` · Group by `subreddit`
 
-`deRed_mini`
-
-- Query: `[lemma="deutsch"]`
-- Gruppierung: `subreddit`
-- Erwartung im Smoke: ca. 33.122 Treffer
-- Frage: Welche Communities treiben die Treffer?
+Smoke-Wert: `33.122` Treffer; Top: `de`, `ich_iel`, `FragReddit`.
 :::
 
-::: {.demo-card}
-<h3>Englisches Reddit</h3>
+::: {.exercise-steps}
+**Englisch**
 
-`enRed_mid`
+`English Reddit` · `[word="Wales"]` · Group by `subreddit`
 
-- Query: `[word="Wales"]`
-- Gruppierung: `subreddit`
-- Erwartung im Smoke: ca. 46.003 Treffer
-- Frage: Was ist regionale Varietät, was Plattform-/Community-Effekt?
+Smoke-Wert: `46.003` Treffer; Top: `Wales`, `Scotland`, `AskUK`.
 :::
 :::
 
 ::: {.warning-card}
-Reddit ist kein direktes Abbild von Sprache. Es ist Plattformkommunikation: Subreddit-Regeln, Moderation, Meme-Konventionen, Sampling und gelöschte Inhalte prägen das Korpus.
+Reddit ist kein direktes Abbild von Sprache. Es ist Plattformkommunikation: Regeln, Moderation, Sampling und gelöschte Inhalte prägen das Korpus.
 :::
 
 ## Kollokationen
 
-::: {.method-card}
-**Was kann man damit machen?**  
-Typische lexikalische Nachbarschaften eines Suchtreffers explorieren.
+::: {.notes}
+68-70
+:::
 
-**Technisch**  
-TextLab nimmt KWIC-Kontexte oder BlackLab-Gruppen, zählt Kandidaten in einem Fenster und sortiert nach Score/Frequenz. Parameter wie Fenstergröße, Lemma/Wortform und Mindestfrequenz sind Teil des Befunds.
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Was kann man damit machen?</div>
+
+Typische lexikalische Nachbarschaften eines Suchtreffers explorieren.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Technisch</div>
+
+TextLab zählt Kandidaten in KWIC-Fenstern oder Indexgruppen und sortiert nach Frequenz oder Assoziationsscore.
+:::
+
+::: {.example-panel}
+<div class="panel-title">Methodische Grenze</div>
+
+Fenstergröße, Mindestfrequenz, Lemma/Wortform und Score sind Teil des Befunds.
+:::
 :::
 
 ## Collocation-Beispiel
 
-![](../assets/screenshots/textlab/05-collocations-demokratie.png){.screenshot-wide fig-alt="TextLab collocation analysis for Demokratie"}
-
-::: {.screenshot-caption}
-Kollokationen sind Kandidaten für Lektüre: Fenster, Score und Mindestfrequenz müssen mitberichtet werden.
+::: {.notes}
+70
 :::
+
+<div class="screenshot-frame screenshot-full">
+<img src="../assets/screenshots/textlab/05-collocations-demokratie.png" alt="TextLab collocation analysis for Demokratie" class="screenshot-wide">
+<div class="screenshot-caption">Kollokationen sind Kandidaten für Lektüre: Score und Parameter ersetzen nicht die KWIC-Prüfung.</div>
+</div>
 
 ## Word Sketches
 
-::: {.method-card}
-**Was kann man damit machen?**  
-Typische grammatische Umgebungen eines Lemmas zusammenfassen: Modifikatoren, Verben, nominale Partner, Präpositionalmuster.
+::: {.notes}
+70-72
+:::
 
-**Technisch**  
-TextLab nutzt Dependency-Annotationen und relationale Gruppierungen. Die Ergebnisse sind explorative Kandidaten und müssen in KWIC geprüft werden.
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Was kann man damit machen?</div>
+
+Grammatische Umgebungen eines Lemmas zusammenfassen: Modifikatoren, Verben, nominale Partner, Präpositionen.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Technisch</div>
+
+Dependency-Annotationen werden zu Relationengruppen verdichtet; Ergebnisse sind explorative Kandidaten.
+:::
+
+::: {.example-panel}
+<div class="panel-title">Prüfung</div>
+
+Annotation ist hilfreich, aber fallibel. Kandidaten müssen wieder in KWIC geprüft werden.
+:::
 :::
 
 ## Word-Sketch-Beispiel
 
-![](../assets/screenshots/textlab/04-word-sketch-demokratie.png){.screenshot-wide fig-alt="TextLab Word Sketch relation groups for Demokratie"}
-
-::: {.screenshot-caption}
-Relationen reduzieren Komplexität; Interpretation bleibt Belegarbeit.
+::: {.notes}
+72
 :::
 
-## Semantic Analysis
+<div class="screenshot-frame screenshot-full">
+<img src="../assets/screenshots/textlab/04-word-sketch-demokratie.png" alt="TextLab Word Sketch relation groups for Demokratie" class="screenshot-wide">
+<div class="screenshot-caption">Relationen reduzieren Komplexität; Interpretation bleibt Belegarbeit.</div>
+</div>
 
-::: {.compact-list}
-- Startpunkt: eine Query und viele KWIC-Kontexte.
-- Kontexte werden als Embeddings repräsentiert.
-- Clustering und Projektion machen semantische Nachbarschaften sichtbar.
-- Ergebnisfrage: Welche Lesarten, Themen oder Register scheinen sich zu gruppieren?
-- Risiko: Embeddings glätten Unterschiede und erklären ihre Kriterien nicht selbst.
+## Semantische Module
+
+::: {.notes}
+72-75
 :::
 
-## Semantic Search
+::: {.outlook-grid}
+::: {.outlook-card .is-ready .fragment}
+### Semantic Analysis
 
-::: {.method-card}
-**Was kann man damit machen?**  
-Passagen finden, die eine Fragestellung semantisch treffen, auch ohne exakte Wortform.
-
-**Technisch**  
-Ein RAG-/Embedding-Index speichert Textsegmente mit Vektoren. Die Anfrage wird ebenfalls eingebettet; TextLab ruft nahe Segmente ab und zeigt Quellen/Evidenz.
+KWIC-Kontexte werden als Embeddings repräsentiert, geclustert und projiziert.
 :::
 
-## LLM Classification
+::: {.outlook-card .fragment}
+### Semantic Search
 
-::: {.compact-list}
-- Man definiert eine Variable: Bedeutung, Thema, Sprechakt, Bewertung, Funktion.
-- Kleine Stichprobe manuell kalibrieren.
-- Prompt, Labels und Beispiele dokumentieren.
-- Modelllabel als Vorschlag behandeln, nicht als Ground Truth.
-- Fehler und Grenzfälle sind Teil des Ergebnisses.
+Eine Frage wird eingebettet; TextLab sucht semantisch ähnliche Segmente im RAG-Index.
+:::
+
+::: {.outlook-card .fragment}
+### LLM Classification
+
+Ein Labelschema wird auf Treffer, Passagen oder Dokumente angewendet und danach geprüft.
+:::
+
+::: {.outlook-card .fragment}
+### Annotation
+
+Manuelle und assistierte Labels machen Evidenz wiederverwendbar.
+:::
+:::
+
+::: {.callout-fragment .fragment}
+Diese Module sind nur wissenschaftlich brauchbar, wenn Labels, Prompts, Beispiele, Fehler und Quellpassagen sichtbar bleiben.
 :::
 
 ## Annotation und LLMs
 
-![](../assets/screenshots/textlab/06-annotation-task.png){.screenshot-wide fig-alt="TextLab annotation task created from concordance evidence"}
+::: {.notes}
+75
+:::
 
-::: {.screenshot-caption}
-Annotation und LLM Classification sind nur belastbar, wenn Labelschema, Beispiele, Modell/Prompt und Review-Fehler dokumentiert werden.
+<div class="screenshot-frame screenshot-full">
+<img src="../assets/screenshots/textlab/06-annotation-task.png" alt="TextLab annotation task created from concordance evidence" class="screenshot-wide">
+<div class="screenshot-caption">Annotation und LLM Classification brauchen Labelschema, Beispiele, Modell/Prompt und Review-Fehler.</div>
+</div>
+
+## Suche als reproduzierbare Pipeline
+
+::: {.notes}
+75-77
+:::
+
+::: {.pipeline-flow}
+::: {.pipeline-step .fragment}
+**1 Text types**<br>
+Korpus/Filter festlegen
+:::
+
+::: {.pipeline-step .fragment}
+**2 Query**<br>
+Trefferraum erzeugen
+:::
+
+::: {.pipeline-step .fragment}
+**3 Sample / Sort**<br>
+Auswahl und Ansicht dokumentieren
+:::
+
+::: {.pipeline-step .fragment}
+**4 Analysis**<br>
+KWIC, Frequency, Collocation, Label
+:::
+:::
+
+::: {.callout-fragment .fragment}
+Perspektive für TextLab: Such- und Analyseoperationen sollten als sichtbare, reproduzierbare Schrittfolge speicherbar werden.
+:::
+
+## Schwach, besser, forschbar
+
+::: {.notes}
+77-80
+:::
+
+::: {.finding-compare .finding-compare-3}
+::: {.weak-finding .fragment}
+### Schwach
+
+Demokratie wird 1848 wichtig.
+:::
+
+::: {.better-finding .fragment}
+### Besser
+
+In dieser DTA-Query clustern Treffer für `Demokratie` stark um 1848; die Verteilung muss aber gegen Quellen, Genre und KWIC-Kontexte geprüft werden.
+:::
+
+::: {.researchable-finding .fragment}
+### Forschbar
+
+Ich behandle `[lemma="Demokratie"]` als eine Operationalisierung demokratischer Begrifflichkeit, vergleiche Jahr und Genre, lese dominante Quellen und teste, ob der Peak nach Ausschluss einzelner Textsorten stabil bleibt.
+:::
+:::
+
+## Dokumentationsstandard
+
+::: {.notes}
+80-82
+:::
+
+::: {.documentation-grid}
+::: {.documentation-card .fragment}
+**Frage**
+
+Welches philologische Problem?
+:::
+
+::: {.documentation-card .fragment}
+**Operationalisierung**
+
+Was zählt als Treffer?
+:::
+
+::: {.documentation-card .fragment}
+**Korpus**
+
+Welche Version, Felder, Grenzen?
+:::
+
+::: {.documentation-card .fragment}
+**Belegarbeit**
+
+Welche KWIC-Zeilen stützen oder stören?
+:::
+
+::: {.documentation-card .fragment}
+**Aussage**
+
+Was ist Befund, was Hypothese?
+:::
 :::
 
 ## Hands-on 2
 
-::: {.hands-on-card}
-<h3>Von Mustern zur Interpretation</h3>
+::: {.notes}
+82-88
+:::
 
-Wählt einen der zwei robusten Pfade und formuliert eine Mini-Aussage:
+::: {.exercise-brief}
+::: {.exercise-main}
+**Output**
 
-- DTA: `[lemma="Demokratie"]` oder `[lemma="Freiheit"]`, Gruppierung nach `year`.
-- Reddit: `[lemma="deutsch"]` in `deRed_mini`, Gruppierung nach `subreddit`.
+Eine Mini-Aussage, die Verteilung, Beleg und Einschränkung verbindet.
+:::
 
-Zusatz, wenn Zeit bleibt:
-
-- Word Sketch oder Collocations als explorative Erweiterung.
-- LLM Classification als Gedankenexperiment: Welche Labels wären prüfbar?
+::: {.exercise-steps}
+1. DTA oder Reddit wählen<br>
+2. Query und Gruppierung notieren<br>
+3. Muster beschreiben<br>
+4. mindestens zwei Belege prüfen<br>
+5. eine Einschränkung formulieren
+:::
 :::
 
 ## Mini-Aussage: Vorlage
 
-::: {.hands-on-card}
-In Korpus **X** liefert Query **Y** unter Filter/Gruppierung **Z** ein Muster: **...**
-
-Zwei Belege sprechen dafür:
-
-1. **...**
-2. **...**
-
-Eine Einschränkung ist:
-
-**...**
+::: {.notes}
+82-88
 :::
 
-## Was muss dokumentiert werden?
+::: {.template-card}
+In Korpus **X** liefert Query **Y** unter Gruppierung/Filter **Z** ein Muster: **...**
 
-::: {.compact-list}
-- Korpus-ID und Korpusprofil.
-- Query, Filter, Gruppierungsfeld und Parameter.
-- Trefferzahl und Sampling.
-- Mindestens zwei Belege oder Gegenbelege.
-- Bekannte Korpus-/Modellgrenzen.
-- Interpretation als vorläufige, kontrollierbare Aussage.
+Zwei Belege sprechen dafür: **...**
+
+Eine Einschränkung ist: **...**
 :::
 
-## Demo-Checkliste für Montag {#demo-checkliste-montag}
+## Plan B
+
+::: {.notes}
+88-89
+:::
+
+Wenn TextLab oder das Netzwerk instabil ist:
+
+::: {.incremental}
+- Screenshots zeigen die Hauptschritte.
+- Die Live-Demo wird vorne gemeinsam durchgesprochen.
+- Die methodische Aufgabe bleibt unverändert.
+:::
+
+::: {.callout-fragment}
+Tools sind austauschbar; entscheidend ist die transparente Analyseoperation.
+:::
+
+## Montag-Checkliste
+
+::: {.notes}
+Vor der Sitzung
+:::
 
 ::: {.checkpoint-list}
-- TextLab öffnen und Login testen.
-- Corpus Selector: `dta_full_uncapped`, `deRed_mini`, `enRed_mid`.
-- DTA: `[lemma="Demokratie"]` → KWIC → Frequency by `year` → ca. 2.486 Treffer.
-- German Reddit: `[lemma="deutsch"]` → Frequency by `subreddit` → ca. 33.122 Treffer.
-- English Reddit: `[word="Wales"]` → Frequency by `subreddit` → ca. 46.003 Treffer.
-- Word Sketch/Collocations nur zeigen, wenn erster DTA-Pfad stabil läuft.
-- Semantic Search nur für DTA; Reddit ohne RAG-Index als bewusstes Feature-Limit erklären.
+- TextLab öffnen und Login mit dem Vorlesungsaccount testen. / `VLDH26`.
+- DTA: `[lemma="Demokratie"]` → KWIC → Frequency by `year` → ca. `2.486` Treffer.
+- German Reddit: `[lemma="deutsch"]` → Frequency by `subreddit` → ca. `33.122` Treffer.
+- English Reddit: `[word="Wales"]` → Frequency by `subreddit` → ca. `46.003` Treffer.
+- Word Sketch/Collocations nur zeigen, wenn der DTA-Pfad stabil läuft.
+- Semantic Search/LLM als Methodenblick, nicht als Live-Abhängigkeit.
 :::
 
 ## Schluss
+
+::: {.notes}
+89-90
+:::
 
 TextLab zeigt DH-Infrastruktur als Zusammenspiel aus Korpusarbeit, Softwarearchitektur, statistischer Verdichtung, Modellverfahren und interpretierender Rückbindung an Texte.
 
 ::: {.takeaway}
 Die zentrale Kompetenz ist nicht, ein Tool zu bedienen, sondern Operationen so zu formulieren, dass sie als wissenschaftliche Entscheidungen diskutierbar werden.
+:::
+
+## Takeaway
+
+::: {.notes}
+90
+:::
+
+::: {.takeaway-lines}
+::: {}
+Korpus kennen.
+:::
+
+::: {}
+Operation dokumentieren.
+:::
+
+::: {}
+Muster an Belegen prüfen.
+:::
 :::
