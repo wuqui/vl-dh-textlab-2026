@@ -11,7 +11,7 @@
 
 ## In Arbeit
 
-- [ ] Folien sprachlich verdichten und Timing nach Proberender prüfen.
+- [ ] Folien sprachlich weiter verdichten und Timing nach Probedurchlauf prüfen.
 
 ## Erledigt
 
@@ -21,3 +21,7 @@
 - [x] Folienstruktur in `slides/textlab-ringvorlesung.qmd` in realistische 90-Minuten-Dramaturgie gebracht.
 - [x] konkrete Demo-Pfade direkt in den Slides notiert: DTA, `deRed_mini`, `enRed_mid`.
 - [x] zentrale TextLab-Screenshots aus dem IDK-Workshop als vorläufige Fallback-Visuals übernommen.
+- [x] Architektur-/Methodenfolien um explizite Demo-Regie, Reddit-Kontrast und Mini-Aussage-Vorlage ergänzt.
+- [x] Collocation- und Annotation-Fallback-Screenshots aus dem Workshopdeck übernommen.
+- [x] `quarto render` nach Folienerweiterung erfolgreich ausgeführt.
+- [x] Browser-Check mit Chrome DevTools durchgeführt: keine Console-Fehler, Screenshot-Assets laden, kritische Folien visuell geprüft.

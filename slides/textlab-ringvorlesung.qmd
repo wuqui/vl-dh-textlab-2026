@@ -35,24 +35,54 @@ TextLab ist keine neutrale Suchbox, sondern eine Kette von Entscheidungen: Korpu
 ::: {.timeline}
 <span>0-10</span> Einstieg: Was muss ein DH-Korpuslabor leisten?
 
-<span>10-30</span> Architektur und Korpus-Ingestion
+<span>10-25</span> Architektur und Korpus-Ingestion
 
-<span>30-45</span> Concordance und Frequency
+<span>25-35</span> Concordance und Frequency
+
+<span>35-45</span> Live-Demo 1: DTA von Query zu Beleg
 
 <span>45-60</span> Hands-on 1: Query, KWIC, Frequenz
 
-<span>60-75</span> Word Sketches, Semantic Analysis/Search, LLM Classification
+<span>60-75</span> Explorative Module: Collocations, Word Sketches, Semantic Search, LLM
 
-<span>75-90</span> Hands-on 2 und Diskussion
+<span>75-90</span> Hands-on 2 und Abschlussdiskussion
+:::
+
+::: {.notes}
+Pacing: Der erste Block ist methodisch enger; der zweite Block zeigt das Spektrum, aber mit klarer Rückbindung an Evidenz.
 :::
 
 ## Demo-Korpora
 
 | Korpus | Wofür geeignet? | Einschränkung |
 |---|---|---|
-| `dta_full_uncapped` | historisches Deutsch, diachrone Muster, KWIC/Frequency/Word Sketch/Semantic Search | Workshop-Snapshot, technische Chunks |
-| `deRed_mini` | deutschsprachige Reddit-Kommunikation, Subreddit-Vergleich, Metadatenfilter, Plattformdaten | Semantic Search erst nach RAG-Index |
-| `enRed_mid` | englische regionale Reddit-Varietäten, Subreddit-Vergleich | Semantic Search erst nach RAG-Index |
+| `dta_full_uncapped`<br>238M Tokens | historisches Deutsch, diachrone Muster, KWIC/Frequency/Word Sketch/Semantic Search | Workshop-Snapshot, technische Chunks |
+| `deRed_mini`<br>61M Tokens | deutschsprachige Reddit-Kommunikation, Subreddit-Vergleich, Metadatenfilter, Plattformdaten | Semantic Search erst nach RAG-Index |
+| `enRed_mid`<br>41M Tokens | englische regionale Reddit-Varietäten, Subreddit-Vergleich | Semantic Search erst nach RAG-Index |
+
+## Zugang und Demo-Regel
+
+::: {.two-column}
+::: {.column}
+### Live
+
+- TextLab: <https://www.wuerschinger.org/textlab/>
+- gemeinsame Workshop-/Demo-Accounts
+- Korpora: DTA, German Reddit, English Reddit
+:::
+
+::: {.column}
+### Fallback
+
+- dieselben Schritte sind als Screenshots in den Folien
+- bei WLAN/Auth-Problemen: gemeinsam vorne durchgehen
+- methodische Aufgabe bleibt gleich: Query, Beleg, Verteilung, Grenze
+:::
+:::
+
+::: {.takeaway}
+Die Live-Demo ist nicht das Ziel. Ziel ist, die Operationen so transparent zu machen, dass sie als DH-Methoden diskutierbar werden.
+:::
 
 ## Was ist TextLab?
 
@@ -123,6 +153,25 @@ flowchart LR
 - NLP laufen lassen: Tokenisierung, Lemma, POS, Dependency, NER, Morphologie.
 - Vertikalformat und BlackLab-Index bauen.
 - Registry ergänzen: Felder, Werte, Capabilities, bekannte Einschränkungen.
+:::
+
+## Ingestion als Interpretationsentscheidung
+
+::: {.demo-script}
+::: {.demo-card}
+### Technische Entscheidung
+
+- Was zählt als Dokument?
+- Welche Metadaten werden bewahrt?
+- Welche Annotationen werden indexiert?
+- Welche Felder sind später filterbar?
+:::
+
+::: {.warning-card}
+### Methodische Folge
+
+Wer später nach `year`, `subreddit`, `doc_type`, POS oder Dependency gruppiert, arbeitet mit genau diesen früheren Modellierungsentscheidungen.
+:::
 :::
 
 ## Beispiel: DTA
@@ -197,6 +246,29 @@ TextLab sendet eine BlackLab-Gruppierung oder abgeleitete Distribution; Ergebnis
 Die Kurve ist ein Hinweis auf eine Quellefrage, nicht schon die Antwort.
 :::
 
+## Live-Demo 1: DTA
+
+::: {.demo-script}
+::: {.demo-card}
+### Schritte
+
+1. Korpus `dta_full_uncapped` wählen.
+2. Query Builder oder manuell: `[lemma="Demokratie"]`.
+3. KWIC öffnen und zwei Treffer lesen.
+4. Frequency nach `year`.
+5. Zurück zur KWIC: Was erklärt den Peak?
+:::
+
+::: {.demo-card}
+### Sprechspur
+
+- Query ist Operationalisierung, nicht Begriff.
+- KWIC prüft Bedeutung und False Positives.
+- Frequenz zeigt ein Muster.
+- Interpretation braucht Quellen-/Genreprüfung.
+:::
+:::
+
 ## Hands-on 1
 
 ::: {.hands-on-card}
@@ -207,6 +279,10 @@ Die Kurve ist ein Hinweis auf eine Quellefrage, nicht schon die Antwort.
 3. KWIC: drei Treffer lesen und eine Beobachtung notieren.
 4. Frequency: nach `year` gruppieren.
 5. Aussage: Was sieht man, und welche Einschränkung muss genannt werden?
+:::
+
+::: {.notes}
+Für Hands-on 1 maximal 15 Minuten. Wenn die Gruppe langsam ist: alle wählen dieselbe Query und diskutieren nur zwei KWIC-Zeilen plus Frequency.
 :::
 
 ## Reddit als Kontrast
@@ -234,9 +310,37 @@ Die Kurve ist ein Hinweis auf eine Quellefrage, nicht schon die Antwort.
 | Korpus | Query | Filter / Gruppierung |
 |---|---|---|
 | `deRed_mini` | `[lemma="deutsch"]` | `subreddit`, `doc_type`, `lang_group` |
-| `deRed_mini` | `[lemma="ich"]` | `subreddit`, `is_image`, `score` |
+| `deRed_mini` | `[lemma="österreich"]` oder `[word="Austria"]` | `subreddit`, `doc_type` |
 | `enRed_mid` | `[lemma="home"]` | `subreddit`, `lang`, `doc_type` |
 | `enRed_mid` | `[word="Wales"]` | Subreddit-Vergleich |
+
+## Live-Demo 2: Reddit
+
+::: {.demo-script}
+::: {.demo-card}
+### Deutsches Reddit
+
+`deRed_mini`
+
+- Query: `[lemma="deutsch"]`
+- Gruppierung: `subreddit`
+- Frage: Welche Communities treiben die Treffer?
+:::
+
+::: {.demo-card}
+### Englisches Reddit
+
+`enRed_mid`
+
+- Query: `[lemma="home"]` oder `[word="Wales"]`
+- Gruppierung: `subreddit`
+- Frage: Was ist regionale Varietät, was Plattform-/Community-Effekt?
+:::
+:::
+
+::: {.warning-card}
+Reddit ist kein direktes Abbild von Sprache. Es ist Plattformkommunikation: Subreddit-Regeln, Moderation, Meme-Konventionen, Sampling und gelöschte Inhalte prägen das Korpus.
+:::
 
 ## Kollokationen
 
@@ -246,6 +350,14 @@ Typische lexikalische Nachbarschaften eines Suchtreffers explorieren.
 
 **Technisch**  
 TextLab nimmt KWIC-Kontexte oder BlackLab-Gruppen, zählt Kandidaten in einem Fenster und sortiert nach Score/Frequenz. Parameter wie Fenstergröße, Lemma/Wortform und Mindestfrequenz sind Teil des Befunds.
+:::
+
+## Collocation-Beispiel
+
+![](../assets/screenshots/textlab/05-collocations-demokratie.png){.screenshot-wide fig-alt="TextLab collocation analysis for Demokratie"}
+
+::: {.screenshot-caption}
+Kollokationen sind Kandidaten für Lektüre: Fenster, Score und Mindestfrequenz müssen mitberichtet werden.
 :::
 
 ## Word Sketches
@@ -296,17 +408,40 @@ Ein RAG-/Embedding-Index speichert Textsegmente mit Vektoren. Die Anfrage wird e
 - Fehler und Grenzfälle sind Teil des Ergebnisses.
 :::
 
+## Annotation und LLMs
+
+![](../assets/screenshots/textlab/06-annotation-task.png){.screenshot-wide fig-alt="TextLab annotation task created from concordance evidence"}
+
+::: {.screenshot-caption}
+Annotation und LLM Classification sind nur belastbar, wenn Labelschema, Beispiele, Modell/Prompt und Review-Fehler dokumentiert werden.
+:::
+
 ## Hands-on 2
 
 ::: {.hands-on-card}
 ### Von Mustern zur Interpretation
 
-Wählt einen Pfad:
+Wählt einen Pfad und formuliert eine Mini-Aussage:
 
 - Word Sketch für `Demokratie`, `Freiheit` oder ein Reddit-Lemma.
 - Frequency mit Metadata-Filter nach `subreddit`.
 - Semantic Search im DTA: Frage nach demokratischer Beteiligung ohne exaktes Lemma.
 - LLM Classification als Gedankenexperiment: Welche Labels wären prüfbar?
+:::
+
+## Mini-Aussage: Vorlage
+
+::: {.hands-on-card}
+In Korpus **X** liefert Query **Y** unter Filter/Gruppierung **Z** ein Muster: **...**
+
+Zwei Belege sprechen dafür:
+
+1. **...**
+2. **...**
+
+Eine Einschränkung ist:
+
+**...**
 :::
 
 ## Was muss dokumentiert werden?
@@ -318,6 +453,18 @@ Wählt einen Pfad:
 - Mindestens zwei Belege oder Gegenbelege.
 - Bekannte Korpus-/Modellgrenzen.
 - Interpretation als vorläufige, kontrollierbare Aussage.
+:::
+
+## Demo-Checkliste für Montag
+
+::: {.checkpoint-list}
+- TextLab öffnen und Login testen.
+- Corpus Selector: `dta_full_uncapped`, `deRed_mini`, `enRed_mid`.
+- DTA: `[lemma="Demokratie"]` → KWIC → Frequency by `year`.
+- German Reddit: `[lemma="deutsch"]` → Frequency by `subreddit`.
+- English Reddit: `[word="Wales"]` oder `[lemma="home"]` → Frequency by `subreddit`.
+- Word Sketch/Collocations nur zeigen, wenn erster DTA-Pfad stabil läuft.
+- Semantic Search nur für DTA; Reddit ohne RAG-Index als bewusstes Feature-Limit erklären.
 :::
 
 ## Schluss
