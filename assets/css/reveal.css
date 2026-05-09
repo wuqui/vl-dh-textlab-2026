@@ -245,7 +245,8 @@ body,
 .outlook-grid,
 .pipeline-flow,
 .finding-compare,
-.documentation-grid {
+.documentation-grid,
+.resource-list {
   display: grid;
   gap: 0.7em;
   margin-top: 0.55em;
@@ -847,6 +848,25 @@ body,
   border-left: 0.24em solid var(--tl-teal);
   font-size: 0.78em;
   line-height: 1.5;
+}
+
+.resource-list {
+  max-width: 32em;
+  gap: 0.45em;
+}
+
+.resource-list > div {
+  padding: 0.54em 0.72em;
+  border: 1px solid var(--tl-border);
+  border-left: 0.22em solid var(--tl-teal);
+  border-radius: 8px;
+  background: var(--tl-card);
+  box-shadow: 0 12px 30px rgba(23, 32, 51, 0.07);
+  font-size: 0.62em;
+}
+
+.resource-list > div p {
+  margin: 0;
 }
 
 .checkpoint-list {

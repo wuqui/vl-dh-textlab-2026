@@ -14,12 +14,14 @@ Ein fokussiertes Quarto-/RevealJS-Deck für eine 90-minütige Ringvorlesung übe
 - Die Folien dürfen zunächst als integriertes Arbeitsdeck wachsen.
 - Hands-on-Schritte werden vorerst direkt in den Slides geführt.
 - Workshop-Screenshots dienen als Fallback-Visuals; der finale Live-Smoke hat die Montag-MVP-Pfade zusätzlich im laufenden UI bestätigt.
+- Für Montag bleibt DTA + Reddit der robuste MVP. COHA wird als optionaler Bonuspfad vorbereitet, weil es als diachrones englisches Brückenkorpus methodisch sehr gut passt, aber erst nach erfolgreichem BlackLab-Vollindex live eingeplant werden sollte.
 
 ## Vorläufige Vorlesungsstruktur
 
 - Block 1: TextLab als Korpuslabor, Architektur, Korpus-Ingestion, Concordance/KWIC, Frequency.
 - Hands-on 1: Query, KWIC, Frequenz, vorsichtige Aussage.
 - Block 2: Collocations, Word Sketches, Semantic Analysis, Semantic Search, LLM Classification.
+- Optionaler Einschub: COHA als historisches englisches Vergleichskorpus, wenn der BlackLab-Index rechtzeitig stabil läuft.
 - Hands-on 2: exploratives Modul an einem Demo-Korpus.
 - Abschluss: Was zeigt TextLab über DH-Infrastruktur, Modellierung und Interpretation?
 
@@ -29,6 +31,7 @@ Ein fokussiertes Quarto-/RevealJS-Deck für eine 90-minütige Ringvorlesung übe
 - Welche TextLab-Module sind live stabil genug für Vorführung statt Screenshot?
 - Gibt es Raum-/Netz-/Account-Anforderungen für die Hands-on-Anteile?
 - Reichen Workshop-Fallbacks für Montag, oder sollen nachträglich noch frische UI-Screenshots ins Deck?
+- Wird COHA rechtzeitig in BlackLab live stabil, oder bleibt es in der Vorlesung bei einem Architektur-/Ausblicksbeispiel?
 
 ## Risiken
 

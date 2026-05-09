@@ -70,10 +70,109 @@ Kein KI-Modul ohne dokumentierte Operationalisierung.
 :::
 :::
 
-## 90 Minuten
+## Was ist Korpuslinguistik?
 
 ::: {.notes}
 6-8
+:::
+
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Gegenstand</div>
+
+Empirische Sprach- und Textanalyse auf der Basis dokumentierter, maschinenlesbarer Textsammlungen.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Prinzip</div>
+
+Einzelbelege und quantitative Muster werden zusammen gelesen: Konkordanz, Frequenz, Kollokation, Variation.
+:::
+
+::: {.example-panel}
+<div class="panel-title">DH-Perspektive</div>
+
+Korpora sind keine Rohdaten, sondern modellierte Quellen: Auswahl, Metadaten, Annotation und Interface prägen jedes Resultat.
+:::
+:::
+
+::: {.caption-note}
+Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; angewandte Perspektive: @hunston2002.
+:::
+
+## Wozu ist das gut?
+
+::: {.notes}
+8-10
+:::
+
+::: {.tool-facts}
+::: {.tool-fact .fragment}
+**Kontext finden**<br>
+Konkordanzen machen viele Belege schnell lesbar.
+:::
+
+::: {.tool-fact .fragment}
+**Variation vergleichen**<br>
+Treffer lassen sich nach Zeit, Genre, Register, Region oder Community gruppieren.
+:::
+
+::: {.tool-fact .fragment}
+**Hypothesen prüfen**<br>
+Frequenzen und Kollokationen machen erwartete und unerwartete Muster kontrollierbar.
+:::
+:::
+
+::: {.callout-fragment .fragment}
+Korpuslinguistik ersetzt Interpretation nicht. Sie macht Suchräume, Muster und Gegenbelege expliziter.
+:::
+
+## Grundoperationen
+
+::: {.notes}
+10-12
+:::
+
+::: {.workflow .core-workflow}
+::: {.workflow-step .fragment}
+**Concordance**<br>
+KWIC lesen<br>
+<span>Bedeutung entsteht im Kontext.</span>
+:::
+
+::: {.workflow-step .fragment}
+**Frequency**<br>
+zählen und gruppieren<br>
+<span>Frequenz ist corpus-relativ.</span>
+:::
+
+::: {.workflow-step .fragment}
+**Collocation**<br>
+Nachbarschaften finden<br>
+<span>Wörter haben typische Umgebungen.</span>
+:::
+
+::: {.workflow-step .fragment}
+**Annotation**<br>
+Merkmale hinzufügen<br>
+<span>POS, Lemma, Dependency, Labels.</span>
+:::
+
+::: {.workflow-step .is-dark .fragment}
+**Claim**<br>
+vorsichtig formulieren<br>
+<span>Muster + Beleg + Grenze.</span>
+:::
+:::
+
+::: {.caption-note}
+Zu Konkordanz/Kollokation: @sinclair1991; zu Frequenz und Statistik: @mceneryHardie2011; @brezina2018.
+:::
+
+## 90 Minuten
+
+::: {.notes}
+12-14
 :::
 
 ::: {.schedule-grid}
@@ -742,10 +841,44 @@ Smoke-Wert: `46.003` Treffer; Top: `Wales`, `Scotland`, `AskUK`.
 Reddit ist kein direktes Abbild von Sprache. Es ist Plattformkommunikation: Regeln, Moderation, Sampling und gelöschte Inhalte prägen das Korpus.
 :::
 
-## Kollokationen
+## COHA als Brückenkorpus {#coha-bridge}
 
 ::: {.notes}
 68-70
+:::
+
+<div class="question-pair">
+<div class="question-card">
+<h3>Warum interessant?</h3>
+
+<ul>
+<li>historisches Englisch von 1810 bis 2010er Jahre</li>
+<li>Genres: Fiction, Magazine, Newspaper, Non-fiction</li>
+<li>lemmatisiert und POS-getaggt</li>
+<li>gute Brücke zwischen DTA und Gegenwartskorpora</li>
+</ul>
+</div>
+
+<div class="question-card">
+<h3>Demo-Ideen</h3>
+
+<ul>
+<li><code>[lemma="computer"]</code>: Aufstieg ab den 1960/70ern</li>
+<li><code>[lemma="radio"]</code>: Mediengeschichte im 20. Jahrhundert</li>
+<li><code>[lemma="automobile"]</code> vs. <code>[lemma="car"]</code>: lexikalische Konkurrenz</li>
+<li>Gruppierung nach <code>year</code>, <code>decade</code> oder <code>genre</code></li>
+</ul>
+</div>
+</div>
+
+::: {.caption-note}
+Guter Didaktikpunkt: Bei `computer` zeigen ältere Treffer teils noch die Personenbedeutung. Genau deshalb muss Frequenz immer zur KWIC zurück.
+:::
+
+## Kollokationen
+
+::: {.notes}
+70-72
 :::
 
 ::: {.method-detail}
@@ -959,6 +1092,30 @@ Was ist Befund, was Hypothese?
 :::
 :::
 
+## Referenzpunkte
+
+::: {.notes}
+80-82
+:::
+
+::: {.resource-list}
+::: {.fragment}
+**Korpuslinguistische Methode:** @sinclair1991; @biberConradReppen1998; @mceneryHardie2011
+:::
+
+::: {.fragment}
+**Anwendung und Statistik:** @hunston2002; @brezina2018
+:::
+
+::: {.fragment}
+**Historische Korpora und COHA:** @davies2012coha
+:::
+
+::: {.fragment}
+**DH-Datenkritik:** @drucker2011; @schoch2013
+:::
+:::
+
 ## Hands-on 2
 
 ::: {.notes}
@@ -1011,6 +1168,15 @@ Wenn TextLab oder das Netzwerk instabil ist:
 
 ::: {.callout-fragment}
 Tools sind austauschbar; entscheidend ist die transparente Analyseoperation.
+:::
+
+## Literatur {.smaller}
+
+::: {.notes}
+Backup
+:::
+
+::: {#refs}
 :::
 
 ## Montag-Checkliste
