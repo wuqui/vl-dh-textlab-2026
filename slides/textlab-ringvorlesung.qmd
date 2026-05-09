@@ -485,6 +485,7 @@ Registry<br>
 | Korpus | Größe | Wofür heute gut? | Grenze |
 |---|---:|---|---|
 | DTA | 238.3M Tokens | historisches Deutsch, diachrone Muster, KWIC, Frequency, Word Sketch | Werk-/Editionslogik und technische Chunks beachten |
+| COHA | 469.9M Tokens | historisches Englisch, Genres, lexikalischer Wandel | falls live: frisch importierter Bonuspfad; KWIC bleibt Pflicht |
 | German Reddit | 61.2M Tokens | Plattformkommunikation, Subreddits, Gegenwartssprache | Sampling, Moderation, Meme-Konventionen |
 | English Reddit | 41.3M Tokens | regionale Communities, Subreddit-Kontrast | Plattformeffekte statt direkter Varietätenmessung |
 
