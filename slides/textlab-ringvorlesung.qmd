@@ -18,9 +18,7 @@ execute:
 
 Quirin Würschinger
 
-::: {.notes}
-Ziel: TextLab nicht nur als Tool zeigen, sondern als Beispiel dafür, wie DH-Infrastruktur entsteht: Korpora, Annotation, Suche, Analyse, KI-Module und methodische Grenzen.
-:::
+<!-- Speaker note: TextLab nicht nur als Tool zeigen, sondern als Beispiel dafür, wie DH-Infrastruktur entsteht: Korpora, Annotation, Suche, Analyse, KI-Module und methodische Grenzen. -->
 
 ## Leitfrage
 
@@ -33,24 +31,20 @@ TextLab ist keine neutrale Suchbox, sondern eine Kette von Entscheidungen: Korpu
 ## 90 Minuten
 
 ::: {.timeline}
-<span>0-10</span> Einstieg: Was muss ein DH-Korpuslabor leisten?
+<span>0-10</span> Einstieg: Was leistet ein DH-Korpuslabor?
 
-<span>10-25</span> Architektur und Korpus-Ingestion
+<span>10-25</span> Architektur, Registry und Korpus-Ingestion
 
-<span>25-35</span> Concordance und Frequency
+<span>25-45</span> Live-Demo 1: DTA von Query zu Beleg zu Frequenz
 
-<span>35-45</span> Live-Demo 1: DTA von Query zu Beleg
+<span>45-60</span> Hands-on 1: dieselbe Pipeline selbst nachvollziehen
 
-<span>45-60</span> Hands-on 1: Query, KWIC, Frequenz
+<span>60-75</span> Reddit als Kontrast und explorative Module
 
-<span>60-75</span> Explorative Module: Collocations, Word Sketches, Semantic Search, LLM
-
-<span>75-90</span> Hands-on 2 und Abschlussdiskussion
+<span>75-90</span> Hands-on 2: Mini-Aussage formulieren und diskutieren
 :::
 
-::: {.notes}
-Pacing: Der erste Block ist methodisch enger; der zweite Block zeigt das Spektrum, aber mit klarer Rückbindung an Evidenz.
-:::
+<!-- Speaker note: Wenn Live-Demo oder Login Zeit kostet, Reddit nur als kurzer Kontrast zeigen und Collocations/Word Sketch/Annotation über Screenshots behandeln. -->
 
 ## Demo-Korpora
 
@@ -64,15 +58,15 @@ Pacing: Der erste Block ist methodisch enger; der zweite Block zeigt das Spektru
 
 ::: {.two-column}
 ::: {.column}
-### Live
+<h3>Live</h3>
 
 - TextLab: <https://www.wuerschinger.org/textlab/>
-- gemeinsame Workshop-/Demo-Accounts
+Zugangsdaten stehen im Raum an der Tafel
 - Korpora: DTA, German Reddit, English Reddit
 :::
 
 ::: {.column}
-### Fallback
+<h3>Fallback</h3>
 
 - dieselben Schritte sind als Screenshots in den Folien
 - bei WLAN/Auth-Problemen: gemeinsam vorne durchgehen
@@ -80,33 +74,54 @@ Pacing: Der erste Block ist methodisch enger; der zweite Block zeigt das Spektru
 :::
 :::
 
-::: {.takeaway}
-Die Live-Demo ist nicht das Ziel. Ziel ist, die Operationen so transparent zu machen, dass sie als DH-Methoden diskutierbar werden.
-:::
+<!-- Speaker note: Die Live-Demo ist nicht das Ziel. Ziel ist, die Operationen so transparent zu machen, dass sie als DH-Methoden diskutierbar werden. -->
+
+## MVP-Demo für Montag {#mvp-demo-montag}
+
+<div class="demo-script">
+<div class="demo-card">
+<h3>Muss live funktionieren</h3>
+<ol>
+<li>DTA: <code>[lemma="Demokratie"]</code>.</li>
+<li>KWIC lesen: Was ist ein Treffer?</li>
+<li>Frequency nach <code>year</code>: Was ist ein Muster?</li>
+<li>Mini-Aussage: Was können wir sagen, was nicht?</li>
+</ol>
+</div>
+
+<div class="demo-card">
+<h3>Bonus, wenn stabil</h3>
+<ul>
+<li>Reddit-Kontrast: <code>[lemma="deutsch"]</code> in <code>deRed_mini</code>, Gruppierung nach <code>subreddit</code>.</li>
+<li>Word Sketch oder Collocations als Übergang zu explorativen Modulen.</li>
+<li>Semantic Search/LLM als Methodenblick, nicht als Live-Abhängigkeit.</li>
+</ul>
+</div>
+</div>
 
 ## Was ist TextLab?
 
 ::: {.module-grid}
 ::: {.module-card}
-### Arbeitsumgebung
+<h3>Arbeitsumgebung</h3>
 
 Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, Semantic Search und Annotation in einer Oberfläche.
 :::
 
 ::: {.module-card}
-### Infrastruktur
+<h3>Infrastruktur</h3>
 
 React-Frontend, FastAPI-Backend, BlackLab-Indizes, Analysejobs und Registry-Konfiguration.
 :::
 
 ::: {.module-card}
-### Methode
+<h3>Methode</h3>
 
 Jede Zahl und jedes Modellresultat muss zu Korpus, Query, Filter und Belegen zurückgeführt werden.
 :::
 
 ::: {.module-card}
-### Lehre
+<h3>Lehre</h3>
 
 Die Oberfläche macht technische Schritte sichtbar genug, um methodische Entscheidungen zu diskutieren.
 :::
@@ -128,7 +143,7 @@ flowchart LR
 
 ::: {.two-column}
 ::: {.column}
-### Ohne Registry
+<h3>Ohne Registry</h3>
 
 - UI rät, welche Attribute existieren.
 - Dokumentation, Query Builder und QA driften auseinander.
@@ -136,7 +151,7 @@ flowchart LR
 :::
 
 ::: {.column}
-### Mit Registry
+<h3>Mit Registry</h3>
 
 - `corpora.yml` ist Single Source of Truth.
 - BlackLab liefert reale Felder; Registry ergänzt Labels, Werte, Capabilities und Limitations.
@@ -159,7 +174,7 @@ flowchart LR
 
 ::: {.demo-script}
 ::: {.demo-card}
-### Technische Entscheidung
+<h3>Technische Entscheidung</h3>
 
 - Was zählt als Dokument?
 - Welche Metadaten werden bewahrt?
@@ -168,7 +183,7 @@ flowchart LR
 :::
 
 ::: {.warning-card}
-### Methodische Folge
+<h3>Methodische Folge</h3>
 
 Wer später nach `year`, `subreddit`, `doc_type`, POS oder Dependency gruppiert, arbeitet mit genau diesen früheren Modellierungsentscheidungen.
 :::
@@ -178,11 +193,11 @@ Wer später nach `year`, `subreddit`, `doc_type`, POS oder Dependency gruppiert,
 
 ::: {.two-column}
 ::: {.column}
-### Frage
+<h3>Frage</h3>
 
 Wie verändern sich politische oder gesellschaftliche Begriffe im 19. Jahrhundert?
 
-### Query-Ideen
+<h3>Query-Ideen</h3>
 
 - `[lemma="Demokratie"]`
 - `[lemma="Freiheit"]`
@@ -190,11 +205,12 @@ Wie verändern sich politische oder gesellschaftliche Begriffe im 19. Jahrhunder
 :::
 
 ::: {.column}
-### Methodische Kontrolle
+<h3>Methodische Kontrolle</h3>
 
 - KWIC vor Frequenzinterpretation.
 - Peaks nach Jahr mit Textklasse/Genre prüfen.
 - Wortbedeutung nicht aus Trefferzahl ableiten.
+- Normalisierung und Korpuszusammensetzung als offene Frage markieren.
 :::
 :::
 
@@ -250,17 +266,18 @@ Die Kurve ist ein Hinweis auf eine Quellefrage, nicht schon die Antwort.
 
 ::: {.demo-script}
 ::: {.demo-card}
-### Schritte
+<h3>Schritte</h3>
 
 1. Korpus `dta_full_uncapped` wählen.
 2. Query Builder oder manuell: `[lemma="Demokratie"]`.
 3. KWIC öffnen und zwei Treffer lesen.
-4. Frequency nach `year`.
-5. Zurück zur KWIC: Was erklärt den Peak?
+4. Trefferzahl nennen: ca. 2.486.
+5. Frequency nach `year`: Peak 1848.
+6. Zurück zur KWIC: Welche Texte erklären den Peak?
 :::
 
 ::: {.demo-card}
-### Sprechspur
+<h3>Sprechspur</h3>
 
 - Query ist Operationalisierung, nicht Begriff.
 - KWIC prüft Bedeutung und False Positives.
@@ -272,7 +289,7 @@ Die Kurve ist ein Hinweis auf eine Quellefrage, nicht schon die Antwort.
 ## Hands-on 1
 
 ::: {.hands-on-card}
-### Von der Frage zum Beleg
+<h3>Von der Frage zum Beleg</h3>
 
 1. Korpus: `dta_full_uncapped`
 2. Query: `[lemma="Demokratie"]` oder `[lemma="Freiheit"]`
@@ -281,15 +298,13 @@ Die Kurve ist ein Hinweis auf eine Quellefrage, nicht schon die Antwort.
 5. Aussage: Was sieht man, und welche Einschränkung muss genannt werden?
 :::
 
-::: {.notes}
-Für Hands-on 1 maximal 15 Minuten. Wenn die Gruppe langsam ist: alle wählen dieselbe Query und diskutieren nur zwei KWIC-Zeilen plus Frequency.
-:::
+<!-- Speaker note: Hands-on 1 maximal 15 Minuten. Wenn die Gruppe langsam ist, alle dieselbe Query wählen und nur zwei KWIC-Zeilen plus Frequency diskutieren. -->
 
 ## Reddit als Kontrast
 
 ::: {.two-column}
 ::: {.column}
-### DTA
+<h3>DTA</h3>
 
 - historischer Kanon/Snapshot
 - Werk- und Editionslogik
@@ -297,7 +312,7 @@ Für Hands-on 1 maximal 15 Minuten. Wenn die Gruppe langsam ist: alle wählen di
 :::
 
 ::: {.column}
-### Reddit
+<h3>Reddit</h3>
 
 - Plattform- und Community-Daten
 - Sampling, Moderation, Meme- und Kommentarlogik
@@ -310,30 +325,34 @@ Für Hands-on 1 maximal 15 Minuten. Wenn die Gruppe langsam ist: alle wählen di
 | Korpus | Query | Filter / Gruppierung |
 |---|---|---|
 | `deRed_mini` | `[lemma="deutsch"]` | `subreddit`, `doc_type`, `lang_group` |
-| `deRed_mini` | `[lemma="österreich"]` oder `[word="Austria"]` | `subreddit`, `doc_type` |
-| `enRed_mid` | `[lemma="home"]` | `subreddit`, `lang`, `doc_type` |
 | `enRed_mid` | `[word="Wales"]` | Subreddit-Vergleich |
 
-## Live-Demo 2: Reddit
+::: {.takeaway}
+Für die Vorlesung reicht ein Reddit-Pfad: Er soll DTA kontrastieren, nicht ein zweites vollständiges Forschungsprojekt eröffnen.
+:::
+
+## Live-Demo 2: Reddit {#live-demo-reddit}
 
 ::: {.demo-script}
 ::: {.demo-card}
-### Deutsches Reddit
+<h3>Deutsches Reddit</h3>
 
 `deRed_mini`
 
 - Query: `[lemma="deutsch"]`
 - Gruppierung: `subreddit`
+- Erwartung im Smoke: ca. 33.122 Treffer
 - Frage: Welche Communities treiben die Treffer?
 :::
 
 ::: {.demo-card}
-### Englisches Reddit
+<h3>Englisches Reddit</h3>
 
 `enRed_mid`
 
-- Query: `[lemma="home"]` oder `[word="Wales"]`
+- Query: `[word="Wales"]`
 - Gruppierung: `subreddit`
+- Erwartung im Smoke: ca. 46.003 Treffer
 - Frage: Was ist regionale Varietät, was Plattform-/Community-Effekt?
 :::
 :::
@@ -419,13 +438,16 @@ Annotation und LLM Classification sind nur belastbar, wenn Labelschema, Beispiel
 ## Hands-on 2
 
 ::: {.hands-on-card}
-### Von Mustern zur Interpretation
+<h3>Von Mustern zur Interpretation</h3>
 
-Wählt einen Pfad und formuliert eine Mini-Aussage:
+Wählt einen der zwei robusten Pfade und formuliert eine Mini-Aussage:
 
-- Word Sketch für `Demokratie`, `Freiheit` oder ein Reddit-Lemma.
-- Frequency mit Metadata-Filter nach `subreddit`.
-- Semantic Search im DTA: Frage nach demokratischer Beteiligung ohne exaktes Lemma.
+- DTA: `[lemma="Demokratie"]` oder `[lemma="Freiheit"]`, Gruppierung nach `year`.
+- Reddit: `[lemma="deutsch"]` in `deRed_mini`, Gruppierung nach `subreddit`.
+
+Zusatz, wenn Zeit bleibt:
+
+- Word Sketch oder Collocations als explorative Erweiterung.
 - LLM Classification als Gedankenexperiment: Welche Labels wären prüfbar?
 :::
 
@@ -455,14 +477,14 @@ Eine Einschränkung ist:
 - Interpretation als vorläufige, kontrollierbare Aussage.
 :::
 
-## Demo-Checkliste für Montag
+## Demo-Checkliste für Montag {#demo-checkliste-montag}
 
 ::: {.checkpoint-list}
 - TextLab öffnen und Login testen.
 - Corpus Selector: `dta_full_uncapped`, `deRed_mini`, `enRed_mid`.
-- DTA: `[lemma="Demokratie"]` → KWIC → Frequency by `year`.
-- German Reddit: `[lemma="deutsch"]` → Frequency by `subreddit`.
-- English Reddit: `[word="Wales"]` oder `[lemma="home"]` → Frequency by `subreddit`.
+- DTA: `[lemma="Demokratie"]` → KWIC → Frequency by `year` → ca. 2.486 Treffer.
+- German Reddit: `[lemma="deutsch"]` → Frequency by `subreddit` → ca. 33.122 Treffer.
+- English Reddit: `[word="Wales"]` → Frequency by `subreddit` → ca. 46.003 Treffer.
 - Word Sketch/Collocations nur zeigen, wenn erster DTA-Pfad stabil läuft.
 - Semantic Search nur für DTA; Reddit ohne RAG-Index als bewusstes Feature-Limit erklären.
 :::
