@@ -499,23 +499,27 @@ Im UI werden Tokenzahlen angezeigt; Trefferzahlen entstehen erst aus Korpus + Qu
 25
 :::
 
-::: {.question-pair}
-::: {.question-card}
-### Live
+<div class="question-pair">
+<div class="question-card">
+<h3>Live</h3>
 
-- <https://www.wuerschinger.org/textlab/>
-Zugangsdaten stehen im Raum an der Tafel
-- zuerst DTA, dann erst Reddit
-:::
+<ul>
+<li><a href="https://www.wuerschinger.org/textlab/">https://www.wuerschinger.org/textlab/</a></li>
+<li>Zugangsdaten stehen im Raum an der Tafel</li>
+<li>zuerst DTA, dann erst Reddit</li>
+</ul>
+</div>
 
-::: {.question-card}
-### Fallback
+<div class="question-card">
+<h3>Fallback</h3>
 
-- Screenshots zeigen dieselben Schritte
-- bei WLAN/Auth-Problemen gemeinsam vorne durchgehen
-- Aufgabe bleibt: Query, Beleg, Verteilung, Grenze
-:::
-:::
+<ul>
+<li>Screenshots zeigen dieselben Schritte</li>
+<li>bei WLAN/Auth-Problemen gemeinsam vorne durchgehen</li>
+<li>Aufgabe bleibt: Query, Beleg, Verteilung, Grenze</li>
+</ul>
+</div>
+</div>
 
 ## Teil 1: Von Query zu Beleg {.section-slide}
 
