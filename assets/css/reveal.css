@@ -232,6 +232,7 @@ body,
 }
 
 .schedule-grid,
+.demo-palette,
 .workflow,
 .architecture-flow,
 .translation-strip,
@@ -254,6 +255,11 @@ body,
 
 .schedule-grid {
   gap: 0.55em;
+}
+
+.demo-palette {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.58em;
 }
 
 .schedule-session {
@@ -386,6 +392,7 @@ body,
 }
 
 .workflow-step,
+.demo-card,
 .question-card,
 .case-card,
 .tool-fact,
@@ -419,6 +426,30 @@ body,
   padding: 0.58em 0.62em;
   border-left: 0.18em solid var(--tl-teal);
   font-size: 0.58em;
+}
+
+.demo-card {
+  min-height: 4.6em;
+  padding: 0.66em 0.72em;
+  border-left: 0.2em solid var(--tl-teal);
+  font-size: 0.62em;
+}
+
+.demo-card strong {
+  display: block;
+  margin-bottom: 0.28em;
+  color: var(--tl-teal-dark);
+  font-size: 1.04em;
+}
+
+.demo-card:nth-child(2),
+.demo-card:nth-child(5) {
+  border-left-color: var(--tl-blue);
+}
+
+.demo-card:nth-child(3),
+.demo-card:nth-child(6) {
+  border-left-color: var(--tl-steel);
 }
 
 .core-workflow .workflow-step {
@@ -484,6 +515,13 @@ body,
 .callout-fragment p,
 .status-note p {
   margin: 0;
+}
+
+.question-summary {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin-top: 0.88em;
 }
 
 .question-pair {
@@ -957,6 +995,7 @@ body,
 
 @media (max-width: 900px) {
   .question-pair,
+  .demo-palette,
   .case-thread,
   .tool-facts,
   .source-criticism,
