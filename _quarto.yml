@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - slides/textlab-ringvorlesung.qmd
+
+website:
+  title: "TextLab in den Digital Humanities"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Überblick
+
+lang: de
+bibliography: references.bib
+link-citations: true
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    link-external-newwindow: true
+
+execute:
+  freeze: auto

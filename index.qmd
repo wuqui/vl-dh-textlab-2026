@@ -1,0 +1,16 @@
+---
+title: "TextLab in den Digital Humanities"
+subtitle: "Ringvorlesung Digital Humanities, LMU"
+---
+
+## Materialien
+
+- [Folien: TextLab in den Digital Humanities](slides/textlab-ringvorlesung.qmd)
+
+## Arbeitsstand
+
+Dieses Repo sammelt die Vorlesungsmaterialien. Die Folien werden zunächst als ein integriertes Deck entwickelt; separate Übungsblätter, Query-Dateien, Exporte oder Datenordner werden erst angelegt, wenn sie konkret gebraucht werden.
+
+## Links
+
+- Live-Demo: [TextLab](https://www.wuerschinger.org/textlab/)
