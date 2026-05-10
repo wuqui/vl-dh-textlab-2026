@@ -15,7 +15,7 @@ execute:
 ## TextLab in den Digital Humanities {#title-slide .custom-title-slide background-color="#eef4f8"}
 
 ::: {.notes}
-0-2
+10:15-10:16
 :::
 
 <img class="title-logo" src="../assets/img/lmu-logo.png" alt="LMU-Logo">
@@ -26,355 +26,112 @@ execute:
 
 <div class="title-email">q.wuerschinger@lmu.de</div>
 
-## Zwei Leitfragen
+## 10:15-10:22 · Einstieg
 
 ::: {.notes}
-2-4
+10:15-10:22
 :::
 
 ::: {.question-pair}
-::: {.question-card .fragment}
-### Methodisch
+::: {.question-card}
+**Methodische Frage**
 
-Was kann man mit großen, annotierten Textsammlungen sehen und tun?
+Was kann man mit großen, annotierten Textsammlungen sehen, suchen, zählen und modellieren?
 :::
 
-::: {.question-card .fragment}
-### Infrastrukturell
+::: {.question-card}
+**Technische Frage**
 
-Welche Infrastruktur macht diese Methoden als Workflow nutzbar?
+Wie muss eine App gebaut sein, damit diese Operationen als Workflow nutzbar werden?
 :::
 :::
 
-::: {.callout-fragment .question-summary .fragment}
+::: {.callout-fragment}
 TextLab ist heute zugleich Werkzeug, Fallbeispiel und Blick in eine DH-Infrastruktur.
 :::
 
-## Heute: sechs Dinge, die TextLab zeigt
+## Was wir heute ausprobieren
 
 ::: {.notes}
-4-6
+10:16-10:20
 :::
 
 ::: {.demo-palette}
-::: {.demo-card .fragment}
+::: {.demo-card}
 **1 Belege öffnen**<br>
 KWIC, Kontext, Dokumentdetails
 :::
 
-::: {.demo-card .fragment}
+::: {.demo-card}
 **2 Verteilungen sehen**<br>
 Jahr, Genre, Subreddit, Texttyp
 :::
 
-::: {.demo-card .fragment}
+::: {.demo-card}
 **3 Nachbarschaften finden**<br>
 Kollokationen und Beispielkontexte
 :::
 
-::: {.demo-card .fragment}
+::: {.demo-card}
 **4 grammatische Profile bauen**<br>
 Word Sketches aus Annotationen
 :::
 
-::: {.demo-card .fragment}
+::: {.demo-card}
 **5 semantisch explorieren**<br>
 Embeddings, Cluster, Search
 :::
 
-::: {.demo-card .fragment}
+::: {.demo-card}
 **6 Treffer annotieren**<br>
-Labels, LLMs, Review, Export
+LLM Classification, Review, Export
 :::
 :::
 
-::: {.callout-fragment .fragment}
-Das Motto für morgen: erst zeigen, was möglich ist; danach erklären, welche Daten- und Softwareentscheidungen das möglich machen.
+::: {.callout-fragment}
+Leitmotiv: erst zeigen, was möglich ist; dann erklären, welche Daten- und Softwareentscheidungen das möglich machen.
 :::
 
-## Was ist TextLab?
-
-::: {.notes}
-6-8
-:::
-
-::: {.tool-facts}
-::: {.tool-fact .fragment}
-**Arbeitsumgebung**<br>
-Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, semantische Suche und Annotation.
-:::
-
-::: {.tool-fact .fragment}
-**Infrastruktur**<br>
-React-Frontend, FastAPI-Backend, BlackLab-Indizes, Analysejobs und Registry-Konfiguration.
-:::
-
-::: {.tool-fact .fragment}
-**Methode**<br>
-Dieselben Daten lassen sich als KWIC, Zeitreihe, Kollokationsprofil, semantischer Raum oder Label-Set betrachten.
-:::
-:::
-
-::: {.callout-fragment .fragment}
-TextLab ist interessant, weil Datenmodellierung und Analysewerkzeuge in einer Oberfläche zusammenkommen.
-:::
-
-## Korpuslinguistik als Werkzeugkasten
+## Eine Methode ist auch ein Bauplan
 
 ::: {.notes}
-8-10
+10:20-10:22
 :::
 
 ::: {.method-detail}
 ::: {.detail-panel}
-<div class="panel-title">Gegenstand</div>
+<div class="panel-title">Datenstruktur</div>
 
-Empirische Sprach- und Textanalyse auf der Basis dokumentierter, maschinenlesbarer Textsammlungen.
+Welche Einheiten gibt es: Dokument, Chunk, Satz, Token, Treffer, Metadatum, Annotation?
 :::
 
 ::: {.detail-panel}
-<div class="panel-title">Prinzip</div>
+<div class="panel-title">Algorithmus</div>
 
-Einzelbelege und quantitative Muster werden zusammen gelesen: Konkordanz, Frequenz, Kollokation, Variation.
+Wie wird daraus ein Ergebnis: Indexsuche, Gruppierung, Fensterzählung, Dependency-Mapping, Vektorvergleich?
 :::
 
 ::: {.example-panel}
-<div class="panel-title">DH-Perspektive</div>
+<div class="panel-title">Interface</div>
 
-Korpora sind keine Rohdaten, sondern modellierte Quellen: Auswahl, Metadaten, Annotation und Interface prägen jedes Resultat.
+Welche Operation kann die UI daraus machen: Query bauen, Treffer lesen, Parameter setzen, Modul wechseln, Ergebnis exportieren?
 :::
 :::
 
 ::: {.caption-note}
-Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; angewandte Perspektive: @hunston2002.
+Das ist auch für DH-Programmierung relevant: Methode, Datenmodell und Softwaredesign sind hier nicht getrennt.
 :::
 
-## Was kann man damit machen?
+## 10:22-10:32 · Architektur der App
 
 ::: {.notes}
-8-10
-:::
-
-::: {.tool-facts}
-::: {.tool-fact .fragment}
-**Belege öffnen**<br>
-Aus einer Query werden sofort KWIC-Zeilen, Detailansichten und zitierbare Beispiele.
-:::
-
-::: {.tool-fact .fragment}
-**Muster vergleichen**<br>
-Treffer lassen sich nach Zeit, Genre, Register, Region oder Community gruppieren und visualisieren.
-:::
-
-::: {.tool-fact .fragment}
-**Module kombinieren**<br>
-Frequency, Collocations, Word Sketches, Semantic Search, Annotation und LLMs bauen auf demselben Trefferraum auf.
-:::
-:::
-
-::: {.callout-fragment .fragment}
-Heute geht es um Bandbreite: Daten ausprobieren, Muster sichtbar machen und verstehen, wie die Tools dafür gebaut sind.
-:::
-
-## Modulpalette: derselbe Trefferraum
-
-::: {.notes}
-10-12
-:::
-
-::: {.workflow .core-workflow}
-::: {.workflow-step .fragment}
-**Concordance**<br>
-KWIC lesen<br>
-<span>Bedeutung entsteht im Kontext.</span>
-:::
-
-::: {.workflow-step .fragment}
-**Frequency**<br>
-zählen und gruppieren<br>
-<span>Frequenz ist corpus-relativ.</span>
-:::
-
-::: {.workflow-step .fragment}
-**Collocation**<br>
-Nachbarschaften finden<br>
-<span>Wörter haben typische Umgebungen.</span>
-:::
-
-::: {.workflow-step .fragment}
-**Annotation**<br>
-Merkmale hinzufügen<br>
-<span>POS, Lemma, Dependency, Labels.</span>
-:::
-
-::: {.workflow-step .is-dark .fragment}
-**Workflow**<br>
-kombinieren<br>
-<span>Suche + Vergleich + Modell.</span>
-:::
-:::
-
-::: {.caption-note}
-Zu Konkordanz/Kollokation: @sinclair1991; zu Frequenz und Statistik: @mceneryHardie2011; @brezina2018.
-:::
-
-## 90 Minuten
-
-::: {.notes}
-12-14
-:::
-
-::: {.schedule-grid}
-::: {.schedule-session}
-<div class="schedule-title">Block 1 · Korpora, Suche, Muster</div>
-
-::: {.schedule-items}
-::: {.schedule-item}
-<span>0-10</span> **Einstieg** <em>Was kann TextLab live zeigen?</em>
-:::
-::: {.schedule-item}
-<span>10-25</span> **Daten + Infrastruktur** <em>Warum Korpora und Registry die Module tragen.</em>
-:::
-::: {.schedule-item}
-<span>25-45</span> **Live-Demo** <em>DTA: Query, KWIC, Frequenz, nächste Frage.</em>
-:::
-::: {.schedule-item .is-main}
-<span>45-60</span> **Hands-on** <em>Dieselbe Pipeline selbst nachvollziehen.</em>
-:::
-:::
-:::
-
-::: {.schedule-session}
-<div class="schedule-title">Block 2 · Vergleich, Exploration, Modellierung</div>
-
-::: {.schedule-items}
-::: {.schedule-item}
-<span>60-70</span> **Kontrast** <em>Reddit, Plattformdaten, Subreddit-Verteilungen.</em>
-:::
-::: {.schedule-item}
-<span>70-80</span> **Module** <em>Kollokationen, Word Sketches, Semantik, LLMs.</em>
-:::
-::: {.schedule-item .is-main}
-<span>80-90</span> **Hands-on + Diskussion** <em>Eigene Query + Modul ausprobieren.</em>
-:::
-:::
-:::
-:::
-
-::: {.caption-note}
-Regel für Montag: DTA ist der gemeinsame Startpunkt; Reddit, COHA und KI-Module zeigen die methodische Bandbreite.
-:::
-
-## Kernpfad: aus einer Query wird mehr
-
-::: {.notes}
-8-10
-:::
-
-::: {.workflow .core-workflow}
-::: {.workflow-step .is-dark .fragment}
-**1**<br>
-Suchraum bauen<br>
-<span>Korpus + Query + Filter</span>
-:::
-
-::: {.workflow-step .fragment}
-**2**<br>
-Belege öffnen<br>
-<span>KWIC, Detail, Dokument</span>
-:::
-
-::: {.workflow-step .fragment}
-**3**<br>
-Muster sichtbar machen<br>
-<span>Jahr, Genre, Subreddit</span>
-:::
-
-::: {.workflow-step .fragment}
-**4**<br>
-Module wechseln<br>
-<span>Collocation, Sketch, Semantic</span>
-:::
-
-::: {.workflow-step .is-dark .fragment}
-**5**<br>
-Anschlussfrage finden<br>
-<span>vergleichen, annotieren, modellieren</span>
-:::
-:::
-
-## Demo-Thread
-
-::: {.notes}
-10-12
-:::
-
-::: {.case-thread}
-::: {.case-card .fragment}
-### Query
-
-`[lemma="Demokratie"]`
-:::
-
-::: {.case-card .fragment}
-### Muster
-
-Die Treffer clustern stark um 1848.
-:::
-
-::: {.case-card .fragment}
-### Frage
-
-Welche nächste Analyse wird daraus: Genre, KWIC, Kollokation oder Vergleichslemma?
-:::
-:::
-
-## Ein Korpus ist ein Datenprodukt
-
-::: {.notes}
-14-16
-:::
-
-::: {.source-criticism}
-::: {.source-question .fragment}
-**Text**
-
-Was wurde gesammelt, transkribiert, normalisiert und segmentiert?
-:::
-
-::: {.source-question .fragment}
-**Metadaten**
-
-Welche Kategorien ordnen das Material, bevor wir es durchsuchen?
-:::
-
-::: {.source-question .fragment}
-**Annotation**
-
-Welche Tokens, Lemmas, POS-Tags, Dependencies und Entitäten werden berechnet?
-:::
-
-::: {.source-question .fragment}
-**Interface**
-
-Welche Resultatansichten machen neue Operationen möglich?
-:::
-:::
-
-::: {.callout-fragment .fragment}
-Der praktische Punkt: Je besser Datenmodell und Annotationen, desto interessanter werden Suche, Module und Demos.
-:::
-
-## Wie ist das gebaut?
-
-::: {.notes}
-16-18
+10:22-10:32
 :::
 
 ::: {.architecture-flow}
 ::: {.architecture-step}
 **1 Rohdaten**<br>
-XML, Reddit, PDF, Text
+XML, Reddit, COHA, Text
 :::
 
 ::: {.architecture-arrow}
@@ -382,7 +139,7 @@ XML, Reddit, PDF, Text
 :::
 
 ::: {.architecture-step}
-**2 Normalisierung**<br>
+**2 Korpusmodell**<br>
 Dokumente, Chunks, Metadaten
 :::
 
@@ -391,7 +148,7 @@ Dokumente, Chunks, Metadaten
 :::
 
 ::: {.architecture-step}
-**3 Annotation**<br>
+**3 NLP**<br>
 Token, Lemma, POS, Dep, NER
 :::
 
@@ -410,209 +167,347 @@ BlackLab, BCQL, KWIC, Groups
 
 ::: {.architecture-step .is-dark}
 **5 TextLab**<br>
-API, UI, Module, Export, Annotation
+API, UI, Module, Jobs
 :::
 :::
 
 ::: {.registry-strip}
-**Corpus Registry:** Labels, Attribute, Werte, Capabilities und bekannte Einschränkungen verbinden Normalisierung, Index und UI.
+**Corpus Registry:** Die App braucht eine strukturierte Beschreibung der Korpora: Labels, Felder, Werte, Capabilities und bekannte Einschränkungen.
 :::
 
-::: {.caption-note}
-Die Registry ergänzt den Index: BlackLab bleibt Quelle für vorhandene Felder; die Registry beschreibt, wie diese Felder sinnvoll genutzt werden.
-:::
-
-## Warum Registry? Weil Module Felder brauchen
+## TextLab als Software-System
 
 ::: {.notes}
-18-20
+10:25-10:29
+:::
+
+::: {.tool-facts}
+::: {.tool-fact}
+**Frontend**
+
+React UI: Korpusauswahl, Query Builder, Ergebnisansichten, Module, Settings.
+:::
+
+::: {.tool-fact}
+**Backend**
+
+FastAPI: Endpunkte für Suche, Schema, Frequenzen, Jobs, Annotation und KI-Workflows.
+:::
+
+::: {.tool-fact}
+**Suchmaschine**
+
+BlackLab: tokenbasierter Index, BCQL, Trefferpositionen, Kontext, Gruppierungen.
+:::
+:::
+
+::: {.callout-fragment}
+Die Oberfläche ist deshalb mehr als eine Suchbox: Sie ist ein Workflow über verschiedene Backend-Fähigkeiten.
+:::
+
+## Warum eine Registry?
+
+::: {.notes}
+10:29-10:32
 :::
 
 ::: {.translation-strip}
-::: {.translation-step .fragment}
-**Problem**
+::: {.translation-step}
+**Index**
 
-Attribute existieren technisch, aber die UI muss wissen, was sie bedeuten.
+BlackLab weiß, welche Felder tatsächlich vorhanden sind.
 :::
 
-::: {.translation-step .fragment}
-**Ohne Registry**
+::: {.translation-step}
+**Registry**
 
-Query Builder, Korpusauswahl, Doku und QA driften auseinander.
+TextLab weiß, wie Felder heißen, welche Werte wichtig sind und welche Module sinnvoll sind.
 :::
 
-::: {.translation-step .fragment}
-**Mit Registry**
+::: {.translation-step}
+**UI**
 
-`corpora.yml` wird Single Source of Truth für Korpusprofile.
+Query Builder, Korpusauswahl und Filter bekommen dieselben Informationen.
 :::
 
-::: {.translation-step .is-dark .fragment}
-**Nutzen**
+::: {.translation-step .is-dark}
+**QA**
 
-Module können Vorschläge, Labels, Capabilities und bekannte Grenzen direkt aus derselben Quelle ziehen.
+Docs und Tests können gegen dieselbe Quelle prüfen.
 :::
 :::
 
-## Korpus-Ingestion: aus Daten wird ein Demo-Korpus
+## 10:32-10:42 · Korpuslinguistik
 
 ::: {.notes}
-20-23
+10:32-10:42
 :::
 
-::: {.workflow}
-::: {.workflow-step .fragment}
-**01**<br>
-Herkunft<br>
-<span>Rechte, Sampling, Zeitraum, Sprache</span>
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Korpus</div>
+
+Eine dokumentierte, maschinenlesbare Textsammlung mit Auswahlkriterien und Metadaten.
 :::
 
-::: {.workflow-step .fragment}
-**02**<br>
-Dokumentmodell<br>
-<span>Dokument, Chunk, Satz, Token</span>
+::: {.detail-panel}
+<div class="panel-title">Annotation</div>
+
+Zusätzliche Schichten über dem Text: Token, Lemma, Wortart, syntaktische Relation, Entität.
 :::
 
-::: {.workflow-step .fragment}
-**03**<br>
-Metadaten<br>
-<span>Jahr, Quelle, Genre, Subreddit, Typ</span>
-:::
+::: {.example-panel}
+<div class="panel-title">Trefferraum</div>
 
-::: {.workflow-step .fragment}
-**04**<br>
-NLP<br>
-<span>Token, Lemma, POS, Dep, NER</span>
-:::
-
-::: {.workflow-step .fragment}
-**05**<br>
-Index<br>
-<span>Vertikalformat, BlackLab, Capabilities</span>
-:::
-
-::: {.workflow-step .is-dark .fragment}
-**06**<br>
-Registry<br>
-<span>Felder, Werte, Labels, Limits</span>
+Eine Query erzeugt nicht einfach “die Antwort”, sondern eine Menge von Treffern, die weiter analysiert wird.
 :::
 :::
-
-## Demo-Korpora
-
-::: {.notes}
-23-25
-:::
-
-| Korpus | Größe | Wofür heute gut? | Live-Idee |
-|---|---:|---|---|
-| DTA | 238.3M Tokens | historisches Deutsch, diachrone Muster, KWIC, Frequency, Word Sketch | `Demokratie`, `Freiheit`, Varianten nach Jahr |
-| COHA | 469.9M Tokens | historisches Englisch, Genres, lexikalischer Wandel | `computer`, `radio`, `automobile` nach Dekade |
-| German Reddit | 61.2M Tokens | Plattformkommunikation, Subreddits, Gegenwartssprache | `deutsch` nach Subreddit |
-| English Reddit | 41.3M Tokens | regionale Communities, Subreddit-Kontrast | `Wales` nach Community |
 
 ::: {.caption-note}
-Im UI werden Tokenzahlen angezeigt; Trefferzahlen entstehen erst aus Korpus + Query + Filter.
+Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; @hunston2002.
 :::
 
-## Zugang und Demo-Regel
+## Grundoperationen
 
 ::: {.notes}
-25
+10:35-10:39
 :::
 
-<div class="question-pair">
-<div class="question-card">
-<h3>Live</h3>
+::: {.workflow .core-workflow}
+::: {.workflow-step}
+**Query**
 
-<ul>
-<li><a href="https://www.wuerschinger.org/textlab/">https://www.wuerschinger.org/textlab/</a></li>
-<li>Zugangsdaten stehen im Raum an der Tafel</li>
-<li>zuerst DTA, dann erst Reddit</li>
-</ul>
-</div>
+Korpus, Tokenattribute und Filter definieren den Suchraum.
+:::
 
-<div class="question-card">
-<h3>Fallback</h3>
+::: {.workflow-step}
+**KWIC**
 
-<ul>
-<li>Screenshots zeigen dieselben Schritte</li>
-<li>bei WLAN/Auth-Problemen gemeinsam vorne durchgehen</li>
-<li>Aufgabe bleibt: Query, Muster, Modulwechsel, nächste Frage</li>
-</ul>
-</div>
-</div>
+Treffer werden mit linkem und rechtem Kontext lesbar.
+:::
 
-## Teil 1: Von Query zu Muster {.section-slide}
+::: {.workflow-step}
+**Frequency**
+
+Treffer werden nach Annotationen oder Metadaten gruppiert.
+:::
+
+::: {.workflow-step}
+**Collocation**
+
+Nachbarwörter werden gezählt und bewertet.
+:::
+
+::: {.workflow-step .is-dark}
+**Modeling**
+
+Embeddings, Topics oder LLM-Labels ergänzen die Suchlogik.
+:::
+:::
+
+## Operationalisierung
 
 ::: {.notes}
-25
-:::
-
-::: {.section-question}
-Was kann man aus einer Suchanfrage alles machen?
-:::
-
-## Von Begriff zu Query
-
-::: {.notes}
-25-27
+10:39-10:42
 :::
 
 ::: {.operationalization-grid}
-::: {.concept-box .fragment}
-### Konzept
+::: {.concept-box}
+**Konzept**
 
-Demokratie als politischer, historischer und semantisch mehrdeutiger Begriff.
+Ein Begriff, ein Muster, eine historische Frage oder ein Vergleichsinteresse.
 :::
 
-::: {.arrow-box .fragment}
+::: {.arrow-box}
 →
 :::
 
-::: {.query-box .fragment}
-### Operationalisierung
+::: {.query-box}
+**Query**
 
 `[lemma="Demokratie"]`
 
-ein Suchweg, nicht der Begriff selbst.
+Das ist ein Suchweg, nicht der Begriff selbst.
 :::
 
-::: {.arrow-box .fragment}
+::: {.arrow-box}
 →
 :::
 
-::: {.evidence-box .fragment}
-### Suchraum
+::: {.evidence-box}
+**Trefferraum**
 
-Treffer, KWIC-Kontexte, Jahre, Genres, Communities.
+KWIC-Zeilen, Frequenzen, Jahre, Genres, Communities, Kollokationen.
 :::
 :::
 
-## Query-Syntax
+## 10:42-10:52 · Daten im TextLab
 
 ::: {.notes}
-27-29
+10:42-10:52
 :::
 
-Wir nutzen einfache BlackLab/BCQL-Queries:
+| Korpus | Größe | Stärken für die Demo | Typische Frage |
+|---|---:|---|---|
+| DTA | 238.3M Tokens | historisches Deutsch, Jahresmetadaten, stabile Belegarbeit | Wie verschieben sich politische Begriffe? |
+| COHA | ca. 470M Tokens | historisches Englisch, Genres, 19./20./21. Jahrhundert | Wie verändert sich Wortgebrauch über Dekaden? |
+| German Reddit | 61.2M Tokens | Gegenwartssprache, Subreddits, Plattformkommunikation | Wie unterscheiden sich Communities? |
+| English Reddit | 41.3M Tokens | regionale Communities, Variation im Englischen | Welche Themen und Wörter markieren Regionen? |
+
+::: {.caption-note}
+Tokenzahlen beschreiben die Korpusgröße; Trefferzahlen entstehen erst durch Query und Filter.
+:::
+
+## Drei Korpuslogiken
+
+::: {.notes}
+10:46-10:50
+:::
+
+::: {.tool-facts}
+::: {.tool-fact}
+**DTA**
+
+Kanonisierte historische Texte, lange Dokumente, gute Zeitachse, philologisch vertraute Quellenlage.
+:::
+
+::: {.tool-fact}
+**Reddit**
+
+Viele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur, viel Gegenwartssprache.
+:::
+
+::: {.tool-fact}
+**COHA**
+
+Historisches Englisch, Genre- und Dekadenvergleich, stark für lexikalischen Wandel.
+:::
+:::
+
+::: {.callout-fragment}
+Die Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Beispiele überzeugend sind.
+:::
+
+## 10:52-11:02 · Korpuskompilierung
+
+::: {.notes}
+10:52-11:02
+:::
+
+::: {.workflow}
+::: {.workflow-step}
+**01 Auswahl**
+
+Zeitraum, Sprache, Quelle, Rechte, Sampling.
+:::
+
+::: {.workflow-step}
+**02 Dokumentmodell**
+
+Was ist ein Dokument, was ist ein Chunk, was bleibt Metadatum?
+:::
+
+::: {.workflow-step}
+**03 Normalisierung**
+
+Text reinigen, strukturieren, persistieren.
+:::
+
+::: {.workflow-step}
+**04 NLP**
+
+Tokenisierung, Lemma, POS, Dependency, NER.
+:::
+
+::: {.workflow-step}
+**05 Index**
+
+Vertikalformat, BlackLab, Tokenattribute, Dokumentfelder.
+:::
+
+::: {.workflow-step .is-dark}
+**06 Registry**
+
+Felder, Werte, Labels, Module, bekannte Grenzen.
+:::
+:::
+
+## Warum kurze Dokumente technisch anders sind
+
+::: {.notes}
+10:56-10:59
+:::
+
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Lange Korpora</div>
+
+Viele Tokens in relativ wenigen Dokumenten: gut für sequentielle Verarbeitung und Indexierung.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Plattformdaten</div>
+
+Sehr viele kurze Posts/Kommentare: mehr Dokumentmetadaten, mehr Index-Objekte, mehr Overhead.
+:::
+
+::: {.example-panel}
+<div class="panel-title">Strategie</div>
+
+Chunking, Sampling, stabile Metadaten und kontrollierte Index-Jobs sind Teil des Korpusdesigns.
+:::
+:::
+
+## 11:02-11:12 · Suchen
+
+::: {.notes}
+11:02-11:12
+:::
 
 ::: {.query-examples}
-`[lemma="Demokratie"]`
+`[word="Haus"]`
 
 `[lemma="Freiheit"]`
+
+`[lemma="Demokratie"]`
 
 `[word="Teutsch.*"]`
 :::
 
 ::: {.syntax-reference}
-`lemma` gruppiert flektierte Formen. `word` sucht konkrete Wortformen. `.*` erweitert die Suche regulär. Jede Erweiterung verändert, was später als Treffer gilt.
+`word` sucht konkrete Wortformen. `lemma` bündelt flektierte Formen. Reguläre Ausdrücke erweitern den Suchraum. Metadatenfilter begrenzen ihn wieder.
+:::
+
+## Wie ist Suche gebaut?
+
+::: {.notes}
+11:04-11:08
+:::
+
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Datenstruktur</div>
+
+Tokens haben Attribute wie `word`, `lemma`, `pos` und Positionen im Dokument.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Index</div>
+
+BlackLab speichert Posting-Listen und einen Forward Index für Kontext und KWIC.
+:::
+
+::: {.example-panel}
+<div class="panel-title">UI</div>
+
+Der Query Builder übersetzt Eingaben in BCQL und nutzt die Registry für Vorschläge.
+:::
 :::
 
 ## TextLab: Query Setup
 
 ::: {.notes}
-29-30
+11:08-11:10
 :::
 
 <div class="screenshot-frame">
@@ -620,662 +515,491 @@ Wir nutzen einfache BlackLab/BCQL-Queries:
 <div class="screenshot-caption">Korpus, Query und Suchmodus bestimmen, welche Muster sichtbar werden.</div>
 </div>
 
-## Concordance / KWIC
+## Semantische Suche als zweite Suchlogik
 
 ::: {.notes}
-30-32
+11:10-11:12
 :::
 
 ::: {.method-detail}
 ::: {.detail-panel}
-<div class="panel-title">Was kann man damit machen?</div>
+<div class="panel-title">Exakte Suche</div>
 
-Viele Fundstellen schnell scannen, typische Kontexte finden und interessante Beispiele öffnen.
+`lemma`, `word`, POS, Regex: Treffer müssen strukturell zur Query passen.
 :::
 
 ::: {.detail-panel}
-<div class="panel-title">Technisch</div>
+<div class="panel-title">Semantische Suche</div>
 
-BlackLab liefert Tokenkontext, Annotationen und Dokumentmetadaten; TextLab macht daraus KWIC-Zeilen, Details, Export und Annotation Targets.
+Query und Texte werden als Vektoren verglichen; Nähe ersetzt exakte Zeichen- oder Lemmagleichheit.
 :::
 
 ::: {.example-panel}
-<div class="panel-title">DTA-Beispiel</div>
+<div class="panel-title">Trade-off</div>
 
-`[lemma="Demokratie"]`: politische Argumente, Zeitungskontexte, metasprachliche Verwendungen und Zeitverläufe werden gemeinsam sichtbar.
+Mehr Exploration, weniger exakt kontrollierbare Trefferdefinition.
 :::
 :::
 
-::: {.callout-fragment .fragment}
-Eine Trefferliste ist ein Einstiegspunkt: von dort aus geht es zu Frequenzen, Kollokationen, Annotation und Modellen.
+## 11:12-11:25 · Analyse I
+
+::: {.notes}
+11:12-11:25
+:::
+
+::: {.section-question}
+Aus einer Query werden Belege, Verteilungen und Anschlussfragen.
+:::
+
+## Concordance / KWIC
+
+::: {.notes}
+11:12-11:15
+:::
+
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Was macht es?</div>
+
+KWIC zeigt Treffer mit linkem und rechtem Kontext. Das macht viele Belege schnell lesbar.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Wie gebaut?</div>
+
+Die Suche liefert Trefferpositionen; der Index gibt für jede Position Kontexttokens zurück.
+:::
+
+::: {.example-panel}
+<div class="panel-title">Wofür gut?</div>
+
+Bedeutungsvarianten, typische Konstruktionen, ungewöhnliche Treffer und Fehler schnell erkennen.
+:::
 :::
 
 ## Concordance-Beispiel
 
 ::: {.notes}
-32-33
+11:15-11:16
 :::
 
 <div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/02-kwic-demokratie.png" alt="TextLab concordance for a Demokratie query" class="screenshot-wide">
-<div class="screenshot-caption">KWIC macht auf einen Blick sichtbar, in welchen Formulierungen und Dokumenttypen ein Treffer vorkommt.</div>
+<img src="../assets/screenshots/textlab/02-kwic-demokratie.png" alt="TextLab KWIC results for Demokratie" class="screenshot-wide">
+<div class="screenshot-caption">KWIC ist die Brücke zwischen Query und einzelner Textstelle.</div>
 </div>
-
-## Schnell weiterdrehen
-
-::: {.notes}
-33-35
-:::
-
-::: {.truth-grid}
-::: {.truth-card .fragment}
-**Guter Treffer**<br>
-Beleg öffnen
-:::
-
-::: {.truth-card .fragment}
-**Auffälliges Muster**<br>
-gruppieren oder zählen
-:::
-
-::: {.truth-card .fragment}
-**Nächste Query**<br>
-Variante testen
-:::
-:::
-
-::: {.reading-standard .fragment}
-Ein kurzer KWIC-Scan reicht oft, um danach schnell in Frequency, Collocations oder Word Sketches weiterzugehen.
-:::
 
 ## Frequency
 
 ::: {.notes}
-35-37
+11:16-11:20
 :::
 
 ::: {.method-detail}
 ::: {.detail-panel}
-<div class="panel-title">Was kann man damit machen?</div>
+<div class="panel-title">Was macht es?</div>
 
-Treffer nach Jahr, Genre, Textklasse, Subreddit, POS, NER oder anderen Feldern gruppieren.
+Treffer werden nach Jahr, Genre, Subreddit, Lemma, POS oder anderen Feldern gruppiert.
 :::
 
 ::: {.detail-panel}
-<div class="panel-title">Technisch</div>
+<div class="panel-title">Wie gebaut?</div>
 
-TextLab ruft BlackLab-Gruppierungen oder abgeleitete Distributionen ab: Buckets, Trefferzahlen, Dokumentzahlen und Normalisierung.
+Backend gruppiert Treffer über BlackLab-Felder oder Metadaten; UI visualisiert Counts und Normalisierung.
 :::
 
 ::: {.example-panel}
-<div class="panel-title">DTA-Beispiel</div>
+<div class="panel-title">Wofür gut?</div>
 
-Der Peak um 1848 macht historische Dynamik sofort sichtbar und lädt zu weiteren Gruppierungen ein.
+Variation, Wandel und Unterschiede zwischen Korpusteilen werden sichtbar.
 :::
-:::
-
-## Beispiel: Demokratie nach Jahr
-
-::: {.notes}
-37-39
-:::
-
-::: {.bar-chart .chronology-chart}
-::: {.bar-row .fragment}
-<span class="bar-label">1848</span><span class="bar-track"><span class="bar-fill is-primary" style="width: 100%"></span></span><span class="bar-value">1252</span>
-:::
-
-::: {.bar-row .fragment}
-<span class="bar-label">1893</span><span class="bar-track"><span class="bar-fill" style="width: 14%"></span></span><span class="bar-value">174</span>
-:::
-
-::: {.bar-row .fragment}
-<span class="bar-label">1875</span><span class="bar-track"><span class="bar-fill" style="width: 10%"></span></span><span class="bar-value">125</span>
-:::
-
-::: {.bar-row .fragment}
-<span class="bar-label">1856</span><span class="bar-track"><span class="bar-fill" style="width: 8%"></span></span><span class="bar-value">100</span>
-:::
-
-::: {.bar-row .fragment}
-<span class="bar-label">1850</span><span class="bar-track"><span class="bar-fill" style="width: 7%"></span></span><span class="bar-value">90</span>
-:::
-:::
-
-::: {.callout-fragment .fragment}
-Nächste Klicks: Genre vergleichen, einzelne Jahre öffnen, andere Lemmata testen.
 :::
 
 ## Frequency-Beispiel im UI
 
 ::: {.notes}
-39-40
+11:20-11:21
 :::
 
 <div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/03-frequency-demokratie.png" alt="TextLab frequency chart for Demokratie by year" class="screenshot-wide">
-<div class="screenshot-caption">Aus einer Query wird eine Zeitreihe; aus der Zeitreihe entstehen neue Vergleichsfragen.</div>
+<img src="../assets/screenshots/textlab/03-frequency-demokratie.png" alt="TextLab frequency results for Demokratie by year" class="screenshot-wide">
+<div class="screenshot-caption">Eine Gruppierung macht aus Treffern ein Muster.</div>
 </div>
 
-## Live-Demo 1: DTA
+## Beispielpalette für Live-Fragen
 
 ::: {.notes}
-40-45
+11:21-11:25
+:::
+
+::: {.demo-palette}
+::: {.demo-card}
+**DTA**
+
+`[lemma="Demokratie"]` oder `[lemma="Freiheit"]` nach Jahr.
+:::
+
+::: {.demo-card}
+**COHA**
+
+`computer`, `telephone`, `radio`, `automobile` nach Dekade oder Genre.
+:::
+
+::: {.demo-card}
+**German Reddit**
+
+`[lemma="deutsch"]` nach Subreddit.
+:::
+
+::: {.demo-card}
+**English Reddit**
+
+`[word="Wales"]` oder regionale Marker nach Community.
+:::
+
+::: {.demo-card}
+**Nächster Schritt**
+
+Aus auffälligen Frequenzen wieder zurück in KWIC-Kontexte.
+:::
+
+::: {.demo-card}
+**Programmatische Idee**
+
+Dasselbe Prinzip wäre auch ein API-Call: Query, Group-by, Response, Chart.
+:::
+:::
+
+## 11:25-11:32 · Hands-on 1
+
+::: {.notes}
+11:25-11:32
 :::
 
 ::: {.exercise-brief}
 ::: {.exercise-main}
-**Startpfad**
+**Minimalpfad**
 
-`dta_full_uncapped` · `[lemma="Demokratie"]`
+1. Korpus wählen.
+2. Eine einfache Query ausführen.
+3. KWIC-Zeilen lesen.
+4. Eine Frequenzgruppierung ansehen.
 :::
 
 ::: {.exercise-steps}
-1. Query ausführen und Trefferzahl notieren: ca. `2.486`.<br>
-2. Zwei KWIC-Zeilen lesen: Was ist der Treffer?<br>
-3. Frequency nach `year`: Peak `1848`.<br>
-4. Optional: Genre, Collocations oder eine zweite Query ausprobieren.
-:::
-:::
+**Mögliche Queries**
 
-::: {.status-note}
-Sprechspur: Eine Query kann nacheinander als KWIC, Zeitreihe, Vergleich und Explorationspfad genutzt werden.
-:::
+`[lemma="Demokratie"]`
 
-## Hands-on 1
+`[lemma="Freiheit"]`
 
-::: {.notes}
-45-60
-:::
+`[word="computer"]`
 
-::: {.exercise-brief}
-::: {.exercise-main}
-**Output**
-
-Eine kleine Exploration zu einer DTA-Query.
-:::
-
-::: {.exercise-steps}
-1. Korpus: `dta_full_uncapped`<br>
-2. Query: `[lemma="Demokratie"]` oder `[lemma="Freiheit"]`<br>
-3. KWIC kurz scannen<br>
-4. Frequency nach `year` anschauen<br>
-5. eine Anschlussfrage notieren: anderes Lemma, Genre, Kollokation?
-:::
-:::
-
-## Teil 2: Von Muster zu Modell {.section-slide}
-
-::: {.notes}
-60
-:::
-
-::: {.section-question}
-Was passiert, wenn wir vergleichen, explorieren und modellgestützt klassifizieren?
-:::
-
-## Reddit als Kontrast
-
-::: {.notes}
-60-63
-:::
-
-::: {.question-pair}
-::: {.question-card .fragment}
-### DTA
-
-- historischer Korpus-Snapshot
-- Werk- und Editionslogik
-- diachrone Verteilungen
-- Begriffsgeschichte, Medienwandel, Register
-:::
-
-::: {.question-card .fragment}
-### Reddit
-
-- Plattform- und Community-Daten
-- Subreddit- und Moderationslogik
-- Gegenwartssprache, Meme- und Kommentarformate
-- Community-Kontraste und Alltagssprache
-:::
-:::
-
-## Reddit-Livedemo
-
-::: {.notes}
-63-68
-:::
-
-::: {.exercise-brief}
-::: {.exercise-main}
-**Deutsch**
-
-`German Reddit` · `[lemma="deutsch"]` · Group by `subreddit`
-
-Smoke-Wert: `33.122` Treffer; Top: `de`, `ich_iel`, `FragReddit`.
-:::
-
-::: {.exercise-steps}
-**Englisch**
-
-`English Reddit` · `[word="Wales"]` · Group by `subreddit`
-
-Smoke-Wert: `46.003` Treffer; Top: `Wales`, `Scotland`, `AskUK`.
+`[lemma="deutsch"]`
 :::
 :::
 
 ::: {.warning-card}
-Reddit ist methodisch interessant, weil Sprache hier an Communities, Plattformregeln, Meme-Formate und Moderation gekoppelt ist.
+Ziel ist nicht die perfekte Interpretation, sondern ein Gefühl dafür, wie Query, Trefferraum und Analysemodul zusammenspielen.
 :::
 
-## Beispielpalette
+## 11:32-11:40 · Analyse II
 
 ::: {.notes}
-68-70
+11:32-11:40
 :::
 
-::: {.tool-facts}
-::: {.tool-fact .fragment}
-**DTA**<br>
-`[lemma="Demokratie"]`, `[lemma="Freiheit"]`, `[word="Teutsch.*"]` nach Jahr.
-:::
-
-::: {.tool-fact .fragment}
-**COHA**<br>
-`[lemma="computer"]`, `[lemma="radio"]`, `[lemma="automobile"]` nach Dekade und Genre.
-:::
-
-::: {.tool-fact .fragment}
-**Reddit**<br>
-`[lemma="deutsch"]`, `[word="Wales"]`, Community-Vergleiche nach Subreddit.
-:::
-:::
-
-::: {.caption-note}
-Die Vorlesung muss nicht jede Query ausinterpretieren; wichtiger ist die Bandbreite der Analyseoperationen.
-:::
-
-## COHA als Brückenkorpus {#coha-bridge}
-
-::: {.notes}
-70-72
-:::
-
-<div class="question-pair">
-<div class="question-card">
-<h3>Warum interessant?</h3>
-
-<ul>
-<li>historisches Englisch von 1810 bis 2010er Jahre</li>
-<li>Genres: Fiction, Magazine, Newspaper, Non-fiction</li>
-<li>lemmatisiert und POS-getaggt</li>
-<li>gute Brücke zwischen DTA und Gegenwartskorpora</li>
-</ul>
-</div>
-
-<div class="question-card">
-<h3>Demo-Ideen</h3>
-
-<ul>
-<li><code>[lemma="computer"]</code>: Aufstieg ab den 1960/70ern</li>
-<li><code>[lemma="radio"]</code>: Mediengeschichte im 20. Jahrhundert</li>
-<li><code>[lemma="automobile"]</code> vs. <code>[lemma="car"]</code>: lexikalische Konkurrenz</li>
-<li>Gruppierung nach <code>year</code>, <code>decade</code> oder <code>genre</code></li>
-</ul>
-</div>
-</div>
-
-::: {.caption-note}
-Guter Didaktikpunkt: Bei `computer` sieht man lexikalischen Wandel und ältere Personenbedeutungen sehr schnell im selben Workflow.
+::: {.section-question}
+Explorative und KI-gestützte Module erweitern den Trefferraum: Nachbarschaften, Grammatik, Semantik, Labels.
 :::
 
 ## Kollokationen
 
 ::: {.notes}
-72-74
+11:32-11:34
 :::
 
 ::: {.method-detail}
 ::: {.detail-panel}
-<div class="panel-title">Was kann man damit machen?</div>
+<div class="panel-title">Was macht es?</div>
 
-Typische lexikalische Nachbarschaften eines Suchtreffers explorieren.
+Kollokationen zeigen Wörter, die auffällig häufig in der Umgebung der Treffer auftreten.
 :::
 
 ::: {.detail-panel}
-<div class="panel-title">Technisch</div>
+<div class="panel-title">Wie gebaut?</div>
 
-TextLab zählt Kandidaten in KWIC-Fenstern oder Indexgruppen und sortiert nach Frequenz oder Assoziationsscore.
+Für jeden Treffer wird ein Kontextfenster gezählt; Kandidaten werden nach Frequenz, Richtung und Score sortiert.
 :::
 
 ::: {.example-panel}
-<div class="panel-title">Parameter</div>
+<div class="panel-title">Wofür gut?</div>
 
-Fenstergröße, Mindestfrequenz, Lemma/Wortform und Score steuern, welche Nachbarschaften sichtbar werden.
+Typische Themen, feste Verbindungen, semantische Prosodie und überraschende Nachbarschaften.
 :::
 :::
 
 ## Collocation-Beispiel
 
 ::: {.notes}
-74
+11:34
 :::
 
 <div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/05-collocations-demokratie.png" alt="TextLab collocation analysis for Demokratie" class="screenshot-wide">
-<div class="screenshot-caption">Kollokationen machen typische sprachliche Umgebungen sichtbar und liefern sofort neue Suchideen.</div>
+<img src="../assets/screenshots/textlab/05-collocations-demokratie.png" alt="TextLab collocation table for Demokratie" class="screenshot-wide">
+<div class="screenshot-caption">Kollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”.</div>
 </div>
 
 ## Word Sketches
 
 ::: {.notes}
-74-76
+11:34-11:36
 :::
 
 ::: {.method-detail}
 ::: {.detail-panel}
-<div class="panel-title">Was kann man damit machen?</div>
+<div class="panel-title">Was macht es?</div>
 
-Grammatische Umgebungen eines Lemmas zusammenfassen: Modifikatoren, Verben, nominale Partner, Präpositionen.
+Word Sketches gruppieren typische Partner eines Lemmas nach grammatischen Relationen.
 :::
 
 ::: {.detail-panel}
-<div class="panel-title">Technisch</div>
+<div class="panel-title">Wie gebaut?</div>
 
-Dependency-Annotationen werden zu Relationengruppen verdichtet; Ergebnisse sind explorative Kandidaten.
+Dependency-Annotationen liefern Relationen wie Subjekt, Objekt, Modifikator; die App zählt Kandidaten pro Relation.
 :::
 
 ::: {.example-panel}
-<div class="panel-title">Demo-Idee</div>
+<div class="panel-title">Wofür gut?</div>
 
-Ein Lemma wird zu einer kleinen Karte typischer Subjekt-, Objekt- und Modifikatorbeziehungen.
+Nicht nur “welche Wörter stehen nah?”, sondern “in welcher grammatischen Rolle treten sie auf?”.
 :::
 :::
 
 ## Word-Sketch-Beispiel
 
 ::: {.notes}
-72
+11:36
 :::
 
 <div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/04-word-sketch-demokratie.png" alt="TextLab Word Sketch relation groups for Demokratie" class="screenshot-wide">
-<div class="screenshot-caption">Word Sketches verdichten viele Treffer zu Relationstypen und Beispielpfaden.</div>
+<img src="../assets/screenshots/textlab/04-word-sketch-demokratie.png" alt="TextLab word sketch for Demokratie" class="screenshot-wide">
+<div class="screenshot-caption">Der Mehrwert entsteht aus der Kombination von Lemma, Dependency-Parse und Beispielbelegen.</div>
 </div>
 
-## Semantische Module
+## Embeddings und Clustering
 
 ::: {.notes}
-72-75
+11:36-11:38
 :::
 
-::: {.outlook-grid}
-::: {.outlook-card .is-ready .fragment}
-### Semantic Analysis
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Embeddings</div>
 
-KWIC-Kontexte werden als Embeddings repräsentiert, geclustert und projiziert.
+Texte, Trefferkontexte oder Queries werden in Vektoren übersetzt.
 :::
 
-::: {.outlook-card .fragment}
-### Semantic Search
+::: {.detail-panel}
+<div class="panel-title">Clustering</div>
 
-Eine Frage wird eingebettet; TextLab sucht semantisch ähnliche Segmente im RAG-Index.
+Ähnliche Vektoren werden gruppiert; Beispiele helfen, Cluster zu benennen und zu prüfen.
 :::
 
-::: {.outlook-card .fragment}
-### LLM Classification
+::: {.example-panel}
+<div class="panel-title">UI-Frage</div>
 
-Ein Labelschema wird auf Treffer, Passagen oder Dokumente angewendet: Genre, Position, Haltung, Thema.
-:::
-
-::: {.outlook-card .fragment}
-### Annotation
-
-Manuelle und assistierte Labels machen Suchergebnisse zu Trainings- und Vergleichsdaten.
+Wie zeigt man semantische Nähe so, dass Nutzerinnen wieder zu Belegen zurückkommen?
 :::
 :::
 
-::: {.callout-fragment .fragment}
-Der interessante DH-Punkt: dieselben Korpora können zugleich Suchindex, Statistikbasis, Embedding-Raum und Annotationsdatenbank sein.
-:::
-
-## Annotation und LLMs
+## LLM Classification
 
 ::: {.notes}
-75
+11:38-11:39
+:::
+
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Was macht es?</div>
+
+Treffer oder Dokumente werden nach einem expliziten Labelschema klassifiziert.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Wie gebaut?</div>
+
+Backend-Job, Prompt, Schema, Beispiele, Modellantwort, Review-Status und Export gehören zusammen.
+:::
+
+::: {.example-panel}
+<div class="panel-title">Wichtig</div>
+
+Das LLM ersetzt nicht die Analyse; es skaliert einen kontrollierten Annotationsschritt.
+:::
+:::
+
+## Annotation-Beispiel
+
+::: {.notes}
+11:39
 :::
 
 <div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/06-annotation-task.png" alt="TextLab annotation task created from concordance evidence" class="screenshot-wide">
-<div class="screenshot-caption">Annotation macht aus Treffern strukturierte Daten: Labels, Beispiele, Review und später Vergleichbarkeit.</div>
+<img src="../assets/screenshots/textlab/06-annotation-task.png" alt="TextLab annotation task interface" class="screenshot-wide">
+<div class="screenshot-caption">Labels werden erst wissenschaftlich brauchbar, wenn Schema, Beleg und Review sichtbar bleiben.</div>
 </div>
 
-## Suche als reproduzierbare Pipeline
+## AI Analysis
 
 ::: {.notes}
-75-77
+11:39-11:40
+:::
+
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">Idee</div>
+
+Ein Analyse-Chat kann Suchschritte, Modulwechsel und Rückfragen in einem Gespräch bündeln.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Wie gebaut?</div>
+
+Tool-Calls gegen TextLab-APIs, gespeicherter Analysekontext, Quellenbelege und asynchrone Jobs.
+:::
+
+::: {.example-panel}
+<div class="panel-title">Ziel</div>
+
+Agentische Hilfe darf den Workflow beschleunigen, muss aber Belege und Parameter sichtbar halten.
+:::
+:::
+
+## Topic Modeling als Ausblick
+
+::: {.notes}
+11:40
+:::
+
+::: {.method-detail}
+::: {.detail-panel}
+<div class="panel-title">On the fly</div>
+
+Topic Models direkt auf Trefferlisten sind flexibel, aber oft instabil und abhängig von Samplegröße.
+:::
+
+::: {.detail-panel}
+<div class="panel-title">Korpusweit</div>
+
+Vorgerechnete Topic-Attribute können stabiler sein und wie Metadaten durchsucht werden.
+:::
+
+::: {.example-panel}
+<div class="panel-title">TextLab-Frage</div>
+
+Welche Modellierung gehört in die Korpuskompilierung, welche in die interaktive Analyse?
+:::
+:::
+
+## 11:40-11:45 · Abschluss
+
+::: {.notes}
+11:40-11:45
 :::
 
 ::: {.pipeline-flow}
-::: {.pipeline-step .fragment}
-**1 Text types**<br>
-Korpus/Filter festlegen
+::: {.pipeline-step}
+**1 Daten wählen**
+
+Korpuslogik, Zeitraum, Genre, Community.
 :::
 
-::: {.pipeline-step .fragment}
-**2 Query**<br>
-Trefferraum erzeugen
+::: {.pipeline-step}
+**2 Suche formulieren**
+
+Query, Filter, Trefferraum.
 :::
 
-::: {.pipeline-step .fragment}
-**3 Sample / Sort**<br>
-Auswahl und Ansicht dokumentieren
+::: {.pipeline-step}
+**3 Modul wechseln**
+
+KWIC, Frequency, Collocation, Sketch, Semantic, LLM.
 :::
 
-::: {.pipeline-step .fragment}
-**4 Analysis**<br>
-KWIC, Frequency, Collocation, Label
+::: {.pipeline-step}
+**4 nächste Frage**
+
+Belege prüfen, Vergleich bauen, Parameter dokumentieren.
 :::
 :::
 
-::: {.callout-fragment .fragment}
-Perspektive für TextLab: Such- und Analyseoperationen sollten als sichtbare, reproduzierbare Schrittfolge speicherbar werden.
-:::
-
-## Von Demo zu Anschlussfrage
+## Reproduzierbare Analyse-Pipeline
 
 ::: {.notes}
-77-80
-:::
-
-::: {.finding-compare .finding-compare-3}
-::: {.weak-finding .fragment}
-### Start
-
-`computer` nimmt im 20. Jahrhundert zu.
-:::
-
-::: {.better-finding .fragment}
-### Demo-tauglich
-
-In COHA zeigt `[lemma="computer"]` frühe Personenbedeutungen und später technische Bedeutungen; nach `decade` sieht man den Bedeutungs- und Technologiewandel.
-:::
-
-::: {.researchable-finding .fragment}
-### Nächster Schritt
-
-Nächste Schritte: `computer` mit `radio`, `television`, `internet` vergleichen; Genreeffekte prüfen; KWIC-Beispiele als Annotation-Set sammeln.
-:::
-:::
-
-## Reproduzierbarer Workflow
-
-::: {.notes}
-80-82
+11:42-11:44
 :::
 
 ::: {.documentation-grid}
-::: {.documentation-card .fragment}
-**Frage**
-
-Welche Exploration oder Vergleichsfrage?
-:::
-
-::: {.documentation-card .fragment}
-**Operationalisierung**
-
-Was zählt als Treffer?
-:::
-
-::: {.documentation-card .fragment}
+::: {.documentation-card}
 **Korpus**
 
-Welche Version, Felder, Größe?
+Version, Größe, Felder, bekannte Grenzen.
 :::
 
-::: {.documentation-card .fragment}
+::: {.documentation-card}
+**Query**
+
+BCQL, Filter, Suchmodus.
+:::
+
+::: {.documentation-card}
 **Modul**
 
-KWIC, Frequency, Collocation, Sketch, Semantic, LLM?
+KWIC, Frequency, Collocation, Sketch, Semantic, LLM.
 :::
 
-::: {.documentation-card .fragment}
-**Output**
+::: {.documentation-card}
+**Parameter**
 
-Screenshot, Query, Tabelle, Label-Set, nächste Frage?
-:::
-:::
-
-## Referenzpunkte
-
-::: {.notes}
-80-82
+Fenster, Gruppierung, Score, Modell, Sample.
 :::
 
-::: {.resource-list}
-::: {.fragment}
-**Korpuslinguistische Methode:** @sinclair1991; @biberConradReppen1998; @mceneryHardie2011
+::: {.documentation-card}
+**Belege**
+
+Beispielkontexte, Trefferlisten, Exporte.
 :::
-
-::: {.fragment}
-**Anwendung und Statistik:** @hunston2002; @brezina2018
-:::
-
-::: {.fragment}
-**Historische Korpora und COHA:** @davies2012coha
-:::
-
-::: {.fragment}
-**DH-Datenkritik:** @drucker2011; @schoch2013
-:::
-:::
-
-## Hands-on 2
-
-::: {.notes}
-82-88
-:::
-
-::: {.exercise-brief}
-::: {.exercise-main}
-**Output**
-
-Eine kleine Demo-Karte zu einer Query oder einem Modul.
-:::
-
-::: {.exercise-steps}
-1. DTA, COHA oder Reddit wählen<br>
-2. Query und Gruppierung notieren<br>
-3. ein Modul ausprobieren: Frequency, Collocation oder Word Sketch<br>
-4. ein auffälliges Muster oder Beispiel festhalten<br>
-5. eine Anschlussfrage formulieren
-:::
-:::
-
-## Mini-Aussage: Vorlage
-
-::: {.notes}
-82-88
-:::
-
-::: {.template-card}
-In Korpus **X** liefert Query **Y** mit Modul **Z** ein interessantes Muster: **...**
-
-Ein Beispiel oder Bucket ist: **...**
-
-Als nächstes würde ich testen: **...**
-:::
-
-## Plan B
-
-::: {.notes}
-88-89
-:::
-
-Wenn TextLab oder das Netzwerk instabil ist:
-
-::: {.incremental}
-- Screenshots zeigen die Hauptschritte.
-- Die Live-Demo wird vorne gemeinsam durchgesprochen.
-- Die methodische Aufgabe bleibt unverändert.
-:::
-
-::: {.callout-fragment}
-Tools sind austauschbar; entscheidend ist die transparente Analyseoperation.
-:::
-
-## Literatur {.smaller}
-
-::: {.notes}
-Backup
-:::
-
-::: {#refs}
-:::
-
-## Montag-Checkliste
-
-::: {.notes}
-Vor der Sitzung
-:::
-
-::: {.checkpoint-list}
-- TextLab öffnen und Login mit dem Vorlesungsaccount testen.
-- DTA: `[lemma="Demokratie"]` → KWIC → Frequency by `year` → ca. `2.486` Treffer.
-- German Reddit: `[lemma="deutsch"]` → Frequency by `subreddit` → ca. `33.122` Treffer.
-- English Reddit: `[word="Wales"]` → Frequency by `subreddit` → ca. `46.003` Treffer.
-- Word Sketch/Collocations nur zeigen, wenn der DTA-Pfad stabil läuft.
-- Semantic Search/LLM als Methodenblick, nicht als Live-Abhängigkeit.
-:::
-
-## Schluss
-
-::: {.notes}
-89-90
-:::
-
-TextLab zeigt, wie aus Korpora konkrete Analysewege werden: suchen, vergleichen, verdichten, annotieren und mit Modellen weiterarbeiten.
-
-::: {.takeaway}
-Der Gewinn liegt in der Kombination: gute Korpora, sichtbare Workflows und Module, die aus Treffern neue Fragen machen.
 :::
 
 ## Takeaway
 
 ::: {.notes}
-90
+11:44-11:45
 :::
 
 ::: {.takeaway-lines}
-::: {}
-Daten wählen.
+::: {.takeaway}
+TextLab zeigt, wie aus Textsammlungen untersuchbare Daten werden.
 :::
 
-::: {}
-Query starten.
+::: {.takeaway}
+Jedes Modul hat zwei Seiten: eine intuitive Forschungsoperation und eine technische Implementierung.
 :::
 
-::: {}
-Module kombinieren.
+::: {.takeaway}
+Für DH ist genau diese Verbindung spannend: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird.
 :::
+:::
+
+## Literatur {.smaller}
+
+::: {.notes}
+Reserve
+:::
+
+**Korpuslinguistische Methode:** @sinclair1991; @biberConradReppen1998; @mceneryHardie2011
+
+**Anwendung und Statistik:** @hunston2002; @brezina2018
+
+::: {#refs}
 :::
