@@ -1218,7 +1218,7 @@ Vor der Sitzung
 :::
 
 ::: {.checkpoint-list}
-- TextLab öffnen und Login mit dem Vorlesungsaccount testen. / `VLDH26`.
+- TextLab öffnen und Login mit dem Vorlesungsaccount testen.
 - DTA: `[lemma="Demokratie"]` → KWIC → Frequency by `year` → ca. `2.486` Treffer.
 - German Reddit: `[lemma="deutsch"]` → Frequency by `subreddit` → ca. `33.122` Treffer.
 - English Reddit: `[word="Wales"]` → Frequency by `subreddit` → ca. `46.003` Treffer.
