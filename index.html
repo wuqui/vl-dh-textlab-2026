@@ -200,12 +200,12 @@ q.wuerschinger@lmu.de
 <p>Welche Infrastruktur macht diese Methoden als Workflow nutzbar?</p>
 </div>
 </div>
-<div class="callout-fragment fragment">
+<div class="callout-fragment question-summary fragment">
 <p>TextLab ist heute zugleich Werkzeug, Fallbeispiel und Blick in eine DH-Infrastruktur.</p>
 </div>
 </section>
-<section id="das-zentrale-argument" class="slide level2">
-<h2>Das zentrale Argument</h2>
+<section id="heute-sechs-dinge-die-textlab-zeigt" class="slide level2">
+<h2>Heute: sechs Dinge, die TextLab zeigt</h2>
 <aside class="notes">
 <p>4-6</p>
 <style type="text/css">
@@ -219,22 +219,64 @@ q.wuerschinger@lmu.de
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<div class="takeaway-lines">
-<div>
-<p>Keine Suche ohne Korpusmodell.</p>
+<div class="demo-palette">
+<div class="demo-card fragment">
+<p><strong>1 Belege öffnen</strong><br> KWIC, Kontext, Dokumentdetails</p>
 </div>
-<div>
-<p>Keine Zahl ohne Datenmodell.</p>
+<div class="demo-card fragment">
+<p><strong>2 Verteilungen sehen</strong><br> Jahr, Genre, Subreddit, Texttyp</p>
 </div>
-<div>
-<p>Keine Methode ohne sichtbaren Workflow.</p>
+<div class="demo-card fragment">
+<p><strong>3 Nachbarschaften finden</strong><br> Kollokationen und Beispielkontexte</p>
 </div>
+<div class="demo-card fragment">
+<p><strong>4 grammatische Profile bauen</strong><br> Word Sketches aus Annotationen</p>
+</div>
+<div class="demo-card fragment">
+<p><strong>5 semantisch explorieren</strong><br> Embeddings, Cluster, Search</p>
+</div>
+<div class="demo-card fragment">
+<p><strong>6 Treffer annotieren</strong><br> Labels, LLMs, Review, Export</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>Das Motto für morgen: erst zeigen, was möglich ist; danach erklären, welche Daten- und Softwareentscheidungen das möglich machen.</p>
 </div>
 </section>
-<section id="was-ist-korpuslinguistik" class="slide level2">
-<h2>Was ist Korpuslinguistik?</h2>
+<section id="was-ist-textlab" class="slide level2">
+<h2>Was ist TextLab?</h2>
 <aside class="notes">
 <p>6-8</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="tool-facts">
+<div class="tool-fact fragment">
+<p><strong>Arbeitsumgebung</strong><br> Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, semantische Suche und Annotation.</p>
+</div>
+<div class="tool-fact fragment">
+<p><strong>Infrastruktur</strong><br> React-Frontend, FastAPI-Backend, BlackLab-Indizes, Analysejobs und Registry-Konfiguration.</p>
+</div>
+<div class="tool-fact fragment">
+<p><strong>Methode</strong><br> Dieselben Daten lassen sich als KWIC, Zeitreihe, Kollokationsprofil, semantischer Raum oder Label-Set betrachten.</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>TextLab ist interessant, weil Datenmodellierung und Analysewerkzeuge in einer Oberfläche zusammenkommen.</p>
+</div>
+</section>
+<section id="korpuslinguistik-als-werkzeugkasten" class="slide level2">
+<h2>Korpuslinguistik als Werkzeugkasten</h2>
+<aside class="notes">
+<p>8-10</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -270,8 +312,8 @@ DH-Perspektive
 <p>Grundlagen: <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>; <span class="citation" data-cites="biberConradReppen1998">Biber u.&nbsp;a. (<a href="#/literatur" role="doc-biblioref" onclick="">1998</a>)</span>; <span class="citation" data-cites="mceneryHardie2011">McEnery und Hardie (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span>; angewandte Perspektive: <span class="citation" data-cites="hunston2002">Hunston (<a href="#/literatur" role="doc-biblioref" onclick="">2002</a>)</span>.</p>
 </div>
 </section>
-<section id="wozu-ist-das-gut" class="slide level2">
-<h2>Wozu ist das gut?</h2>
+<section id="was-kann-man-damit-machen" class="slide level2">
+<h2>Was kann man damit machen?</h2>
 <aside class="notes">
 <p>8-10</p>
 <style type="text/css">
@@ -287,21 +329,21 @@ DH-Perspektive
       }</style></aside>
 <div class="tool-facts">
 <div class="tool-fact fragment">
-<p><strong>Kontext finden</strong><br> Konkordanzen machen viele Belege schnell lesbar.</p>
+<p><strong>Belege öffnen</strong><br> Aus einer Query werden sofort KWIC-Zeilen, Detailansichten und zitierbare Beispiele.</p>
 </div>
 <div class="tool-fact fragment">
-<p><strong>Variation vergleichen</strong><br> Treffer lassen sich nach Zeit, Genre, Register, Region oder Community gruppieren.</p>
+<p><strong>Muster vergleichen</strong><br> Treffer lassen sich nach Zeit, Genre, Register, Region oder Community gruppieren und visualisieren.</p>
 </div>
 <div class="tool-fact fragment">
-<p><strong>Hypothesen prüfen</strong><br> Frequenzen und Kollokationen machen erwartete und unerwartete Muster kontrollierbar.</p>
+<p><strong>Module kombinieren</strong><br> Frequency, Collocations, Word Sketches, Semantic Search, Annotation und LLMs bauen auf demselben Trefferraum auf.</p>
 </div>
 </div>
 <div class="callout-fragment fragment">
-<p>Korpuslinguistik ersetzt Interpretation nicht. Sie macht Suchräume, Muster und Gegenbelege expliziter.</p>
+<p>Heute geht es um Bandbreite: Daten ausprobieren, Muster sichtbar machen und verstehen, wie die Tools dafür gebaut sind.</p>
 </div>
 </section>
-<section id="grundoperationen" class="slide level2">
-<h2>Grundoperationen</h2>
+<section id="modulpalette-derselbe-trefferraum" class="slide level2">
+<h2>Modulpalette: derselbe Trefferraum</h2>
 <aside class="notes">
 <p>10-12</p>
 <style type="text/css">
@@ -358,13 +400,13 @@ Block 1 · Korpora, Suche, Muster
 </div>
 <div class="schedule-items">
 <div class="schedule-item">
-<p><span>0-10</span> <strong>Einstieg</strong> <em>TextLab als DH-Korpuslabor.</em></p>
+<p><span>0-10</span> <strong>Einstieg</strong> <em>Was kann TextLab live zeigen?</em></p>
 </div>
 <div class="schedule-item">
-<p><span>10-25</span> <strong>Infrastruktur</strong> <em>Architektur, Registry, Ingestion.</em></p>
+<p><span>10-25</span> <strong>Daten + Infrastruktur</strong> <em>Warum Korpora und Registry die Module tragen.</em></p>
 </div>
 <div class="schedule-item">
-<p><span>25-45</span> <strong>Live-Demo</strong> <em>DTA: Query, KWIC, Frequenz, Varianten.</em></p>
+<p><span>25-45</span> <strong>Live-Demo</strong> <em>DTA: Query, KWIC, Frequenz, nächste Frage.</em></p>
 </div>
 <div class="schedule-item is-main">
 <p><span>45-60</span> <strong>Hands-on</strong> <em>Dieselbe Pipeline selbst nachvollziehen.</em></p>
@@ -392,8 +434,8 @@ Block 2 · Vergleich, Exploration, Modellierung
 <p>Regel für Montag: DTA ist der gemeinsame Startpunkt; Reddit, COHA und KI-Module zeigen die methodische Bandbreite.</p>
 </div>
 </section>
-<section id="kernpfad-der-vorlesung" class="slide level2">
-<h2>Kernpfad der Vorlesung</h2>
+<section id="kernpfad-aus-einer-query-wird-mehr" class="slide level2">
+<h2>Kernpfad: aus einer Query wird mehr</h2>
 <aside class="notes">
 <p>8-10</p>
 <style type="text/css">
@@ -409,24 +451,24 @@ Block 2 · Vergleich, Exploration, Modellierung
       }</style></aside>
 <div class="workflow core-workflow">
 <div class="workflow-step is-dark fragment">
-<p><strong>1</strong><br> Frage operationalisieren<br> <span>Was zählt als Treffer?</span></p>
+<p><strong>1</strong><br> Suchraum bauen<br> <span>Korpus + Query + Filter</span></p>
 </div>
 <div class="workflow-step fragment">
-<p><strong>2</strong><br> Query ausführen<br> <span>Korpus, Query, Trefferzahl notieren</span></p>
+<p><strong>2</strong><br> Belege öffnen<br> <span>KWIC, Detail, Dokument</span></p>
 </div>
 <div class="workflow-step fragment">
-<p><strong>3</strong><br> KWIC scannen<br> <span>Kontexte, typische Verwendungen, Überraschungen</span></p>
+<p><strong>3</strong><br> Muster sichtbar machen<br> <span>Jahr, Genre, Subreddit</span></p>
 </div>
 <div class="workflow-step fragment">
-<p><strong>4</strong><br> Metadaten vergleichen<br> <span>Jahr, Genre, Subreddit, Dokumenttyp</span></p>
+<p><strong>4</strong><br> Module wechseln<br> <span>Collocation, Sketch, Semantic</span></p>
 </div>
 <div class="workflow-step is-dark fragment">
-<p><strong>5</strong><br> Weiterarbeiten<br> <span>vergleichen, clustern, modellieren</span></p>
+<p><strong>5</strong><br> Anschlussfrage finden<br> <span>vergleichen, annotieren, modellieren</span></p>
 </div>
 </div>
 </section>
-<section id="laufendes-beispiel" class="slide level2">
-<h2>Laufendes Beispiel</h2>
+<section id="demo-thread" class="slide level2">
+<h2>Demo-Thread</h2>
 <aside class="notes">
 <p>10-12</p>
 <style type="text/css">
@@ -451,42 +493,12 @@ Block 2 · Vergleich, Exploration, Modellierung
 </div>
 <div class="case-card fragment">
 <h3 id="frage">Frage</h3>
-<p>Was erlaubt dieses Muster zu behaupten, und was nicht?</p>
+<p>Welche nächste Analyse wird daraus: Genre, KWIC, Kollokation oder Vergleichslemma?</p>
 </div>
 </div>
 </section>
-<section id="was-ist-textlab" class="slide level2">
-<h2>Was ist TextLab?</h2>
-<aside class="notes">
-<p>12-14</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<div class="tool-facts">
-<div class="tool-fact fragment">
-<p><strong>Arbeitsumgebung</strong><br> Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, semantische Suche und Annotation.</p>
-</div>
-<div class="tool-fact fragment">
-<p><strong>Infrastruktur</strong><br> React-Frontend, FastAPI-Backend, BlackLab-Indizes, Analysejobs und Registry-Konfiguration.</p>
-</div>
-<div class="tool-fact fragment">
-<p><strong>Methode</strong><br> Dieselben Daten lassen sich als KWIC, Zeitreihe, Kollokationsprofil, semantischer Raum oder Label-Set betrachten.</p>
-</div>
-</div>
-<div class="callout-fragment fragment">
-<p>TextLab ist interessant, weil Datenmodellierung und Analysewerkzeuge in einer Oberfläche zusammenkommen.</p>
-</div>
-</section>
-<section id="ein-korpus-ist-eine-bearbeitete-quelle" class="slide level2">
-<h2>Ein Korpus ist eine bearbeitete Quelle</h2>
+<section id="ein-korpus-ist-ein-datenprodukt" class="slide level2">
+<h2>Ein Korpus ist ein Datenprodukt</h2>
 <aside class="notes">
 <p>14-16</p>
 <style type="text/css">
@@ -503,7 +515,7 @@ Block 2 · Vergleich, Exploration, Modellierung
 <div class="source-criticism">
 <div class="source-question fragment">
 <p><strong>Text</strong></p>
-<p>Was wurde gesammelt, transkribiert, normalisiert oder ausgeschlossen?</p>
+<p>Was wurde gesammelt, transkribiert, normalisiert und segmentiert?</p>
 </div>
 <div class="source-question fragment">
 <p><strong>Metadaten</strong></p>
@@ -515,15 +527,15 @@ Block 2 · Vergleich, Exploration, Modellierung
 </div>
 <div class="source-question fragment">
 <p><strong>Interface</strong></p>
-<p>Welche Resultatansichten machen Muster sichtbar oder unsichtbar?</p>
+<p>Welche Resultatansichten machen neue Operationen möglich?</p>
 </div>
 </div>
 <div class="callout-fragment fragment">
-<p>Korpuskritik erweitert Quellenkritik in die Suchoberfläche hinein.</p>
+<p>Der praktische Punkt: Je besser Datenmodell und Annotationen, desto interessanter werden Suche, Module und Demos.</p>
 </div>
 </section>
-<section id="architektur-in-fünf-schichten" class="slide level2">
-<h2>Architektur in fünf Schichten</h2>
+<section id="wie-ist-das-gebaut" class="slide level2">
+<h2>Wie ist das gebaut?</h2>
 <aside class="notes">
 <p>16-18</p>
 <style type="text/css">
@@ -573,8 +585,8 @@ Block 2 · Vergleich, Exploration, Modellierung
 <p>Die Registry ergänzt den Index: BlackLab bleibt Quelle für vorhandene Felder; die Registry beschreibt, wie diese Felder sinnvoll genutzt werden.</p>
 </div>
 </section>
-<section id="warum-registry" class="slide level2">
-<h2>Warum Registry?</h2>
+<section id="warum-registry-weil-module-felder-brauchen" class="slide level2">
+<h2>Warum Registry? Weil Module Felder brauchen</h2>
 <aside class="notes">
 <p>18-20</p>
 <style type="text/css">
@@ -591,24 +603,24 @@ Block 2 · Vergleich, Exploration, Modellierung
 <div class="translation-strip">
 <div class="translation-step fragment">
 <p><strong>Problem</strong></p>
-<p>Attribute existieren technisch, aber ihre Bedeutung ist nicht automatisch klar.</p>
+<p>Attribute existieren technisch, aber die UI muss wissen, was sie bedeuten.</p>
 </div>
 <div class="translation-step fragment">
-<p><strong>Risiko</strong></p>
-<p>Query Builder, Dokumentation und QA driften auseinander.</p>
+<p><strong>Ohne Registry</strong></p>
+<p>Query Builder, Korpusauswahl, Doku und QA driften auseinander.</p>
 </div>
 <div class="translation-step fragment">
-<p><strong>Lösung</strong></p>
+<p><strong>Mit Registry</strong></p>
 <p><code>corpora.yml</code> wird Single Source of Truth für Korpusprofile.</p>
 </div>
 <div class="translation-step is-dark fragment">
 <p><strong>Nutzen</strong></p>
-<p>UI, Docs und Tests sprechen über dieselben Felder, Werte und Grenzen.</p>
+<p>Module können Vorschläge, Labels, Capabilities und bekannte Grenzen direkt aus derselben Quelle ziehen.</p>
 </div>
 </div>
 </section>
-<section id="korpus-ingestion" class="slide level2">
-<h2>Korpus-Ingestion</h2>
+<section id="korpus-ingestion-aus-daten-wird-ein-demo-korpus" class="slide level2">
+<h2>Korpus-Ingestion: aus Daten wird ein Demo-Korpus</h2>
 <aside class="notes">
 <p>20-23</p>
 <style type="text/css">
@@ -918,8 +930,8 @@ KWIC macht auf einen Blick sichtbar, in welchen Formulierungen und Dokumenttypen
 </div>
 </div>
 </section>
-<section id="schnell-kalibrieren" class="slide level2">
-<h2>Schnell kalibrieren</h2>
+<section id="schnell-weiterdrehen" class="slide level2">
+<h2>Schnell weiterdrehen</h2>
 <aside class="notes">
 <p>33-35</p>
 <style type="text/css">
@@ -935,17 +947,17 @@ KWIC macht auf einen Blick sichtbar, in welchen Formulierungen und Dokumenttypen
       }</style></aside>
 <div class="truth-grid">
 <div class="truth-card fragment">
-<p><strong>True positive</strong><br> relevanter Treffer</p>
+<p><strong>Guter Treffer</strong><br> Beleg öffnen</p>
 </div>
 <div class="truth-card fragment">
-<p><strong>False positive</strong><br> technisch getroffen, aber interpretativ falsch</p>
+<p><strong>Auffälliges Muster</strong><br> gruppieren oder zählen</p>
 </div>
 <div class="truth-card fragment">
-<p><strong>False negative</strong><br> relevant, aber von dieser Query verfehlt</p>
+<p><strong>Nächste Query</strong><br> Variante testen</p>
 </div>
 </div>
 <div class="reading-standard fragment">
-<p>Ein kurzer KWIC-Scan reicht oft, um danach schneller in Frequenzen und Module zu wechseln.</p>
+<p>Ein kurzer KWIC-Scan reicht oft, um danach schnell in Frequency, Collocations oder Word Sketches weiterzugehen.</p>
 </div>
 </section>
 <section id="frequency" class="slide level2">
@@ -1489,8 +1501,8 @@ Annotation macht aus Treffern strukturierte Daten: Labels, Beispiele, Review und
 <p>Perspektive für TextLab: Such- und Analyseoperationen sollten als sichtbare, reproduzierbare Schrittfolge speicherbar werden.</p>
 </div>
 </section>
-<section id="von-demo-zu-forschungsfrage" class="slide level2">
-<h2>Von Demo zu Forschungsfrage</h2>
+<section id="von-demo-zu-anschlussfrage" class="slide level2">
+<h2>Von Demo zu Anschlussfrage</h2>
 <aside class="notes">
 <p>77-80</p>
 <style type="text/css">
@@ -1506,15 +1518,15 @@ Annotation macht aus Treffern strukturierte Daten: Labels, Beispiele, Review und
       }</style></aside>
 <div class="finding-compare finding-compare-3">
 <div class="weak-finding fragment">
-<h3 id="schwach">Schwach</h3>
+<h3 id="start">Start</h3>
 <p><code>computer</code> nimmt im 20. Jahrhundert zu.</p>
 </div>
 <div class="better-finding fragment">
-<h3 id="interessanter">Interessanter</h3>
+<h3 id="demo-tauglich">Demo-tauglich</h3>
 <p>In COHA zeigt <code>[lemma="computer"]</code> frühe Personenbedeutungen und später technische Bedeutungen; nach <code>decade</code> sieht man den Bedeutungs- und Technologiewandel.</p>
 </div>
 <div class="researchable-finding fragment">
-<h3 id="anschlussfähig">Anschlussfähig</h3>
+<h3 id="nächster-schritt">Nächster Schritt</h3>
 <p>Nächste Schritte: <code>computer</code> mit <code>radio</code>, <code>television</code>, <code>internet</code> vergleichen; Genreeffekte prüfen; KWIC-Beispiele als Annotation-Set sammeln.</p>
 </div>
 </div>
@@ -1747,9 +1759,9 @@ Sinclair, John. 1991. <em>Corpus, Concordance, Collocation</em>. Oxford Universi
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<p>TextLab zeigt DH-Infrastruktur als Zusammenspiel aus Korpusarbeit, Softwarearchitektur, statistischer Verdichtung, Modellverfahren und interpretierender Rückbindung an Texte.</p>
+<p>TextLab zeigt, wie aus Korpora konkrete Analysewege werden: suchen, vergleichen, verdichten, annotieren und mit Modellen weiterarbeiten.</p>
 <div class="takeaway">
-<p>Die zentrale Kompetenz ist nicht, ein Tool zu bedienen, sondern Operationen so zu formulieren, dass sie als wissenschaftliche Entscheidungen diskutierbar werden.</p>
+<p>Der Gewinn liegt in der Kombination: gute Korpora, sichtbare Workflows und Module, die aus Treffern neue Fragen machen.</p>
 </div>
 </section>
 <section id="takeaway" class="slide level2">
@@ -1769,13 +1781,13 @@ Sinclair, John. 1991. <em>Corpus, Concordance, Collocation</em>. Oxford Universi
       }</style></aside>
 <div class="takeaway-lines">
 <div>
-<p>Korpus kennen.</p>
+<p>Daten wählen.</p>
 </div>
 <div>
-<p>Methoden kombinieren.</p>
+<p>Query starten.</p>
 </div>
 <div>
-<p>Nächste Frage finden.</p>
+<p>Module kombinieren.</p>
 </div>
 </div>
 
