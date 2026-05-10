@@ -34,23 +34,23 @@ execute:
 
 ::: {.question-pair}
 ::: {.question-card}
-**Methodische Frage**
+**These**
 
-Was kann man mit großen, annotierten Textsammlungen sehen, suchen, zählen und modellieren?
+TextLab macht große Textsammlungen praktisch untersuchbar: als Belege, Verteilungen, Nachbarschaften, semantische Räume und Labels.
 :::
 
 ::: {.question-card}
-**Technische Frage**
+**DH-Perspektive**
 
-Wie muss eine App gebaut sein, damit diese Operationen als Workflow nutzbar werden?
+Interessant ist nicht nur das Ergebnis, sondern auch die Frage: Wie baut man so ein Tool?
 :::
 :::
 
 ::: {.callout-fragment}
-TextLab ist heute zugleich Werkzeug, Fallbeispiel und Blick in eine DH-Infrastruktur.
+Wir nutzen TextLab doppelt: als Werkzeug für Beispiele und als Fallstudie für DH-Software.
 :::
 
-## Was wir heute ausprobieren
+## Was TextLab als Operationen anbietet
 
 ::: {.notes}
 10:16-10:20
@@ -58,41 +58,41 @@ TextLab ist heute zugleich Werkzeug, Fallbeispiel und Blick in eine DH-Infrastru
 
 ::: {.demo-palette}
 ::: {.demo-card}
-**1 Belege öffnen**<br>
-KWIC, Kontext, Dokumentdetails
+**Belege öffnen**<br>
+KWIC, Kontext, Dokumentdetails.
 :::
 
 ::: {.demo-card}
-**2 Verteilungen sehen**<br>
-Jahr, Genre, Subreddit, Texttyp
+**Verteilungen sehen**<br>
+Jahr, Genre, Subreddit, Texttyp.
 :::
 
 ::: {.demo-card}
-**3 Nachbarschaften finden**<br>
-Kollokationen und Beispielkontexte
+**Nachbarschaften finden**<br>
+Kollokationen und Beispielkontexte.
 :::
 
 ::: {.demo-card}
-**4 grammatische Profile bauen**<br>
-Word Sketches aus Annotationen
+**Grammatische Profile bauen**<br>
+Word Sketches aus Annotationen.
 :::
 
 ::: {.demo-card}
-**5 semantisch explorieren**<br>
-Embeddings, Cluster, Search
+**Semantisch explorieren**<br>
+Embeddings, Cluster, Search.
 :::
 
 ::: {.demo-card}
-**6 Treffer annotieren**<br>
-LLM Classification, Review, Export
+**Treffer annotieren**<br>
+LLM Classification, Review, Export.
 :::
 :::
 
 ::: {.callout-fragment}
-Leitmotiv: erst zeigen, was möglich ist; dann erklären, welche Daten- und Softwareentscheidungen das möglich machen.
+Leitmotiv: Jede Operation ist ein Methodenangebot und zugleich eine technische Architekturentscheidung.
 :::
 
-## Eine Methode ist auch ein Bauplan
+## Jede Methode hat drei Schichten
 
 ::: {.notes}
 10:20-10:22
@@ -102,7 +102,7 @@ Leitmotiv: erst zeigen, was möglich ist; dann erklären, welche Daten- und Soft
 ::: {.detail-panel}
 <div class="panel-title">Datenstruktur</div>
 
-Welche Einheiten gibt es: Dokument, Chunk, Satz, Token, Treffer, Metadatum, Annotation?
+Welche Einheiten gibt es: Dokument, Satz, Token, Treffer, Metadatum, Annotation, Vektor, Label?
 :::
 
 ::: {.detail-panel}
@@ -114,7 +114,7 @@ Wie wird daraus ein Ergebnis: Indexsuche, Gruppierung, Fensterzählung, Dependen
 ::: {.example-panel}
 <div class="panel-title">Interface</div>
 
-Welche Operation kann die UI daraus machen: Query bauen, Treffer lesen, Parameter setzen, Modul wechseln, Ergebnis exportieren?
+Welche kontrollierbare Handlung entsteht daraus: Query bauen, Treffer lesen, Parameter setzen, Ergebnis prüfen?
 :::
 :::
 
@@ -126,6 +126,10 @@ Das ist auch für DH-Programmierung relevant: Methode, Datenmodell und Softwared
 
 ::: {.notes}
 10:22-10:32
+:::
+
+::: {.callout-fragment}
+Die zentrale Designidee: Einmal sauber kompilierte Korpora sollen viele Analyseoperationen tragen.
 :::
 
 ::: {.architecture-flow}
@@ -157,7 +161,7 @@ Token, Lemma, POS, Dep, NER
 :::
 
 ::: {.architecture-step}
-**4 Index**<br>
+**4 Suchindex**<br>
 BlackLab, BCQL, KWIC, Groups
 :::
 
@@ -166,13 +170,9 @@ BlackLab, BCQL, KWIC, Groups
 :::
 
 ::: {.architecture-step .is-dark}
-**5 TextLab**<br>
+**5 Anwendung**<br>
 API, UI, Module, Jobs
 :::
-:::
-
-::: {.registry-strip}
-**Corpus Registry:** Die App braucht eine strukturierte Beschreibung der Korpora: Labels, Felder, Werte, Capabilities und bekannte Einschränkungen.
 :::
 
 ## TextLab als Software-System
@@ -185,13 +185,13 @@ API, UI, Module, Jobs
 ::: {.tool-fact}
 **Frontend**
 
-React UI: Korpusauswahl, Query Builder, Ergebnisansichten, Module, Settings.
+React: Korpusauswahl, Query Builder, Ergebnisansichten, Module, Settings.
 :::
 
 ::: {.tool-fact}
 **Backend**
 
-FastAPI: Endpunkte für Suche, Schema, Frequenzen, Jobs, Annotation und KI-Workflows.
+FastAPI: Endpunkte für Suche, Schema, Frequenzen, Jobs, Annotation, KI-Workflows.
 :::
 
 ::: {.tool-fact}
@@ -202,10 +202,10 @@ BlackLab: tokenbasierter Index, BCQL, Trefferpositionen, Kontext, Gruppierungen.
 :::
 
 ::: {.callout-fragment}
-Die Oberfläche ist deshalb mehr als eine Suchbox: Sie ist ein Workflow über verschiedene Backend-Fähigkeiten.
+Viele UI-Aktionen sind deshalb kleine Pipelines: Input validieren, API-Request bauen, Index/Job ausführen, Resultat in eine lesbare Form bringen.
 :::
 
-## Warum eine Registry?
+## Corpus Registry: Korpuswissen als Konfiguration
 
 ::: {.notes}
 10:29-10:32
@@ -215,13 +215,13 @@ Die Oberfläche ist deshalb mehr als eine Suchbox: Sie ist ein Workflow über ve
 ::: {.translation-step}
 **Index**
 
-BlackLab weiß, welche Felder tatsächlich vorhanden sind.
+BlackLab weiß, welche Felder technisch vorhanden sind.
 :::
 
 ::: {.translation-step}
 **Registry**
 
-TextLab weiß, wie Felder heißen, welche Werte wichtig sind und welche Module sinnvoll sind.
+TextLab weiß, was Felder bedeuten, welche Werte wichtig sind und welche Module sinnvoll sind.
 :::
 
 ::: {.translation-step}
@@ -235,6 +235,29 @@ Query Builder, Korpusauswahl und Filter bekommen dieselben Informationen.
 
 Docs und Tests können gegen dieselbe Quelle prüfen.
 :::
+:::
+
+## Registry als Schnittstelle
+
+::: {.notes}
+10:30-10:32
+:::
+
+```yaml
+# schematisch
+dta:
+  token_count: 238300000
+  annotations: [word, lemma, pos, dep_rel, ner]
+  metadata: [year, author, title, genre]
+  value_options:
+    annotations:
+      pos: [NN, VVFIN, ADJA, "..."]
+    metadata:
+      genre: ["..."]
+```
+
+::: {.syntax-reference}
+Das ist kein Zusatzdokument neben der App, sondern Teil des Produkts: Query Builder, Korpusauswahl, Filter, Docs und Tests greifen auf dieselbe Registry-Idee zu.
 :::
 
 ## 10:32-10:42 · Korpuslinguistik
@@ -265,6 +288,23 @@ Eine Query erzeugt nicht einfach “die Antwort”, sondern eine Menge von Treff
 
 ::: {.caption-note}
 Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; @hunston2002.
+:::
+
+## Text wird zur Datenstruktur
+
+::: {.notes}
+10:34-10:36
+:::
+
+| pos | word | lemma | pos_tag | dep_rel | metadata |
+|---:|---|---|---|---|---|
+| 1 | Die | der | ART | nk | year=1848 |
+| 2 | Freiheit | Freiheit | NN | sb | year=1848 |
+| 3 | bleibt | bleiben | VVFIN | root | year=1848 |
+| 4 | umkämpft | umkämpft | ADJD | pd | year=1848 |
+
+::: {.syntax-reference}
+Eine Korpussuche ist technisch eine Suche über strukturierte Token- und Dokumentattribute. Genau deshalb können wir nach Wortform, Lemma, Wortart, syntaktischer Relation oder Metadaten filtern.
 :::
 
 ## Grundoperationen
@@ -432,6 +472,26 @@ Felder, Werte, Labels, Module, bekannte Grenzen.
 :::
 :::
 
+## Was im Suchindex landet
+
+::: {.notes}
+10:58-11:02
+:::
+
+```text
+<doc id="dta_1848_..." year="1848" genre="political">
+word        lemma       pos     dep_rel
+Die         der         ART     nk
+Freiheit    Freiheit    NN      sb
+bleibt      bleiben     VVFIN   root
+umkämpft    umkämpft    ADJD    pd
+</doc>
+```
+
+::: {.syntax-reference}
+BlackLab indexiert Tokenattribute und Dokumentmetadaten zusammen. Dadurch kann dieselbe Oberfläche erst KWIC-Kontexte, dann Frequenzen nach `year`, dann Kollokationen oder Word Sketches ausgeben.
+:::
+
 ## 11:02-11:12 · Suchen
 
 ::: {.notes}
@@ -578,7 +638,7 @@ Treffer werden nach Jahr, Genre, Subreddit, Lemma, POS oder anderen Feldern grup
 ::: {.detail-panel}
 <div class="panel-title">Wie gebaut?</div>
 
-Backend gruppiert Treffer über BlackLab-Felder oder Metadaten; UI visualisiert Counts und Normalisierung.
+Backend gruppiert Treffer über BlackLab-Felder oder Metadaten; UI zeigt absolute Counts und, wo sinnvoll, Raten pro Million Tokens.
 :::
 
 ::: {.example-panel}
@@ -702,13 +762,51 @@ Kollokationen zeigen Wörter, die auffällig häufig in der Umgebung der Treffer
 ::: {.detail-panel}
 <div class="panel-title">Wie gebaut?</div>
 
-Für jeden Treffer wird ein Kontextfenster gezählt; Kandidaten werden nach Frequenz, Richtung und Score sortiert.
+Für jeden Treffer wird ein linkes/rechtes Kontextfenster gezählt; Kandidaten werden nach Frequenz, Richtung und Assoziationsscore sortiert.
 :::
 
 ::: {.example-panel}
 <div class="panel-title">Wofür gut?</div>
 
 Typische Themen, feste Verbindungen, semantische Prosodie und überraschende Nachbarschaften.
+:::
+:::
+
+## Kollokationen als Algorithmus
+
+::: {.notes}
+11:33-11:34
+:::
+
+::: {.workflow .core-workflow}
+::: {.workflow-step}
+**1 Treffer**
+
+`[lemma="Demokratie"]`
+:::
+
+::: {.workflow-step}
+**2 Fenster**
+
+z. B. 5 Tokens links und rechts.
+:::
+
+::: {.workflow-step}
+**3 Kandidaten**
+
+Nachbarlemmata zählen.
+:::
+
+::: {.workflow-step}
+**4 Score**
+
+Häufigkeit + Auffälligkeit bewerten.
+:::
+
+::: {.workflow-step .is-dark}
+**5 Belege**
+
+Jeden Kandidaten zurück in KWIC prüfen.
 :::
 :::
 
@@ -739,7 +837,7 @@ Word Sketches gruppieren typische Partner eines Lemmas nach grammatischen Relati
 ::: {.detail-panel}
 <div class="panel-title">Wie gebaut?</div>
 
-Dependency-Annotationen liefern Relationen wie Subjekt, Objekt, Modifikator; die App zählt Kandidaten pro Relation.
+Dependency-Annotationen liefern Relationen; die App zählt Kandidaten pro Relation, Ziellemma und Kandidatenlemma.
 :::
 
 ::: {.example-panel}
@@ -747,6 +845,22 @@ Dependency-Annotationen liefern Relationen wie Subjekt, Objekt, Modifikator; die
 
 Nicht nur “welche Wörter stehen nah?”, sondern “in welcher grammatischen Rolle treten sie auf?”.
 :::
+:::
+
+## Word Sketches als Datenmodell
+
+::: {.notes}
+11:35-11:36
+:::
+
+| target | relation | candidate | evidence |
+|---|---|---|---|
+| Demokratie | adjective modifier | direkte | direkte Demokratie |
+| Demokratie | subject of | entstehen | Demokratie entsteht |
+| Demokratie | object of | fordern | Demokratie fordern |
+
+::: {.syntax-reference}
+Der Unterschied zur Kollokation: Nicht nur lineare Nähe zählt, sondern eine syntaktische Relation im Dependency-Parse.
 :::
 
 ## Word-Sketch-Beispiel
@@ -770,13 +884,13 @@ Nicht nur “welche Wörter stehen nah?”, sondern “in welcher grammatischen 
 ::: {.detail-panel}
 <div class="panel-title">Embeddings</div>
 
-Texte, Trefferkontexte oder Queries werden in Vektoren übersetzt.
+Texte, Trefferkontexte oder Queries werden von einem Modell in numerische Vektoren übersetzt.
 :::
 
 ::: {.detail-panel}
 <div class="panel-title">Clustering</div>
 
-Ähnliche Vektoren werden gruppiert; Beispiele helfen, Cluster zu benennen und zu prüfen.
+Ähnliche Vektoren werden per Distanzmaß verglichen, gruppiert oder als nächste Nachbarn gesucht.
 :::
 
 ::: {.example-panel}
@@ -784,6 +898,42 @@ Texte, Trefferkontexte oder Queries werden in Vektoren übersetzt.
 
 Wie zeigt man semantische Nähe so, dass Nutzerinnen wieder zu Belegen zurückkommen?
 :::
+:::
+
+## Embedding-Workflow
+
+::: {.notes}
+11:36-11:38
+:::
+
+::: {.pipeline-flow}
+::: {.pipeline-step}
+**1 Textfenster**
+
+Trefferkontext oder Dokumentausschnitt.
+:::
+
+::: {.pipeline-step}
+**2 Vektor**
+
+Embedding-Modell erzeugt eine dichte Repräsentation.
+:::
+
+::: {.pipeline-step}
+**3 Suche/Cluster**
+
+Nearest Neighbors, Clustering, Projektion.
+:::
+
+::: {.pipeline-step}
+**4 Rückbindung**
+
+Clusterlabel nur mit Beispielbelegen vertrauen.
+:::
+:::
+
+::: {.caption-note}
+Grundidee: distributionelle Semantik und Satz-/Dokument-Embeddings, vgl. @mikolov2013; @reimers2019.
 :::
 
 ## LLM Classification
@@ -802,7 +952,7 @@ Treffer oder Dokumente werden nach einem expliziten Labelschema klassifiziert.
 ::: {.detail-panel}
 <div class="panel-title">Wie gebaut?</div>
 
-Backend-Job, Prompt, Schema, Beispiele, Modellantwort, Review-Status und Export gehören zusammen.
+Backend-Job, Prompt, Labelschema, Beispiele, Modellantwort, Review-Status und Export gehören zusammen.
 :::
 
 ::: {.example-panel}
@@ -873,6 +1023,10 @@ Vorgerechnete Topic-Attribute können stabiler sein und wie Metadaten durchsucht
 
 Welche Modellierung gehört in die Korpuskompilierung, welche in die interaktive Analyse?
 :::
+:::
+
+::: {.caption-note}
+Topic Modeling als probabilistisches Modell: @blei2003.
 :::
 
 ## 11:40-11:45 · Abschluss
