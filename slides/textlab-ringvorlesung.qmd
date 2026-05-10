@@ -390,7 +390,7 @@ KWIC-Zeilen, Frequenzen, Jahre, Genres, Communities, Kollokationen.
 | Korpus | Größe | Stärken für die Demo | Typische Frage |
 |---|---:|---|---|
 | DTA | 238.3M Tokens | historisches Deutsch, Jahresmetadaten, stabile Belegarbeit | Wie verschieben sich politische Begriffe? |
-| COHA | ca. 470M Tokens | historisches Englisch, Genres, 19./20./21. Jahrhundert | Wie verändert sich Wortgebrauch über Dekaden? |
+| COHA | 472.3M Tokens | historisches Englisch, Genres, 1820-2019 | Wie verändert sich Wortgebrauch über Dekaden? |
 | German Reddit | 61.2M Tokens | Gegenwartssprache, Subreddits, Plattformkommunikation | Wie unterscheiden sich Communities? |
 | English Reddit | 41.3M Tokens | regionale Communities, Variation im Englischen | Welche Themen und Wörter markieren Regionen? |
 
@@ -669,25 +669,25 @@ Variation, Wandel und Unterschiede zwischen Korpusteilen werden sichtbar.
 ::: {.demo-card}
 **DTA**
 
-`[lemma="Demokratie"]` oder `[lemma="Freiheit"]` nach Jahr.
+`[lemma="Demokratie"]` → 2,486 Treffer; Peak 1848.
 :::
 
 ::: {.demo-card}
 **COHA**
 
-`computer`, `telephone`, `radio`, `automobile` nach Dekade oder Genre.
+`[lemma="computer"]` → Bedeutungswandel vom Menschen zur Maschine.
 :::
 
 ::: {.demo-card}
 **German Reddit**
 
-`[lemma="deutsch"]` nach Subreddit.
+`[lemma="deutsch"]` → 33,122 Treffer nach Subreddit.
 :::
 
 ::: {.demo-card}
 **English Reddit**
 
-`[word="Wales"]` oder regionale Marker nach Community.
+`[word="Wales"]` → 46,003 Treffer nach Community.
 :::
 
 ::: {.demo-card}
@@ -726,7 +726,7 @@ Dasselbe Prinzip wäre auch ein API-Call: Query, Group-by, Response, Chart.
 
 `[lemma="Freiheit"]`
 
-`[word="computer"]`
+`[lemma="computer"]`
 
 `[lemma="deutsch"]`
 :::
@@ -855,12 +855,12 @@ Nicht nur “welche Wörter stehen nah?”, sondern “in welcher grammatischen 
 
 | target | relation | candidate | evidence |
 |---|---|---|---|
-| Demokratie | adjective modifier | direkte | direkte Demokratie |
-| Demokratie | subject of | entstehen | Demokratie entsteht |
-| Demokratie | object of | fordern | Demokratie fordern |
+| Demokratie | modifier | sozial | Sozial-demokratie |
+| Demokratie | governing verb | siegte | Demokratie siegte |
+| Demokratie | nominal association | organ | Organ der Demokratie |
 
 ::: {.syntax-reference}
-Der Unterschied zur Kollokation: Nicht nur lineare Nähe zählt, sondern eine syntaktische Relation im Dependency-Parse.
+Der Unterschied zur Kollokation: Nicht nur lineare Nähe zählt, sondern eine syntaktische Relation oder ein regelhaftes Kandidatenprofil.
 :::
 
 ## Word-Sketch-Beispiel
