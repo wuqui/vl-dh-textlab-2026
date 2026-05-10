@@ -432,32 +432,6 @@ Felder, Werte, Labels, Module, bekannte Grenzen.
 :::
 :::
 
-## Warum kurze Dokumente technisch anders sind
-
-::: {.notes}
-10:56-10:59
-:::
-
-::: {.method-detail}
-::: {.detail-panel}
-<div class="panel-title">Lange Korpora</div>
-
-Viele Tokens in relativ wenigen Dokumenten: gut für sequentielle Verarbeitung und Indexierung.
-:::
-
-::: {.detail-panel}
-<div class="panel-title">Plattformdaten</div>
-
-Sehr viele kurze Posts/Kommentare: mehr Dokumentmetadaten, mehr Index-Objekte, mehr Overhead.
-:::
-
-::: {.example-panel}
-<div class="panel-title">Strategie</div>
-
-Chunking, Sampling, stabile Metadaten und kontrollierte Index-Jobs sind Teil des Korpusdesigns.
-:::
-:::
-
 ## 11:02-11:12 · Suchen
 
 ::: {.notes}
