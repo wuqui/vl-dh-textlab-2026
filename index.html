@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <title>TextLab in den Digital Humanities</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="assets/css/reveal.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="title-slide" class="slide level2 custom-title-slide center" data-background-color="#eef4f8">
+<h2>TextLab in den Digital Humanities</h2>
+<aside class="notes">
+<p>0-2</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+<img class="title-logo r-stretch" src="assets/img/lmu-logo.png" alt="LMU-Logo"><div class="title-subtitle">
+Ringvorlesung Digital Humanities · LMU · Sommersemester 2026
+</div>
+<div class="title-author">
+Quirin Würschinger · LMU München · 11. Mai 2026
+</div>
+<div class="title-email">
+q.wuerschinger@lmu.de
+</div>
+</section>
+<section id="zwei-leitfragen" class="slide level2">
+<h2>Zwei Leitfragen</h2>
+<aside class="notes">
+<p>2-4</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="question-pair">
+<div class="question-card fragment">
+<h3 id="methodisch">Methodisch</h3>
+<p>Was kann man mit großen, annotierten Textsammlungen sehen und tun?</p>
+</div>
+<div class="question-card fragment">
+<h3 id="infrastrukturell">Infrastrukturell</h3>
+<p>Welche Infrastruktur macht diese Methoden als Workflow nutzbar?</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>TextLab ist heute zugleich Werkzeug, Fallbeispiel und Blick in eine DH-Infrastruktur.</p>
+</div>
+</section>
+<section id="das-zentrale-argument" class="slide level2">
+<h2>Das zentrale Argument</h2>
+<aside class="notes">
+<p>4-6</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="takeaway-lines">
+<div>
+<p>Keine Suche ohne Korpusmodell.</p>
+</div>
+<div>
+<p>Keine Zahl ohne Datenmodell.</p>
+</div>
+<div>
+<p>Keine Methode ohne sichtbaren Workflow.</p>
+</div>
+</div>
+</section>
+<section id="was-ist-korpuslinguistik" class="slide level2">
+<h2>Was ist Korpuslinguistik?</h2>
+<aside class="notes">
+<p>6-8</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="method-detail">
+<div class="detail-panel">
+<div class="panel-title">
+Gegenstand
+</div>
+<p>Empirische Sprach- und Textanalyse auf der Basis dokumentierter, maschinenlesbarer Textsammlungen.</p>
+</div>
+<div class="detail-panel">
+<div class="panel-title">
+Prinzip
+</div>
+<p>Einzelbelege und quantitative Muster werden zusammen gelesen: Konkordanz, Frequenz, Kollokation, Variation.</p>
+</div>
+<div class="example-panel">
+<div class="panel-title">
+DH-Perspektive
+</div>
+<p>Korpora sind keine Rohdaten, sondern modellierte Quellen: Auswahl, Metadaten, Annotation und Interface prägen jedes Resultat.</p>
+</div>
+</div>
+<div class="caption-note">
+<p>Grundlagen: <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>; <span class="citation" data-cites="biberConradReppen1998">Biber u.&nbsp;a. (<a href="#/literatur" role="doc-biblioref" onclick="">1998</a>)</span>; <span class="citation" data-cites="mceneryHardie2011">McEnery und Hardie (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span>; angewandte Perspektive: <span class="citation" data-cites="hunston2002">Hunston (<a href="#/literatur" role="doc-biblioref" onclick="">2002</a>)</span>.</p>
+</div>
+</section>
+<section id="wozu-ist-das-gut" class="slide level2">
+<h2>Wozu ist das gut?</h2>
+<aside class="notes">
+<p>8-10</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="tool-facts">
+<div class="tool-fact fragment">
+<p><strong>Kontext finden</strong><br> Konkordanzen machen viele Belege schnell lesbar.</p>
+</div>
+<div class="tool-fact fragment">
+<p><strong>Variation vergleichen</strong><br> Treffer lassen sich nach Zeit, Genre, Register, Region oder Community gruppieren.</p>
+</div>
+<div class="tool-fact fragment">
+<p><strong>Hypothesen prüfen</strong><br> Frequenzen und Kollokationen machen erwartete und unerwartete Muster kontrollierbar.</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>Korpuslinguistik ersetzt Interpretation nicht. Sie macht Suchräume, Muster und Gegenbelege expliziter.</p>
+</div>
+</section>
+<section id="grundoperationen" class="slide level2">
+<h2>Grundoperationen</h2>
+<aside class="notes">
+<p>10-12</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="workflow core-workflow">
+<div class="workflow-step fragment">
+<p><strong>Concordance</strong><br> KWIC lesen<br> <span>Bedeutung entsteht im Kontext.</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>Frequency</strong><br> zählen und gruppieren<br> <span>Frequenz ist corpus-relativ.</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>Collocation</strong><br> Nachbarschaften finden<br> <span>Wörter haben typische Umgebungen.</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>Annotation</strong><br> Merkmale hinzufügen<br> <span>POS, Lemma, Dependency, Labels.</span></p>
+</div>
+<div class="workflow-step is-dark fragment">
+<p><strong>Workflow</strong><br> kombinieren<br> <span>Suche + Vergleich + Modell.</span></p>
+</div>
+</div>
+<div class="caption-note">
+<p>Zu Konkordanz/Kollokation: <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>; zu Frequenz und Statistik: <span class="citation" data-cites="mceneryHardie2011">McEnery und Hardie (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span>; <span class="citation" data-cites="brezina2018">Brezina (<a href="#/literatur" role="doc-biblioref" onclick="">2018</a>)</span>.</p>
+</div>
+</section>
+<section id="minuten" class="slide level2">
+<h2>90 Minuten</h2>
+<aside class="notes">
+<p>12-14</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="schedule-grid">
+<div class="schedule-session">
+<div class="schedule-title">
+Block 1 · Korpora, Suche, Muster
+</div>
+<div class="schedule-items">
+<div class="schedule-item">
+<p><span>0-10</span> <strong>Einstieg</strong> <em>TextLab als DH-Korpuslabor.</em></p>
+</div>
+<div class="schedule-item">
+<p><span>10-25</span> <strong>Infrastruktur</strong> <em>Architektur, Registry, Ingestion.</em></p>
+</div>
+<div class="schedule-item">
+<p><span>25-45</span> <strong>Live-Demo</strong> <em>DTA: Query, KWIC, Frequenz, Varianten.</em></p>
+</div>
+<div class="schedule-item is-main">
+<p><span>45-60</span> <strong>Hands-on</strong> <em>Dieselbe Pipeline selbst nachvollziehen.</em></p>
+</div>
+</div>
+</div>
+<div class="schedule-session">
+<div class="schedule-title">
+Block 2 · Vergleich, Exploration, Modellierung
+</div>
+<div class="schedule-items">
+<div class="schedule-item">
+<p><span>60-70</span> <strong>Kontrast</strong> <em>Reddit, Plattformdaten, Subreddit-Verteilungen.</em></p>
+</div>
+<div class="schedule-item">
+<p><span>70-80</span> <strong>Module</strong> <em>Kollokationen, Word Sketches, Semantik, LLMs.</em></p>
+</div>
+<div class="schedule-item is-main">
+<p><span>80-90</span> <strong>Hands-on + Diskussion</strong> <em>Eigene Query + Modul ausprobieren.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="caption-note">
+<p>Regel für Montag: DTA ist der gemeinsame Startpunkt; Reddit, COHA und KI-Module zeigen die methodische Bandbreite.</p>
+</div>
+</section>
+<section id="kernpfad-der-vorlesung" class="slide level2">
+<h2>Kernpfad der Vorlesung</h2>
+<aside class="notes">
+<p>8-10</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="workflow core-workflow">
+<div class="workflow-step is-dark fragment">
+<p><strong>1</strong><br> Frage operationalisieren<br> <span>Was zählt als Treffer?</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>2</strong><br> Query ausführen<br> <span>Korpus, Query, Trefferzahl notieren</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>3</strong><br> KWIC scannen<br> <span>Kontexte, typische Verwendungen, Überraschungen</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>4</strong><br> Metadaten vergleichen<br> <span>Jahr, Genre, Subreddit, Dokumenttyp</span></p>
+</div>
+<div class="workflow-step is-dark fragment">
+<p><strong>5</strong><br> Weiterarbeiten<br> <span>vergleichen, clustern, modellieren</span></p>
+</div>
+</div>
+</section>
+<section id="laufendes-beispiel" class="slide level2">
+<h2>Laufendes Beispiel</h2>
+<aside class="notes">
+<p>10-12</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="case-thread">
+<div class="case-card fragment">
+<h3 id="query">Query</h3>
+<p><code>[lemma="Demokratie"]</code></p>
+</div>
+<div class="case-card fragment">
+<h3 id="muster">Muster</h3>
+<p>Die Treffer clustern stark um 1848.</p>
+</div>
+<div class="case-card fragment">
+<h3 id="frage">Frage</h3>
+<p>Was erlaubt dieses Muster zu behaupten, und was nicht?</p>
+</div>
+</div>
+</section>
+<section id="was-ist-textlab" class="slide level2">
+<h2>Was ist TextLab?</h2>
+<aside class="notes">
+<p>12-14</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="tool-facts">
+<div class="tool-fact fragment">
+<p><strong>Arbeitsumgebung</strong><br> Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, semantische Suche und Annotation.</p>
+</div>
+<div class="tool-fact fragment">
+<p><strong>Infrastruktur</strong><br> React-Frontend, FastAPI-Backend, BlackLab-Indizes, Analysejobs und Registry-Konfiguration.</p>
+</div>
+<div class="tool-fact fragment">
+<p><strong>Methode</strong><br> Dieselben Daten lassen sich als KWIC, Zeitreihe, Kollokationsprofil, semantischer Raum oder Label-Set betrachten.</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>TextLab ist interessant, weil Datenmodellierung und Analysewerkzeuge in einer Oberfläche zusammenkommen.</p>
+</div>
+</section>
+<section id="ein-korpus-ist-eine-bearbeitete-quelle" class="slide level2">
+<h2>Ein Korpus ist eine bearbeitete Quelle</h2>
+<aside class="notes">
+<p>14-16</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="source-criticism">
+<div class="source-question fragment">
+<p><strong>Text</strong></p>
+<p>Was wurde gesammelt, transkribiert, normalisiert oder ausgeschlossen?</p>
+</div>
+<div class="source-question fragment">
+<p><strong>Metadaten</strong></p>
+<p>Welche Kategorien ordnen das Material, bevor wir es durchsuchen?</p>
+</div>
+<div class="source-question fragment">
+<p><strong>Annotation</strong></p>
+<p>Welche Tokens, Lemmas, POS-Tags, Dependencies und Entitäten werden berechnet?</p>
+</div>
+<div class="source-question fragment">
+<p><strong>Interface</strong></p>
+<p>Welche Resultatansichten machen Muster sichtbar oder unsichtbar?</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>Korpuskritik erweitert Quellenkritik in die Suchoberfläche hinein.</p>
+</div>
+</section>
+<section id="architektur-in-fünf-schichten" class="slide level2">
+<h2>Architektur in fünf Schichten</h2>
+<aside class="notes">
+<p>16-18</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="architecture-flow">
+<div class="architecture-step">
+<p><strong>1 Rohdaten</strong><br> XML, Reddit, PDF, Text</p>
+</div>
+<div class="architecture-arrow">
+<p>→</p>
+</div>
+<div class="architecture-step">
+<p><strong>2 Normalisierung</strong><br> Dokumente, Chunks, Metadaten</p>
+</div>
+<div class="architecture-arrow">
+<p>→</p>
+</div>
+<div class="architecture-step">
+<p><strong>3 Annotation</strong><br> Token, Lemma, POS, Dep, NER</p>
+</div>
+<div class="architecture-arrow">
+<p>→</p>
+</div>
+<div class="architecture-step">
+<p><strong>4 Index</strong><br> BlackLab, BCQL, KWIC, Groups</p>
+</div>
+<div class="architecture-arrow">
+<p>→</p>
+</div>
+<div class="architecture-step is-dark">
+<p><strong>5 TextLab</strong><br> API, UI, Module, Export, Annotation</p>
+</div>
+</div>
+<div class="registry-strip">
+<p><strong>Corpus Registry:</strong> Labels, Attribute, Werte, Capabilities und bekannte Einschränkungen verbinden Normalisierung, Index und UI.</p>
+</div>
+<div class="caption-note">
+<p>Die Registry ergänzt den Index: BlackLab bleibt Quelle für vorhandene Felder; die Registry beschreibt, wie diese Felder sinnvoll genutzt werden.</p>
+</div>
+</section>
+<section id="warum-registry" class="slide level2">
+<h2>Warum Registry?</h2>
+<aside class="notes">
+<p>18-20</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="translation-strip">
+<div class="translation-step fragment">
+<p><strong>Problem</strong></p>
+<p>Attribute existieren technisch, aber ihre Bedeutung ist nicht automatisch klar.</p>
+</div>
+<div class="translation-step fragment">
+<p><strong>Risiko</strong></p>
+<p>Query Builder, Dokumentation und QA driften auseinander.</p>
+</div>
+<div class="translation-step fragment">
+<p><strong>Lösung</strong></p>
+<p><code>corpora.yml</code> wird Single Source of Truth für Korpusprofile.</p>
+</div>
+<div class="translation-step is-dark fragment">
+<p><strong>Nutzen</strong></p>
+<p>UI, Docs und Tests sprechen über dieselben Felder, Werte und Grenzen.</p>
+</div>
+</div>
+</section>
+<section id="korpus-ingestion" class="slide level2">
+<h2>Korpus-Ingestion</h2>
+<aside class="notes">
+<p>20-23</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="workflow">
+<div class="workflow-step fragment">
+<p><strong>01</strong><br> Herkunft<br> <span>Rechte, Sampling, Zeitraum, Sprache</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>02</strong><br> Dokumentmodell<br> <span>Dokument, Chunk, Satz, Token</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>03</strong><br> Metadaten<br> <span>Jahr, Quelle, Genre, Subreddit, Typ</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>04</strong><br> NLP<br> <span>Token, Lemma, POS, Dep, NER</span></p>
+</div>
+<div class="workflow-step fragment">
+<p><strong>05</strong><br> Index<br> <span>Vertikalformat, BlackLab, Capabilities</span></p>
+</div>
+<div class="workflow-step is-dark fragment">
+<p><strong>06</strong><br> Registry<br> <span>Felder, Werte, Labels, Limits</span></p>
+</div>
+</div>
+</section>
+<section id="demo-korpora" class="slide level2">
+<h2>Demo-Korpora</h2>
+<aside class="notes">
+<p>23-25</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Korpus</th>
+<th style="text-align: right;">Größe</th>
+<th>Wofür heute gut?</th>
+<th>Live-Idee</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DTA</td>
+<td style="text-align: right;">238.3M Tokens</td>
+<td>historisches Deutsch, diachrone Muster, KWIC, Frequency, Word Sketch</td>
+<td><code>Demokratie</code>, <code>Freiheit</code>, Varianten nach Jahr</td>
+</tr>
+<tr class="even">
+<td>COHA</td>
+<td style="text-align: right;">469.9M Tokens</td>
+<td>historisches Englisch, Genres, lexikalischer Wandel</td>
+<td><code>computer</code>, <code>radio</code>, <code>automobile</code> nach Dekade</td>
+</tr>
+<tr class="odd">
+<td>German Reddit</td>
+<td style="text-align: right;">61.2M Tokens</td>
+<td>Plattformkommunikation, Subreddits, Gegenwartssprache</td>
+<td><code>deutsch</code> nach Subreddit</td>
+</tr>
+<tr class="even">
+<td>English Reddit</td>
+<td style="text-align: right;">41.3M Tokens</td>
+<td>regionale Communities, Subreddit-Kontrast</td>
+<td><code>Wales</code> nach Community</td>
+</tr>
+</tbody>
+</table>
+<div class="caption-note">
+<p>Im UI werden Tokenzahlen angezeigt; Trefferzahlen entstehen erst aus Korpus + Query + Filter.</p>
+</div>
+</section>
+<section id="zugang-und-demo-regel" class="slide level2">
+<h2>Zugang und Demo-Regel</h2>
+<aside class="notes">
+<p>25</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="question-pair">
+<div class="question-card">
+<h3>
+Live
+</h3>
+<ul>
+<li>
+<a href="https://www.wuerschinger.org/textlab/">https://www.wuerschinger.org/textlab/</a>
+</li>
+<li>
+Zugangsdaten stehen im Raum an der Tafel
+</li>
+<li>
+zuerst DTA, dann erst Reddit
+</li>
+</ul>
+</div>
+<div class="question-card">
+<h3>
+Fallback
+</h3>
+<ul>
+<li>
+Screenshots zeigen dieselben Schritte
+</li>
+<li>
+bei WLAN/Auth-Problemen gemeinsam vorne durchgehen
+</li>
+<li>
+Aufgabe bleibt: Query, Muster, Modulwechsel, nächste Frage
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="teil-1-von-query-zu-muster" class="slide level2 section-slide">
+<h2>Teil 1: Von Query zu Muster</h2>
+<aside class="notes">
+<p>25</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="section-question">
+<p>Was kann man aus einer Suchanfrage alles machen?</p>
+</div>
+</section>
+<section id="von-begriff-zu-query" class="slide level2">
+<h2>Von Begriff zu Query</h2>
+<aside class="notes">
+<p>25-27</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="operationalization-grid">
+<div class="concept-box fragment">
+<h3 id="konzept">Konzept</h3>
+<p>Demokratie als politischer, historischer und semantisch mehrdeutiger Begriff.</p>
+</div>
+<div class="arrow-box fragment">
+<p>→</p>
+</div>
+<div class="query-box fragment">
+<h3 id="operationalisierung">Operationalisierung</h3>
+<p><code>[lemma="Demokratie"]</code></p>
+<p>ein Suchweg, nicht der Begriff selbst.</p>
+</div>
+<div class="arrow-box fragment">
+<p>→</p>
+</div>
+<div class="evidence-box fragment">
+<h3 id="suchraum">Suchraum</h3>
+<p>Treffer, KWIC-Kontexte, Jahre, Genres, Communities.</p>
+</div>
+</div>
+</section>
+<section id="query-syntax" class="slide level2">
+<h2>Query-Syntax</h2>
+<aside class="notes">
+<p>27-29</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p>Wir nutzen einfache BlackLab/BCQL-Queries:</p>
+<div class="query-examples">
+<p><code>[lemma="Demokratie"]</code></p>
+<p><code>[lemma="Freiheit"]</code></p>
+<p><code>[word="Teutsch.*"]</code></p>
+</div>
+<div class="syntax-reference">
+<p><code>lemma</code> gruppiert flektierte Formen. <code>word</code> sucht konkrete Wortformen. <code>.*</code> erweitert die Suche regulär. Jede Erweiterung verändert, was später als Treffer gilt.</p>
+</div>
+</section>
+<section id="textlab-query-setup" class="slide level2">
+<h2>TextLab: Query Setup</h2>
+<aside class="notes">
+<p>29-30</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="screenshot-frame">
+<img src="assets/screenshots/textlab/01-query-setup.png" alt="TextLab query setup with DTA corpus and a Demokratie query" class="screenshot-wide">
+<div class="screenshot-caption">
+Korpus, Query und Suchmodus bestimmen, welche Muster sichtbar werden.
+</div>
+</div>
+</section>
+<section id="concordance-kwic" class="slide level2">
+<h2>Concordance / KWIC</h2>
+<aside class="notes">
+<p>30-32</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="method-detail">
+<div class="detail-panel">
+<div class="panel-title">
+Was kann man damit machen?
+</div>
+<p>Viele Fundstellen schnell scannen, typische Kontexte finden und interessante Beispiele öffnen.</p>
+</div>
+<div class="detail-panel">
+<div class="panel-title">
+Technisch
+</div>
+<p>BlackLab liefert Tokenkontext, Annotationen und Dokumentmetadaten; TextLab macht daraus KWIC-Zeilen, Details, Export und Annotation Targets.</p>
+</div>
+<div class="example-panel">
+<div class="panel-title">
+DTA-Beispiel
+</div>
+<p><code>[lemma="Demokratie"]</code>: politische Argumente, Zeitungskontexte, metasprachliche Verwendungen und Zeitverläufe werden gemeinsam sichtbar.</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>Eine Trefferliste ist ein Einstiegspunkt: von dort aus geht es zu Frequenzen, Kollokationen, Annotation und Modellen.</p>
+</div>
+</section>
+<section id="concordance-beispiel" class="slide level2">
+<h2>Concordance-Beispiel</h2>
+<aside class="notes">
+<p>32-33</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="screenshot-frame screenshot-full">
+<img src="assets/screenshots/textlab/02-kwic-demokratie.png" alt="TextLab concordance for a Demokratie query" class="screenshot-wide">
+<div class="screenshot-caption">
+KWIC macht auf einen Blick sichtbar, in welchen Formulierungen und Dokumenttypen ein Treffer vorkommt.
+</div>
+</div>
+</section>
+<section id="schnell-kalibrieren" class="slide level2">
+<h2>Schnell kalibrieren</h2>
+<aside class="notes">
+<p>33-35</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="truth-grid">
+<div class="truth-card fragment">
+<p><strong>True positive</strong><br> relevanter Treffer</p>
+</div>
+<div class="truth-card fragment">
+<p><strong>False positive</strong><br> technisch getroffen, aber interpretativ falsch</p>
+</div>
+<div class="truth-card fragment">
+<p><strong>False negative</strong><br> relevant, aber von dieser Query verfehlt</p>
+</div>
+</div>
+<div class="reading-standard fragment">
+<p>Ein kurzer KWIC-Scan reicht oft, um danach schneller in Frequenzen und Module zu wechseln.</p>
+</div>
+</section>
+<section id="frequency" class="slide level2">
+<h2>Frequency</h2>
+<aside class="notes">
+<p>35-37</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="method-detail">
+<div class="detail-panel">
+<div class="panel-title">
+Was kann man damit machen?
+</div>
+<p>Treffer nach Jahr, Genre, Textklasse, Subreddit, POS, NER oder anderen Feldern gruppieren.</p>
+</div>
+<div class="detail-panel">
+<div class="panel-title">
+Technisch
+</div>
+<p>TextLab ruft BlackLab-Gruppierungen oder abgeleitete Distributionen ab: Buckets, Trefferzahlen, Dokumentzahlen und Normalisierung.</p>
+</div>
+<div class="example-panel">
+<div class="panel-title">
+DTA-Beispiel
+</div>
+<p>Der Peak um 1848 macht historische Dynamik sofort sichtbar und lädt zu weiteren Gruppierungen ein.</p>
+</div>
+</div>
+</section>
+<section id="beispiel-demokratie-nach-jahr" class="slide level2">
+<h2>Beispiel: Demokratie nach Jahr</h2>
+<aside class="notes">
+<p>37-39</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="bar-chart chronology-chart">
+<div class="bar-row fragment">
+<p><span class="bar-label">1848</span><span class="bar-track"><span class="bar-fill is-primary" style="width: 100%"></span></span><span class="bar-value">1252</span></p>
+</div>
+<div class="bar-row fragment">
+<p><span class="bar-label">1893</span><span class="bar-track"><span class="bar-fill" style="width: 14%"></span></span><span class="bar-value">174</span></p>
+</div>
+<div class="bar-row fragment">
+<p><span class="bar-label">1875</span><span class="bar-track"><span class="bar-fill" style="width: 10%"></span></span><span class="bar-value">125</span></p>
+</div>
+<div class="bar-row fragment">
+<p><span class="bar-label">1856</span><span class="bar-track"><span class="bar-fill" style="width: 8%"></span></span><span class="bar-value">100</span></p>
+</div>
+<div class="bar-row fragment">
+<p><span class="bar-label">1850</span><span class="bar-track"><span class="bar-fill" style="width: 7%"></span></span><span class="bar-value">90</span></p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>Nächste Klicks: Genre vergleichen, einzelne Jahre öffnen, andere Lemmata testen.</p>
+</div>
+</section>
+<section id="frequency-beispiel-im-ui" class="slide level2">
+<h2>Frequency-Beispiel im UI</h2>
+<aside class="notes">
+<p>39-40</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="screenshot-frame screenshot-full">
+<img src="assets/screenshots/textlab/03-frequency-demokratie.png" alt="TextLab frequency chart for Demokratie by year" class="screenshot-wide">
+<div class="screenshot-caption">
+Aus einer Query wird eine Zeitreihe; aus der Zeitreihe entstehen neue Vergleichsfragen.
+</div>
+</div>
+</section>
+<section id="live-demo-1-dta" class="slide level2">
+<h2>Live-Demo 1: DTA</h2>
+<aside class="notes">
+<p>40-45</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="exercise-brief">
+<div class="exercise-main">
+<p><strong>Startpfad</strong></p>
+<p><code>dta_full_uncapped</code> · <code>[lemma="Demokratie"]</code></p>
+</div>
+<div class="exercise-steps">
+<ol type="1">
+<li>Query ausführen und Trefferzahl notieren: ca. <code>2.486</code>.<br></li>
+<li>Zwei KWIC-Zeilen lesen: Was ist der Treffer?<br></li>
+<li>Frequency nach <code>year</code>: Peak <code>1848</code>.<br></li>
+<li>Optional: Genre, Collocations oder eine zweite Query ausprobieren.</li>
+</ol>
+</div>
+</div>
+<div class="status-note">
+<p>Sprechspur: Eine Query kann nacheinander als KWIC, Zeitreihe, Vergleich und Explorationspfad genutzt werden.</p>
+</div>
+</section>
+<section id="hands-on-1" class="slide level2">
+<h2>Hands-on 1</h2>
+<aside class="notes">
+<p>45-60</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="exercise-brief">
+<div class="exercise-main">
+<p><strong>Output</strong></p>
+<p>Eine kleine Exploration zu einer DTA-Query.</p>
+</div>
+<div class="exercise-steps">
+<ol type="1">
+<li>Korpus: <code>dta_full_uncapped</code><br></li>
+<li>Query: <code>[lemma="Demokratie"]</code> oder <code>[lemma="Freiheit"]</code><br></li>
+<li>KWIC kurz scannen<br></li>
+<li>Frequency nach <code>year</code> anschauen<br></li>
+<li>eine Anschlussfrage notieren: anderes Lemma, Genre, Kollokation?</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="teil-2-von-muster-zu-modell" class="slide level2 section-slide">
+<h2>Teil 2: Von Muster zu Modell</h2>
+<aside class="notes">
+<p>60</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="section-question">
+<p>Was passiert, wenn wir vergleichen, explorieren und modellgestützt klassifizieren?</p>
+</div>
+</section>
+<section id="reddit-als-kontrast" class="slide level2">
+<h2>Reddit als Kontrast</h2>
+<aside class="notes">
+<p>60-63</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="question-pair">
+<div class="question-card fragment">
+<h3 id="dta">DTA</h3>
+<ul>
+<li>historischer Korpus-Snapshot</li>
+<li>Werk- und Editionslogik</li>
+<li>diachrone Verteilungen</li>
+<li>Begriffsgeschichte, Medienwandel, Register</li>
+</ul>
+</div>
+<div class="question-card fragment">
+<h3 id="reddit">Reddit</h3>
+<ul>
+<li>Plattform- und Community-Daten</li>
+<li>Subreddit- und Moderationslogik</li>
+<li>Gegenwartssprache, Meme- und Kommentarformate</li>
+<li>Community-Kontraste und Alltagssprache</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="reddit-livedemo" class="slide level2">
+<h2>Reddit-Livedemo</h2>
+<aside class="notes">
+<p>63-68</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="exercise-brief">
+<div class="exercise-main">
+<p><strong>Deutsch</strong></p>
+<p><code>German Reddit</code> · <code>[lemma="deutsch"]</code> · Group by <code>subreddit</code></p>
+<p>Smoke-Wert: <code>33.122</code> Treffer; Top: <code>de</code>, <code>ich_iel</code>, <code>FragReddit</code>.</p>
+</div>
+<div class="exercise-steps">
+<p><strong>Englisch</strong></p>
+<p><code>English Reddit</code> · <code>[word="Wales"]</code> · Group by <code>subreddit</code></p>
+<p>Smoke-Wert: <code>46.003</code> Treffer; Top: <code>Wales</code>, <code>Scotland</code>, <code>AskUK</code>.</p>
+</div>
+</div>
+<div class="warning-card">
+<p>Reddit ist methodisch interessant, weil Sprache hier an Communities, Plattformregeln, Meme-Formate und Moderation gekoppelt ist.</p>
+</div>
+</section>
+<section id="beispielpalette" class="slide level2">
+<h2>Beispielpalette</h2>
+<aside class="notes">
+<p>68-70</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="tool-facts">
+<div class="tool-fact fragment">
+<p><strong>DTA</strong><br> <code>[lemma="Demokratie"]</code>, <code>[lemma="Freiheit"]</code>, <code>[word="Teutsch.*"]</code> nach Jahr.</p>
+</div>
+<div class="tool-fact fragment">
+<p><strong>COHA</strong><br> <code>[lemma="computer"]</code>, <code>[lemma="radio"]</code>, <code>[lemma="automobile"]</code> nach Dekade und Genre.</p>
+</div>
+<div class="tool-fact fragment">
+<p><strong>Reddit</strong><br> <code>[lemma="deutsch"]</code>, <code>[word="Wales"]</code>, Community-Vergleiche nach Subreddit.</p>
+</div>
+</div>
+<div class="caption-note">
+<p>Die Vorlesung muss nicht jede Query ausinterpretieren; wichtiger ist die Bandbreite der Analyseoperationen.</p>
+</div>
+</section>
+<section id="coha-bridge" class="slide level2">
+<h2>COHA als Brückenkorpus</h2>
+<aside class="notes">
+<p>70-72</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="question-pair">
+<div class="question-card">
+<h3>
+Warum interessant?
+</h3>
+<ul>
+<li>
+historisches Englisch von 1810 bis 2010er Jahre
+</li>
+<li>
+Genres: Fiction, Magazine, Newspaper, Non-fiction
+</li>
+<li>
+lemmatisiert und POS-getaggt
+</li>
+<li>
+gute Brücke zwischen DTA und Gegenwartskorpora
+</li>
+</ul>
+</div>
+<div class="question-card">
+<h3>
+Demo-Ideen
+</h3>
+<ul>
+<li>
+<code>[lemma=“computer”]</code>: Aufstieg ab den 1960/70ern
+</li>
+<li>
+<code>[lemma=“radio”]</code>: Mediengeschichte im 20. Jahrhundert
+</li>
+<li>
+<code>[lemma=“automobile”]</code> vs.&nbsp;<code>[lemma=“car”]</code>: lexikalische Konkurrenz
+</li>
+<li>
+Gruppierung nach <code>year</code>, <code>decade</code> oder <code>genre</code>
+</li>
+</ul>
+</div>
+</div>
+<div class="caption-note">
+<p>Guter Didaktikpunkt: Bei <code>computer</code> sieht man lexikalischen Wandel und ältere Personenbedeutungen sehr schnell im selben Workflow.</p>
+</div>
+</section>
+<section id="kollokationen" class="slide level2">
+<h2>Kollokationen</h2>
+<aside class="notes">
+<p>72-74</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="method-detail">
+<div class="detail-panel">
+<div class="panel-title">
+Was kann man damit machen?
+</div>
+<p>Typische lexikalische Nachbarschaften eines Suchtreffers explorieren.</p>
+</div>
+<div class="detail-panel">
+<div class="panel-title">
+Technisch
+</div>
+<p>TextLab zählt Kandidaten in KWIC-Fenstern oder Indexgruppen und sortiert nach Frequenz oder Assoziationsscore.</p>
+</div>
+<div class="example-panel">
+<div class="panel-title">
+Parameter
+</div>
+<p>Fenstergröße, Mindestfrequenz, Lemma/Wortform und Score steuern, welche Nachbarschaften sichtbar werden.</p>
+</div>
+</div>
+</section>
+<section id="collocation-beispiel" class="slide level2">
+<h2>Collocation-Beispiel</h2>
+<aside class="notes">
+<p>74</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="screenshot-frame screenshot-full">
+<img src="assets/screenshots/textlab/05-collocations-demokratie.png" alt="TextLab collocation analysis for Demokratie" class="screenshot-wide">
+<div class="screenshot-caption">
+Kollokationen machen typische sprachliche Umgebungen sichtbar und liefern sofort neue Suchideen.
+</div>
+</div>
+</section>
+<section id="word-sketches" class="slide level2">
+<h2>Word Sketches</h2>
+<aside class="notes">
+<p>74-76</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="method-detail">
+<div class="detail-panel">
+<div class="panel-title">
+Was kann man damit machen?
+</div>
+<p>Grammatische Umgebungen eines Lemmas zusammenfassen: Modifikatoren, Verben, nominale Partner, Präpositionen.</p>
+</div>
+<div class="detail-panel">
+<div class="panel-title">
+Technisch
+</div>
+<p>Dependency-Annotationen werden zu Relationengruppen verdichtet; Ergebnisse sind explorative Kandidaten.</p>
+</div>
+<div class="example-panel">
+<div class="panel-title">
+Demo-Idee
+</div>
+<p>Ein Lemma wird zu einer kleinen Karte typischer Subjekt-, Objekt- und Modifikatorbeziehungen.</p>
+</div>
+</div>
+</section>
+<section id="word-sketch-beispiel" class="slide level2">
+<h2>Word-Sketch-Beispiel</h2>
+<aside class="notes">
+<p>72</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="screenshot-frame screenshot-full">
+<img src="assets/screenshots/textlab/04-word-sketch-demokratie.png" alt="TextLab Word Sketch relation groups for Demokratie" class="screenshot-wide">
+<div class="screenshot-caption">
+Word Sketches verdichten viele Treffer zu Relationstypen und Beispielpfaden.
+</div>
+</div>
+</section>
+<section id="semantische-module" class="slide level2">
+<h2>Semantische Module</h2>
+<aside class="notes">
+<p>72-75</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="outlook-grid">
+<div class="outlook-card is-ready fragment">
+<h3 id="semantic-analysis">Semantic Analysis</h3>
+<p>KWIC-Kontexte werden als Embeddings repräsentiert, geclustert und projiziert.</p>
+</div>
+<div class="outlook-card fragment">
+<h3 id="semantic-search">Semantic Search</h3>
+<p>Eine Frage wird eingebettet; TextLab sucht semantisch ähnliche Segmente im RAG-Index.</p>
+</div>
+<div class="outlook-card fragment">
+<h3 id="llm-classification">LLM Classification</h3>
+<p>Ein Labelschema wird auf Treffer, Passagen oder Dokumente angewendet: Genre, Position, Haltung, Thema.</p>
+</div>
+<div class="outlook-card fragment">
+<h3 id="annotation">Annotation</h3>
+<p>Manuelle und assistierte Labels machen Suchergebnisse zu Trainings- und Vergleichsdaten.</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>Der interessante DH-Punkt: dieselben Korpora können zugleich Suchindex, Statistikbasis, Embedding-Raum und Annotationsdatenbank sein.</p>
+</div>
+</section>
+<section id="annotation-und-llms" class="slide level2">
+<h2>Annotation und LLMs</h2>
+<aside class="notes">
+<p>75</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="screenshot-frame screenshot-full">
+<img src="assets/screenshots/textlab/06-annotation-task.png" alt="TextLab annotation task created from concordance evidence" class="screenshot-wide">
+<div class="screenshot-caption">
+Annotation macht aus Treffern strukturierte Daten: Labels, Beispiele, Review und später Vergleichbarkeit.
+</div>
+</div>
+</section>
+<section id="suche-als-reproduzierbare-pipeline" class="slide level2">
+<h2>Suche als reproduzierbare Pipeline</h2>
+<aside class="notes">
+<p>75-77</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="pipeline-flow">
+<div class="pipeline-step fragment">
+<p><strong>1 Text types</strong><br> Korpus/Filter festlegen</p>
+</div>
+<div class="pipeline-step fragment">
+<p><strong>2 Query</strong><br> Trefferraum erzeugen</p>
+</div>
+<div class="pipeline-step fragment">
+<p><strong>3 Sample / Sort</strong><br> Auswahl und Ansicht dokumentieren</p>
+</div>
+<div class="pipeline-step fragment">
+<p><strong>4 Analysis</strong><br> KWIC, Frequency, Collocation, Label</p>
+</div>
+</div>
+<div class="callout-fragment fragment">
+<p>Perspektive für TextLab: Such- und Analyseoperationen sollten als sichtbare, reproduzierbare Schrittfolge speicherbar werden.</p>
+</div>
+</section>
+<section id="von-demo-zu-forschungsfrage" class="slide level2">
+<h2>Von Demo zu Forschungsfrage</h2>
+<aside class="notes">
+<p>77-80</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="finding-compare finding-compare-3">
+<div class="weak-finding fragment">
+<h3 id="schwach">Schwach</h3>
+<p><code>computer</code> nimmt im 20. Jahrhundert zu.</p>
+</div>
+<div class="better-finding fragment">
+<h3 id="interessanter">Interessanter</h3>
+<p>In COHA zeigt <code>[lemma="computer"]</code> frühe Personenbedeutungen und später technische Bedeutungen; nach <code>decade</code> sieht man den Bedeutungs- und Technologiewandel.</p>
+</div>
+<div class="researchable-finding fragment">
+<h3 id="anschlussfähig">Anschlussfähig</h3>
+<p>Nächste Schritte: <code>computer</code> mit <code>radio</code>, <code>television</code>, <code>internet</code> vergleichen; Genreeffekte prüfen; KWIC-Beispiele als Annotation-Set sammeln.</p>
+</div>
+</div>
+</section>
+<section id="reproduzierbarer-workflow" class="slide level2">
+<h2>Reproduzierbarer Workflow</h2>
+<aside class="notes">
+<p>80-82</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="documentation-grid">
+<div class="documentation-card fragment">
+<p><strong>Frage</strong></p>
+<p>Welche Exploration oder Vergleichsfrage?</p>
+</div>
+<div class="documentation-card fragment">
+<p><strong>Operationalisierung</strong></p>
+<p>Was zählt als Treffer?</p>
+</div>
+<div class="documentation-card fragment">
+<p><strong>Korpus</strong></p>
+<p>Welche Version, Felder, Größe?</p>
+</div>
+<div class="documentation-card fragment">
+<p><strong>Modul</strong></p>
+<p>KWIC, Frequency, Collocation, Sketch, Semantic, LLM?</p>
+</div>
+<div class="documentation-card fragment">
+<p><strong>Output</strong></p>
+<p>Screenshot, Query, Tabelle, Label-Set, nächste Frage?</p>
+</div>
+</div>
+</section>
+<section id="referenzpunkte" class="slide level2">
+<h2>Referenzpunkte</h2>
+<aside class="notes">
+<p>80-82</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="resource-list">
+<div class="fragment">
+<p><strong>Korpuslinguistische Methode:</strong> <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>; <span class="citation" data-cites="biberConradReppen1998">Biber u.&nbsp;a. (<a href="#/literatur" role="doc-biblioref" onclick="">1998</a>)</span>; <span class="citation" data-cites="mceneryHardie2011">McEnery und Hardie (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Anwendung und Statistik:</strong> <span class="citation" data-cites="hunston2002">Hunston (<a href="#/literatur" role="doc-biblioref" onclick="">2002</a>)</span>; <span class="citation" data-cites="brezina2018">Brezina (<a href="#/literatur" role="doc-biblioref" onclick="">2018</a>)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Historische Korpora und COHA:</strong> <span class="citation" data-cites="davies2012coha">Davies (<a href="#/literatur" role="doc-biblioref" onclick="">2012</a>)</span></p>
+</div>
+<div class="fragment">
+<p><strong>DH-Datenkritik:</strong> <span class="citation" data-cites="drucker2011">Drucker (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span>; <span class="citation" data-cites="schoch2013">Schöch (<a href="#/literatur" role="doc-biblioref" onclick="">2013</a>)</span></p>
+</div>
+</div>
+</section>
+<section id="hands-on-2" class="slide level2">
+<h2>Hands-on 2</h2>
+<aside class="notes">
+<p>82-88</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="exercise-brief">
+<div class="exercise-main">
+<p><strong>Output</strong></p>
+<p>Eine kleine Demo-Karte zu einer Query oder einem Modul.</p>
+</div>
+<div class="exercise-steps">
+<ol type="1">
+<li>DTA, COHA oder Reddit wählen<br></li>
+<li>Query und Gruppierung notieren<br></li>
+<li>ein Modul ausprobieren: Frequency, Collocation oder Word Sketch<br></li>
+<li>ein auffälliges Muster oder Beispiel festhalten<br></li>
+<li>eine Anschlussfrage formulieren</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="mini-aussage-vorlage" class="slide level2">
+<h2>Mini-Aussage: Vorlage</h2>
+<aside class="notes">
+<p>82-88</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="template-card">
+<p>In Korpus <strong>X</strong> liefert Query <strong>Y</strong> mit Modul <strong>Z</strong> ein interessantes Muster: <strong>…</strong></p>
+<p>Ein Beispiel oder Bucket ist: <strong>…</strong></p>
+<p>Als nächstes würde ich testen: <strong>…</strong></p>
+</div>
+</section>
+<section id="plan-b" class="slide level2">
+<h2>Plan B</h2>
+<aside class="notes">
+<p>88-89</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p>Wenn TextLab oder das Netzwerk instabil ist:</p>
+<ul>
+<li class="fragment">Screenshots zeigen die Hauptschritte.</li>
+<li class="fragment">Die Live-Demo wird vorne gemeinsam durchgesprochen.</li>
+<li class="fragment">Die methodische Aufgabe bleibt unverändert.</li>
+</ul>
+<div class="callout-fragment">
+<p>Tools sind austauschbar; entscheidend ist die transparente Analyseoperation.</p>
+</div>
+</section>
+<section id="literatur" class="slide level2 smaller scrollable">
+<h2>Literatur</h2>
+<aside class="notes">
+<p>Backup</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-biberConradReppen1998" class="csl-entry" role="listitem">
+Biber, Douglas, Susan Conrad, und Randi Reppen. 1998. <em>Corpus Linguistics: Investigating Language Structure and Use</em>. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511804489">https://doi.org/10.1017/CBO9780511804489</a>.
+</div>
+<div id="ref-brezina2018" class="csl-entry" role="listitem">
+Brezina, Vaclav. 2018. <em>Statistics in Corpus Linguistics: A Practical Guide</em>. Cambridge University Press. <a href="https://doi.org/10.1017/9781316410899">https://doi.org/10.1017/9781316410899</a>.
+</div>
+<div id="ref-davies2012coha" class="csl-entry" role="listitem">
+Davies, Mark. 2012. <span>„Expanding horizons in historical linguistics with the 400-million word <span>C</span>orpus of <span>H</span>istorical <span>A</span>merican <span>E</span>nglish“</span>. <em>Corpora</em> 7: 121–57. <a href="https://doi.org/10.3366/cor.2012.0024">https://doi.org/10.3366/cor.2012.0024</a>.
+</div>
+<div id="ref-drucker2011" class="csl-entry" role="listitem">
+Drucker, Johanna. 2011. <span>„Humanities Approaches to Graphical Display“</span>. <em>Digital Humanities Quarterly</em> 5 (1). <a href="https://doi.org/10.63744/r4ysrh7ae534">https://doi.org/10.63744/r4ysrh7ae534</a>.
+</div>
+<div id="ref-hunston2002" class="csl-entry" role="listitem">
+Hunston, Susan. 2002. <em>Corpora in Applied Linguistics</em>. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139524773">https://doi.org/10.1017/CBO9781139524773</a>.
+</div>
+<div id="ref-mceneryHardie2011" class="csl-entry" role="listitem">
+McEnery, Tony, und Andrew Hardie. 2011. <em>Corpus Linguistics: Method, Theory and Practice</em>. Cambridge Textbooks in Linguistics. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511981395">https://doi.org/10.1017/CBO9780511981395</a>.
+</div>
+<div id="ref-schoch2013" class="csl-entry" role="listitem">
+Schöch, Christof. 2013. <span>„Big? Smart? Clean? Messy? Data in the Humanities“</span>. <em>Journal of Digital Humanities</em> 2 (3): 2–13. <a href="https://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/">https://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/</a>.
+</div>
+<div id="ref-sinclair1991" class="csl-entry" role="listitem">
+Sinclair, John. 1991. <em>Corpus, Concordance, Collocation</em>. Oxford University Press.
+</div>
+</div>
+</section>
+<section id="montag-checkliste" class="slide level2">
+<h2>Montag-Checkliste</h2>
+<aside class="notes">
+<p>Vor der Sitzung</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="checkpoint-list">
+<ul>
+<li>TextLab öffnen und Login mit dem Vorlesungsaccount testen.</li>
+<li>DTA: <code>[lemma="Demokratie"]</code> → KWIC → Frequency by <code>year</code> → ca. <code>2.486</code> Treffer.</li>
+<li>German Reddit: <code>[lemma="deutsch"]</code> → Frequency by <code>subreddit</code> → ca. <code>33.122</code> Treffer.</li>
+<li>English Reddit: <code>[word="Wales"]</code> → Frequency by <code>subreddit</code> → ca. <code>46.003</code> Treffer.</li>
+<li>Word Sketch/Collocations nur zeigen, wenn der DTA-Pfad stabil läuft.</li>
+<li>Semantic Search/LLM als Methodenblick, nicht als Live-Abhängigkeit.</li>
+</ul>
+</div>
+</section>
+<section id="schluss" class="slide level2">
+<h2>Schluss</h2>
+<aside class="notes">
+<p>89-90</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p>TextLab zeigt DH-Infrastruktur als Zusammenspiel aus Korpusarbeit, Softwarearchitektur, statistischer Verdichtung, Modellverfahren und interpretierender Rückbindung an Texte.</p>
+<div class="takeaway">
+<p>Die zentrale Kompetenz ist nicht, ein Tool zu bedienen, sondern Operationen so zu formulieren, dass sie als wissenschaftliche Entscheidungen diskutierbar werden.</p>
+</div>
+</section>
+<section id="takeaway" class="slide level2">
+<h2>Takeaway</h2>
+<aside class="notes">
+<p>90</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="takeaway-lines">
+<div>
+<p>Korpus kennen.</p>
+</div>
+<div>
+<p>Methoden kombinieren.</p>
+</div>
+<div>
+<p>Nächste Frage finden.</p>
+</div>
+</div>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Kopiert");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Kopiert");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
