@@ -46,34 +46,83 @@ Welche Infrastruktur macht diese Methoden als Workflow nutzbar?
 :::
 :::
 
-::: {.callout-fragment .fragment}
+::: {.callout-fragment .question-summary .fragment}
 TextLab ist heute zugleich Werkzeug, Fallbeispiel und Blick in eine DH-Infrastruktur.
 :::
 
-## Das zentrale Argument
+## Heute: sechs Dinge, die TextLab zeigt
 
 ::: {.notes}
 4-6
 :::
 
-::: {.takeaway-lines}
-::: {}
-Keine Suche ohne Korpusmodell.
+::: {.demo-palette}
+::: {.demo-card .fragment}
+**1 Belege öffnen**<br>
+KWIC, Kontext, Dokumentdetails
 :::
 
-::: {}
-Keine Zahl ohne Datenmodell.
+::: {.demo-card .fragment}
+**2 Verteilungen sehen**<br>
+Jahr, Genre, Subreddit, Texttyp
 :::
 
-::: {}
-Keine Methode ohne sichtbaren Workflow.
+::: {.demo-card .fragment}
+**3 Nachbarschaften finden**<br>
+Kollokationen und Beispielkontexte
+:::
+
+::: {.demo-card .fragment}
+**4 grammatische Profile bauen**<br>
+Word Sketches aus Annotationen
+:::
+
+::: {.demo-card .fragment}
+**5 semantisch explorieren**<br>
+Embeddings, Cluster, Search
+:::
+
+::: {.demo-card .fragment}
+**6 Treffer annotieren**<br>
+Labels, LLMs, Review, Export
 :::
 :::
 
-## Was ist Korpuslinguistik?
+::: {.callout-fragment .fragment}
+Das Motto für morgen: erst zeigen, was möglich ist; danach erklären, welche Daten- und Softwareentscheidungen das möglich machen.
+:::
+
+## Was ist TextLab?
 
 ::: {.notes}
 6-8
+:::
+
+::: {.tool-facts}
+::: {.tool-fact .fragment}
+**Arbeitsumgebung**<br>
+Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, semantische Suche und Annotation.
+:::
+
+::: {.tool-fact .fragment}
+**Infrastruktur**<br>
+React-Frontend, FastAPI-Backend, BlackLab-Indizes, Analysejobs und Registry-Konfiguration.
+:::
+
+::: {.tool-fact .fragment}
+**Methode**<br>
+Dieselben Daten lassen sich als KWIC, Zeitreihe, Kollokationsprofil, semantischer Raum oder Label-Set betrachten.
+:::
+:::
+
+::: {.callout-fragment .fragment}
+TextLab ist interessant, weil Datenmodellierung und Analysewerkzeuge in einer Oberfläche zusammenkommen.
+:::
+
+## Korpuslinguistik als Werkzeugkasten
+
+::: {.notes}
+8-10
 :::
 
 ::: {.method-detail}
@@ -100,7 +149,7 @@ Korpora sind keine Rohdaten, sondern modellierte Quellen: Auswahl, Metadaten, An
 Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; angewandte Perspektive: @hunston2002.
 :::
 
-## Wozu ist das gut?
+## Was kann man damit machen?
 
 ::: {.notes}
 8-10
@@ -108,26 +157,26 @@ Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; angewandt
 
 ::: {.tool-facts}
 ::: {.tool-fact .fragment}
-**Kontext finden**<br>
-Konkordanzen machen viele Belege schnell lesbar.
+**Belege öffnen**<br>
+Aus einer Query werden sofort KWIC-Zeilen, Detailansichten und zitierbare Beispiele.
 :::
 
 ::: {.tool-fact .fragment}
-**Variation vergleichen**<br>
-Treffer lassen sich nach Zeit, Genre, Register, Region oder Community gruppieren.
+**Muster vergleichen**<br>
+Treffer lassen sich nach Zeit, Genre, Register, Region oder Community gruppieren und visualisieren.
 :::
 
 ::: {.tool-fact .fragment}
-**Hypothesen prüfen**<br>
-Frequenzen und Kollokationen machen erwartete und unerwartete Muster kontrollierbar.
+**Module kombinieren**<br>
+Frequency, Collocations, Word Sketches, Semantic Search, Annotation und LLMs bauen auf demselben Trefferraum auf.
 :::
 :::
 
 ::: {.callout-fragment .fragment}
-Korpuslinguistik ersetzt Interpretation nicht. Sie macht Suchräume, Muster und Gegenbelege expliziter.
+Heute geht es um Bandbreite: Daten ausprobieren, Muster sichtbar machen und verstehen, wie die Tools dafür gebaut sind.
 :::
 
-## Grundoperationen
+## Modulpalette: derselbe Trefferraum
 
 ::: {.notes}
 10-12
@@ -181,13 +230,13 @@ Zu Konkordanz/Kollokation: @sinclair1991; zu Frequenz und Statistik: @mceneryHar
 
 ::: {.schedule-items}
 ::: {.schedule-item}
-<span>0-10</span> **Einstieg** <em>TextLab als DH-Korpuslabor.</em>
+<span>0-10</span> **Einstieg** <em>Was kann TextLab live zeigen?</em>
 :::
 ::: {.schedule-item}
-<span>10-25</span> **Infrastruktur** <em>Architektur, Registry, Ingestion.</em>
+<span>10-25</span> **Daten + Infrastruktur** <em>Warum Korpora und Registry die Module tragen.</em>
 :::
 ::: {.schedule-item}
-<span>25-45</span> **Live-Demo** <em>DTA: Query, KWIC, Frequenz, Varianten.</em>
+<span>25-45</span> **Live-Demo** <em>DTA: Query, KWIC, Frequenz, nächste Frage.</em>
 :::
 ::: {.schedule-item .is-main}
 <span>45-60</span> **Hands-on** <em>Dieselbe Pipeline selbst nachvollziehen.</em>
@@ -216,7 +265,7 @@ Zu Konkordanz/Kollokation: @sinclair1991; zu Frequenz und Statistik: @mceneryHar
 Regel für Montag: DTA ist der gemeinsame Startpunkt; Reddit, COHA und KI-Module zeigen die methodische Bandbreite.
 :::
 
-## Kernpfad der Vorlesung
+## Kernpfad: aus einer Query wird mehr
 
 ::: {.notes}
 8-10
@@ -225,36 +274,36 @@ Regel für Montag: DTA ist der gemeinsame Startpunkt; Reddit, COHA und KI-Module
 ::: {.workflow .core-workflow}
 ::: {.workflow-step .is-dark .fragment}
 **1**<br>
-Frage operationalisieren<br>
-<span>Was zählt als Treffer?</span>
+Suchraum bauen<br>
+<span>Korpus + Query + Filter</span>
 :::
 
 ::: {.workflow-step .fragment}
 **2**<br>
-Query ausführen<br>
-<span>Korpus, Query, Trefferzahl notieren</span>
+Belege öffnen<br>
+<span>KWIC, Detail, Dokument</span>
 :::
 
 ::: {.workflow-step .fragment}
 **3**<br>
-KWIC scannen<br>
-<span>Kontexte, typische Verwendungen, Überraschungen</span>
+Muster sichtbar machen<br>
+<span>Jahr, Genre, Subreddit</span>
 :::
 
 ::: {.workflow-step .fragment}
 **4**<br>
-Metadaten vergleichen<br>
-<span>Jahr, Genre, Subreddit, Dokumenttyp</span>
+Module wechseln<br>
+<span>Collocation, Sketch, Semantic</span>
 :::
 
 ::: {.workflow-step .is-dark .fragment}
 **5**<br>
-Weiterarbeiten<br>
-<span>vergleichen, clustern, modellieren</span>
+Anschlussfrage finden<br>
+<span>vergleichen, annotieren, modellieren</span>
 :::
 :::
 
-## Laufendes Beispiel
+## Demo-Thread
 
 ::: {.notes}
 10-12
@@ -276,38 +325,11 @@ Die Treffer clustern stark um 1848.
 ::: {.case-card .fragment}
 ### Frage
 
-Was erlaubt dieses Muster zu behaupten, und was nicht?
+Welche nächste Analyse wird daraus: Genre, KWIC, Kollokation oder Vergleichslemma?
 :::
 :::
 
-## Was ist TextLab?
-
-::: {.notes}
-12-14
-:::
-
-::: {.tool-facts}
-::: {.tool-fact .fragment}
-**Arbeitsumgebung**<br>
-Suche, KWIC, Frequenzen, Kollokationen, Word Sketches, semantische Suche und Annotation.
-:::
-
-::: {.tool-fact .fragment}
-**Infrastruktur**<br>
-React-Frontend, FastAPI-Backend, BlackLab-Indizes, Analysejobs und Registry-Konfiguration.
-:::
-
-::: {.tool-fact .fragment}
-**Methode**<br>
-Dieselben Daten lassen sich als KWIC, Zeitreihe, Kollokationsprofil, semantischer Raum oder Label-Set betrachten.
-:::
-:::
-
-::: {.callout-fragment .fragment}
-TextLab ist interessant, weil Datenmodellierung und Analysewerkzeuge in einer Oberfläche zusammenkommen.
-:::
-
-## Ein Korpus ist eine bearbeitete Quelle
+## Ein Korpus ist ein Datenprodukt
 
 ::: {.notes}
 14-16
@@ -317,7 +339,7 @@ TextLab ist interessant, weil Datenmodellierung und Analysewerkzeuge in einer Ob
 ::: {.source-question .fragment}
 **Text**
 
-Was wurde gesammelt, transkribiert, normalisiert oder ausgeschlossen?
+Was wurde gesammelt, transkribiert, normalisiert und segmentiert?
 :::
 
 ::: {.source-question .fragment}
@@ -335,15 +357,15 @@ Welche Tokens, Lemmas, POS-Tags, Dependencies und Entitäten werden berechnet?
 ::: {.source-question .fragment}
 **Interface**
 
-Welche Resultatansichten machen Muster sichtbar oder unsichtbar?
+Welche Resultatansichten machen neue Operationen möglich?
 :::
 :::
 
 ::: {.callout-fragment .fragment}
-Korpuskritik erweitert Quellenkritik in die Suchoberfläche hinein.
+Der praktische Punkt: Je besser Datenmodell und Annotationen, desto interessanter werden Suche, Module und Demos.
 :::
 
-## Architektur in fünf Schichten
+## Wie ist das gebaut?
 
 ::: {.notes}
 16-18
@@ -400,7 +422,7 @@ API, UI, Module, Export, Annotation
 Die Registry ergänzt den Index: BlackLab bleibt Quelle für vorhandene Felder; die Registry beschreibt, wie diese Felder sinnvoll genutzt werden.
 :::
 
-## Warum Registry?
+## Warum Registry? Weil Module Felder brauchen
 
 ::: {.notes}
 18-20
@@ -410,17 +432,17 @@ Die Registry ergänzt den Index: BlackLab bleibt Quelle für vorhandene Felder; 
 ::: {.translation-step .fragment}
 **Problem**
 
-Attribute existieren technisch, aber ihre Bedeutung ist nicht automatisch klar.
+Attribute existieren technisch, aber die UI muss wissen, was sie bedeuten.
 :::
 
 ::: {.translation-step .fragment}
-**Risiko**
+**Ohne Registry**
 
-Query Builder, Dokumentation und QA driften auseinander.
+Query Builder, Korpusauswahl, Doku und QA driften auseinander.
 :::
 
 ::: {.translation-step .fragment}
-**Lösung**
+**Mit Registry**
 
 `corpora.yml` wird Single Source of Truth für Korpusprofile.
 :::
@@ -428,11 +450,11 @@ Query Builder, Dokumentation und QA driften auseinander.
 ::: {.translation-step .is-dark .fragment}
 **Nutzen**
 
-UI, Docs und Tests sprechen über dieselben Felder, Werte und Grenzen.
+Module können Vorschläge, Labels, Capabilities und bekannte Grenzen direkt aus derselben Quelle ziehen.
 :::
 :::
 
-## Korpus-Ingestion
+## Korpus-Ingestion: aus Daten wird ein Demo-Korpus
 
 ::: {.notes}
 20-23
@@ -639,7 +661,7 @@ Eine Trefferliste ist ein Einstiegspunkt: von dort aus geht es zu Frequenzen, Ko
 <div class="screenshot-caption">KWIC macht auf einen Blick sichtbar, in welchen Formulierungen und Dokumenttypen ein Treffer vorkommt.</div>
 </div>
 
-## Schnell kalibrieren
+## Schnell weiterdrehen
 
 ::: {.notes}
 33-35
@@ -647,23 +669,23 @@ Eine Trefferliste ist ein Einstiegspunkt: von dort aus geht es zu Frequenzen, Ko
 
 ::: {.truth-grid}
 ::: {.truth-card .fragment}
-**True positive**<br>
-relevanter Treffer
+**Guter Treffer**<br>
+Beleg öffnen
 :::
 
 ::: {.truth-card .fragment}
-**False positive**<br>
-technisch getroffen, aber interpretativ falsch
+**Auffälliges Muster**<br>
+gruppieren oder zählen
 :::
 
 ::: {.truth-card .fragment}
-**False negative**<br>
-relevant, aber von dieser Query verfehlt
+**Nächste Query**<br>
+Variante testen
 :::
 :::
 
 ::: {.reading-standard .fragment}
-Ein kurzer KWIC-Scan reicht oft, um danach schneller in Frequenzen und Module zu wechseln.
+Ein kurzer KWIC-Scan reicht oft, um danach schnell in Frequency, Collocations oder Word Sketches weiterzugehen.
 :::
 
 ## Frequency
@@ -1060,7 +1082,7 @@ KWIC, Frequency, Collocation, Label
 Perspektive für TextLab: Such- und Analyseoperationen sollten als sichtbare, reproduzierbare Schrittfolge speicherbar werden.
 :::
 
-## Von Demo zu Forschungsfrage
+## Von Demo zu Anschlussfrage
 
 ::: {.notes}
 77-80
@@ -1068,19 +1090,19 @@ Perspektive für TextLab: Such- und Analyseoperationen sollten als sichtbare, re
 
 ::: {.finding-compare .finding-compare-3}
 ::: {.weak-finding .fragment}
-### Schwach
+### Start
 
 `computer` nimmt im 20. Jahrhundert zu.
 :::
 
 ::: {.better-finding .fragment}
-### Interessanter
+### Demo-tauglich
 
 In COHA zeigt `[lemma="computer"]` frühe Personenbedeutungen und später technische Bedeutungen; nach `decade` sieht man den Bedeutungs- und Technologiewandel.
 :::
 
 ::: {.researchable-finding .fragment}
-### Anschlussfähig
+### Nächster Schritt
 
 Nächste Schritte: `computer` mit `radio`, `television`, `internet` vergleichen; Genreeffekte prüfen; KWIC-Beispiele als Annotation-Set sammeln.
 :::
@@ -1232,10 +1254,10 @@ Vor der Sitzung
 89-90
 :::
 
-TextLab zeigt DH-Infrastruktur als Zusammenspiel aus Korpusarbeit, Softwarearchitektur, statistischer Verdichtung, Modellverfahren und interpretierender Rückbindung an Texte.
+TextLab zeigt, wie aus Korpora konkrete Analysewege werden: suchen, vergleichen, verdichten, annotieren und mit Modellen weiterarbeiten.
 
 ::: {.takeaway}
-Die zentrale Kompetenz ist nicht, ein Tool zu bedienen, sondern Operationen so zu formulieren, dass sie als wissenschaftliche Entscheidungen diskutierbar werden.
+Der Gewinn liegt in der Kombination: gute Korpora, sichtbare Workflows und Module, die aus Treffern neue Fragen machen.
 :::
 
 ## Takeaway
@@ -1246,14 +1268,14 @@ Die zentrale Kompetenz ist nicht, ein Tool zu bedienen, sondern Operationen so z
 
 ::: {.takeaway-lines}
 ::: {}
-Korpus kennen.
+Daten wählen.
 :::
 
 ::: {}
-Methoden kombinieren.
+Query starten.
 :::
 
 ::: {}
-Nächste Frage finden.
+Module kombinieren.
 :::
 :::
