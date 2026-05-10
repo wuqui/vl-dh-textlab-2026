@@ -6,6 +6,19 @@
 quarto render
 ```
 
+## Quarto/RevealJS-Fallen
+
+- In `revealjs`-Folien keine Markdown-Überschriften (`#`, `##`, `###`, ...) innerhalb von Cards, Columns, Callouts, HTML-Blöcken oder anderen Container-Layouts verwenden.
+- Reveal interpretiert Markdown-Headings als Slide-/Section-Struktur. Besonders `###` innerhalb einer Folie kann als nested vertical section gerendert werden und die Navigation nach einigen Slides abbrechen oder auf `#1` zurückspringen lassen.
+- Für Card-interne Titel stattdessen HTML verwenden, z. B. `<h3>Live</h3>`, oder reine Markdown-Fettschrift wie `**Live**`, wenn kein semantisches Heading nötig ist.
+- Nach strukturellen Folienänderungen immer `quarto render` ausführen und im gerenderten HTML prüfen, ob keine unerwarteten nested Reveal-Sections entstanden sind. Ein schneller Check ist:
+
+```bash
+rg '<section[^>]*>\\s*<section' _site/slides/textlab-ringvorlesung.html
+```
+
+- Wenn die Navigation im Browser nach einer bestimmten Folie springt, zuerst die vorherige Folie auf interne Markdown-Headings in Cards/Columns prüfen.
+
 ## Live-Smoke 2026-05-09
 
 TextLab live:

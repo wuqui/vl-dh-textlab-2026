@@ -19,6 +19,7 @@
 - Externe deutschsprachige Texte verwenden reguläre Umlaute und `ß`.
 - Literaturangaben werden bei Bedarf über Quarto-native Citations in `references.bib` gepflegt.
 - Keine großen Korpora, BlackLab-Indizes oder Runtime-Daten in dieses Repo kopieren.
+- Vor größeren Folienänderungen die Quarto/RevealJS-Fallen in `.agents/runbook.md` prüfen; insbesondere keine Markdown-Headings innerhalb von Cards/Columns verwenden.
 
 ## Dateien in `.agents/`
 
