@@ -34,12 +34,12 @@ execute:
 ## Einstieg
 
 ::: {.notes}
-10:15-10:22
+10:16-10:18
 :::
 
 ::: {.question-pair}
 ::: {.question-card}
-**These**
+**TextLab**
 
 TextLab macht große Textsammlungen praktisch untersuchbar: als Belege, Verteilungen, Nachbarschaften, semantische Räume und Labels.
 :::
@@ -58,7 +58,7 @@ Wir nutzen TextLab doppelt: als Werkzeug für Beispiele und als Fallstudie für 
 ## Was TextLab als Operationen anbietet
 
 ::: {.notes}
-10:16-10:20
+10:18-10:20
 :::
 
 ::: {.demo-palette}
@@ -130,7 +130,7 @@ Das ist auch für DH-Programmierung relevant: Methode, Datenmodell und Softwared
 ## Architektur der App
 
 ::: {.notes}
-10:22-10:32
+10:22-10:25
 :::
 
 ::: {.callout-fragment}
@@ -140,7 +140,7 @@ Die zentrale Designidee: Einmal sauber kompilierte Korpora sollen viele Analyseo
 ::: {.architecture-flow}
 ::: {.architecture-step}
 **1 Rohdaten**<br>
-XML, Reddit, COHA, Text
+XML, csv, json, txt
 :::
 
 ::: {.architecture-arrow}
@@ -183,7 +183,7 @@ API, UI, Module, Jobs
 ## TextLab als Software-System
 
 ::: {.notes}
-10:25-10:29
+10:25-10:27
 :::
 
 ::: {.tool-facts}
@@ -213,7 +213,7 @@ Viele UI-Aktionen sind deshalb kleine Pipelines: Input validieren, API-Request b
 ## Corpus Registry: Korpuswissen als Konfiguration
 
 ::: {.notes}
-10:29-10:32
+10:27-10:29
 :::
 
 ::: {.translation-strip}
@@ -245,7 +245,7 @@ Docs und Tests können gegen dieselbe Quelle prüfen.
 ## Registry als Schnittstelle
 
 ::: {.notes}
-10:30-10:32
+10:29-10:31
 :::
 
 ```yaml
@@ -270,7 +270,7 @@ Ausschnitt aus `server/corpora.yml`: Die App behandelt Korpuswissen als Konfigur
 ## Korpuslinguistik
 
 ::: {.notes}
-10:32-10:42
+10:31-10:34
 :::
 
 ::: {.method-detail}
@@ -300,7 +300,7 @@ Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; @hunston2
 ## Korpuslinguistik: Hintergrund
 
 ::: {.notes}
-10:32-10:42
+10:34-10:36
 :::
 
 ::: {.tool-facts}
@@ -333,7 +333,7 @@ Begriffe werden zu Suchmustern, Trefferräumen und kontrollierbaren Aggregatione
 ## Text wird zur Datenstruktur
 
 ::: {.notes}
-10:34-10:36
+10:36-10:39
 :::
 
 ::: {.tei-index-grid}
@@ -375,7 +375,7 @@ Korpussuche heißt: über Wortform, Lemma, Wortart, syntaktische Relation oder M
 ## Grundoperationen
 
 ::: {.notes}
-10:35-10:39
+10:39-10:41
 :::
 
 ::: {.workflow .core-workflow}
@@ -398,7 +398,7 @@ Treffer werden nach Annotationen oder Metadaten gruppiert.
 :::
 
 ::: {.workflow-step}
-**Collocation**
+**Collocations & Word Sketches**
 
 Nachbarwörter werden gezählt und bewertet.
 :::
@@ -413,7 +413,7 @@ Embeddings, Topics oder LLM-Labels ergänzen die Suchlogik.
 ## Operationalisierung
 
 ::: {.notes}
-10:39-10:42
+10:41-10:43
 :::
 
 ::: {.operationalization-grid}
@@ -449,7 +449,7 @@ KWIC-Zeilen, Frequenzen, Jahre, Genres, Communities, Kollokationen.
 ## Daten im TextLab
 
 ::: {.notes}
-10:42-10:52
+10:43-10:45
 :::
 
 ::: {.corpus-table}
@@ -461,14 +461,11 @@ KWIC-Zeilen, Frequenzen, Jahre, Genres, Communities, Kollokationen.
 | COHA | ca. 470M Tokens | historisches Englisch, Genres, 1820-2019 | Wie verändert sich Wortgebrauch über Dekaden? |
 :::
 
-::: {.caption-note}
-Tokenzahlen beschreiben die Korpusgröße; Trefferzahlen entstehen erst durch Query und Filter.
-:::
 
 ## Drei Korpuslogiken
 
 ::: {.notes}
-10:46-10:50
+10:45-10:47
 :::
 
 ::: {.tool-facts}
@@ -498,7 +495,7 @@ Die Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Be
 ## Korpuskompilierung
 
 ::: {.notes}
-10:52-11:02
+10:47-10:49
 :::
 
 ::: {.workflow}
@@ -542,7 +539,7 @@ Felder, Werte, Labels, Module, bekannte Grenzen.
 ## Was im Suchindex landet
 
 ::: {.notes}
-10:58-11:02
+10:49-10:51
 :::
 
 ```text
@@ -562,7 +559,7 @@ Der Index speichert Tokenattribute und Dokumentmetadaten zusammen. Dieselbe Quer
 ## Suchen
 
 ::: {.notes}
-11:02-11:12
+10:51-10:54
 :::
 
 ::: {.query-examples .query-examples-wide}
@@ -592,7 +589,7 @@ BCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa `genre =
 ## Code: Query Builder {.code-slide}
 
 ::: {.notes}
-11:04-11:08
+10:54-10:56
 :::
 
 ```ts
@@ -617,7 +614,7 @@ Ausschnitt aus `ui-textlab/src/lib/queryBuilder.ts`: Der UI-Builder erzeugt kein
 ## Wie ist Suche gebaut?
 
 ::: {.notes}
-11:04-11:08
+10:56-10:58
 :::
 
 ::: {.method-detail}
@@ -643,7 +640,7 @@ Der Index merkt sich auch die Tokenfolge. So kann die UI Treffer als KWIC-Kontex
 ## TextLab: Query Setup
 
 ::: {.notes}
-11:08-11:10
+10:58-10:59
 :::
 
 <div class="screenshot-frame screenshot-crop screenshot-query-crop">
@@ -654,7 +651,7 @@ Der Index merkt sich auch die Tokenfolge. So kann die UI Treffer als KWIC-Kontex
 ## Semantische Suche als zweite Suchlogik
 
 ::: {.notes}
-11:10-11:12
+10:59-11:01
 :::
 
 ::: {.method-detail}
@@ -680,7 +677,7 @@ Mehr Exploration, weniger exakt kontrollierbare Trefferdefinition.
 ## Semantic-Search-Beispiel
 
 ::: {.notes}
-11:10-11:12
+11:01-11:03
 :::
 
 ::: {.semantic-example}
@@ -697,7 +694,7 @@ Beispiel: Statt `[lemma="Maschine"]` sucht die Frage nach ähnlichen Passage-Vek
 ## Analyse I: Konkordanzen und Frequenzen
 
 ::: {.notes}
-11:12-11:25
+11:03-11:04
 :::
 
 ::: {.section-question}
@@ -707,7 +704,7 @@ Aus einer Query werden Belege, Verteilungen und Anschlussfragen.
 ## Concordance / KWIC
 
 ::: {.notes}
-11:12-11:15
+11:04-11:06
 :::
 
 ::: {.method-detail}
@@ -733,7 +730,7 @@ Bedeutungsvarianten, typische Konstruktionen, ungewöhnliche Treffer und Fehler 
 ## Concordance-Beispiel
 
 ::: {.notes}
-11:15-11:16
+11:06-11:07
 :::
 
 <div class="screenshot-frame screenshot-full">
@@ -744,7 +741,7 @@ Bedeutungsvarianten, typische Konstruktionen, ungewöhnliche Treffer und Fehler 
 ## Frequency
 
 ::: {.notes}
-11:16-11:20
+11:07-11:09
 :::
 
 ::: {.method-detail}
@@ -770,7 +767,7 @@ Variation, Wandel und Unterschiede zwischen Korpusteilen werden sichtbar.
 ## Frequency-Beispiel im UI
 
 ::: {.notes}
-11:20-11:21
+11:09-11:10
 :::
 
 <div class="screenshot-frame screenshot-full screenshot-crop">
@@ -781,7 +778,7 @@ Variation, Wandel und Unterschiede zwischen Korpusteilen werden sichtbar.
 ## Beispielpalette für Live-Fragen
 
 ::: {.notes}
-11:21-11:25
+11:10-11:12
 :::
 
 ::: {.demo-palette}
@@ -825,7 +822,7 @@ Dasselbe Prinzip wäre auch ein API-Call: Query, Group-by, Response, Chart.
 ## Hands-on 1
 
 ::: {.notes}
-11:25-11:32
+11:12-11:23
 :::
 
 ::: {.exercise-brief}
@@ -858,7 +855,7 @@ Ziel ist nicht die perfekte Interpretation, sondern ein Gefühl dafür, wie Quer
 ## Analyse II: Exploration und KI
 
 ::: {.notes}
-11:32-11:40
+11:23-11:24
 :::
 
 ::: {.section-question}
@@ -868,7 +865,7 @@ Explorative und KI-gestützte Module erweitern den Trefferraum: Nachbarschaften,
 ## Kollokationen
 
 ::: {.notes}
-11:32-11:34
+11:24-11:26
 :::
 
 ::: {.method-detail}
@@ -894,7 +891,7 @@ Typische Themen, feste Verbindungen, semantische Prosodie und überraschende Nac
 ## Kollokationen als Algorithmus
 
 ::: {.notes}
-11:33-11:34
+11:26-11:27
 :::
 
 ::: {.workflow .core-workflow}
@@ -932,7 +929,7 @@ Jeden Kandidaten zurück in KWIC prüfen.
 ## Collocation-Beispiel
 
 ::: {.notes}
-11:34
+11:27-11:28
 :::
 
 <div class="screenshot-frame screenshot-full screenshot-crop">
@@ -943,7 +940,7 @@ Jeden Kandidaten zurück in KWIC prüfen.
 ## Word Sketches
 
 ::: {.notes}
-11:34-11:36
+11:28-11:30
 :::
 
 ::: {.method-detail}
@@ -969,7 +966,7 @@ Nicht nur “welche Wörter stehen nah?”, sondern “in welcher grammatischen 
 ## Word Sketches als Datenmodell
 
 ::: {.notes}
-11:35-11:36
+11:30-11:31
 :::
 
 | target | relation | candidate | evidence |
@@ -985,7 +982,7 @@ Der Unterschied zur Kollokation: Nicht nur lineare Nähe zählt, sondern eine sy
 ## Word-Sketch-Beispiel
 
 ::: {.notes}
-11:36
+11:31-11:32
 :::
 
 <div class="screenshot-frame screenshot-full">
@@ -996,7 +993,7 @@ Der Unterschied zur Kollokation: Nicht nur lineare Nähe zählt, sondern eine sy
 ## Embeddings und Clustering
 
 ::: {.notes}
-11:36-11:38
+11:32-11:34
 :::
 
 ::: {.method-detail}
@@ -1022,7 +1019,7 @@ Wie zeigt man semantische Nähe so, dass Nutzerinnen wieder zu Belegen zurückko
 ## Embedding-Workflow
 
 ::: {.notes}
-11:36-11:38
+11:34-11:36
 :::
 
 ::: {.pipeline-flow}
@@ -1114,7 +1111,7 @@ Das LLM ersetzt nicht die Analyse; es skaliert einen kontrollierten Annotationss
 ## Annotation-Beispiel
 
 ::: {.notes}
-11:39
+11:39-11:40
 :::
 
 <div class="screenshot-frame screenshot-full">
@@ -1125,7 +1122,7 @@ Das LLM ersetzt nicht die Analyse; es skaliert einen kontrollierten Annotationss
 ## AI Analysis
 
 ::: {.notes}
-11:39-11:40
+11:40-11:41
 :::
 
 ::: {.method-detail}
@@ -1151,7 +1148,7 @@ Agentische Hilfe darf den Workflow beschleunigen, muss aber Belege und Parameter
 ## Topic Modeling als Ausblick
 
 ::: {.notes}
-11:40
+11:41-11:42
 :::
 
 ::: {.method-detail}
@@ -1181,7 +1178,7 @@ Topic Modeling als probabilistisches Modell: @blei2003.
 ## Abschluss
 
 ::: {.notes}
-11:40-11:45
+11:42-11:43
 :::
 
 ::: {.pipeline-flow}
@@ -1213,7 +1210,7 @@ Belege prüfen, Vergleich bauen, Parameter dokumentieren.
 ## Reproduzierbare Analyse-Pipeline
 
 ::: {.notes}
-11:42-11:44
+11:43-11:44
 :::
 
 ::: {.documentation-grid}
