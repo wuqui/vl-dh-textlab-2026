@@ -7,7 +7,7 @@ format:
     transition: fade
     incremental: false
     smaller: true
-    css: ../assets/css/reveal.css
+    css: assets/css/reveal.css
     pointer:
       key: "q"
       color: "#0f766e"
@@ -21,7 +21,7 @@ revealjs-plugins:
 ## TextLab in den Digital Humanities {#title-slide .custom-title-slide background-color="#eef4f8"}
 
 
-<img class="title-logo" src="../assets/img/lmu-logo.png" alt="LMU-Logo">
+<img class="title-logo" src="assets/img/lmu-logo.png" alt="LMU-Logo">
 
 <div class="title-subtitle">Ringvorlesung Digital Humanities · LMU · Sommersemester 2026</div>
 
@@ -30,7 +30,7 @@ revealjs-plugins:
 <div class="title-email">q.wuerschinger@lmu.de</div>
 
 <div class="title-access">
-  <img src="../assets/img/textlab-vldh-qr.svg" alt="QR-Code für https://textlab.short.gy/vldh">
+  <img src="assets/img/textlab-vldh-qr.svg" alt="QR-Code für https://textlab.short.gy/vldh">
   <a href="https://textlab.short.gy/vldh">textlab.short.gy/vldh</a>
 </div>
 
@@ -604,7 +604,7 @@ Der Index merkt sich auch die Tokenfolge. So kann die UI Treffer als KWIC-Kontex
 
 
 <div class="screenshot-frame screenshot-crop screenshot-query-crop">
-<img src="../assets/screenshots/textlab/01-query-setup.png" alt="TextLab query setup with DTA corpus and a Demokratie query" class="screenshot-wide">
+<img src="assets/screenshots/textlab/01-query-setup.png" alt="TextLab query setup with DTA corpus and a Demokratie query" class="screenshot-wide">
 <div class="screenshot-caption">Der Query Builder macht Tokenattribute, Operatoren und Werte auswählbar; daraus entsteht die BCQL-Query für den Index.</div>
 </div>
 
@@ -644,7 +644,7 @@ Beispiel aus TextLab: Topic Modeling arbeitet auf Trefferlisten und macht Themen
 :::
 
 <div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/08-topic-modeling-crop.png" alt="TextLab topic modeling module with topic map, terms and metadata controls" class="screenshot-wide">
+<img src="assets/screenshots/textlab/08-topic-modeling-crop.png" alt="TextLab topic modeling module with topic map, terms and metadata controls" class="screenshot-wide">
 <div class="screenshot-caption">Topic Modeling: Query-konditionierte Topics, relevante Terme, Modellparameter und Metadata-/Time-Ansicht.</div>
 </div>
 :::
@@ -681,7 +681,7 @@ Beispiel: Statt `[lemma="Maschine"]` sucht die Frage nach ähnlichen Passage-Vek
 :::
 
 <div class="screenshot-frame">
-<img src="../assets/screenshots/textlab/07-semantic-search-results.png" alt="Semantic search results in TextLab" class="screenshot-wide">
+<img src="assets/screenshots/textlab/07-semantic-search-results.png" alt="Semantic search results in TextLab" class="screenshot-wide">
 <div class="screenshot-caption">Semantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht.</div>
 </div>
 :::
@@ -981,7 +981,7 @@ Der Unterschied zur Kollokation: Nicht nur lineare Nähe zählt, sondern eine sy
 
 
 <div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/04-word-sketch-demokratie.png" alt="TextLab word sketch for Demokratie" class="screenshot-wide">
+<img src="assets/screenshots/textlab/04-word-sketch-demokratie.png" alt="TextLab word sketch for Demokratie" class="screenshot-wide">
 <div class="screenshot-caption">Der Mehrwert entsteht aus der Kombination von Lemma, Dependency-Parse und Beispielbelegen.</div>
 </div>
 
@@ -1095,7 +1095,7 @@ Das LLM ersetzt nicht die Analyse; es skaliert einen kontrollierten Annotationss
 
 
 <div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/06-annotation-task.png" alt="TextLab annotation task interface" class="screenshot-wide">
+<img src="assets/screenshots/textlab/06-annotation-task.png" alt="TextLab annotation task interface" class="screenshot-wide">
 <div class="screenshot-caption">Labels werden erst wissenschaftlich brauchbar, wenn Schema, Beleg und Review sichtbar bleiben.</div>
 </div>
 

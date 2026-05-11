@@ -4,8 +4,7 @@ Vorbereitungsmaterialien für eine 90-minütige Vorlesung zur Vorstellung von Te
 
 ## Struktur
 
-- `index.qmd`: knappe Projekt-/Materialseite
-- `slides/textlab-ringvorlesung.qmd`: Hauptfolien
+- `index.qmd`: RevealJS-Hauptfolien
 - `assets/`: CSS, Bilder und vorläufige TextLab-Screenshots aus dem IDK-Workshop
 - `.agents/`: internes Projektmanagement und Arbeitsnotizen
 
