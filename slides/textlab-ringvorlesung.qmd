@@ -26,6 +26,11 @@ execute:
 
 <div class="title-email">q.wuerschinger@lmu.de</div>
 
+<div class="title-access">
+  <img src="../assets/img/textlab-vldh-qr.svg" alt="QR-Code für https://textlab.short.gy/vldh">
+  <a href="https://textlab.short.gy/vldh">textlab.short.gy/vldh</a>
+</div>
+
 ## 10:15-10:22 · Einstieg
 
 ::: {.notes}
