@@ -4,336 +4,343 @@
     "href": "slides/textlab-ringvorlesung.html#title-slide",
     "title": "TextLab in den Digital Humanities",
     "section": "TextLab in den Digital Humanities",
-    "text": "TextLab in den Digital Humanities\n\n10:15-10:16\n\n\n\nRingvorlesung Digital Humanities · LMU · Sommersemester 2026\n\n\nQuirin Würschinger · LMU München · 11. Mai 2026\n\n\nq.wuerschinger@lmu.de\n\n\n textlab.short.gy/vldh"
+    "text": "TextLab in den Digital Humanities\n\n\nRingvorlesung Digital Humanities · LMU · Sommersemester 2026\n\n\nQuirin Würschinger · LMU München · 11. Mai 2026\n\n\nq.wuerschinger@lmu.de\n\n\n textlab.short.gy/vldh"
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#einstieg",
     "href": "slides/textlab-ringvorlesung.html#einstieg",
     "title": "TextLab in den Digital Humanities",
     "section": "Einstieg",
-    "text": "Einstieg\n\n10:16-10:18\n\n\n\nTextLab\nTextLab macht große Textsammlungen praktisch untersuchbar: als Belege, Verteilungen, Nachbarschaften, semantische Räume und Labels.\n\n\nDH-Perspektive\nInteressant ist nicht nur das Ergebnis, sondern auch die Frage: Wie baut man so ein Tool?\n\n\n\nWir nutzen TextLab doppelt: als Werkzeug für Beispiele und als Fallstudie für DH-Software."
+    "text": "Einstieg\n\n\nTextLab\nTextLab macht große Textsammlungen praktisch untersuchbar: als Belege, Verteilungen, Nachbarschaften, semantische Räume und Labels.\n\n\nDH-Perspektive\nInteressant ist nicht nur das Ergebnis, sondern auch die Frage: Wie baut man so ein Tool?\n\n\n\nWir nutzen TextLab doppelt: als Werkzeug für Beispiele und als Fallstudie für DH-Software."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#was-textlab-als-operationen-anbietet",
     "href": "slides/textlab-ringvorlesung.html#was-textlab-als-operationen-anbietet",
     "title": "TextLab in den Digital Humanities",
     "section": "Was TextLab als Operationen anbietet",
-    "text": "Was TextLab als Operationen anbietet\n\n10:18-10:20\n\n\n\nBelege öffnen KWIC, Kontext, Dokumentdetails.\n\n\nVerteilungen sehen Jahr, Genre, Subreddit, Texttyp.\n\n\nNachbarschaften finden Kollokationen und Beispielkontexte.\n\n\nGrammatische Profile bauen Word Sketches aus Annotationen.\n\n\nSemantisch explorieren Embeddings, Cluster, Search.\n\n\nTreffer annotieren LLM Classification, Review, Export.\n\n\n\nLeitmotiv: Jede Operation ist ein Methodenangebot und zugleich eine technische Architekturentscheidung."
+    "text": "Was TextLab als Operationen anbietet\n\n\nBelege öffnen KWIC, Kontext, Dokumentdetails.\n\n\nVerteilungen sehen Jahr, Genre, Subreddit, Texttyp.\n\n\nNachbarschaften finden Kollokationen und Beispielkontexte.\n\n\nGrammatische Profile bauen Word Sketches aus Annotationen.\n\n\nSemantisch explorieren Embeddings, Cluster, Search.\n\n\nTreffer annotieren LLM Classification, Review, Export.\n\n\n\nLeitmotiv: Jede Operation ist ein Methodenangebot und zugleich eine technische Architekturentscheidung."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#jede-methode-hat-drei-schichten",
     "href": "slides/textlab-ringvorlesung.html#jede-methode-hat-drei-schichten",
     "title": "TextLab in den Digital Humanities",
     "section": "Jede Methode hat drei Schichten",
-    "text": "Jede Methode hat drei Schichten\n\n10:20-10:22\n\n\n\n\nDaten\n\nWelche Einheiten gibt es: Dokument, Satz, Token, Treffer, Metadatum, Annotation, Vektor, Label?\n\n\n\nMethode\n\nWie wird daraus ein Ergebnis: Indexsuche, Gruppierung, Fensterzählung, Dependency-Mapping, Vektorvergleich?\n\n\n\nInterface\n\nWelche kontrollierbare Handlung entsteht daraus: Query bauen, Treffer lesen, Parameter setzen, Ergebnis prüfen?\n\n\n\nDas ist auch für DH-Programmierung relevant: Methode, Datenmodell und Softwaredesign sind hier nicht getrennt."
+    "text": "Jede Methode hat drei Schichten\n\n\n\nDaten\n\nWelche Einheiten gibt es: Dokument, Satz, Token, Treffer, Metadatum, Annotation, Vektor, Label?\n\n\n\nMethode\n\nWie wird daraus ein Ergebnis: Indexsuche, Gruppierung, Fensterzählung, Dependency-Mapping, Vektorvergleich?\n\n\n\nInterface\n\nWelche kontrollierbare Handlung entsteht daraus: Query bauen, Treffer lesen, Parameter setzen, Ergebnis prüfen?\n\n\n\nDas ist auch für DH-Programmierung relevant: Methode, Datenmodell und Softwaredesign sind hier nicht getrennt; vgl. Schöch (2013); Drucker (2011)."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#architektur-der-app",
     "href": "slides/textlab-ringvorlesung.html#architektur-der-app",
     "title": "TextLab in den Digital Humanities",
     "section": "Architektur der App",
-    "text": "Architektur der App\n\n10:22-10:25\n\n\nDie zentrale Designidee: Einmal sauber kompilierte Korpora sollen viele Analyseoperationen tragen.\n\n\n\n1 Rohdaten XML, csv, json, txt\n\n\n→\n\n\n2 Korpusmodell Dokumente, Chunks, Metadaten\n\n\n→\n\n\n3 NLP Token, Lemma, POS, Dependencies, NER\n\n\n→\n\n\n4 Suchindex BlackLab, BCQL, KWIC, Groups\n\n\n→\n\n\n5 Anwendung API, UI, Module, Jobs"
+    "text": "Architektur der App\n\nDie zentrale Designidee: Einmal sauber kompilierte Korpora sollen viele Analyseoperationen tragen.\n\n\n\n1 Rohdaten XML, csv, json, txt\n\n\n→\n\n\n2 Korpusmodell Dokumente, Chunks, Metadaten\n\n\n→\n\n\n3 NLP Token, Lemma, POS, Dependencies, NER\n\n\n→\n\n\n4 Suchindex BlackLab, BCQL, KWIC, Groups\n\n\n→\n\n\n5 Anwendung API, UI, Module, Jobs"
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#textlab-als-software-system",
     "href": "slides/textlab-ringvorlesung.html#textlab-als-software-system",
     "title": "TextLab in den Digital Humanities",
     "section": "TextLab als Software-System",
-    "text": "TextLab als Software-System\n\n10:25-10:27\n\n\n\nFrontend\nReact: Korpusauswahl, Query Builder, Ergebnisansichten, Module, Settings.\n\n\nBackend\nFastAPI: Endpunkte für Suche, Schema, Frequenzen, Jobs, Annotation, KI-Workflows.\n\n\nSuchmaschine\nBlackLab: tokenbasierter Index, BCQL, Trefferpositionen, Kontext, Gruppierungen.\n\n\n\nViele UI-Aktionen sind deshalb kleine Pipelines: Input validieren, API-Request bauen, Index/Job ausführen, Resultat in eine lesbare Form bringen."
+    "text": "TextLab als Software-System\n\n\nFrontend · React\nKorpusauswahl, Query Builder, Ergebnisansichten, Module, Settings.\n\n\nBackend · FastAPI\nSchema, Suche, Frequenzen, Jobs, Annotation, KI-Workflows.\n\n\nBlackLab\nBCQL, Tokenpositionen, KWIC-Kontext, Gruppierungen.\n\n\nRegistry & Jobs\nKorpuswissen, Embeddings, Topics, LLM-Klassifikation, Exporte.\n\n\n\nViele UI-Aktionen sind kleine Pipelines: Input validieren, API-Request bauen, Index oder Job ausführen, Resultat in eine lesbare Form bringen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#corpus-registry-korpuswissen-als-konfiguration",
     "href": "slides/textlab-ringvorlesung.html#corpus-registry-korpuswissen-als-konfiguration",
     "title": "TextLab in den Digital Humanities",
     "section": "Corpus Registry: Korpuswissen als Konfiguration",
-    "text": "Corpus Registry: Korpuswissen als Konfiguration\n\n10:27-10:29\n\n\n\nIndex\nBlackLab weiß, welche Felder technisch vorhanden sind.\n\n\nRegistry\nTextLab weiß, was Felder bedeuten, welche Werte wichtig sind und welche Module sinnvoll sind.\n\n\nUI\nQuery Builder, Korpusauswahl und Filter bekommen dieselben Informationen.\n\n\nQA\nDocs und Tests können gegen dieselbe Quelle prüfen."
+    "text": "Corpus Registry: Korpuswissen als Konfiguration\n\n\nIndex\nBlackLab weiß, welche Felder technisch vorhanden sind.\n\n\nRegistry\nTextLab weiß, was Felder bedeuten, welche Werte wichtig sind und welche Module sinnvoll sind.\n\n\nUI\nQuery Builder, Korpusauswahl und Filter bekommen dieselben Informationen.\n\n\nQA\nDocs und Tests können gegen dieselbe Quelle prüfen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#registry-als-schnittstelle",
     "href": "slides/textlab-ringvorlesung.html#registry-als-schnittstelle",
     "title": "TextLab in den Digital Humanities",
     "section": "Registry als Schnittstelle",
-    "text": "Registry als Schnittstelle\n\n10:29-10:31\n\ncoha:\n  total_tokens: 472302948\n  annotations:\n    attributes: [word, lemma, tag]\n  metadata_fields:\n    - { key: year, label: Year }\n    - { key: genre, label: Genre }\n  value_options:\n    annotations:\n      tag: [nn1, jj, vv0, \"...\"]\n    metadata:\n      genre: [FIC, MAG, NEWS, NF]\n\nAusschnitt aus server/corpora.yml: Die App behandelt Korpuswissen als Konfiguration → single source of truth."
+    "text": "Registry als Schnittstelle\ncoha:\n  total_tokens: 472302948\n  annotations:\n    attributes: [word, lemma, tag]\n  metadata_fields:\n    - { key: year, label: Year }\n    - { key: genre, label: Genre }\n  value_options:\n    annotations:\n      tag: [nn1, jj, vv0, \"...\"]\n    metadata:\n      genre: [FIC, MAG, NEWS, NF]\n\nAusschnitt aus server/corpora.yml: Die App behandelt Korpuswissen als Konfiguration → single source of truth."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#korpuslinguistik",
     "href": "slides/textlab-ringvorlesung.html#korpuslinguistik",
     "title": "TextLab in den Digital Humanities",
     "section": "Korpuslinguistik",
-    "text": "Korpuslinguistik\n\n10:31-10:34\n\n\n\n\nKorpus\n\nEine dokumentierte, maschinenlesbare Textsammlung mit Auswahlkriterien und Metadaten.\n\n\n\nAnnotation\n\nZusätzliche Schichten über dem Text: Token, Lemma, Wortart, syntaktische Relation, Entität.\n\n\n\nTrefferraum\n\nEine Query erzeugt nicht einfach “die Antwort”, sondern eine Menge von Treffern, die weiter analysiert wird.\n\n\n\nGrundlagen: Sinclair (1991); Biber u. a. (1998); McEnery und Hardie (2011); Hunston (2002)."
+    "text": "Korpuslinguistik\n\n\n\nKorpus\n\nEine dokumentierte, maschinenlesbare Textsammlung mit Auswahlkriterien und Metadaten.\n\n\n\nAnnotation\n\nZusätzliche Schichten über dem Text: Token, Lemma, Wortart, syntaktische Relation, Entität.\n\n\n\nTrefferraum\n\nEine Query erzeugt nicht einfach “die Antwort”, sondern eine Menge von Treffern, die weiter analysiert wird.\n\n\n\nGrundlagen: Sinclair (1991); Biber u. a. (1998); McEnery und Hardie (2011); Hunston (2002)."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#korpuslinguistik-hintergrund",
     "href": "slides/textlab-ringvorlesung.html#korpuslinguistik-hintergrund",
     "title": "TextLab in den Digital Humanities",
     "section": "Korpuslinguistik: Hintergrund",
-    "text": "Korpuslinguistik: Hintergrund\n\n10:34-10:36\n\n\n\nEmpirie\nKorpora machen viele authentische Belege systematisch zugänglich.\n\n\nVariation\nZeit, Genre, Register, Region oder Community werden vergleichbar.\n\n\nOperationalisierung\nBegriffe werden zu Suchmustern, Trefferräumen und kontrollierbaren Aggregationen.\n\n\n\nSinclair 1991 Biber, Conrad & Reppen 1998 Hunston 2002 McEnery & Hardie 2011"
+    "text": "Korpuslinguistik: Hintergrund\n\n\nEmpirie\nKorpora machen viele authentische Belege systematisch zugänglich.\n\n\nVariation\nZeit, Genre, Register, Region oder Community werden vergleichbar.\n\n\nOperationalisierung\nBegriffe werden zu Suchmustern, Trefferräumen und kontrollierbaren Aggregationen.\n\n\n\nSinclair 1991 Biber, Conrad & Reppen 1998 Hunston 2002 McEnery & Hardie 2011"
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#text-wird-zur-datenstruktur",
     "href": "slides/textlab-ringvorlesung.html#text-wird-zur-datenstruktur",
     "title": "TextLab in den Digital Humanities",
     "section": "Text wird zur Datenstruktur",
-    "text": "Text wird zur Datenstruktur\n\n10:36-10:39\n\n\n\n&lt;TEI&gt;\n  &lt;teiHeader&gt;\n    &lt;titleStmt&gt;\n      &lt;title&gt;Die Freiheit bleibt umkämpft&lt;/title&gt;\n    &lt;/titleStmt&gt;\n  &lt;/teiHeader&gt;\n  &lt;text&gt;\n    &lt;body&gt;\n      &lt;p&gt;Die Freiheit bleibt umkämpft.&lt;/p&gt;\n    &lt;/body&gt;\n  &lt;/text&gt;\n&lt;/TEI&gt;\n\nTEI/XML beschreibt Text, Struktur und Metadaten. Für die Suche wird daraus ein Tokenstrom mit Annotationen.\n\n\n\n\n\n\npos\nword\nlemma\npos_tag\ndep_rel\nmetadata\n\n\n\n\n1\nDie\nder\nART\nnk\nyear=1848\n\n\n2\nFreiheit\nFreiheit\nNN\nsb\nyear=1848\n\n\n3\nbleibt\nbleiben\nVVFIN\nroot\nyear=1848\n\n\n4\numkämpft\numkämpft\nADJD\npd\nyear=1848\n\n\n\n\nKorpussuche heißt: über Wortform, Lemma, Wortart, syntaktische Relation oder Metadaten filtern."
+    "text": "Text wird zur Datenstruktur\n\n\n&lt;TEI&gt;\n  &lt;teiHeader&gt;\n    &lt;titleStmt&gt;\n      &lt;title&gt;Die Freiheit bleibt umkämpft&lt;/title&gt;\n    &lt;/titleStmt&gt;\n    &lt;profileDesc&gt;\n      &lt;creation&gt;&lt;date when=\"1848\"/&gt;&lt;/creation&gt;\n    &lt;/profileDesc&gt;\n  &lt;/teiHeader&gt;\n  &lt;text&gt;\n    &lt;body&gt;\n      &lt;p&gt;Die Freiheit bleibt umkämpft.&lt;/p&gt;\n    &lt;/body&gt;\n  &lt;/text&gt;\n&lt;/TEI&gt;\n\nTEI/XML beschreibt Text, Struktur und Metadaten. Für die Suche wird daraus ein Tokenstrom mit Annotationen.\n\n\n\n\n\n\npos\nword\nlemma\npos_tag\ndep_rel\nmetadata\n\n\n\n\n1\nDie\nder\nART\nnk\nyear=1848\n\n\n2\nFreiheit\nFreiheit\nNN\nsb\nyear=1848\n\n\n3\nbleibt\nbleiben\nVVFIN\nroot\nyear=1848\n\n\n4\numkämpft\numkämpft\nADJD\npd\nyear=1848\n\n\n\n\nKorpussuche heißt: über Wortform, Lemma, Wortart, syntaktische Relation oder Metadaten filtern."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#grundoperationen",
     "href": "slides/textlab-ringvorlesung.html#grundoperationen",
     "title": "TextLab in den Digital Humanities",
     "section": "Grundoperationen",
-    "text": "Grundoperationen\n\n10:39-10:41\n\n\n\nQuery\nKorpus, Tokenattribute und Filter definieren den Suchraum.\n\n\nKWIC\nTreffer werden mit linkem und rechtem Kontext lesbar.\n\n\nFrequency\nTreffer werden nach Annotationen oder Metadaten gruppiert.\n\n\nCollocations & Word Sketches\nNachbarwörter werden gezählt und bewertet.\n\n\nModeling\nEmbeddings, Topics oder LLM-Labels ergänzen die Suchlogik."
+    "text": "Grundoperationen\n\n\nQuery\nKorpus, Tokenattribute und Filter definieren den Suchraum.\n\n\nKWIC\nTreffer werden mit linkem und rechtem Kontext lesbar.\n\n\nFrequency\nTreffer werden nach Annotationen oder Metadaten gruppiert.\n\n\nCollocations & Word Sketches\nNachbarwörter werden gezählt und bewertet.\n\n\nModeling\nEmbeddings, Topics oder LLM-Labels ergänzen die Suchlogik."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#operationalisierung",
     "href": "slides/textlab-ringvorlesung.html#operationalisierung",
     "title": "TextLab in den Digital Humanities",
     "section": "Operationalisierung",
-    "text": "Operationalisierung\n\n10:41-10:43\n\n\n\nKonzept\nEin Begriff, ein Muster, eine historische Frage oder ein Vergleichsinteresse.\n\n\n→\n\n\nQuery\n[lemma=\"Demokratie\"]\nDas ist ein Suchweg, nicht der Begriff selbst.\n\n\n→\n\n\nTrefferraum\nKWIC-Zeilen, Frequenzen, Jahre, Genres, Communities, Kollokationen."
+    "text": "Operationalisierung\n\n\nKonzept\nEin Begriff, ein Muster, eine historische Frage oder ein Vergleichsinteresse.\n\n\n→\n\n\nQuery\n[lemma=\"Demokratie\"]\nDas ist ein Suchweg, nicht der Begriff selbst.\n\n\n→\n\n\nTrefferraum\nKWIC-Zeilen, Frequenzen, Jahre, Genres, Communities, Kollokationen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#daten-im-textlab",
     "href": "slides/textlab-ringvorlesung.html#daten-im-textlab",
     "title": "TextLab in den Digital Humanities",
     "section": "Daten im TextLab",
-    "text": "Daten im TextLab\n\n10:43-10:45\n\n\n\n\n\n\n\n\n\n\n\nKorpus\nGröße\nStärken für die Demo\nTypische Frage\n\n\n\n\nEnglish Reddit\n41.3M Tokens\nregionale Communities, Variation im Englischen\nWelche Themen und Wörter markieren Regionen?\n\n\nGerman Reddit\n61.2M Tokens\nGegenwartssprache, Subreddits, Plattformkommunikation\nWie unterscheiden sich Communities?\n\n\nDTA\n238.3M Tokens\nhistorisches Deutsch, Jahresmetadaten, stabile Belegarbeit\nWie verschieben sich politische Begriffe?\n\n\nCOHA\nca. 470M Tokens\nhistorisches Englisch, Genres, 1820-2019\nWie verändert sich Wortgebrauch über Dekaden?"
+    "text": "Daten im TextLab\n\n\n\n\n\n\n\n\n\n\nKorpus\nGröße\nStärken für die Demo\nTypische Frage\n\n\n\n\nEnglish Reddit\n41.3M Tokens\nregionale Communities, Variation im Englischen\nWelche Themen und Wörter markieren Regionen?\n\n\nGerman Reddit\n61.2M Tokens\nGegenwartssprache, Subreddits, Plattformkommunikation\nWie unterscheiden sich Communities?\n\n\nDTA\n238.3M Tokens\nhistorisches Deutsch, Jahresmetadaten, stabile Belegarbeit\nWie verschieben sich politische Begriffe?\n\n\nCOHA\nca. 470M Tokens\nhistorisches Englisch, Genres, 1820-2019\nWie verändert sich Wortgebrauch über Dekaden?\n\n\n\n\n\nCOHA als diachrones Referenzkorpus: Davies (2012)."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#drei-korpuslogiken",
     "href": "slides/textlab-ringvorlesung.html#drei-korpuslogiken",
     "title": "TextLab in den Digital Humanities",
     "section": "Drei Korpuslogiken",
-    "text": "Drei Korpuslogiken\n\n10:45-10:47\n\n\n\nDTA\nKanonisierte historische Texte, lange Dokumente, gute Zeitachse, philologisch vertraute Quellenlage.\n\n\nReddit\nViele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur, viel Gegenwartssprache.\n\n\nCOHA\nHistorisches Englisch, Genre- und Dekadenvergleich, stark für lexikalischen Wandel.\n\n\n\nDie Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Beispiele überzeugend sind."
+    "text": "Drei Korpuslogiken\n\n\nDTA\nKanonisierte historische Texte, lange Dokumente, gute Zeitachse. Beispiel: [lemma=\"Demokratie\"] nach year.\n\n\nReddit\nViele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur. Beispiel: Servus, Oida, wos nach subreddit.\n\n\nCOHA\nHistorisches Englisch, Genre- und Dekadenvergleich. Beispiel: computer, radio, telephone nach decade.\n\n\n\nDie Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Beispiele überzeugend sind."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#korpuskompilierung",
     "href": "slides/textlab-ringvorlesung.html#korpuskompilierung",
     "title": "TextLab in den Digital Humanities",
     "section": "Korpuskompilierung",
-    "text": "Korpuskompilierung\n\n10:47-10:49\n\n\n\n01 Auswahl\nZeitraum, Sprache, Quelle, Rechte, Sampling.\n\n\n02 Dokumentmodell\nWas ist ein Dokument, was ist ein Chunk, was bleibt Metadatum?\n\n\n03 Normalisierung\nText reinigen, strukturieren, persistieren.\n\n\n04 NLP\nTokenisierung, Lemma, POS, Dependency, NER.\n\n\n05 Index\nVertikalformat, BlackLab, Tokenattribute, Dokumentfelder.\n\n\n06 Registry\nFelder, Werte, Labels, Module, bekannte Grenzen."
+    "text": "Korpuskompilierung\n\n\n1 Auswahl\nZeitraum, Sprache, Quelle, Rechte, Sampling.\n\n\n2 Dokumentmodell\nWas ist ein Dokument, was ist ein Chunk, was bleibt Metadatum?\n\n\n3 Normalisierung\nText reinigen, strukturieren, persistieren.\n\n\n4 NLP\nTokenisierung, Lemma, POS, Dependency, NER.\n\n\n5 Index\nvereinfachtes Vertikalformat, BlackLab, Tokenattribute, Dokumentfelder.\n\n\n6 Registry\nFelder, Werte, Labels, Module, bekannte Grenzen."
   },
   {
-    "objectID": "slides/textlab-ringvorlesung.html#was-im-suchindex-landet",
-    "href": "slides/textlab-ringvorlesung.html#was-im-suchindex-landet",
+    "objectID": "slides/textlab-ringvorlesung.html#was-in-den-suchindex-geht",
+    "href": "slides/textlab-ringvorlesung.html#was-in-den-suchindex-geht",
     "title": "TextLab in den Digital Humanities",
-    "section": "Was im Suchindex landet",
-    "text": "Was im Suchindex landet\n\n10:49-10:51\n\n&lt;doc id=\"dta_1848_...\" year=\"1848\" genre=\"political\"&gt;\nword        lemma       pos     dep_rel\nDie         der         ART     nk\nFreiheit    Freiheit    NN      sb\nbleibt      bleiben     VVFIN   root\numkämpft    umkämpft    ADJD    pd\n&lt;/doc&gt;\n\nDer Index speichert Tokenattribute und Dokumentmetadaten zusammen. Dieselbe Query kann dadurch KWIC, Frequenzen, Kollokationen und Word Sketches antreiben."
+    "section": "Was in den Suchindex geht",
+    "text": "Was in den Suchindex geht\n&lt;doc id=\"dta_1848_...\" year=\"1848\" genre=\"political\"&gt;\nword        lemma       pos     dep_rel\nDie         der         ART     nk\nFreiheit    Freiheit    NN      sb\nbleibt      bleiben     VVFIN   root\numkämpft    umkämpft    ADJD    pd\n&lt;/doc&gt;\n\nDas ist ein vereinfachtes Lehrformat für den Import. BlackLab baut daraus einen Lucene-basierten Index mit Tokenannotationen, Vorwärtsindex für Kontext/KWIC und Dokumentmetadaten."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#suchen",
     "href": "slides/textlab-ringvorlesung.html#suchen",
     "title": "TextLab in den Digital Humanities",
     "section": "Suchen",
-    "text": "Suchen\n\n10:51-10:54\n\n\n[word=\"Haus\"]\n[lemma=\"Freiheit\"]\n[lemma=\"politisch\"] [lemma=\"Freiheit\"]\n[word=\"Teutsch.*\"]\n[pos=\"ADJA\"] [lemma=\"Demokratie\"]\n[lemma=\"Demokratie\" & dep_rel=\"sb\"]\n\n\nBCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa genre = Zeitung oder subreddit = ich_iel.\n\n\nBCQL/CQL BlackLab Query Language Multi-Token · Regex · POS · Dependencies · Texttypen"
+    "text": "Suchen\n\n\n\n\n\n\n\n\n\nQuery\nWas gefunden wird\nBeispiel\n\n\n\n\n[word=\"Haus\"]\nexakte Wortform\nSchreibweise im Text\n\n\n[lemma=\"Freiheit\"]\nalle Flexionsformen eines Lemmas\nFreiheit, Freiheiten\n\n\n[lemma=\"politisch\"] [lemma=\"Freiheit\"]\nSequenz aus zwei Tokenmustern\npolitische Freiheit\n\n\n[word=\"Teutsch.*\"]\nregulärer Ausdruck\nTeutsch, Teutsche\n\n\n[pos=\"ADJA\"] [lemma=\"Demokratie\"]\nWortart + Lemma\ndemokratische Demokratie?\n\n\n[lemma=\"Demokratie\" & dep_rel=\"sb\"]\nLemma mit syntaktischer Rolle\nDemokratie als Subjekt\n\n\n\n\n\nBCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa genre = Zeitung oder subreddit = ich_iel.\n\n\nBCQL/CQL BlackLab BlackLab Query Language Multi-Token · Regex · POS · Dependencies · Texttypen"
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#code-query-builder",
     "href": "slides/textlab-ringvorlesung.html#code-query-builder",
     "title": "TextLab in den Digital Humanities",
     "section": "Code: Query Builder",
-    "text": "Code: Query Builder\n\n10:54-10:56\n\nexport function buildProbeBcql(tokens, scopes, availableAnnotations = []) {\n  const available = new Set(availableAnnotations.map((v) =&gt; v.toLowerCase()));\n  const tokenParts = tokens.map((token) =&gt; {\n    const conditions = token.conditions.map((condition) =&gt; {\n      const attr = resolveProbeAttribute(condition.attribute, available);\n      const value = condition.value.replaceAll('\"', '\\\\\"').trim();\n      return value ? `${attr}${condition.operator}\"${value}\"` : null;\n    }).filter(Boolean);\n    return conditions.length ? `[${conditions.join(' & ')}]${token.quantifier}` : null;\n  });\n  return tokenParts.filter(Boolean).join(' ').trim();\n}\n\nAusschnitt aus ui-textlab/src/lib/queryBuilder.ts: Der UI-Builder erzeugt keine Magie, sondern eine kontrollierte BCQL-Zeichenkette."
+    "text": "Code: Query Builder\nexport function buildProbeBcql(tokens, scopes, availableAnnotations = []) {\n  const available = new Set(availableAnnotations.map((v) =&gt; v.toLowerCase()));\n  const tokenParts = tokens.map((token) =&gt; {\n    const conditions = token.conditions.map((condition) =&gt; {\n      const attr = resolveProbeAttribute(condition.attribute, available);\n      const value = condition.value.replaceAll('\"', '\\\\\"').trim();\n      return value ? `${attr}${condition.operator}\"${value}\"` : null;\n    }).filter(Boolean);\n    return conditions.length ? `[${conditions.join(' & ')}]${token.quantifier}` : null;\n  });\n  return tokenParts.filter(Boolean).join(' ').trim();\n}\n\nAusschnitt aus ui-textlab/src/lib/queryBuilder.ts: Der Query Builder übersetzt UI-Auswahlen in BCQL. Man muss die Suchsprache also nicht direkt schreiben, kann sie aber als reproduzierbare Form sehen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#wie-ist-suche-gebaut",
     "href": "slides/textlab-ringvorlesung.html#wie-ist-suche-gebaut",
     "title": "TextLab in den Digital Humanities",
     "section": "Wie ist Suche gebaut?",
-    "text": "Wie ist Suche gebaut?\n\n10:56-10:58\n\n\n\n\nDatenstruktur\n\nTokens haben Attribute wie word, lemma, pos und Positionen im Dokument.\n\n\n\nSuchregister\n\nFür jedes Merkmal gibt es eine Liste der Fundstellen: lemma=Freiheit → alle Tokenpositionen.\n\n\n\nKontextspeicher\n\nDer Index merkt sich auch die Tokenfolge. So kann die UI Treffer als KWIC-Kontext anzeigen."
+    "text": "Wie ist Suche gebaut?\n\n\n\nDatenstruktur\n\nTokens haben Attribute wie word, lemma, pos und Positionen im Dokument.\n\n\n\nSuchregister\n\nFür jedes Merkmal gibt es eine Liste der Fundstellen: lemma=Freiheit → alle Tokenpositionen.\n\n\n\nKontextspeicher\n\nDer Index merkt sich auch die Tokenfolge. So kann die UI Treffer als KWIC-Kontext anzeigen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#textlab-query-setup",
     "href": "slides/textlab-ringvorlesung.html#textlab-query-setup",
     "title": "TextLab in den Digital Humanities",
     "section": "TextLab: Query Setup",
-    "text": "TextLab: Query Setup\n\n10:58-10:59\n\n\n\n\nKorpus, Query und Suchmodus bestimmen, welche Muster sichtbar werden."
+    "text": "TextLab: Query Setup\n\n\n\nDer Query Builder macht Tokenattribute, Operatoren und Werte auswählbar; daraus entsteht die BCQL-Query für den Index."
+  },
+  {
+    "objectID": "slides/textlab-ringvorlesung.html#topic-modeling-als-modellierungsschicht",
+    "href": "slides/textlab-ringvorlesung.html#topic-modeling-als-modellierungsschicht",
+    "title": "TextLab in den Digital Humanities",
+    "section": "Topic Modeling als Modellierungsschicht",
+    "text": "Topic Modeling als Modellierungsschicht\n\n\n\nOn the fly\n\nTopic Models direkt auf Trefferlisten sind flexibel, aber oft instabil und abhängig von Samplegröße.\n\n\n\nKorpusweit\n\nVorgerechnete Topic-Attribute können stabiler sein und wie Metadaten durchsucht werden.\n\n\n\nCOHA-Beispiel\n\nTopics over time: Themen als Dekaden- oder Genreprofil lesen und danach wieder in Belege zurückspringen.\n\n\n\nTopic Modeling als probabilistisches Modell: Blei u. a. (2003)."
+  },
+  {
+    "objectID": "slides/textlab-ringvorlesung.html#topic-modeling-beispiel",
+    "href": "slides/textlab-ringvorlesung.html#topic-modeling-beispiel",
+    "title": "TextLab in den Digital Humanities",
+    "section": "Topic-Modeling-Beispiel",
+    "text": "Topic-Modeling-Beispiel\n\n\nBeispiel aus TextLab: Topic Modeling arbeitet auf Trefferlisten und macht Themen, Modellparameter und Qualitätsindikatoren sichtbar.\n\n\n\n\nTopic Modeling: Query-konditionierte Topics, relevante Terme, Modellparameter und Metadata-/Time-Ansicht."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#semantische-suche-als-zweite-suchlogik",
     "href": "slides/textlab-ringvorlesung.html#semantische-suche-als-zweite-suchlogik",
     "title": "TextLab in den Digital Humanities",
     "section": "Semantische Suche als zweite Suchlogik",
-    "text": "Semantische Suche als zweite Suchlogik\n\n10:59-11:01\n\n\n\n\nExakte Suche\n\nlemma, word, POS, Regex: Treffer müssen strukturell zur Query passen.\n\n\n\nSemantische Suche\n\nQuery und Texte werden als Vektoren verglichen; Nähe ersetzt exakte Zeichen- oder Lemmagleichheit.\n\n\n\nTrade-off\n\nMehr Exploration, weniger exakt kontrollierbare Trefferdefinition."
+    "text": "Semantische Suche als zweite Suchlogik\n\n\n\nExakte Suche\n\nlemma, word, POS, Regex: Treffer müssen strukturell zur Query passen.\n\n\n\nSemantische Suche\n\nQuery und Texte werden als Vektoren verglichen; Nähe ersetzt exakte Zeichen- oder Lemmagleichheit.\n\n\n\nTrade-off\n\nMehr Exploration, weniger exakt kontrollierbare Trefferdefinition."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#semantic-search-beispiel",
     "href": "slides/textlab-ringvorlesung.html#semantic-search-beispiel",
     "title": "TextLab in den Digital Humanities",
     "section": "Semantic-Search-Beispiel",
-    "text": "Semantic-Search-Beispiel\n\n11:01-11:03\n\n\n\nBeispiel: Statt [lemma=\"Maschine\"] sucht die Frage nach ähnlichen Passage-Vektoren. Das Ergebnis bleibt aber wieder als Belegliste lesbar.\n\n\n\n\nSemantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht."
+    "text": "Semantic-Search-Beispiel\n\n\nBeispiel: Statt [lemma=\"Maschine\"] sucht die Frage nach ähnlichen Passage-Vektoren. Das Ergebnis bleibt aber wieder als Belegliste lesbar.\n\n\n\n\nSemantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#analyse-i-konkordanzen-und-frequenzen",
     "href": "slides/textlab-ringvorlesung.html#analyse-i-konkordanzen-und-frequenzen",
     "title": "TextLab in den Digital Humanities",
     "section": "Analyse I: Konkordanzen und Frequenzen",
-    "text": "Analyse I: Konkordanzen und Frequenzen\n\n11:03-11:04\n\n\nAus einer Query werden Belege, Verteilungen und Anschlussfragen."
+    "text": "Analyse I: Konkordanzen und Frequenzen\n\nAus einer Query werden Belege, Verteilungen und Anschlussfragen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#concordance-kwic",
     "href": "slides/textlab-ringvorlesung.html#concordance-kwic",
     "title": "TextLab in den Digital Humanities",
     "section": "Concordance / KWIC",
-    "text": "Concordance / KWIC\n\n11:04-11:06\n\n\n\n\nWas macht es?\n\nKWIC zeigt Treffer mit linkem und rechtem Kontext. Das macht viele Belege schnell lesbar.\n\n\n\nWie gebaut?\n\nDie Suche liefert Trefferpositionen; der Index gibt für jede Position Kontexttokens zurück.\n\n\n\nWofür gut?\n\nBedeutungsvarianten, typische Konstruktionen, ungewöhnliche Treffer und Fehler schnell erkennen."
+    "text": "Concordance / KWIC\n\n\n\nWas macht es?\n\nKWIC zeigt Treffer mit linkem und rechtem Kontext. Das macht viele Belege schnell lesbar.\n\n\n\nWie gebaut?\n\nDie Suche liefert Trefferpositionen; der Index gibt für jede Position Kontexttokens zurück.\n\n\n\nWofür gut?\n\nBedeutungsvarianten, typische Konstruktionen, ungewöhnliche Treffer und Fehler schnell erkennen."
   },
   {
-    "objectID": "slides/textlab-ringvorlesung.html#concordance-beispiel",
-    "href": "slides/textlab-ringvorlesung.html#concordance-beispiel",
+    "objectID": "slides/textlab-ringvorlesung.html#concordance-beispiel-coha",
+    "href": "slides/textlab-ringvorlesung.html#concordance-beispiel-coha",
     "title": "TextLab in den Digital Humanities",
-    "section": "Concordance-Beispiel",
-    "text": "Concordance-Beispiel\n\n11:06-11:07\n\n\n\n\nKWIC ist die Brücke zwischen Query und einzelner Textstelle."
+    "section": "Concordance-Beispiel: COHA",
+    "text": "Concordance-Beispiel: COHA\n\n\n\nQuery\n\n[lemma=\"computer\"] in COHA.\n\n\n\nLesefrage\n\nMeint computer einen rechnenden Menschen, eine Maschine oder eine digitale Infrastruktur?\n\n\n\nNER-Highlights\n\nFarbliche Entitäts-Spans sind ein Anzeige-Layer über der KWIC-Zeile: Sie markieren erkannte Personen, Orte oder Organisationen, wenn der Korpus solche Span-Annotationen enthält.\n\n\n\nKWIC ist die Brücke zwischen Query und einzelner Textstelle: Eine diachrone Frequenzkurve wird erst interpretierbar, wenn man konkrete Kontexte liest."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#frequency",
     "href": "slides/textlab-ringvorlesung.html#frequency",
     "title": "TextLab in den Digital Humanities",
     "section": "Frequency",
-    "text": "Frequency\n\n11:07-11:09\n\n\n\n\nWas macht es?\n\nTreffer werden nach Jahr, Genre, Subreddit, Lemma, POS oder anderen Feldern gruppiert.\n\n\n\nWie gebaut?\n\nBackend gruppiert Treffer über BlackLab-Felder oder Metadaten; UI zeigt absolute Counts und, wo sinnvoll, Raten pro Million Tokens.\n\n\n\nWofür gut?\n\nVariation, Wandel und Unterschiede zwischen Korpusteilen werden sichtbar."
+    "text": "Frequency\n\n\n\nWas macht es?\n\nTreffer werden nach Jahr, Genre, Subreddit, Lemma, POS oder anderen Feldern gruppiert.\n\n\n\nWie gebaut?\n\nBackend gruppiert Treffer über BlackLab-Felder oder Metadaten; UI zeigt absolute Counts und, wo sinnvoll, Raten pro Million Tokens.\n\n\n\nWofür gut?\n\nVariation, Wandel und Unterschiede zwischen Korpusteilen werden sichtbar."
   },
   {
-    "objectID": "slides/textlab-ringvorlesung.html#frequency-beispiel-im-ui",
-    "href": "slides/textlab-ringvorlesung.html#frequency-beispiel-im-ui",
+    "objectID": "slides/textlab-ringvorlesung.html#frequency-beispiel-coha-diachron",
+    "href": "slides/textlab-ringvorlesung.html#frequency-beispiel-coha-diachron",
     "title": "TextLab in den Digital Humanities",
-    "section": "Frequency-Beispiel im UI",
-    "text": "Frequency-Beispiel im UI\n\n11:09-11:10\n\n\n\n\nEine Gruppierung macht aus Treffern ein Muster."
+    "section": "Frequency-Beispiel: COHA diachron",
+    "text": "Frequency-Beispiel: COHA diachron\n\n\n\n\n\n\n\n\n\nSchritt\nEinstellung\nWarum\n\n\n\n\nKorpus\nCOHA\nhistorisches Englisch, lange Zeitachse\n\n\nQuery\n[lemma=\"computer\"]\nlexikalischer Bedeutungswandel\n\n\nGroup by\ndecade\nBuckets chronologisch sortieren\n\n\nRückbindung\nKWIC pro auffälliger Dekade\nBedeutung nicht aus Counts allein ableiten\n\n\n\n\n\nEine Gruppierung macht aus Treffern ein Muster. Bei COHA ist die Reihenfolge der Buckets selbst Teil der Aussage: 1820s → 1830s → … → 2010s.\n\n\nFrequenzinterpretation und Normalisierung in Korpora: Brezina (2018)."
   },
   {
-    "objectID": "slides/textlab-ringvorlesung.html#beispielpalette-für-live-fragen",
-    "href": "slides/textlab-ringvorlesung.html#beispielpalette-für-live-fragen",
+    "objectID": "slides/textlab-ringvorlesung.html#beispielpfade-für-eigene-fragen",
+    "href": "slides/textlab-ringvorlesung.html#beispielpfade-für-eigene-fragen",
     "title": "TextLab in den Digital Humanities",
-    "section": "Beispielpalette für Live-Fragen",
-    "text": "Beispielpalette für Live-Fragen\n\n11:10-11:12\n\n\n\nDTA\n[lemma=\"Demokratie\"] → 2,486 Treffer; Peak 1848.\n\n\nCOHA\n[lemma=\"computer\"] → Bedeutungswandel vom Menschen zur Maschine.\n\n\nGerman Reddit\n[lemma=\"deutsch\"] → 33,122 Treffer nach Subreddit.\n\n\nEnglish Reddit\n[word=\"Wales\"] → 46,003 Treffer nach Community.\n\n\nNächster Schritt\nAus auffälligen Frequenzen wieder zurück in KWIC-Kontexte.\n\n\nProgrammatische Idee\nDasselbe Prinzip wäre auch ein API-Call: Query, Group-by, Response, Chart."
+    "section": "Beispielpfade für eigene Fragen",
+    "text": "Beispielpfade für eigene Fragen\n\n\nDTA\n[lemma=\"Demokratie\"] → 2,486 Treffer; Peak 1848.\n\n\nCOHA\n[lemma=\"computer\"] → Bedeutungswandel vom Menschen zur Maschine.\n\n\nGerman Reddit\nDE/AT: Servus, Oida, wos → nach Subreddit/Community vergleichen.\n\n\nEnglish Reddit\nUS/UK: color/colour, soccer/football → nach Community vergleichen.\n\n\nNächster Schritt\nAus auffälligen Frequenzen wieder zurück in KWIC-Kontexte.\n\n\nProgrammatische Idee\nDasselbe Prinzip wäre auch ein API-Call: Query, Group-by, Response, Chart."
   },
   {
-    "objectID": "slides/textlab-ringvorlesung.html#hands-on-1",
-    "href": "slides/textlab-ringvorlesung.html#hands-on-1",
+    "objectID": "slides/textlab-ringvorlesung.html#übung-query-kwic-frequency",
+    "href": "slides/textlab-ringvorlesung.html#übung-query-kwic-frequency",
     "title": "TextLab in den Digital Humanities",
-    "section": "Hands-on 1",
-    "text": "Hands-on 1\n\n11:12-11:23\n\n\n\nMinimalpfad\n\nKorpus wählen.\nEine einfache Query ausführen.\nKWIC-Zeilen lesen.\nEine Frequenzgruppierung ansehen.\n\n\n\nMögliche Queries\n[lemma=\"Demokratie\"]\n[lemma=\"Freiheit\"]\n[lemma=\"computer\"]\n[lemma=\"deutsch\"]\n\n\n\nZiel ist nicht die perfekte Interpretation, sondern ein Gefühl dafür, wie Query, Trefferraum und Analysemodul zusammenspielen."
+    "section": "Übung: Query, KWIC, Frequency",
+    "text": "Übung: Query, KWIC, Frequency\n\n\nMinimalpfad\n\nKorpus wählen.\nEine einfache Query ausführen.\nKWIC-Zeilen lesen.\nEine Frequenzgruppierung ansehen.\n\n\n\nMögliche Queries\n[lemma=\"Demokratie\"]\n[lemma=\"Freiheit\"]\n[lemma=\"computer\"]\n[lemma=\"deutsch\"]\n\n\n\nZiel ist nicht die perfekte Interpretation, sondern ein Gefühl dafür, wie Query, Trefferraum und Analysemodul zusammenspielen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#analyse-ii-exploration-und-ki",
     "href": "slides/textlab-ringvorlesung.html#analyse-ii-exploration-und-ki",
     "title": "TextLab in den Digital Humanities",
     "section": "Analyse II: Exploration und KI",
-    "text": "Analyse II: Exploration und KI\n\n11:23-11:24\n\n\nExplorative und KI-gestützte Module erweitern den Trefferraum: Nachbarschaften, Grammatik, Semantik, Labels."
+    "text": "Analyse II: Exploration und KI\n\nExplorative und KI-gestützte Module erweitern den Trefferraum: Nachbarschaften, Grammatik, Semantik, Labels."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#kollokationen",
     "href": "slides/textlab-ringvorlesung.html#kollokationen",
     "title": "TextLab in den Digital Humanities",
     "section": "Kollokationen",
-    "text": "Kollokationen\n\n11:24-11:26\n\n\n\n\nWas macht es?\n\nKollokationen zeigen Wörter, die auffällig häufig in der Umgebung der Treffer auftreten.\n\n\n\nWie gebaut?\n\nFür jeden Treffer wird ein linkes/rechtes Kontextfenster gezählt; Kandidaten werden nach Frequenz, Richtung und Assoziationsscore sortiert.\n\n\n\nWofür gut?\n\nTypische Themen, feste Verbindungen, semantische Prosodie und überraschende Nachbarschaften."
+    "text": "Kollokationen\n\n\n\nWas macht es?\n\nKollokationen zeigen Wörter, die auffällig häufig in der Umgebung der Treffer auftreten.\n\n\n\nWie gebaut?\n\nFür jeden Treffer wird ein linkes/rechtes Kontextfenster gezählt; Kandidaten werden nach Frequenz, Richtung und Assoziationsscore sortiert.\n\n\n\nWofür gut?\n\nTypische Themen, feste Verbindungen, semantische Prosodie und überraschende Nachbarschaften."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#kollokationen-als-algorithmus",
     "href": "slides/textlab-ringvorlesung.html#kollokationen-als-algorithmus",
     "title": "TextLab in den Digital Humanities",
     "section": "Kollokationen als Algorithmus",
-    "text": "Kollokationen als Algorithmus\n\n11:26-11:27\n\n\n\n1 Treffer\n[lemma=\"Demokratie\"]\n\n\n2 Fenster\n\nB. 5 Tokens links und rechts.\n\n\n\n3 Kandidaten\nNachbarlemmata zählen.\n\n\n4 Score\nHäufigkeit + Auffälligkeit bewerten.\n\n\n5 Belege\nJeden Kandidaten zurück in KWIC prüfen."
+    "text": "Kollokationen als Algorithmus\n\n\n1 Treffer\n[lemma=\"Demokratie\"]\n\n\n2 Fenster\n\nB. 5 Tokens links und rechts.\n\n\n\n3 Kandidaten\nNachbarlemmata zählen.\n\n\n4 Score\nHäufigkeit + Auffälligkeit bewerten.\n\n\n5 Belege\nJeden Kandidaten zurück in KWIC prüfen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#collocation-beispiel",
     "href": "slides/textlab-ringvorlesung.html#collocation-beispiel",
     "title": "TextLab in den Digital Humanities",
     "section": "Collocation-Beispiel",
-    "text": "Collocation-Beispiel\n\n11:27-11:28\n\n\n\n\nKollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”."
+    "text": "Collocation-Beispiel\n\n\n\n\n\n\n\n\n\nKorpus\nQuery\nKollokationsfrage\n\n\n\n\nCOHA\n[lemma=\"computer\"]\nWelche Nachbarwörter zeigen den Übergang vom Beruf zur Maschine?\n\n\nCOHA\n[lemma=\"radio\"]\nWelche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum?\n\n\nEnglish Reddit\ncolour / color\nWelche Community-Kontexte begleiten Schreibvarianten?\n\n\n\n\n\nKollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”. Gute Beispiele brauchen deshalb Korpus, Query, Fenster, Attribut und Score.\n\n\nKollokation als korpuslinguistische Grundoperation: Sinclair (1991)."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#word-sketches",
     "href": "slides/textlab-ringvorlesung.html#word-sketches",
     "title": "TextLab in den Digital Humanities",
     "section": "Word Sketches",
-    "text": "Word Sketches\n\n11:28-11:30\n\n\n\n\nWas macht es?\n\nWord Sketches gruppieren typische Partner eines Lemmas nach grammatischen Relationen.\n\n\n\nWie gebaut?\n\nDependency-Annotationen liefern Relationen; die App zählt Kandidaten pro Relation, Ziellemma und Kandidatenlemma.\n\n\n\nWofür gut?\n\nNicht nur “welche Wörter stehen nah?”, sondern “in welcher grammatischen Rolle treten sie auf?”."
+    "text": "Word Sketches\n\n\n\nWas macht es?\n\nWord Sketches gruppieren typische Partner eines Lemmas nach grammatischen Relationen.\n\n\n\nWie gebaut?\n\nDependency-Annotationen liefern Relationen; die App zählt Kandidaten pro Relation, Ziellemma und Kandidatenlemma.\n\n\n\nWofür gut?\n\nNicht nur “welche Wörter stehen nah?”, sondern “in welcher grammatischen Rolle treten sie auf?”."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#word-sketches-als-datenmodell",
     "href": "slides/textlab-ringvorlesung.html#word-sketches-als-datenmodell",
     "title": "TextLab in den Digital Humanities",
     "section": "Word Sketches als Datenmodell",
-    "text": "Word Sketches als Datenmodell\n\n11:30-11:31\n\n\n\n\ntarget\nrelation\ncandidate\nevidence\n\n\n\n\nDemokratie\nmodifier\nsozial\nSozial-demokratie\n\n\nDemokratie\ngoverning verb\nsiegte\nDemokratie siegte\n\n\nDemokratie\nnominal association\norgan\nOrgan der Demokratie\n\n\n\n\nDer Unterschied zur Kollokation: Nicht nur lineare Nähe zählt, sondern eine syntaktische Relation oder ein regelhaftes Kandidatenprofil."
+    "text": "Word Sketches als Datenmodell\n\n\n\ntarget\ncandidate\nrelation\nevidence\n\n\n\n\nDemokratie\nsozial\nmodifier\nSozial-demokratie\n\n\nDemokratie\nsiegte\ngoverning verb\nDemokratie siegte\n\n\nDemokratie\norgan\nnominal association\nOrgan der Demokratie\n\n\n\n\nDer Unterschied zur Kollokation: Nicht nur lineare Nähe zählt, sondern eine syntaktische Relation oder ein regelhaftes Kandidatenprofil."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#word-sketch-beispiel",
     "href": "slides/textlab-ringvorlesung.html#word-sketch-beispiel",
     "title": "TextLab in den Digital Humanities",
     "section": "Word-Sketch-Beispiel",
-    "text": "Word-Sketch-Beispiel\n\n11:31-11:32\n\n\n\n\nDer Mehrwert entsteht aus der Kombination von Lemma, Dependency-Parse und Beispielbelegen."
+    "text": "Word-Sketch-Beispiel\n\n\n\nDer Mehrwert entsteht aus der Kombination von Lemma, Dependency-Parse und Beispielbelegen."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#embeddings-und-clustering",
     "href": "slides/textlab-ringvorlesung.html#embeddings-und-clustering",
     "title": "TextLab in den Digital Humanities",
     "section": "Embeddings und Clustering",
-    "text": "Embeddings und Clustering\n\n11:32-11:34\n\n\n\n\nEmbeddings\n\nTexte, Trefferkontexte oder Queries werden von einem Modell in numerische Vektoren übersetzt.\n\n\n\nClustering\n\nÄhnliche Vektoren werden per Distanzmaß verglichen, gruppiert oder als nächste Nachbarn gesucht.\n\n\n\nUI-Frage\n\nWie zeigt man semantische Nähe so, dass Nutzerinnen wieder zu Belegen zurückkommen?"
+    "text": "Embeddings und Clustering\n\n\n\nEmbeddings\n\nTexte, Trefferkontexte oder Queries werden von einem Modell in numerische Vektoren übersetzt.\n\n\n\nClustering\n\nÄhnliche Vektoren werden per Distanzmaß verglichen, gruppiert oder als nächste Nachbarn gesucht.\n\n\n\nUI-Frage\n\nWie zeigt man semantische Nähe so, dass Nutzerinnen wieder zu Belegen zurückkommen?"
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#embedding-workflow",
     "href": "slides/textlab-ringvorlesung.html#embedding-workflow",
     "title": "TextLab in den Digital Humanities",
     "section": "Embedding-Workflow",
-    "text": "Embedding-Workflow\n\n11:34-11:36\n\n\n\n1 Textfenster\nTrefferkontext oder Dokumentausschnitt.\n\n\n2 Vektor\nEmbedding-Modell erzeugt eine dichte Repräsentation.\n\n\n3 Suche/Cluster\nNearest Neighbors, Clustering, Projektion.\n\n\n4 Rückbindung\nClusterlabel nur mit Beispielbelegen vertrauen.\n\n\n\nGrundidee: distributionelle Semantik und Satz-/Dokument-Embeddings, vgl. Mikolov u. a. (2013); Reimers und Gurevych (2019)."
+    "text": "Embedding-Workflow\n\n\n1 Textfenster\nTrefferkontext oder Dokumentausschnitt.\n\n\n2 Vektor\nEmbedding-Modell erzeugt eine dichte Repräsentation.\n\n\n3 Suche/Cluster\nNearest Neighbors, Clustering, Projektion.\n\n\n4 Rückbindung\nClusterlabel nur mit Beispielbelegen vertrauen.\n\n\n\nGrundidee: distributionelle Semantik und Satz-/Dokument-Embeddings, vgl. Mikolov u. a. (2013); Reimers und Gurevych (2019)."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#code-embedding-job",
     "href": "slides/textlab-ringvorlesung.html#code-embedding-job",
     "title": "TextLab in den Digital Humanities",
     "section": "Code: Embedding-Job",
-    "text": "Code: Embedding-Job\n\n11:36-11:38\n\nconcordances = [\n    build_concordance_string(hit.left, hit.keyword, hit.right)\n    for hit in hits\n]\n\nembeddings, embedding_model = await loop.run_in_executor(\n    None, semantic_clustering.embed_concordances, concordances\n)\n\npoints_2d = await loop.run_in_executor(\n    None, semantic_clustering.reduce_dimensions, embeddings\n)\n\nlabels, *_ = await loop.run_in_executor(\n    None,\n    lambda: semantic_clustering.cluster_embeddings(points_2d, is_2d=True),\n)\n\nAusschnitt aus server/app/services/textlab_semantic_jobs.py: Rechenintensive Schritte laufen als Job, nicht synchron im Request."
+    "text": "Code: Embedding-Job\nconcordances = [\n    build_concordance_string(hit.left, hit.keyword, hit.right)\n    for hit in hits\n]\n\nembeddings, embedding_model = await loop.run_in_executor(\n    None, semantic_clustering.embed_concordances, concordances\n)\n\npoints_2d = await loop.run_in_executor(\n    None, semantic_clustering.reduce_dimensions, embeddings\n)\n\nlabels, *_ = await loop.run_in_executor(\n    None,\n    lambda: semantic_clustering.cluster_embeddings(points_2d, is_2d=True),\n)\n\nAusschnitt aus server/app/services/textlab_semantic_jobs.py: Rechenintensive Schritte laufen als Job, nicht synchron im Request."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#llm-classification",
     "href": "slides/textlab-ringvorlesung.html#llm-classification",
     "title": "TextLab in den Digital Humanities",
     "section": "LLM Classification",
-    "text": "LLM Classification\n\n11:38-11:39\n\n\n\n\nWas macht es?\n\nTreffer oder Dokumente werden nach einem expliziten Labelschema klassifiziert.\n\n\n\nWie gebaut?\n\nBackend-Job, Prompt, Labelschema, Beispiele, Modellantwort, Review-Status und Export gehören zusammen.\n\n\n\nWichtig\n\nDas LLM ersetzt nicht die Analyse; es skaliert einen kontrollierten Annotationsschritt."
+    "text": "LLM Classification\n\n\n\nWas macht es?\n\nTreffer oder Dokumente werden nach einem expliziten Labelschema klassifiziert.\n\n\n\nWie gebaut?\n\nBackend-Job, Prompt, Labelschema, Beispiele, Modellantwort, Review-Status und Export gehören zusammen.\n\n\n\nWichtig\n\nDas LLM ersetzt nicht die Analyse; es skaliert einen kontrollierten Annotationsschritt."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#annotation-beispiel",
     "href": "slides/textlab-ringvorlesung.html#annotation-beispiel",
     "title": "TextLab in den Digital Humanities",
     "section": "Annotation-Beispiel",
-    "text": "Annotation-Beispiel\n\n11:39-11:40\n\n\n\n\nLabels werden erst wissenschaftlich brauchbar, wenn Schema, Beleg und Review sichtbar bleiben."
+    "text": "Annotation-Beispiel\n\n\n\nLabels werden erst wissenschaftlich brauchbar, wenn Schema, Beleg und Review sichtbar bleiben."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#ai-analysis",
     "href": "slides/textlab-ringvorlesung.html#ai-analysis",
     "title": "TextLab in den Digital Humanities",
     "section": "AI Analysis",
-    "text": "AI Analysis\n\n11:40-11:41\n\n\n\n\nIdee\n\nEin Analyse-Chat kann Suchschritte, Modulwechsel und Rückfragen in einem Gespräch bündeln.\n\n\n\nWie gebaut?\n\nTool-Calls gegen TextLab-APIs, gespeicherter Analysekontext, Quellenbelege und asynchrone Jobs.\n\n\n\nZiel\n\nAgentische Hilfe darf den Workflow beschleunigen, muss aber Belege und Parameter sichtbar halten."
-  },
-  {
-    "objectID": "slides/textlab-ringvorlesung.html#topic-modeling-als-ausblick",
-    "href": "slides/textlab-ringvorlesung.html#topic-modeling-als-ausblick",
-    "title": "TextLab in den Digital Humanities",
-    "section": "Topic Modeling als Ausblick",
-    "text": "Topic Modeling als Ausblick\n\n11:41-11:42\n\n\n\n\nOn the fly\n\nTopic Models direkt auf Trefferlisten sind flexibel, aber oft instabil und abhängig von Samplegröße.\n\n\n\nKorpusweit\n\nVorgerechnete Topic-Attribute können stabiler sein und wie Metadaten durchsucht werden.\n\n\n\nTextLab-Frage\n\nWelche Modellierung gehört in die Korpuskompilierung, welche in die interaktive Analyse?\n\n\n\nTopic Modeling als probabilistisches Modell: Blei u. a. (2003)."
+    "text": "AI Analysis\n\n\n\nIdee\n\nEin Analyse-Chat kann Suchschritte, Modulwechsel und Rückfragen in einem Gespräch bündeln.\n\n\n\nWie gebaut?\n\nTool-Calls gegen TextLab-APIs, gespeicherter Analysekontext, Quellenbelege und asynchrone Jobs.\n\n\n\nZiel\n\nAgentische Hilfe darf den Workflow beschleunigen, muss aber Belege und Parameter sichtbar halten."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#abschluss",
     "href": "slides/textlab-ringvorlesung.html#abschluss",
     "title": "TextLab in den Digital Humanities",
     "section": "Abschluss",
-    "text": "Abschluss\n\n11:42-11:43\n\n\n\n1 Daten wählen\nKorpuslogik, Zeitraum, Genre, Community.\n\n\n2 Suche formulieren\nQuery, Filter, Trefferraum.\n\n\n3 Modul wechseln\nKWIC, Frequency, Collocation, Sketch, Semantic, LLM.\n\n\n4 nächste Frage\nBelege prüfen, Vergleich bauen, Parameter dokumentieren."
+    "text": "Abschluss\n\n\n1 Daten wählen\nKorpuslogik, Zeitraum, Genre, Community.\n\n\n2 Suche formulieren\nQuery, Filter, Trefferraum.\n\n\n3 Modul wechseln\nKWIC, Frequency, Collocation, Sketch, Semantic, LLM.\n\n\n4 nächste Frage\nBelege prüfen, Vergleich bauen, Parameter dokumentieren."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#reproduzierbare-analyse-pipeline",
     "href": "slides/textlab-ringvorlesung.html#reproduzierbare-analyse-pipeline",
     "title": "TextLab in den Digital Humanities",
     "section": "Reproduzierbare Analyse-Pipeline",
-    "text": "Reproduzierbare Analyse-Pipeline\n\n11:43-11:44\n\n\n\nKorpus\nVersion, Größe, Felder, bekannte Grenzen.\n\n\nQuery\nBCQL, Filter, Suchmodus.\n\n\nModul\nKWIC, Frequency, Collocation, Sketch, Semantic, LLM.\n\n\nParameter\nFenster, Gruppierung, Score, Modell, Sample.\n\n\nBelege\nBeispielkontexte, Trefferlisten, Exporte."
+    "text": "Reproduzierbare Analyse-Pipeline\n\n\nKorpus\nVersion, Größe, Felder, bekannte Grenzen.\n\n\nQuery\nBCQL, Filter, Suchmodus.\n\n\nModul\nKWIC, Frequency, Collocation, Sketch, Semantic, LLM.\n\n\nParameter\nFenster, Gruppierung, Score, Modell, Sample.\n\n\nBelege\nBeispielkontexte, Trefferlisten, Exporte."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#takeaway",
     "href": "slides/textlab-ringvorlesung.html#takeaway",
     "title": "TextLab in den Digital Humanities",
     "section": "Takeaway",
-    "text": "Takeaway\n\n11:44-11:45\n\n\n\nTextLab zeigt, wie aus Textsammlungen untersuchbare Daten werden.\n\n\nJedes Modul hat zwei Seiten: eine intuitive Forschungsoperation und eine technische Implementierung.\n\n\nFür DH ist genau diese Verbindung spannend: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird."
+    "text": "Takeaway\n\n\nTextLab zeigt, wie aus Textsammlungen untersuchbare Daten werden.\n\n\nJedes Modul hat zwei Seiten: eine intuitive Forschungsoperation und eine technische Implementierung.\n\n\nFür DH ist genau diese Verbindung spannend: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#literatur",
     "href": "slides/textlab-ringvorlesung.html#literatur",
     "title": "TextLab in den Digital Humanities",
     "section": "Literatur",
-    "text": "Literatur\n\nReserve\n\nKorpuslinguistische Methode: Sinclair (1991); Biber u. a. (1998); McEnery und Hardie (2011)\nAnwendung und Statistik: Hunston (2002); Brezina (2018)\n\n\nBiber, Douglas, Susan Conrad, und Randi Reppen. 1998. Corpus Linguistics: Investigating Language Structure and Use. Cambridge University Press. https://doi.org/10.1017/CBO9780511804489.\n\n\nBlei, David M., Andrew Y. Ng, und Michael I. Jordan. 2003. „Latent Dirichlet Allocation“. Journal of Machine Learning Research 3: 993–1022.\n\n\nBrezina, Vaclav. 2018. Statistics in Corpus Linguistics: A Practical Guide. Cambridge University Press. https://doi.org/10.1017/9781316410899.\n\n\nHunston, Susan. 2002. Corpora in Applied Linguistics. Cambridge University Press. https://doi.org/10.1017/CBO9781139524773.\n\n\nMcEnery, Tony, und Andrew Hardie. 2011. Corpus Linguistics: Method, Theory and Practice. Cambridge Textbooks in Linguistics. Cambridge University Press. https://doi.org/10.1017/CBO9780511981395.\n\n\nMikolov, Tomas, Kai Chen, Greg Corrado, und Jeffrey Dean. 2013. „Efficient Estimation of Word Representations in Vector Space“. International Conference on Learning Representations Workshop. https://arxiv.org/abs/1301.3781.\n\n\nReimers, Nils, und Iryna Gurevych. 2019. „Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks“. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing, 3982–92. https://doi.org/10.18653/v1/D19-1410.\n\n\nSinclair, John. 1991. Corpus, Concordance, Collocation. Oxford University Press."
+    "text": "Literatur\nKorpuslinguistische Methode: Sinclair (1991); Biber u. a. (1998); McEnery und Hardie (2011)\nAnwendung und Statistik: Hunston (2002); Brezina (2018)\n\n\nBiber, Douglas, Susan Conrad, und Randi Reppen. 1998. Corpus Linguistics: Investigating Language Structure and Use. Cambridge University Press. https://doi.org/10.1017/CBO9780511804489.\n\n\nBlei, David M., Andrew Y. Ng, und Michael I. Jordan. 2003. „Latent Dirichlet Allocation“. Journal of Machine Learning Research 3: 993–1022.\n\n\nBrezina, Vaclav. 2018. Statistics in Corpus Linguistics: A Practical Guide. Cambridge University Press. https://doi.org/10.1017/9781316410899.\n\n\nDavies, Mark. 2012. „Expanding horizons in historical linguistics with the 400-million word Corpus of Historical American English“. Corpora 7: 121–57. https://doi.org/10.3366/cor.2012.0024.\n\n\nDrucker, Johanna. 2011. „Humanities Approaches to Graphical Display“. Digital Humanities Quarterly 5 (1). https://doi.org/10.63744/r4ysrh7ae534.\n\n\nHunston, Susan. 2002. Corpora in Applied Linguistics. Cambridge University Press. https://doi.org/10.1017/CBO9781139524773.\n\n\nMcEnery, Tony, und Andrew Hardie. 2011. Corpus Linguistics: Method, Theory and Practice. Cambridge Textbooks in Linguistics. Cambridge University Press. https://doi.org/10.1017/CBO9780511981395.\n\n\nMikolov, Tomas, Kai Chen, Greg Corrado, und Jeffrey Dean. 2013. „Efficient Estimation of Word Representations in Vector Space“. International Conference on Learning Representations Workshop. https://arxiv.org/abs/1301.3781.\n\n\nReimers, Nils, und Iryna Gurevych. 2019. „Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks“. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing, 3982–92. https://doi.org/10.18653/v1/D19-1410.\n\n\nSchöch, Christof. 2013. „Big? Smart? Clean? Messy? Data in the Humanities“. Journal of Digital Humanities 2 (3): 2–13. https://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/.\n\n\nSinclair, John. 1991. Corpus, Concordance, Collocation. Oxford University Press."
   },
   {
     "objectID": "index.html",

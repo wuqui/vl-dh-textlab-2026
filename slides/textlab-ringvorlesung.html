@@ -121,6 +121,7 @@
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -217,19 +218,6 @@
 
 <section id="title-slide" class="slide level2 custom-title-slide center" data-background-color="#eef4f8">
 <h2>TextLab in den Digital Humanities</h2>
-<aside class="notes">
-<p>10:15-10:16</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <p><img class="title-logo" src="../assets/img/lmu-logo.png" alt="LMU-Logo"></p>
 <div class="title-subtitle">
 Ringvorlesung Digital Humanities · LMU · Sommersemester 2026
@@ -246,19 +234,6 @@ q.wuerschinger@lmu.de
 </section>
 <section id="einstieg" class="slide level2">
 <h2>Einstieg</h2>
-<aside class="notes">
-<p>10:16-10:18</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="question-pair">
 <div class="question-card">
 <p><strong>TextLab</strong></p>
@@ -275,19 +250,6 @@ q.wuerschinger@lmu.de
 </section>
 <section id="was-textlab-als-operationen-anbietet" class="slide level2">
 <h2>Was TextLab als Operationen anbietet</h2>
-<aside class="notes">
-<p>10:18-10:20</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="demo-palette">
 <div class="demo-card">
 <p><strong>Belege öffnen</strong><br> KWIC, Kontext, Dokumentdetails.</p>
@@ -314,19 +276,6 @@ q.wuerschinger@lmu.de
 </section>
 <section id="jede-methode-hat-drei-schichten" class="slide level2">
 <h2>Jede Methode hat drei Schichten</h2>
-<aside class="notes">
-<p>10:20-10:22</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -348,24 +297,11 @@ Interface
 </div>
 </div>
 <div class="caption-note">
-<p>Das ist auch für DH-Programmierung relevant: Methode, Datenmodell und Softwaredesign sind hier nicht getrennt.</p>
+<p>Das ist auch für DH-Programmierung relevant: Methode, Datenmodell und Softwaredesign sind hier nicht getrennt; vgl. <span class="citation" data-cites="schoch2013">Schöch (<a href="#/literatur" role="doc-biblioref" onclick="">2013</a>)</span>; <span class="citation" data-cites="drucker2011">Drucker (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span>.</p>
 </div>
 </section>
 <section id="architektur-der-app" class="slide level2">
 <h2>Architektur der App</h2>
-<aside class="notes">
-<p>10:22-10:25</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="callout-fragment">
 <p>Die zentrale Designidee: Einmal sauber kompilierte Korpora sollen viele Analyseoperationen tragen.</p>
 </div>
@@ -401,52 +337,30 @@ Interface
 </section>
 <section id="textlab-als-software-system" class="slide level2">
 <h2>TextLab als Software-System</h2>
-<aside class="notes">
-<p>10:25-10:27</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<div class="tool-facts">
-<div class="tool-fact">
-<p><strong>Frontend</strong></p>
-<p>React: Korpusauswahl, Query Builder, Ergebnisansichten, Module, Settings.</p>
+<div class="pipeline-flow">
+<div class="pipeline-step">
+<p><strong>Frontend · React</strong></p>
+<p>Korpusauswahl, Query Builder, Ergebnisansichten, Module, Settings.</p>
 </div>
-<div class="tool-fact">
-<p><strong>Backend</strong></p>
-<p>FastAPI: Endpunkte für Suche, Schema, Frequenzen, Jobs, Annotation, KI-Workflows.</p>
+<div class="pipeline-step">
+<p><strong>Backend · FastAPI</strong></p>
+<p>Schema, Suche, Frequenzen, Jobs, Annotation, KI-Workflows.</p>
 </div>
-<div class="tool-fact">
-<p><strong>Suchmaschine</strong></p>
-<p>BlackLab: tokenbasierter Index, BCQL, Trefferpositionen, Kontext, Gruppierungen.</p>
+<div class="pipeline-step">
+<p><strong>BlackLab</strong></p>
+<p>BCQL, Tokenpositionen, KWIC-Kontext, Gruppierungen.</p>
+</div>
+<div class="pipeline-step">
+<p><strong>Registry &amp; Jobs</strong></p>
+<p>Korpuswissen, Embeddings, Topics, LLM-Klassifikation, Exporte.</p>
 </div>
 </div>
-<div class="callout-fragment">
-<p>Viele UI-Aktionen sind deshalb kleine Pipelines: Input validieren, API-Request bauen, Index/Job ausführen, Resultat in eine lesbare Form bringen.</p>
+<div class="caption-note">
+<p>Viele UI-Aktionen sind kleine Pipelines: Input validieren, API-Request bauen, Index oder Job ausführen, Resultat in eine lesbare Form bringen.</p>
 </div>
 </section>
 <section id="corpus-registry-korpuswissen-als-konfiguration" class="slide level2">
 <h2>Corpus Registry: Korpuswissen als Konfiguration</h2>
-<aside class="notes">
-<p>10:27-10:29</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="translation-strip">
 <div class="translation-step">
 <p><strong>Index</strong></p>
@@ -468,19 +382,6 @@ Interface
 </section>
 <section id="registry-als-schnittstelle" class="slide level2">
 <h2>Registry als Schnittstelle</h2>
-<aside class="notes">
-<p>10:29-10:31</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">coha</span><span class="kw">:</span></span>
 <span id="cb1-2"><a></a><span class="at">  </span><span class="fu">total_tokens</span><span class="kw">:</span><span class="at"> </span><span class="dv">472302948</span></span>
 <span id="cb1-3"><a></a><span class="at">  </span><span class="fu">annotations</span><span class="kw">:</span></span>
@@ -499,19 +400,6 @@ Interface
 </section>
 <section id="korpuslinguistik" class="slide level2">
 <h2>Korpuslinguistik</h2>
-<aside class="notes">
-<p>10:31-10:34</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -538,19 +426,6 @@ Trefferraum
 </section>
 <section id="korpuslinguistik-hintergrund" class="slide level2">
 <h2>Korpuslinguistik: Hintergrund</h2>
-<aside class="notes">
-<p>10:34-10:36</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="tool-facts">
 <div class="tool-fact">
 <p><strong>Empirie</strong></p>
@@ -571,19 +446,6 @@ Trefferraum
 </section>
 <section id="text-wird-zur-datenstruktur" class="slide level2">
 <h2>Text wird zur Datenstruktur</h2>
-<aside class="notes">
-<p>10:36-10:39</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="tei-index-grid">
 <div class="tei-note">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource xml number-lines code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a></a>&lt;<span class="kw">TEI</span>&gt;</span>
@@ -591,13 +453,16 @@ Trefferraum
 <span id="cb2-3"><a></a>    &lt;<span class="kw">titleStmt</span>&gt;</span>
 <span id="cb2-4"><a></a>      &lt;<span class="kw">title</span>&gt;Die Freiheit bleibt umkämpft&lt;/<span class="kw">title</span>&gt;</span>
 <span id="cb2-5"><a></a>    &lt;/<span class="kw">titleStmt</span>&gt;</span>
-<span id="cb2-6"><a></a>  &lt;/<span class="kw">teiHeader</span>&gt;</span>
-<span id="cb2-7"><a></a>  &lt;<span class="kw">text</span>&gt;</span>
-<span id="cb2-8"><a></a>    &lt;<span class="kw">body</span>&gt;</span>
-<span id="cb2-9"><a></a>      &lt;<span class="kw">p</span>&gt;Die Freiheit bleibt umkämpft.&lt;/<span class="kw">p</span>&gt;</span>
-<span id="cb2-10"><a></a>    &lt;/<span class="kw">body</span>&gt;</span>
-<span id="cb2-11"><a></a>  &lt;/<span class="kw">text</span>&gt;</span>
-<span id="cb2-12"><a></a>&lt;/<span class="kw">TEI</span>&gt;</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-6"><a></a>    &lt;<span class="kw">profileDesc</span>&gt;</span>
+<span id="cb2-7"><a></a>      &lt;<span class="kw">creation</span>&gt;&lt;<span class="kw">date</span> <span class="ot">when=</span><span class="st">"1848"</span>/&gt;&lt;/<span class="kw">creation</span>&gt;</span>
+<span id="cb2-8"><a></a>    &lt;/<span class="kw">profileDesc</span>&gt;</span>
+<span id="cb2-9"><a></a>  &lt;/<span class="kw">teiHeader</span>&gt;</span>
+<span id="cb2-10"><a></a>  &lt;<span class="kw">text</span>&gt;</span>
+<span id="cb2-11"><a></a>    &lt;<span class="kw">body</span>&gt;</span>
+<span id="cb2-12"><a></a>      &lt;<span class="kw">p</span>&gt;Die Freiheit bleibt umkämpft.&lt;/<span class="kw">p</span>&gt;</span>
+<span id="cb2-13"><a></a>    &lt;/<span class="kw">body</span>&gt;</span>
+<span id="cb2-14"><a></a>  &lt;/<span class="kw">text</span>&gt;</span>
+<span id="cb2-15"><a></a>&lt;/<span class="kw">TEI</span>&gt;</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="syntax-reference">
 <p>TEI/XML beschreibt Text, Struktur und Metadaten. Für die Suche wird daraus ein Tokenstrom mit Annotationen.</p>
 </div>
@@ -657,19 +522,6 @@ Trefferraum
 </section>
 <section id="grundoperationen" class="slide level2">
 <h2>Grundoperationen</h2>
-<aside class="notes">
-<p>10:39-10:41</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="workflow core-workflow">
 <div class="workflow-step">
 <p><strong>Query</strong></p>
@@ -695,19 +547,6 @@ Trefferraum
 </section>
 <section id="operationalisierung" class="slide level2">
 <h2>Operationalisierung</h2>
-<aside class="notes">
-<p>10:41-10:43</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="operationalization-grid">
 <div class="concept-box">
 <p><strong>Konzept</strong></p>
@@ -732,19 +571,6 @@ Trefferraum
 </section>
 <section id="daten-im-textlab" class="slide level2">
 <h2>Daten im TextLab</h2>
-<aside class="notes">
-<p>10:43-10:45</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="corpus-table">
 <table class="caption-top" style="width:100%;">
 <colgroup>
@@ -789,34 +615,24 @@ Trefferraum
 </tbody>
 </table>
 </div>
+<div class="caption-note">
+<p>COHA als diachrones Referenzkorpus: <span class="citation" data-cites="davies2012coha">Davies (<a href="#/literatur" role="doc-biblioref" onclick="">2012</a>)</span>.</p>
+</div>
 </section>
 <section id="drei-korpuslogiken" class="slide level2">
 <h2>Drei Korpuslogiken</h2>
-<aside class="notes">
-<p>10:45-10:47</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="tool-facts">
 <div class="tool-fact">
 <p><strong>DTA</strong></p>
-<p>Kanonisierte historische Texte, lange Dokumente, gute Zeitachse, philologisch vertraute Quellenlage.</p>
+<p>Kanonisierte historische Texte, lange Dokumente, gute Zeitachse. Beispiel: <code>[lemma="Demokratie"]</code> nach <code>year</code>.</p>
 </div>
 <div class="tool-fact">
 <p><strong>Reddit</strong></p>
-<p>Viele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur, viel Gegenwartssprache.</p>
+<p>Viele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur. Beispiel: <code>Servus</code>, <code>Oida</code>, <code>wos</code> nach <code>subreddit</code>.</p>
 </div>
 <div class="tool-fact">
 <p><strong>COHA</strong></p>
-<p>Historisches Englisch, Genre- und Dekadenvergleich, stark für lexikalischen Wandel.</p>
+<p>Historisches Englisch, Genre- und Dekadenvergleich. Beispiel: <code>computer</code>, <code>radio</code>, <code>telephone</code> nach <code>decade</code>.</p>
 </div>
 </div>
 <div class="callout-fragment">
@@ -825,61 +641,35 @@ Trefferraum
 </section>
 <section id="korpuskompilierung" class="slide level2">
 <h2>Korpuskompilierung</h2>
-<aside class="notes">
-<p>10:47-10:49</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="workflow">
 <div class="workflow-step">
-<p><strong>01 Auswahl</strong></p>
+<p><strong>1 Auswahl</strong></p>
 <p>Zeitraum, Sprache, Quelle, Rechte, Sampling.</p>
 </div>
 <div class="workflow-step">
-<p><strong>02 Dokumentmodell</strong></p>
+<p><strong>2 Dokumentmodell</strong></p>
 <p>Was ist ein Dokument, was ist ein Chunk, was bleibt Metadatum?</p>
 </div>
 <div class="workflow-step">
-<p><strong>03 Normalisierung</strong></p>
+<p><strong>3 Normalisierung</strong></p>
 <p>Text reinigen, strukturieren, persistieren.</p>
 </div>
 <div class="workflow-step">
-<p><strong>04 NLP</strong></p>
+<p><strong>4 NLP</strong></p>
 <p>Tokenisierung, Lemma, POS, Dependency, NER.</p>
 </div>
 <div class="workflow-step">
-<p><strong>05 Index</strong></p>
-<p>Vertikalformat, BlackLab, Tokenattribute, Dokumentfelder.</p>
+<p><strong>5 Index</strong></p>
+<p>vereinfachtes Vertikalformat, BlackLab, Tokenattribute, Dokumentfelder.</p>
 </div>
 <div class="workflow-step is-dark">
-<p><strong>06 Registry</strong></p>
+<p><strong>6 Registry</strong></p>
 <p>Felder, Werte, Labels, Module, bekannte Grenzen.</p>
 </div>
 </div>
 </section>
-<section id="was-im-suchindex-landet" class="slide level2">
-<h2>Was im Suchindex landet</h2>
-<aside class="notes">
-<p>10:49-10:51</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="was-in-den-suchindex-geht" class="slide level2">
+<h2>Was in den Suchindex geht</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>&lt;doc id="dta_1848_..." year="1848" genre="political"&gt;</span>
 <span id="cb3-2"><a></a>word        lemma       pos     dep_rel</span>
 <span id="cb3-3"><a></a>Die         der         ART     nk</span>
@@ -888,54 +678,68 @@ Trefferraum
 <span id="cb3-6"><a></a>umkämpft    umkämpft    ADJD    pd</span>
 <span id="cb3-7"><a></a>&lt;/doc&gt;</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="syntax-reference">
-<p>Der Index speichert Tokenattribute und Dokumentmetadaten zusammen. Dieselbe Query kann dadurch KWIC, Frequenzen, Kollokationen und Word Sketches antreiben.</p>
+<p>Das ist ein vereinfachtes Lehrformat für den Import. BlackLab baut daraus einen Lucene-basierten Index mit Tokenannotationen, Vorwärtsindex für Kontext/KWIC und Dokumentmetadaten.</p>
 </div>
 </section>
 <section id="suchen" class="slide level2">
 <h2>Suchen</h2>
-<aside class="notes">
-<p>10:51-10:54</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<div class="query-examples query-examples-wide">
-<p><code>[word="Haus"]</code></p>
-<p><code>[lemma="Freiheit"]</code></p>
-<p><code>[lemma="politisch"] [lemma="Freiheit"]</code></p>
-<p><code>[word="Teutsch.*"]</code></p>
-<p><code>[pos="ADJA"] [lemma="Demokratie"]</code></p>
-<p><code>[lemma="Demokratie" &amp; dep_rel="sb"]</code></p>
+<div class="search-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Query</th>
+<th>Was gefunden wird</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>[word="Haus"]</code></td>
+<td>exakte Wortform</td>
+<td>Schreibweise im Text</td>
+</tr>
+<tr class="even">
+<td><code>[lemma="Freiheit"]</code></td>
+<td>alle Flexionsformen eines Lemmas</td>
+<td>Freiheit, Freiheiten</td>
+</tr>
+<tr class="odd">
+<td><code>[lemma="politisch"] [lemma="Freiheit"]</code></td>
+<td>Sequenz aus zwei Tokenmustern</td>
+<td>politische Freiheit</td>
+</tr>
+<tr class="even">
+<td><code>[word="Teutsch.*"]</code></td>
+<td>regulärer Ausdruck</td>
+<td>Teutsch, Teutsche</td>
+</tr>
+<tr class="odd">
+<td><code>[pos="ADJA"] [lemma="Demokratie"]</code></td>
+<td>Wortart + Lemma</td>
+<td>demokratische Demokratie?</td>
+</tr>
+<tr class="even">
+<td><code>[lemma="Demokratie" &amp; dep_rel="sb"]</code></td>
+<td>Lemma mit syntaktischer Rolle</td>
+<td>Demokratie als Subjekt</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="syntax-reference">
 <p>BCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa <code>genre = Zeitung</code> oder <code>subreddit = ich_iel</code>.</p>
 </div>
 <div class="search-docs">
-<p><span>BCQL/CQL</span> <a href="https://blacklab.ivdnt.org/guide/query-language/">BlackLab Query Language</a> <span>Multi-Token · Regex · POS · Dependencies · Texttypen</span></p>
+<p><span>BCQL/CQL</span> <a href="https://blacklab.ivdnt.org/">BlackLab</a> <a href="https://blacklab.ivdnt.org/guide/query-language/">BlackLab Query Language</a> <span>Multi-Token · Regex · POS · Dependencies · Texttypen</span></p>
 </div>
 </section>
 <section id="code-query-builder" class="slide level2 code-slide">
 <h2>Code: Query Builder</h2>
-<aside class="notes">
-<p>10:54-10:56</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource ts number-lines code-with-copy"><code class="sourceCode typescript"><span id="cb4-1"><a></a><span class="im">export</span> <span class="kw">function</span> <span class="fu">buildProbeBcql</span>(tokens<span class="op">,</span> scopes<span class="op">,</span> availableAnnotations <span class="op">=</span> []) {</span>
 <span id="cb4-2"><a></a>  <span class="kw">const</span> available <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>(availableAnnotations<span class="op">.</span><span class="fu">map</span>((v) <span class="kw">=&gt;</span> v<span class="op">.</span><span class="fu">toLowerCase</span>()))<span class="op">;</span></span>
 <span id="cb4-3"><a></a>  <span class="kw">const</span> tokenParts <span class="op">=</span> tokens<span class="op">.</span><span class="fu">map</span>((token) <span class="kw">=&gt;</span> {</span>
@@ -949,24 +753,11 @@ Trefferraum
 <span id="cb4-11"><a></a>  <span class="cf">return</span> tokenParts<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>)<span class="op">.</span><span class="fu">join</span>(<span class="st">' '</span>)<span class="op">.</span><span class="fu">trim</span>()<span class="op">;</span></span>
 <span id="cb4-12"><a></a>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="syntax-reference">
-<p>Ausschnitt aus <code>ui-textlab/src/lib/queryBuilder.ts</code>: Der UI-Builder erzeugt keine Magie, sondern eine kontrollierte BCQL-Zeichenkette.</p>
+<p>Ausschnitt aus <code>ui-textlab/src/lib/queryBuilder.ts</code>: Der Query Builder übersetzt UI-Auswahlen in BCQL. Man muss die Suchsprache also nicht direkt schreiben, kann sie aber als reproduzierbare Form sehen.</p>
 </div>
 </section>
 <section id="wie-ist-suche-gebaut" class="slide level2">
 <h2>Wie ist Suche gebaut?</h2>
-<aside class="notes">
-<p>10:56-10:58</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -990,41 +781,55 @@ Kontextspeicher
 </section>
 <section id="textlab-query-setup" class="slide level2">
 <h2>TextLab: Query Setup</h2>
-<aside class="notes">
-<p>10:58-10:59</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="screenshot-frame screenshot-crop screenshot-query-crop">
 <img src="../assets/screenshots/textlab/01-query-setup.png" alt="TextLab query setup with DTA corpus and a Demokratie query" class="screenshot-wide">
 <div class="screenshot-caption">
-Korpus, Query und Suchmodus bestimmen, welche Muster sichtbar werden.
+Der Query Builder macht Tokenattribute, Operatoren und Werte auswählbar; daraus entsteht die BCQL-Query für den Index.
+</div>
+</div>
+</section>
+<section id="topic-modeling-als-modellierungsschicht" class="slide level2">
+<h2>Topic Modeling als Modellierungsschicht</h2>
+<div class="method-detail">
+<div class="detail-panel">
+<div class="panel-title">
+On the fly
+</div>
+<p>Topic Models direkt auf Trefferlisten sind flexibel, aber oft instabil und abhängig von Samplegröße.</p>
+</div>
+<div class="detail-panel">
+<div class="panel-title">
+Korpusweit
+</div>
+<p>Vorgerechnete Topic-Attribute können stabiler sein und wie Metadaten durchsucht werden.</p>
+</div>
+<div class="example-panel">
+<div class="panel-title">
+COHA-Beispiel
+</div>
+<p>Topics over time: Themen als Dekaden- oder Genreprofil lesen und danach wieder in Belege zurückspringen.</p>
+</div>
+</div>
+<div class="caption-note">
+<p>Topic Modeling als probabilistisches Modell: <span class="citation" data-cites="blei2003">Blei u.&nbsp;a. (<a href="#/literatur" role="doc-biblioref" onclick="">2003</a>)</span>.</p>
+</div>
+</section>
+<section id="topic-modeling-beispiel" class="slide level2">
+<h2>Topic-Modeling-Beispiel</h2>
+<div class="semantic-example">
+<div class="syntax-reference">
+<p>Beispiel aus TextLab: Topic Modeling arbeitet auf Trefferlisten und macht Themen, Modellparameter und Qualitätsindikatoren sichtbar.</p>
+</div>
+<div class="screenshot-frame screenshot-full">
+<img src="../assets/screenshots/textlab/08-topic-modeling-crop.png" alt="TextLab topic modeling module with topic map, terms and metadata controls" class="screenshot-wide">
+<div class="screenshot-caption">
+Topic Modeling: Query-konditionierte Topics, relevante Terme, Modellparameter und Metadata-/Time-Ansicht.
+</div>
 </div>
 </div>
 </section>
 <section id="semantische-suche-als-zweite-suchlogik" class="slide level2">
 <h2>Semantische Suche als zweite Suchlogik</h2>
-<aside class="notes">
-<p>10:59-11:01</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -1048,19 +853,6 @@ Trade-off
 </section>
 <section id="semantic-search-beispiel" class="slide level2">
 <h2>Semantic-Search-Beispiel</h2>
-<aside class="notes">
-<p>11:01-11:03</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="semantic-example">
 <div class="syntax-reference">
 <p>Beispiel: Statt <code>[lemma="Maschine"]</code> sucht die Frage nach ähnlichen Passage-Vektoren. Das Ergebnis bleibt aber wieder als Belegliste lesbar.</p>
@@ -1075,38 +867,12 @@ Semantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegans
 </section>
 <section id="analyse-i-konkordanzen-und-frequenzen" class="slide level2">
 <h2>Analyse I: Konkordanzen und Frequenzen</h2>
-<aside class="notes">
-<p>11:03-11:04</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="section-question">
 <p>Aus einer Query werden Belege, Verteilungen und Anschlussfragen.</p>
 </div>
 </section>
 <section id="concordance-kwic" class="slide level2">
 <h2>Concordance / KWIC</h2>
-<aside class="notes">
-<p>11:04-11:06</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -1128,43 +894,34 @@ Wofür gut?
 </div>
 </div>
 </section>
-<section id="concordance-beispiel" class="slide level2">
-<h2>Concordance-Beispiel</h2>
-<aside class="notes">
-<p>11:06-11:07</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<div class="screenshot-frame screenshot-full">
-<img src="../assets/screenshots/textlab/02-kwic-demokratie.png" alt="TextLab KWIC results for Demokratie" class="screenshot-wide">
-<div class="screenshot-caption">
-KWIC ist die Brücke zwischen Query und einzelner Textstelle.
+<section id="concordance-beispiel-coha" class="slide level2">
+<h2>Concordance-Beispiel: COHA</h2>
+<div class="method-detail">
+<div class="detail-panel">
+<div class="panel-title">
+Query
 </div>
+<p><code>[lemma="computer"]</code> in COHA.</p>
+</div>
+<div class="detail-panel">
+<div class="panel-title">
+Lesefrage
+</div>
+<p>Meint <code>computer</code> einen rechnenden Menschen, eine Maschine oder eine digitale Infrastruktur?</p>
+</div>
+<div class="example-panel">
+<div class="panel-title">
+NER-Highlights
+</div>
+<p>Farbliche Entitäts-Spans sind ein Anzeige-Layer über der KWIC-Zeile: Sie markieren erkannte Personen, Orte oder Organisationen, wenn der Korpus solche Span-Annotationen enthält.</p>
+</div>
+</div>
+<div class="syntax-reference">
+<p>KWIC ist die Brücke zwischen Query und einzelner Textstelle: Eine diachrone Frequenzkurve wird erst interpretierbar, wenn man konkrete Kontexte liest.</p>
 </div>
 </section>
 <section id="frequency" class="slide level2">
 <h2>Frequency</h2>
-<aside class="notes">
-<p>11:07-11:09</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -1186,43 +943,55 @@ Wofür gut?
 </div>
 </div>
 </section>
-<section id="frequency-beispiel-im-ui" class="slide level2">
-<h2>Frequency-Beispiel im UI</h2>
-<aside class="notes">
-<p>11:09-11:10</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<div class="screenshot-frame screenshot-full screenshot-crop">
-<img src="../assets/screenshots/textlab/03-frequency-demokratie.png" alt="TextLab frequency results for Demokratie by year" class="screenshot-wide">
-<div class="screenshot-caption">
-Eine Gruppierung macht aus Treffern ein Muster.
+<section id="frequency-beispiel-coha-diachron" class="slide level2">
+<h2>Frequency-Beispiel: COHA diachron</h2>
+<div class="frequency-example">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Schritt</th>
+<th>Einstellung</th>
+<th>Warum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Korpus</td>
+<td>COHA</td>
+<td>historisches Englisch, lange Zeitachse</td>
+</tr>
+<tr class="even">
+<td>Query</td>
+<td><code>[lemma="computer"]</code></td>
+<td>lexikalischer Bedeutungswandel</td>
+</tr>
+<tr class="odd">
+<td>Group by</td>
+<td><code>decade</code></td>
+<td>Buckets chronologisch sortieren</td>
+</tr>
+<tr class="even">
+<td>Rückbindung</td>
+<td>KWIC pro auffälliger Dekade</td>
+<td>Bedeutung nicht aus Counts allein ableiten</td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="syntax-reference">
+<p>Eine Gruppierung macht aus Treffern ein Muster. Bei COHA ist die Reihenfolge der Buckets selbst Teil der Aussage: 1820s → 1830s → … → 2010s.</p>
+</div>
+<div class="caption-note">
+<p>Frequenzinterpretation und Normalisierung in Korpora: <span class="citation" data-cites="brezina2018">Brezina (<a href="#/literatur" role="doc-biblioref" onclick="">2018</a>)</span>.</p>
 </div>
 </section>
-<section id="beispielpalette-für-live-fragen" class="slide level2">
-<h2>Beispielpalette für Live-Fragen</h2>
-<aside class="notes">
-<p>11:10-11:12</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="beispielpfade-für-eigene-fragen" class="slide level2">
+<h2>Beispielpfade für eigene Fragen</h2>
 <div class="demo-palette">
 <div class="demo-card">
 <p><strong>DTA</strong></p>
@@ -1234,11 +1003,11 @@ Eine Gruppierung macht aus Treffern ein Muster.
 </div>
 <div class="demo-card">
 <p><strong>German Reddit</strong></p>
-<p><code>[lemma="deutsch"]</code> → 33,122 Treffer nach Subreddit.</p>
+<p>DE/AT: <code>Servus</code>, <code>Oida</code>, <code>wos</code> → nach Subreddit/Community vergleichen.</p>
 </div>
 <div class="demo-card">
 <p><strong>English Reddit</strong></p>
-<p><code>[word="Wales"]</code> → 46,003 Treffer nach Community.</p>
+<p>US/UK: <code>color</code>/<code>colour</code>, <code>soccer</code>/<code>football</code> → nach Community vergleichen.</p>
 </div>
 <div class="demo-card">
 <p><strong>Nächster Schritt</strong></p>
@@ -1250,21 +1019,8 @@ Eine Gruppierung macht aus Treffern ein Muster.
 </div>
 </div>
 </section>
-<section id="hands-on-1" class="slide level2">
-<h2>Hands-on 1</h2>
-<aside class="notes">
-<p>11:12-11:23</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="übung-query-kwic-frequency" class="slide level2">
+<h2>Übung: Query, KWIC, Frequency</h2>
 <div class="exercise-brief">
 <div class="exercise-main">
 <p><strong>Minimalpfad</strong></p>
@@ -1289,38 +1045,12 @@ Eine Gruppierung macht aus Treffern ein Muster.
 </section>
 <section id="analyse-ii-exploration-und-ki" class="slide level2">
 <h2>Analyse II: Exploration und KI</h2>
-<aside class="notes">
-<p>11:23-11:24</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="section-question">
 <p>Explorative und KI-gestützte Module erweitern den Trefferraum: Nachbarschaften, Grammatik, Semantik, Labels.</p>
 </div>
 </section>
 <section id="kollokationen" class="slide level2">
 <h2>Kollokationen</h2>
-<aside class="notes">
-<p>11:24-11:26</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -1344,19 +1074,6 @@ Wofür gut?
 </section>
 <section id="kollokationen-als-algorithmus" class="slide level2">
 <h2>Kollokationen als Algorithmus</h2>
-<aside class="notes">
-<p>11:26-11:27</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="workflow core-workflow">
 <div class="workflow-step">
 <p><strong>1 Treffer</strong></p>
@@ -1384,41 +1101,48 @@ Wofür gut?
 </section>
 <section id="collocation-beispiel" class="slide level2">
 <h2>Collocation-Beispiel</h2>
-<aside class="notes">
-<p>11:27-11:28</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<div class="screenshot-frame screenshot-full screenshot-crop">
-<img src="../assets/screenshots/textlab/05-collocations-demokratie.png" alt="TextLab collocation table for Demokratie" class="screenshot-wide">
-<div class="screenshot-caption">
-Kollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”.
+<div class="frequency-example">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Korpus</th>
+<th>Query</th>
+<th>Kollokationsfrage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>COHA</td>
+<td><code>[lemma="computer"]</code></td>
+<td>Welche Nachbarwörter zeigen den Übergang vom Beruf zur Maschine?</td>
+</tr>
+<tr class="even">
+<td>COHA</td>
+<td><code>[lemma="radio"]</code></td>
+<td>Welche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum?</td>
+</tr>
+<tr class="odd">
+<td>English Reddit</td>
+<td><code>colour</code> / <code>color</code></td>
+<td>Welche Community-Kontexte begleiten Schreibvarianten?</td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="syntax-reference">
+<p>Kollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”. Gute Beispiele brauchen deshalb Korpus, Query, Fenster, Attribut und Score.</p>
+</div>
+<div class="caption-note">
+<p>Kollokation als korpuslinguistische Grundoperation: <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>.</p>
 </div>
 </section>
 <section id="word-sketches" class="slide level2">
 <h2>Word Sketches</h2>
-<aside class="notes">
-<p>11:28-11:30</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -1442,45 +1166,32 @@ Wofür gut?
 </section>
 <section id="word-sketches-als-datenmodell" class="slide level2">
 <h2>Word Sketches als Datenmodell</h2>
-<aside class="notes">
-<p>11:30-11:31</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>target</th>
-<th>relation</th>
 <th>candidate</th>
+<th>relation</th>
 <th>evidence</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Demokratie</td>
-<td>modifier</td>
 <td>sozial</td>
+<td>modifier</td>
 <td>Sozial-demokratie</td>
 </tr>
 <tr class="even">
 <td>Demokratie</td>
-<td>governing verb</td>
 <td>siegte</td>
+<td>governing verb</td>
 <td>Demokratie siegte</td>
 </tr>
 <tr class="odd">
 <td>Demokratie</td>
-<td>nominal association</td>
 <td>organ</td>
+<td>nominal association</td>
 <td>Organ der Demokratie</td>
 </tr>
 </tbody>
@@ -1491,19 +1202,6 @@ Wofür gut?
 </section>
 <section id="word-sketch-beispiel" class="slide level2">
 <h2>Word-Sketch-Beispiel</h2>
-<aside class="notes">
-<p>11:31-11:32</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="screenshot-frame screenshot-full">
 <img src="../assets/screenshots/textlab/04-word-sketch-demokratie.png" alt="TextLab word sketch for Demokratie" class="screenshot-wide">
 <div class="screenshot-caption">
@@ -1513,19 +1211,6 @@ Der Mehrwert entsteht aus der Kombination von Lemma, Dependency-Parse und Beispi
 </section>
 <section id="embeddings-und-clustering" class="slide level2">
 <h2>Embeddings und Clustering</h2>
-<aside class="notes">
-<p>11:32-11:34</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -1549,19 +1234,6 @@ UI-Frage
 </section>
 <section id="embedding-workflow" class="slide level2">
 <h2>Embedding-Workflow</h2>
-<aside class="notes">
-<p>11:34-11:36</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="pipeline-flow">
 <div class="pipeline-step">
 <p><strong>1 Textfenster</strong></p>
@@ -1586,19 +1258,6 @@ UI-Frage
 </section>
 <section id="code-embedding-job" class="slide level2 code-slide">
 <h2>Code: Embedding-Job</h2>
-<aside class="notes">
-<p>11:36-11:38</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource py number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>concordances <span class="op">=</span> [</span>
 <span id="cb5-2"><a></a>    build_concordance_string(hit.left, hit.keyword, hit.right)</span>
 <span id="cb5-3"><a></a>    <span class="cf">for</span> hit <span class="kw">in</span> hits</span>
@@ -1622,19 +1281,6 @@ UI-Frage
 </section>
 <section id="llm-classification" class="slide level2">
 <h2>LLM Classification</h2>
-<aside class="notes">
-<p>11:38-11:39</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -1658,19 +1304,6 @@ Wichtig
 </section>
 <section id="annotation-beispiel" class="slide level2">
 <h2>Annotation-Beispiel</h2>
-<aside class="notes">
-<p>11:39-11:40</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="screenshot-frame screenshot-full">
 <img src="../assets/screenshots/textlab/06-annotation-task.png" alt="TextLab annotation task interface" class="screenshot-wide">
 <div class="screenshot-caption">
@@ -1680,19 +1313,6 @@ Labels werden erst wissenschaftlich brauchbar, wenn Schema, Beleg und Review sic
 </section>
 <section id="ai-analysis" class="slide level2">
 <h2>AI Analysis</h2>
-<aside class="notes">
-<p>11:40-11:41</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="method-detail">
 <div class="detail-panel">
 <div class="panel-title">
@@ -1714,60 +1334,8 @@ Ziel
 </div>
 </div>
 </section>
-<section id="topic-modeling-als-ausblick" class="slide level2">
-<h2>Topic Modeling als Ausblick</h2>
-<aside class="notes">
-<p>11:41-11:42</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<div class="method-detail">
-<div class="detail-panel">
-<div class="panel-title">
-On the fly
-</div>
-<p>Topic Models direkt auf Trefferlisten sind flexibel, aber oft instabil und abhängig von Samplegröße.</p>
-</div>
-<div class="detail-panel">
-<div class="panel-title">
-Korpusweit
-</div>
-<p>Vorgerechnete Topic-Attribute können stabiler sein und wie Metadaten durchsucht werden.</p>
-</div>
-<div class="example-panel">
-<div class="panel-title">
-TextLab-Frage
-</div>
-<p>Welche Modellierung gehört in die Korpuskompilierung, welche in die interaktive Analyse?</p>
-</div>
-</div>
-<div class="caption-note">
-<p>Topic Modeling als probabilistisches Modell: <span class="citation" data-cites="blei2003">Blei u.&nbsp;a. (<a href="#/literatur" role="doc-biblioref" onclick="">2003</a>)</span>.</p>
-</div>
-</section>
 <section id="abschluss" class="slide level2">
 <h2>Abschluss</h2>
-<aside class="notes">
-<p>11:42-11:43</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="pipeline-flow">
 <div class="pipeline-step">
 <p><strong>1 Daten wählen</strong></p>
@@ -1789,19 +1357,6 @@ TextLab-Frage
 </section>
 <section id="reproduzierbare-analyse-pipeline" class="slide level2">
 <h2>Reproduzierbare Analyse-Pipeline</h2>
-<aside class="notes">
-<p>11:43-11:44</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="documentation-grid">
 <div class="documentation-card">
 <p><strong>Korpus</strong></p>
@@ -1827,19 +1382,6 @@ TextLab-Frage
 </section>
 <section id="takeaway" class="slide level2">
 <h2>Takeaway</h2>
-<aside class="notes">
-<p>11:44-11:45</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="takeaway-lines">
 <div class="takeaway">
 <p>TextLab zeigt, wie aus Textsammlungen untersuchbare Daten werden.</p>
@@ -1854,19 +1396,6 @@ TextLab-Frage
 </section>
 <section id="literatur" class="slide level2 smaller scrollable">
 <h2>Literatur</h2>
-<aside class="notes">
-<p>Reserve</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <p><strong>Korpuslinguistische Methode:</strong> <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>; <span class="citation" data-cites="biberConradReppen1998">Biber u.&nbsp;a. (<a href="#/literatur" role="doc-biblioref" onclick="">1998</a>)</span>; <span class="citation" data-cites="mceneryHardie2011">McEnery und Hardie (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span></p>
 <p><strong>Anwendung und Statistik:</strong> <span class="citation" data-cites="hunston2002">Hunston (<a href="#/literatur" role="doc-biblioref" onclick="">2002</a>)</span>; <span class="citation" data-cites="brezina2018">Brezina (<a href="#/literatur" role="doc-biblioref" onclick="">2018</a>)</span></p>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
@@ -1879,6 +1408,12 @@ Blei, David M., Andrew Y. Ng, und Michael I. Jordan. 2003. <span>„Latent Diric
 <div id="ref-brezina2018" class="csl-entry" role="listitem">
 Brezina, Vaclav. 2018. <em>Statistics in Corpus Linguistics: A Practical Guide</em>. Cambridge University Press. <a href="https://doi.org/10.1017/9781316410899">https://doi.org/10.1017/9781316410899</a>.
 </div>
+<div id="ref-davies2012coha" class="csl-entry" role="listitem">
+Davies, Mark. 2012. <span>„Expanding horizons in historical linguistics with the 400-million word <span>C</span>orpus of <span>H</span>istorical <span>A</span>merican <span>E</span>nglish“</span>. <em>Corpora</em> 7: 121–57. <a href="https://doi.org/10.3366/cor.2012.0024">https://doi.org/10.3366/cor.2012.0024</a>.
+</div>
+<div id="ref-drucker2011" class="csl-entry" role="listitem">
+Drucker, Johanna. 2011. <span>„Humanities Approaches to Graphical Display“</span>. <em>Digital Humanities Quarterly</em> 5 (1). <a href="https://doi.org/10.63744/r4ysrh7ae534">https://doi.org/10.63744/r4ysrh7ae534</a>.
+</div>
 <div id="ref-hunston2002" class="csl-entry" role="listitem">
 Hunston, Susan. 2002. <em>Corpora in Applied Linguistics</em>. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139524773">https://doi.org/10.1017/CBO9781139524773</a>.
 </div>
@@ -1890,6 +1425,9 @@ Mikolov, Tomas, Kai Chen, Greg Corrado, und Jeffrey Dean. 2013. <span>„Efficie
 </div>
 <div id="ref-reimers2019" class="csl-entry" role="listitem">
 Reimers, Nils, und Iryna Gurevych. 2019. <span>„Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks“</span>. <em>Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing</em>, 3982–92. <a href="https://doi.org/10.18653/v1/D19-1410">https://doi.org/10.18653/v1/D19-1410</a>.
+</div>
+<div id="ref-schoch2013" class="csl-entry" role="listitem">
+Schöch, Christof. 2013. <span>„Big? Smart? Clean? Messy? Data in the Humanities“</span>. <em>Journal of Digital Humanities</em> 2 (3): 2–13. <a href="https://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/">https://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/</a>.
 </div>
 <div id="ref-sinclair1991" class="csl-entry" role="listitem">
 Sinclair, John. 1991. <em>Corpus, Concordance, Collocation</em>. Oxford University Press.
@@ -1912,6 +1450,7 @@ Sinclair, John. 1991. <em>Corpus, Concordance, Collocation</em>. Oxford Universi
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1934,6 +1473,7 @@ Sinclair, John. 1991. <em>Corpus, Concordance, Collocation</em>. Oxford Universi
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'pointer': {"key":"q","color":"#0f766e","pointerSize":18,"alwaysVisible":false},
 'smaller': true,
  
         // Display controls in the bottom right corner
@@ -2104,7 +1644,7 @@ Sinclair, John. 1991. <em>Corpus, Concordance, Collocation</em>. Oxford Universi
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,
