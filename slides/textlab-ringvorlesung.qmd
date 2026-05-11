@@ -446,19 +446,25 @@ COHA als diachrones Referenzkorpus: @davies2012coha.
 ::: {.tool-fact}
 **DTA**
 
-Kanonisierte historische Texte, lange Dokumente, gute Zeitachse. Beispiel: `[lemma="Demokratie"]` nach `year`.
+Kanonisierte historische Texte, lange Dokumente, gute Zeitachse. 
+
+Beispiel: `[lemma="Demokratie"]` nach `year`.
 :::
 
 ::: {.tool-fact}
 **Reddit**
 
-Viele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur. Beispiel: `Servus`, `Oida`, `wos` nach `subreddit`.
+Viele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur. 
+
+Beispiel: *Servus*, *Oida*, *wos* nach `subreddit`.
 :::
 
 ::: {.tool-fact}
 **COHA**
 
-Historisches Englisch, Genre- und Dekadenvergleich. Beispiel: `computer`, `radio`, `telephone` nach `decade`.
+Historisches Englisch, Genre- und Dekadenvergleich. 
+
+Beispiel: *computer*, *radio*, *telephone* nach `decade`.
 :::
 :::
 
