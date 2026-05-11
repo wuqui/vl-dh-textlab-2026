@@ -102,7 +102,7 @@
     "href": "slides/textlab-ringvorlesung.html#drei-korpuslogiken",
     "title": "TextLab in den Digital Humanities",
     "section": "Drei Korpuslogiken",
-    "text": "Drei Korpuslogiken\n\n\nDTA\nKanonisierte historische Texte, lange Dokumente, gute Zeitachse. Beispiel: [lemma=\"Demokratie\"] nach year.\n\n\nReddit\nViele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur. Beispiel: Servus, Oida, wos nach subreddit.\n\n\nCOHA\nHistorisches Englisch, Genre- und Dekadenvergleich. Beispiel: computer, radio, telephone nach decade.\n\n\n\nDie Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Beispiele überzeugend sind."
+    "text": "Drei Korpuslogiken\n\n\nDTA\nKanonisierte historische Texte, lange Dokumente, gute Zeitachse.\nBeispiel: [lemma=\"Demokratie\"] nach year.\n\n\nReddit\nViele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur.\nBeispiel: Servus, Oida, wos nach subreddit.\n\n\nCOHA\nHistorisches Englisch, Genre- und Dekadenvergleich.\nBeispiel: computer, radio, telephone nach decade.\n\n\n\nDie Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Beispiele überzeugend sind."
   },
   {
     "objectID": "slides/textlab-ringvorlesung.html#korpuskompilierung",
