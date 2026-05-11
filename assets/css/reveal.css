@@ -1139,6 +1139,51 @@ body,
   font-size: 0.74em;
 }
 
+.code-slide pre code {
+  max-height: 56vh;
+  font-size: 0.78em;
+  line-height: 1.32;
+}
+
+.code-slide .syntax-reference {
+  max-width: min(100%, 52em);
+  font-size: 0.7em;
+}
+
+.semantic-example {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5em;
+  align-items: start;
+  margin-top: 0.4em;
+}
+
+.semantic-example .screenshot-frame {
+  margin-top: 0;
+}
+
+.semantic-example .screenshot-wide {
+  width: 100% !important;
+  max-height: 56vh;
+}
+
+.reference-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.36em;
+  margin-top: 0.65em;
+  font-size: 0.7em;
+}
+
+.reference-pills span {
+  padding: 0.18em 0.5em;
+  border: 1px solid rgba(36, 84, 214, 0.16);
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #1d3fa3;
+  font-weight: 700;
+}
+
 .caption-note p {
   margin: 0;
   color: #4b596d;

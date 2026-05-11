@@ -249,20 +249,22 @@ Docs und Tests können gegen dieselbe Quelle prüfen.
 :::
 
 ```yaml
-# schematisch
-dta:
-  token_count: 238300000
-  annotations: [word, lemma, pos, dep_rel, ner]
-  metadata: [year, author, title, genre]
+coha:
+  total_tokens: 472302948
+  annotations:
+    attributes: [word, lemma, tag]
+  metadata_fields:
+    - { key: year, label: Year }
+    - { key: genre, label: Genre }
   value_options:
     annotations:
-      pos: [NN, VVFIN, ADJA, "..."]
+      tag: [nn1, jj, vv0, "..."]
     metadata:
-      genre: ["..."]
+      genre: [FIC, MAG, NEWS, NF]
 ```
 
 ::: {.syntax-reference}
-Das ist kein Zusatzdokument neben der App, sondern Teil des Produkts: Query Builder, Korpusauswahl, Filter, Docs und Tests greifen auf dieselbe Registry-Idee zu.
+Ausschnitt aus `server/corpora.yml`: Die App behandelt Korpuswissen als Konfiguration → single source of truth.
 :::
 
 ## Korpuslinguistik
@@ -293,6 +295,39 @@ Eine Query erzeugt nicht einfach “die Antwort”, sondern eine Menge von Treff
 
 ::: {.caption-note}
 Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; @hunston2002.
+:::
+
+## Korpuslinguistik: Hintergrund
+
+::: {.notes}
+10:32-10:42
+:::
+
+::: {.tool-facts}
+::: {.tool-fact}
+**Empirie**
+
+Korpora machen viele authentische Belege systematisch zugänglich.
+:::
+
+::: {.tool-fact}
+**Variation**
+
+Zeit, Genre, Register, Region oder Community werden vergleichbar.
+:::
+
+::: {.tool-fact}
+**Operationalisierung**
+
+Begriffe werden zu Suchmustern, Trefferräumen und kontrollierbaren Aggregationen.
+:::
+:::
+
+::: {.reference-pills}
+<span>Sinclair 1991</span>
+<span>Biber, Conrad & Reppen 1998</span>
+<span>Hunston 2002</span>
+<span>McEnery & Hardie 2011</span>
 :::
 
 ## Text wird zur Datenstruktur
@@ -554,6 +589,31 @@ BCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa `genre =
 <span>Multi-Token · Regex · POS · Dependencies · Texttypen</span>
 :::
 
+## Code: Query Builder {.code-slide}
+
+::: {.notes}
+11:04-11:08
+:::
+
+```ts
+export function buildProbeBcql(tokens, scopes, availableAnnotations = []) {
+  const available = new Set(availableAnnotations.map((v) => v.toLowerCase()));
+  const tokenParts = tokens.map((token) => {
+    const conditions = token.conditions.map((condition) => {
+      const attr = resolveProbeAttribute(condition.attribute, available);
+      const value = condition.value.replaceAll('"', '\\"').trim();
+      return value ? `${attr}${condition.operator}"${value}"` : null;
+    }).filter(Boolean);
+    return conditions.length ? `[${conditions.join(' & ')}]${token.quantifier}` : null;
+  });
+  return tokenParts.filter(Boolean).join(' ').trim();
+}
+```
+
+::: {.syntax-reference}
+Ausschnitt aus `ui-textlab/src/lib/queryBuilder.ts`: Der UI-Builder erzeugt keine Magie, sondern eine kontrollierte BCQL-Zeichenkette.
+:::
+
 ## Wie ist Suche gebaut?
 
 ::: {.notes}
@@ -615,6 +675,23 @@ Query und Texte werden als Vektoren verglichen; Nähe ersetzt exakte Zeichen- od
 
 Mehr Exploration, weniger exakt kontrollierbare Trefferdefinition.
 :::
+:::
+
+## Semantic-Search-Beispiel
+
+::: {.notes}
+11:10-11:12
+:::
+
+::: {.semantic-example}
+::: {.syntax-reference}
+Beispiel: Statt `[lemma="Maschine"]` sucht die Frage nach ähnlichen Passage-Vektoren. Das Ergebnis bleibt aber wieder als Belegliste lesbar.
+:::
+
+<div class="screenshot-frame">
+<img src="../assets/screenshots/textlab/07-semantic-search-results.png" alt="Semantic search results in TextLab" class="screenshot-wide">
+<div class="screenshot-caption">Semantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht.</div>
+</div>
 :::
 
 ## Analyse I: Konkordanzen und Frequenzen
@@ -976,6 +1053,36 @@ Clusterlabel nur mit Beispielbelegen vertrauen.
 
 ::: {.caption-note}
 Grundidee: distributionelle Semantik und Satz-/Dokument-Embeddings, vgl. @mikolov2013; @reimers2019.
+:::
+
+## Code: Embedding-Job {.code-slide}
+
+::: {.notes}
+11:36-11:38
+:::
+
+```py
+concordances = [
+    build_concordance_string(hit.left, hit.keyword, hit.right)
+    for hit in hits
+]
+
+embeddings, embedding_model = await loop.run_in_executor(
+    None, semantic_clustering.embed_concordances, concordances
+)
+
+points_2d = await loop.run_in_executor(
+    None, semantic_clustering.reduce_dimensions, embeddings
+)
+
+labels, *_ = await loop.run_in_executor(
+    None,
+    lambda: semantic_clustering.cluster_embeddings(points_2d, is_2d=True),
+)
+```
+
+::: {.syntax-reference}
+Ausschnitt aus `server/app/services/textlab_semantic_jobs.py`: Rechenintensive Schritte laufen als Job, nicht synchron im Request.
 :::
 
 ## LLM Classification
