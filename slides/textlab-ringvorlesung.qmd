@@ -31,7 +31,7 @@ execute:
   <a href="https://textlab.short.gy/vldh">textlab.short.gy/vldh</a>
 </div>
 
-## 10:15-10:22 · Einstieg
+## Einstieg
 
 ::: {.notes}
 10:15-10:22
@@ -105,13 +105,13 @@ Leitmotiv: Jede Operation ist ein Methodenangebot und zugleich eine technische A
 
 ::: {.method-detail}
 ::: {.detail-panel}
-<div class="panel-title">Datenstruktur</div>
+<div class="panel-title">Daten</div>
 
 Welche Einheiten gibt es: Dokument, Satz, Token, Treffer, Metadatum, Annotation, Vektor, Label?
 :::
 
 ::: {.detail-panel}
-<div class="panel-title">Algorithmus</div>
+<div class="panel-title">Methode</div>
 
 Wie wird daraus ein Ergebnis: Indexsuche, Gruppierung, Fensterzählung, Dependency-Mapping, Vektorvergleich?
 :::
@@ -127,7 +127,7 @@ Welche kontrollierbare Handlung entsteht daraus: Query bauen, Treffer lesen, Par
 Das ist auch für DH-Programmierung relevant: Methode, Datenmodell und Softwaredesign sind hier nicht getrennt.
 :::
 
-## 10:22-10:32 · Architektur der App
+## Architektur der App
 
 ::: {.notes}
 10:22-10:32
@@ -158,7 +158,7 @@ Dokumente, Chunks, Metadaten
 
 ::: {.architecture-step}
 **3 NLP**<br>
-Token, Lemma, POS, Dep, NER
+Token, Lemma, POS, Dependencies, NER
 :::
 
 ::: {.architecture-arrow}
@@ -265,7 +265,7 @@ dta:
 Das ist kein Zusatzdokument neben der App, sondern Teil des Produkts: Query Builder, Korpusauswahl, Filter, Docs und Tests greifen auf dieselbe Registry-Idee zu.
 :::
 
-## 10:32-10:42 · Korpuslinguistik
+## Korpuslinguistik
 
 ::: {.notes}
 10:32-10:42
@@ -386,7 +386,7 @@ KWIC-Zeilen, Frequenzen, Jahre, Genres, Communities, Kollokationen.
 :::
 :::
 
-## 10:42-10:52 · Daten im TextLab
+## Daten im TextLab
 
 ::: {.notes}
 10:42-10:52
@@ -433,7 +433,7 @@ Historisches Englisch, Genre- und Dekadenvergleich, stark für lexikalischen Wan
 Die Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Beispiele überzeugend sind.
 :::
 
-## 10:52-11:02 · Korpuskompilierung
+## Korpuskompilierung
 
 ::: {.notes}
 10:52-11:02
@@ -497,7 +497,7 @@ umkämpft    umkämpft    ADJD    pd
 BlackLab indexiert Tokenattribute und Dokumentmetadaten zusammen. Dadurch kann dieselbe Oberfläche erst KWIC-Kontexte, dann Frequenzen nach `year`, dann Kollokationen oder Word Sketches ausgeben.
 :::
 
-## 11:02-11:12 · Suchen
+## Suchen
 
 ::: {.notes}
 11:02-11:12
@@ -580,7 +580,7 @@ Mehr Exploration, weniger exakt kontrollierbare Trefferdefinition.
 :::
 :::
 
-## 11:12-11:25 · Analyse I
+## Analyse I: Konkordanzen und Frequenzen
 
 ::: {.notes}
 11:12-11:25
@@ -708,7 +708,7 @@ Dasselbe Prinzip wäre auch ein API-Call: Query, Group-by, Response, Chart.
 :::
 :::
 
-## 11:25-11:32 · Hands-on 1
+## Hands-on 1
 
 ::: {.notes}
 11:25-11:32
@@ -741,7 +741,7 @@ Dasselbe Prinzip wäre auch ein API-Call: Query, Group-by, Response, Chart.
 Ziel ist nicht die perfekte Interpretation, sondern ein Gefühl dafür, wie Query, Trefferraum und Analysemodul zusammenspielen.
 :::
 
-## 11:32-11:40 · Analyse II
+## Analyse II: Exploration und KI
 
 ::: {.notes}
 11:32-11:40
@@ -1034,7 +1034,7 @@ Welche Modellierung gehört in die Korpuskompilierung, welche in die interaktive
 Topic Modeling als probabilistisches Modell: @blei2003.
 :::
 
-## 11:40-11:45 · Abschluss
+## Abschluss
 
 ::: {.notes}
 11:40-11:45

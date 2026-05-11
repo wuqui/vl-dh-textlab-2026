@@ -355,8 +355,8 @@ body,
 
 .architecture-flow {
   grid-template-columns:
-    minmax(0, 1.05fr) 0.16fr minmax(0, 1.12fr) 0.16fr minmax(0, 1.05fr) 0.16fr
-    minmax(0, 1fr) 0.16fr minmax(0, 1.2fr);
+    minmax(0, 1fr) 0.18fr minmax(0, 1fr) 0.18fr minmax(0, 1fr) 0.18fr
+    minmax(0, 1fr) 0.18fr minmax(0, 1fr);
   align-items: stretch;
   margin-top: 0.8em;
 }
@@ -540,6 +540,10 @@ body,
   border-left: 0.24em solid var(--tl-teal);
   font-size: 0.74em;
   line-height: 1.32;
+}
+
+.callout-fragment {
+  margin-top: 0.95em;
 }
 
 .takeaway p,
