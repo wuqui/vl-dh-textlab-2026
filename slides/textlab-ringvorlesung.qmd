@@ -301,6 +301,29 @@ Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; @hunston2
 10:34-10:36
 :::
 
+::: {.tei-index-grid}
+::: {.tei-note}
+```xml
+<TEI>
+  <teiHeader>
+    <titleStmt>
+      <title>Die Freiheit bleibt umkämpft</title>
+    </titleStmt>
+  </teiHeader>
+  <text>
+    <body>
+      <p>Die Freiheit bleibt umkämpft.</p>
+    </body>
+  </text>
+</TEI>
+```
+
+::: {.syntax-reference}
+TEI/XML beschreibt Text, Struktur und Metadaten. Für die Suche wird daraus ein Tokenstrom mit Annotationen.
+:::
+:::
+
+::: {.tei-note}
 | pos | word | lemma | pos_tag | dep_rel | metadata |
 |---:|---|---|---|---|---|
 | 1 | Die | der | ART | nk | year=1848 |
@@ -309,7 +332,9 @@ Grundlagen: @sinclair1991; @biberConradReppen1998; @mceneryHardie2011; @hunston2
 | 4 | umkämpft | umkämpft | ADJD | pd | year=1848 |
 
 ::: {.syntax-reference}
-Eine Korpussuche ist technisch eine Suche über strukturierte Token- und Dokumentattribute. Genau deshalb können wir nach Wortform, Lemma, Wortart, syntaktischer Relation oder Metadaten filtern.
+Korpussuche heißt: über Wortform, Lemma, Wortart, syntaktische Relation oder Metadaten filtern.
+:::
+:::
 :::
 
 ## Grundoperationen
@@ -392,12 +417,14 @@ KWIC-Zeilen, Frequenzen, Jahre, Genres, Communities, Kollokationen.
 10:42-10:52
 :::
 
+::: {.corpus-table}
 | Korpus | Größe | Stärken für die Demo | Typische Frage |
 |---|---:|---|---|
-| DTA | 238.3M Tokens | historisches Deutsch, Jahresmetadaten, stabile Belegarbeit | Wie verschieben sich politische Begriffe? |
-| COHA | 472.3M Tokens | historisches Englisch, Genres, 1820-2019 | Wie verändert sich Wortgebrauch über Dekaden? |
-| German Reddit | 61.2M Tokens | Gegenwartssprache, Subreddits, Plattformkommunikation | Wie unterscheiden sich Communities? |
 | English Reddit | 41.3M Tokens | regionale Communities, Variation im Englischen | Welche Themen und Wörter markieren Regionen? |
+| German Reddit | 61.2M Tokens | Gegenwartssprache, Subreddits, Plattformkommunikation | Wie unterscheiden sich Communities? |
+| DTA | 238.3M Tokens | historisches Deutsch, Jahresmetadaten, stabile Belegarbeit | Wie verschieben sich politische Begriffe? |
+| COHA | ca. 470M Tokens | historisches Englisch, Genres, 1820-2019 | Wie verändert sich Wortgebrauch über Dekaden? |
+:::
 
 ::: {.caption-note}
 Tokenzahlen beschreiben die Korpusgröße; Trefferzahlen entstehen erst durch Query und Filter.
@@ -494,7 +521,7 @@ umkämpft    umkämpft    ADJD    pd
 ```
 
 ::: {.syntax-reference}
-BlackLab indexiert Tokenattribute und Dokumentmetadaten zusammen. Dadurch kann dieselbe Oberfläche erst KWIC-Kontexte, dann Frequenzen nach `year`, dann Kollokationen oder Word Sketches ausgeben.
+Der Index speichert Tokenattribute und Dokumentmetadaten zusammen. Dieselbe Query kann dadurch KWIC, Frequenzen, Kollokationen und Word Sketches antreiben.
 :::
 
 ## Suchen
@@ -503,18 +530,28 @@ BlackLab indexiert Tokenattribute und Dokumentmetadaten zusammen. Dadurch kann d
 11:02-11:12
 :::
 
-::: {.query-examples}
+::: {.query-examples .query-examples-wide}
 `[word="Haus"]`
 
 `[lemma="Freiheit"]`
 
-`[lemma="Demokratie"]`
+`[lemma="politisch"] [lemma="Freiheit"]`
 
 `[word="Teutsch.*"]`
+
+`[pos="ADJA"] [lemma="Demokratie"]`
+
+`[lemma="Demokratie" & dep_rel="sb"]`
 :::
 
 ::: {.syntax-reference}
-`word` sucht konkrete Wortformen. `lemma` bündelt flektierte Formen. Reguläre Ausdrücke erweitern den Suchraum. Metadatenfilter begrenzen ihn wieder.
+BCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa `genre = Zeitung` oder `subreddit = ich_iel`.
+:::
+
+::: {.search-docs}
+<span>BCQL/CQL</span>
+<a href="https://blacklab.ivdnt.org/guide/query-language/">BlackLab Query Language</a>
+<span>Multi-Token · Regex · POS · Dependencies · Texttypen</span>
 :::
 
 ## Wie ist Suche gebaut?
@@ -531,15 +568,15 @@ Tokens haben Attribute wie `word`, `lemma`, `pos` und Positionen im Dokument.
 :::
 
 ::: {.detail-panel}
-<div class="panel-title">Index</div>
+<div class="panel-title">Suchregister</div>
 
-BlackLab speichert Posting-Listen und einen Forward Index für Kontext und KWIC.
+Für jedes Merkmal gibt es eine Liste der Fundstellen: `lemma=Freiheit` → alle Tokenpositionen.
 :::
 
 ::: {.example-panel}
-<div class="panel-title">UI</div>
+<div class="panel-title">Kontextspeicher</div>
 
-Der Query Builder übersetzt Eingaben in BCQL und nutzt die Registry für Vorschläge.
+Der Index merkt sich auch die Tokenfolge. So kann die UI Treffer als KWIC-Kontext anzeigen.
 :::
 :::
 
@@ -549,7 +586,7 @@ Der Query Builder übersetzt Eingaben in BCQL und nutzt die Registry für Vorsch
 11:08-11:10
 :::
 
-<div class="screenshot-frame">
+<div class="screenshot-frame screenshot-crop screenshot-query-crop">
 <img src="../assets/screenshots/textlab/01-query-setup.png" alt="TextLab query setup with DTA corpus and a Demokratie query" class="screenshot-wide">
 <div class="screenshot-caption">Korpus, Query und Suchmodus bestimmen, welche Muster sichtbar werden.</div>
 </div>
@@ -659,7 +696,7 @@ Variation, Wandel und Unterschiede zwischen Korpusteilen werden sichtbar.
 11:20-11:21
 :::
 
-<div class="screenshot-frame screenshot-full">
+<div class="screenshot-frame screenshot-full screenshot-crop">
 <img src="../assets/screenshots/textlab/03-frequency-demokratie.png" alt="TextLab frequency results for Demokratie by year" class="screenshot-wide">
 <div class="screenshot-caption">Eine Gruppierung macht aus Treffern ein Muster.</div>
 </div>
@@ -821,7 +858,7 @@ Jeden Kandidaten zurück in KWIC prüfen.
 11:34
 :::
 
-<div class="screenshot-frame screenshot-full">
+<div class="screenshot-frame screenshot-full screenshot-crop">
 <img src="../assets/screenshots/textlab/05-collocations-demokratie.png" alt="TextLab collocation table for Demokratie" class="screenshot-wide">
 <div class="screenshot-caption">Kollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”.</div>
 </div>
