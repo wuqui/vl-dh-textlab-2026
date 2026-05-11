@@ -2,15 +2,12 @@ project:
   type: website
   output-dir: _site
   render:
-    - index.qmd
     - slides/textlab-ringvorlesung.qmd
+  resources:
+    - index.html
 
 website:
   title: "TextLab in den Digital Humanities"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Überblick
 
 lang: de
 bibliography: references.bib
