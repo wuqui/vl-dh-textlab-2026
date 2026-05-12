@@ -1391,3 +1391,35 @@ body,
     display: none;
   }
 }
+
+@media print {
+  :root {
+    --tl-shadow: none;
+  }
+
+  .reveal *,
+  .reveal section img,
+  .reveal table,
+  .reveal pre {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+  }
+}
+
+html.print-pdf {
+  --tl-shadow: none;
+}
+
+html.print-pdf .reveal *,
+html.print-pdf .reveal section img,
+html.print-pdf .reveal table,
+html.print-pdf .reveal pre,
+body.print-pdf .reveal *,
+body.print-pdf .reveal section img,
+body.print-pdf .reveal table,
+body.print-pdf .reveal pre {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
