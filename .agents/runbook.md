@@ -6,6 +6,21 @@
 quarto render
 ```
 
+## PDF-Export
+
+```bash
+quarto render
+npx decktape reveal _site/index.html output/textlab-ringvorlesung.pdf
+```
+
+Nach dem Export mindestens eine Card-/Table-Folie als PNG prüfen:
+
+```bash
+pdftoppm -png -f 2 -l 2 -r 150 output/textlab-ringvorlesung.pdf output/pdf-check/page
+```
+
+Wichtig: CSS-`box-shadow` ist für decktape/PDF in diesem Deck deaktiviert. Weiche Schatten können im PDF als große graue Rechteckflächen erscheinen, besonders in macOS Preview/Acrobat. Für neue Card-, Tabellen-, Bild- oder Codeblock-Styles deshalb keine `box-shadow`-Regeln wieder einführen, ohne den PDF-Export visuell zu prüfen.
+
 ## Quarto/RevealJS-Fallen
 
 - In `revealjs`-Folien keine Markdown-Überschriften (`#`, `##`, `###`, ...) innerhalb von Cards, Columns, Callouts, HTML-Blöcken oder anderen Container-Layouts verwenden.

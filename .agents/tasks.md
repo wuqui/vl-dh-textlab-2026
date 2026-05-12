@@ -78,3 +78,4 @@
 - [x] Live-UI-Smoke mit Vorlesungsaccount durchgeführt: Login, Tokenlabels im Korpusmenü, DTA-KWIC/Frequency, German Reddit und English Reddit geprüft.
 - [x] Korpuslinguistik-Grundlagenblock mit einschlägigen Literaturverweisen ins Deck eingebaut.
 - [x] COHA als live verfügbares diachrones Bonuskorpus in TextLab und Folien eingebaut.
+- [x] PDF-Export-Artefakt durch deaktivierte CSS-Shadows behoben und als Runbook-Regel dokumentiert.
