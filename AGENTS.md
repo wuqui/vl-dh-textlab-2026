@@ -5,7 +5,7 @@
 - Anlass: 90-minütige Vorlesung in der Ringvorlesung des Studiengangs Digital Humanities an der LMU.
 - Termin: Montag nach dem ITG/IDK-Workshop vom 08.05.2026.
 - Thema: Vorstellung von TextLab als DH-/Korpuslabor: Was kann es, wie ist es gebaut, und wie lassen sich zentrale Module methodisch einordnen?
-- Primäres Material: Quarto/RevealJS-Folien in `slides/`.
+- Primäres Material: Quarto/RevealJS-Folien in `index.qmd`.
 - Ausgangspunkte:
   - TextLab-App und technische Dokumentation: `/Users/quirin/proj/mcl-textlab`
   - heutiger Workshop: `/Users/quirin/itg/idk-workshops/2_text-analysis`
@@ -20,6 +20,15 @@
 - Literaturangaben werden bei Bedarf über Quarto-native Citations in `references.bib` gepflegt.
 - Keine großen Korpora, BlackLab-Indizes oder Runtime-Daten in dieses Repo kopieren.
 - Vor größeren Folienänderungen die Quarto/RevealJS-Fallen in `.agents/runbook.md` prüfen; insbesondere keine Markdown-Headings innerhalb von Cards/Columns verwenden.
+
+## Browser- und Screenshot-Regeln
+
+- Für Browser-/Screenshot-Aufgaben nach Möglichkeit den persönlichen Skill `$browser-screenshot-workflow` verwenden.
+- Bei sichtbarer Arbeit im Codex-internen Browser zuerst das Browser-Plugin bzw. den In-app-Browser-Kontext verwenden; nicht auf einen separaten Chrome-DevTools-Kontext ausweichen, wenn der Nutzer ausdrücklich den Codex-Browser meint.
+- Für deployed TextLab mit Login bevorzugt die Codex Chrome Extension verwenden, weil sie den eingeloggten Chrome-Kontext des Nutzers nutzt. Der isolierte In-app-Browser kann bei Auth/Cookies vom sichtbaren Nutzerzustand abweichen.
+- Chrome DevTools nur für gezielte DOM-/Network-Diagnose verwenden, wenn der Browser-Kontext eindeutig derselbe ist oder wenn kein Login-/Session-Zustand relevant ist.
+- Playwright nur für reproduzierbare Test-, Export- oder Screenshot-Flows verwenden, nicht als Standardersatz für einen sichtbaren manuellen Browserzustand.
+- Bei Screenshot-Arbeit an TextLab zuerst klären und nennen, aus welchem Kontext das Bild stammt: deployed App, lokale App, gerendertes Deck oder Doku-/Fallback-Asset.
 
 ## Dateien in `.agents/`
 

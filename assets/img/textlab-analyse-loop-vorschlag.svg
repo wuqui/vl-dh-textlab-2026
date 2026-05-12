@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TextLab Analyse-Loop</title>
+  <desc id="desc">Vorschlag für ein Diagramm: Fragestellung, Korpus und Query, Modul und Parameter, Belege und Export, neue Frage.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#23988a"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#203040" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .title { fill: #121b2d; font: 800 58px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .subtitle { fill: #586e84; font: 500 28px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .box { fill: #ffffff; stroke: #23988a; stroke-width: 4; filter: url(#shadow); }
+      .box-blue { stroke: #2454d6; }
+      .label { fill: #121b2d; font: 800 28px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .body { fill: #334155; font: 500 21px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .small { fill: #586e84; font: 650 22px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .badge { fill: #f97316; }
+      .badgeText { fill: #fff; font: 800 24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-anchor: middle; dominant-baseline: central; }
+      .arrow { fill: none; stroke: #23988a; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .return { fill: none; stroke: #2454d6; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); stroke-dasharray: 18 16; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f6fbfb"/>
+  <text x="100" y="112" class="title">Analyse als kontrollierter Loop</text>
+  <text x="102" y="160" class="subtitle">TextLab verbindet Forschungsfrage, Suchmuster, Modulparameter und Belegprüfung.</text>
+
+  <g transform="translate(85 270)">
+    <rect class="box" width="320" height="180" rx="18"/>
+    <circle class="badge" cx="52" cy="48" r="24"/>
+    <text class="badgeText" x="52" y="49">1</text>
+    <text x="36" y="102" class="label">Fragestellung</text>
+    <text x="36" y="140" class="body">Was soll sichtbar werden?</text>
+  </g>
+
+  <g transform="translate(465 270)">
+    <rect class="box box-blue" width="320" height="180" rx="18"/>
+    <circle class="badge" cx="52" cy="48" r="24"/>
+    <text class="badgeText" x="52" y="49">2</text>
+    <text x="36" y="102" class="label">Korpus + Query</text>
+    <text x="36" y="140" class="body">Trefferraum definieren</text>
+  </g>
+
+  <g transform="translate(845 270)">
+    <rect class="box" width="320" height="180" rx="18"/>
+    <circle class="badge" cx="52" cy="48" r="24"/>
+    <text class="badgeText" x="52" y="49">3</text>
+    <text x="36" y="102" class="label">Modul + Parameter</text>
+    <text x="36" y="140" class="body">zählen, gruppieren, modellieren</text>
+  </g>
+
+  <g transform="translate(1225 270)">
+    <rect class="box box-blue" width="320" height="180" rx="18"/>
+    <circle class="badge" cx="52" cy="48" r="24"/>
+    <text class="badgeText" x="52" y="49">4</text>
+    <text x="36" y="102" class="label">Belege + Export</text>
+    <text x="36" y="140" class="body">prüfen und dokumentieren</text>
+  </g>
+
+  <path class="arrow" d="M420 360H450"/>
+  <path class="arrow" d="M800 360H830"/>
+  <path class="arrow" d="M1180 360H1210"/>
+  <path class="return" d="M1375 485C1295 680 310 680 245 485"/>
+
+  <g transform="translate(430 625)">
+    <rect x="0" y="0" width="740" height="88" rx="16" fill="#e8f4ff" stroke="#c9dcff" stroke-width="3"/>
+    <text x="34" y="38" class="small">Rückbindung:</text>
+    <text x="188" y="38" class="body">Counts, Cluster oder Labels werden erst durch KWIC-Belege interpretierbar.</text>
+    <text x="34" y="68" class="body">Jede Auswertung erzeugt die nächste, präzisere Frage.</text>
+  </g>
+</svg>

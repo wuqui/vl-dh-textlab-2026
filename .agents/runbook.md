@@ -14,10 +14,35 @@ quarto render
 - Nach strukturellen Folienänderungen immer `quarto render` ausführen und im gerenderten HTML prüfen, ob keine unerwarteten nested Reveal-Sections entstanden sind. Ein schneller Check ist:
 
 ```bash
-rg '<section[^>]*>\\s*<section' _site/slides/textlab-ringvorlesung.html
+rg '<section[^>]*>\\s*<section' _site/index.html
 ```
 
 - Wenn die Navigation im Browser nach einer bestimmten Folie springt, zuerst die vorherige Folie auf interne Markdown-Headings in Cards/Columns prüfen.
+
+## Reveal Pointer
+
+- Die Quarto-Extension `quarto-ext/pointer` ist lokal unter `_extensions/quarto-ext/pointer/` installiert.
+- In der Präsentation toggelt `q` den Pointer; Farbe und Größe sind im YAML von `index.qmd` gesetzt.
+- Nach Quarto-Upgrades einmal prüfen, ob `site_libs/revealjs/plugin/reveal-pointer/pointer.js` im gerenderten HTML geladen wird.
+
+## Browser-Workflow für Reviews und Screenshots
+
+0. Für Screenshot-Arbeit zuerst den persönlichen Codex-Skill `$browser-screenshot-workflow` verwenden; die projektspezifischen Regeln hier ergänzen diesen Workflow.
+1. Sichtbarer Codex-Browser / In-app-Browser ist der Default für Folienreviews, `file://`, `localhost` und öffentliche Seiten ohne Login.
+2. Für `https://www.wuerschinger.org/textlab/` mit Login die Codex Chrome Extension verwenden. Sie ist der richtige Weg, wenn Codex den eingeloggten Nutzerzustand aus Chrome sehen soll.
+3. Nicht zwischen In-app-Browser, Chrome DevTools und Playwright wechseln, ohne den Kontext explizit zu benennen. Wenn ein Tool Login-Screen zeigt, während der Nutzer eine eingeloggte Seite sieht, ist es der falsche Browser-Kontext.
+4. Chrome DevTools nur gezielt einsetzen: DOM-Inspektion, Network-Fehler, Console-Fehler, CSS-Diagnose. Vor Aktionen prüfen, dass URL und Session sichtbar zum Nutzerzustand passen.
+5. Playwright nur für reproduzierbare Abläufe verwenden: DeckTape/PDF-Export, automatisierte Navigation, E2E-Smokes oder Screenshot-Serien, die bewusst aus einem Skript kommen.
+6. Screenshot-Assets für das Deck müssen mit ihrer Herkunft benannt werden:
+   - `live-deployed-*`: aus der deployed TextLab-App
+   - `local-*`: aus lokaler App
+   - `deck-*`: aus gerendertem Deck
+   - `fallback-*`: historische Doku-/Workshopbilder, nur wenn ausdrücklich als Fallback gewünscht
+7. Für Folien-Screenshots zuerst Element-Screenshots versuchen. Wenn ein Fullpage-Screenshot zugeschnitten werden muss, `.agents/crop-screenshot.py` verwenden:
+   - `python3 .agents/crop-screenshot.py info <image>`
+   - `python3 .agents/crop-screenshot.py contact <image> /tmp/contact.png --strip-height 900`
+   - `python3 .agents/crop-screenshot.py candidates <image> /tmp/crops --x 60 --width 2760 --height 900 --ys 1200,1500,1800`
+   - `python3 .agents/crop-screenshot.py crop <image> <output> --x 60 --y 1500 --width 2760 --height 900 --spec assets/screenshots/textlab/crops.json`
 
 ## Live-Smoke 2026-05-09
 
@@ -29,6 +54,8 @@ TextLab live:
 - Services: `textlab-api.service`, `nginx.service`, `blacklab.service` active
 - Probe account: server-side in `/etc/textlab/textlab_probe_auth.env`
 - Vorlesungsaccount: `dh@lmu.de`, approved non-admin user, credentials server-side in `/etc/textlab/textlab_lecture_auth.env`
+- 2026-05-11: Vorlesungsaccount nach GitGuardian-Alert gelöscht und neu angelegt; Login und `/api/textlab/health` mit neuer serverseitiger Credential-Datei erfolgreich geprüft.
+- 2026-05-11: Git-Historie auf `main` bereinigt und force-gepusht; Publish-Workflow währenddessen pausiert und danach wieder aktiviert. Remote-`main` und `gh-pages` auf Zugangsdaten-Zeilen geprüft.
 
 Confirmed demo queries through authenticated TextLab API:
 
@@ -57,7 +84,7 @@ Live-demo rule: show DTA first; only show Reddit after DTA query + distribution 
 ## Lokale Arbeitsreihenfolge
 
 1. `.agents/project.md` und `.agents/tasks.md` prüfen.
-2. Folien in `slides/textlab-ringvorlesung.qmd` bearbeiten.
+2. Folien in `index.qmd` bearbeiten.
 3. Bei neuen technischen Aussagen TextLab-Doku in `/Users/quirin/proj/mcl-textlab/dev/docs/` prüfen.
 4. Bei wiederverwendbaren Workshopteilen Material in `/Users/quirin/itg/idk-workshops/2_text-analysis` prüfen.
 5. Rendern und sichtbare Probleme direkt korrigieren.

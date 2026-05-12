@@ -10,6 +10,51 @@
 - [ ] Vorlesungsaccount am Montag vor der Sitzung nochmal mit Login im UI prüfen.
 - [ ] COHA-Integration am Montag kurz gegenprüfen: Korpusauswahl, `[lemma="computer"]`, Frequency nach `decade`.
 
+## Folien-Backlog zur Priorisierung (erfasst 2026-05-11)
+
+### Inhaltlich vorlesungsnah
+
+- [x] Suchen-Slide als Tabelle umbauen: Query | was gefunden wird | Beispiel.
+- [x] Query-Setup-Slide so umbauen, dass der Query Builder sichtbar ist und erklärt wird: Man muss dadurch nicht direkt BCQL schreiben.
+- [x] Prüfen, ob Semantic-Search-Beispiel und Screenshot im aktuellen Deck gut sichtbar sind; ggf. verbessern.
+- [x] Concordance-Beispiel durch COHA-Beispiel ersetzen und NER-Highlights erklären.
+- [x] Frequency-Beispiel durch diachrones COHA-Beispiel ersetzen und Buckets chronologisch sortieren.
+- [x] Live-Beispielpalette verbessern: German Reddit mit dialektalem DE/AT-Wort; English Reddit mit US/UK-Unterschied.
+- [x] Collocation-Beispiel einschlägiger machen, ggf. COHA.
+- [x] Topic Modeling vor Embeddings verschieben; Beispiel ergänzen.
+- [x] Topic-Modeling-Screenshot ergänzen.
+- [ ] Optional ersetzen: spezifischer COHA-topics-over-time-Screenshot, falls später verfügbar.
+- [x] Referenzen als Fußnoten/Captions auf relevante Slides verteilen.
+- [x] Drei Korpuslogiken: konkrete Beispiele ergänzen.
+
+### Korrektheit und technische Erklärung
+
+- [x] Registry-Codeblock-Kontrast verbessern.
+- [x] TEI/XML-Beispiel um Metadaten wie `year` ergänzen.
+- [x] Tabelle Daten im TextLab: Größenspalte schmaler.
+- [x] Korpuskompilierung: Leading zeros entfernen.
+- [x] Suchindex-Folie korrekt erklären: prüfen, welches Format BlackLab tatsächlich nutzt; ggf. als vereinfachtes Vertikalformat labeln.
+- [x] BlackLab kurz erklären und offizielle URL verlinken.
+
+### Layout, Plugins und Assets
+
+- [x] Einstieg: Card-Titel `These` zu `TextLab` ändern.
+- [x] Word-Sketch-Tabelle: `candidate` als zweite Spalte vor `relation`.
+- [x] Quarto Reveal Pointer Plugin installieren/einrichten.
+- [x] App-Architekturdiagramm als präzise Quarto/CSS-Grafik passend ins Deck einbauen; ImageGen wegen exakter technischer Labels bewusst nicht verwendet.
+- [x] Speaker Notes aus den published slides entfernen bzw. beim Publishing ausschließen.
+
+## TextLab-PM-Backlog (im TextLab-Repo erfasst, keine Umsetzung hier)
+
+- [x] Corpus-Selector zeigt falschen Eintrag `Corpus`; später entfernen/fixen.
+- [x] Collocation-Modul liefert bei COHA `[word="computer"]` unplausible Ergebnisse; Stopwords, Ranking, Scoring, Fenster und Attribut prüfen.
+- [x] Collocation-Defaults: 3 links / 3 rechts.
+- [x] Collocation-Attribut konfigurierbar machen, sinnvoller Default `lemma`.
+- [x] Collocation-Metriken konfigurierbar machen; logDice ggf. als Default dokumentieren und mit Literatur/Resource erklären.
+- [x] AI Analysis Agent ist nicht zuverlässig genug: Timeouts/Deadline, RAG-Index-Missing, Fehlermeldungen, Chat-Workflow und robuste Tool-Nutzung neu aufsetzen.
+- [ ] Query Builder überschreibt die BCQL-Querybox nicht zuverlässig: Wenn dort bereits Text steht, muss man ihn oft erst manuell löschen. Gewünschtes Verhalten klären und sauber fixen, sodass Builder-Ausgabe und BCQL-Preview/Querybox synchron bleiben.
+- [ ] Frequency-Modul: Sortierung `Bucket label`/`Ascending` prüfen. Im deployed UI wirkt die Einstellung nicht zuverlässig auf Tabelle/Chart; für diachrone Beispiele müssen Buckets nachvollziehbar chronologisch darstellbar sein.
+
 ## In Arbeit
 
 - [ ] Timing nach Probedurchlauf prüfen.
