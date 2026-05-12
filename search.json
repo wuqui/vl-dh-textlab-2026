@@ -161,11 +161,11 @@
     "text": "Semantische Suche als zweite Suchlogik\n\n\n\nExakte Suche\n\nlemma, word, POS, Regex: Treffer müssen strukturell zur Query passen.\n\n\n\nSemantische Suche\n\nQuery und Texte werden als Vektoren verglichen; Nähe ersetzt exakte Zeichen- oder Lemmagleichheit.\n\n\n\nTrade-off\n\nMehr Exploration, weniger exakt kontrollierbare Trefferdefinition."
   },
   {
-    "objectID": "index.html#semantic-search-beispiel",
-    "href": "index.html#semantic-search-beispiel",
+    "objectID": "index.html#beispiel-für-semantische-suche",
+    "href": "index.html#beispiel-für-semantische-suche",
     "title": "TextLab in den Digital Humanities",
-    "section": "Semantic-Search-Beispiel",
-    "text": "Semantic-Search-Beispiel\n\n\nBeispiel: Statt [lemma=\"Maschine\"] sucht die Frage nach ähnlichen Passage-Vektoren. Das Ergebnis bleibt aber wieder als Belegliste lesbar.\n\n\n\n\nSemantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht."
+    "section": "Beispiel für semantische Suche",
+    "text": "Beispiel für semantische Suche\nSuchanfrage: In welchen Texten spielt Wetter eine Rolle?\nStatt z.B. [lemma=\"Wetter\"] sucht die Frage nach semantisch ähnlichen Passagen im Korpus.\n\nSemantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht."
   },
   {
     "objectID": "index.html#analyse-i-konkordanzen-und-frequenzen",
@@ -186,7 +186,7 @@
     "href": "index.html#concordance-beispiel-reddit-kwic",
     "title": "TextLab in den Digital Humanities",
     "section": "Concordance-Beispiel: Reddit-KWIC",
-    "text": "Concordance-Beispiel: Reddit-KWIC\n\n\nEnglish Reddit: [word=\"London\"]. KWIC zeigt konkrete Belege; vorhandene Span-Annotationen können darüber als Entity-/NER-Layer sichtbar gemacht werden.\n\n\n\n\nKonkordanz: Query → KWIC-Zeilen → interpretierbare Einzelkontexte; zusätzliche Annotationen bleiben als Layer anzeigbar."
+    "text": "Concordance-Beispiel: Reddit-KWIC\nEnglish Reddit: [word=\"London\"].\nKWIC zeigt konkrete Belege; vorhandene Span-Annotationen können darüber als Entity-/NER-Layer sichtbar gemacht werden.\n\nKonkordanz: Query → KWIC-Zeilen → interpretierbare Einzelkontexte; zusätzliche Annotationen bleiben als Layer anzeigbar."
   },
   {
     "objectID": "index.html#frequency",
@@ -242,7 +242,7 @@
     "href": "index.html#collocation-beispiel",
     "title": "TextLab in den Digital Humanities",
     "section": "Collocation-Beispiel",
-    "text": "Collocation-Beispiel\n\n\n\n\n\n\n\n\n\nKorpus\nQuery\nKollokationsfrage\n\n\n\n\nDTA\n[lemma=\"Demokratie\"]\nWelche Nachbarlemmata markieren historische Textsorten und politische Kontexte?\n\n\nCOHA\n[lemma=\"radio\"]\nWelche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum?\n\n\nEnglish Reddit\ncolour / color\nWelche Community-Kontexte begleiten Schreibvarianten?\n\n\n\n\n\n\n\nKollokationen: Attribut, Fenster, Richtung und Score bestimmen, welche Nachbarschaften als auffällig erscheinen. Screenshot: deployed TextLab, 11.05.2026.\n\n\n\nKollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”. Gute Beispiele brauchen deshalb Korpus, Query, Fenster, Attribut und Score.\n\n\nKollokation als korpuslinguistische Grundoperation: Sinclair (1991)."
+    "text": "Collocation-Beispiel\n\n\n\n\n\n\n\n\nKorpus\nQuery\nKollokationsfrage\n\n\n\n\nDTA\n[lemma=\"Demokratie\"]\nWelche Nachbarlemmata markieren historische Textsorten und politische Kontexte?\n\n\nCOHA\n[lemma=\"radio\"]\nWelche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum?\n\n\nEnglish Reddit\ncolour / color\nWelche Community-Kontexte begleiten Schreibvarianten?\n\n\n\n\n\n\nKollokationen für commit im englischen Reddit-Korpus.\n\n\n\nKollokation als korpuslinguistische Grundoperation: Sinclair (1991)."
   },
   {
     "objectID": "index.html#word-sketches",
@@ -277,7 +277,7 @@
     "href": "index.html#embedding-clustering-beispiel",
     "title": "TextLab in den Digital Humanities",
     "section": "Embedding-/Clustering-Beispiel",
-    "text": "Embedding-/Clustering-Beispiel\n\n\nTextLab projiziert Trefferkontexte als semantischen Raum: Cluster sind nur dann interpretierbar, wenn man die Belege darunter mitliest.\n\n\n\n\nSemantic Space: Embeddings → Projektion → Cluster → Rückbindung an KWIC-Beispiele. Screenshot: deployed TextLab, 11.05.2026."
+    "text": "Embedding-/Clustering-Beispiel\nTextLab analysiert und visualisiert Treffer in ihrem semantischen Raum.\n\nSemantic Space des Wortes Schloss: Embeddings → Projektion → Cluster"
   },
   {
     "objectID": "index.html#embedding-workflow",
@@ -333,7 +333,7 @@
     "href": "index.html#takeaway",
     "title": "TextLab in den Digital Humanities",
     "section": "Takeaway",
-    "text": "Takeaway\n\n\nTextLab zeigt, wie aus Textsammlungen untersuchbare Daten werden.\n\n\nJedes Modul hat zwei Seiten: eine intuitive Forschungsoperation und eine technische Implementierung.\n\n\nFür DH ist genau diese Verbindung spannend: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird."
+    "text": "Takeaway\n\n\nTextLab kann aus Text-Daten durchsuchbar und analysierbar machen.\n\n\nJedes Modul hat zwei Seiten: eine Forschungsoperation und eine technische Implementierung.\n\n\nFür DH relevant: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird."
   },
   {
     "objectID": "index.html#literatur",

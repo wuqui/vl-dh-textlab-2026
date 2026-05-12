@@ -824,20 +824,12 @@ Trade-off
 </div>
 </div>
 </section>
-<section id="semantic-search-beispiel" class="slide level2">
-<h2>Semantic-Search-Beispiel</h2>
-<div class="semantic-example">
-<div class="syntax-reference">
-<p>Beispiel: Statt <code>[lemma="Maschine"]</code> sucht die Frage nach ähnlichen Passage-Vektoren. Das Ergebnis bleibt aber wieder als Belegliste lesbar.</p>
-</div>
-<div class="screenshot-frame screenshot-crop screenshot-semantic-crop">
-<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-semantic-search.png" alt="Semantic search results in TextLab with backend metadata and KWIC-like result table" class="screenshot-wide">
-<div class="screenshot-caption">
-Semantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht.
-</div>
-</div>
-</div>
-</section>
+<section id="beispiel-für-semantische-suche" class="slide level2">
+<h2>Beispiel für semantische Suche</h2>
+<p>Suchanfrage: <code>In welchen Texten spielt Wetter eine Rolle?</code></p>
+<p>Statt z.B. <code>[lemma="Wetter"]</code> sucht die Frage nach semantisch ähnlichen Passagen im Korpus.</p>
+
+<img data-src="att/semantische-suche-wetter.png" class="r-stretch quarto-figure-center"><p class="caption">Semantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht.</p></section>
 <section id="analyse-i-konkordanzen-und-frequenzen" class="slide level2">
 <h2>Analyse I: Konkordanzen und Frequenzen</h2>
 <div class="section-question">
@@ -869,18 +861,10 @@ Wofür gut?
 </section>
 <section id="concordance-beispiel-reddit-kwic" class="slide level2">
 <h2>Concordance-Beispiel: Reddit-KWIC</h2>
-<div class="semantic-example">
-<div class="syntax-reference">
-<p>English Reddit: <code>[word="London"]</code>. KWIC zeigt konkrete Belege; vorhandene Span-Annotationen können darüber als Entity-/NER-Layer sichtbar gemacht werden.</p>
-</div>
-<div class="screenshot-frame screenshot-crop screenshot-kwic-crop">
-<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-kwic-reddit-london-v2.png" alt="TextLab concordance view for London in English Reddit" class="screenshot-wide">
-<div class="screenshot-caption">
-Konkordanz: Query → KWIC-Zeilen → interpretierbare Einzelkontexte; zusätzliche Annotationen bleiben als Layer anzeigbar.
-</div>
-</div>
-</div>
-</section>
+<p>English Reddit: <code>[word="London"]</code>.</p>
+<p>KWIC zeigt konkrete Belege; vorhandene Span-Annotationen können darüber als Entity-/NER-Layer sichtbar gemacht werden.</p>
+
+<img data-src="att/concordance-london.png" class="r-stretch quarto-figure-center"><p class="caption">Konkordanz: Query → KWIC-Zeilen → interpretierbare Einzelkontexte; zusätzliche Annotationen bleiben als Layer anzeigbar.</p></section>
 <section id="frequency" class="slide level2">
 <h2>Frequency</h2>
 <div class="method-detail">
@@ -1020,47 +1004,42 @@ Wofür gut?
 </section>
 <section id="collocation-beispiel" class="slide level2">
 <h2>Collocation-Beispiel</h2>
-<div class="frequency-example">
 <table class="caption-top">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 12%">
+<col style="width: 19%">
+<col style="width: 67%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Korpus</th>
-<th>Query</th>
-<th>Kollokationsfrage</th>
+<th style="text-align: left;">Korpus</th>
+<th style="text-align: left;">Query</th>
+<th style="text-align: left;">Kollokationsfrage</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>DTA</td>
-<td><code>[lemma="Demokratie"]</code></td>
-<td>Welche Nachbarlemmata markieren historische Textsorten und politische Kontexte?</td>
+<td style="text-align: left;">DTA</td>
+<td style="text-align: left;"><code>[lemma="Demokratie"]</code></td>
+<td style="text-align: left;">Welche Nachbarlemmata markieren historische Textsorten und politische Kontexte?</td>
 </tr>
 <tr class="even">
-<td>COHA</td>
-<td><code>[lemma="radio"]</code></td>
-<td>Welche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum?</td>
+<td style="text-align: left;">COHA</td>
+<td style="text-align: left;"><code>[lemma="radio"]</code></td>
+<td style="text-align: left;">Welche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum?</td>
 </tr>
 <tr class="odd">
-<td>English Reddit</td>
-<td><code>colour</code> / <code>color</code></td>
-<td>Welche Community-Kontexte begleiten Schreibvarianten?</td>
+<td style="text-align: left;">English Reddit</td>
+<td style="text-align: left;"><code>colour</code> / <code>color</code></td>
+<td style="text-align: left;">Welche Community-Kontexte begleiten Schreibvarianten?</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="screenshot-frame screenshot-crop screenshot-collocation-crop">
-<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-collocations-demokratie.png" alt="TextLab collocation module with ranked collocates and KWIC examples" class="screenshot-wide">
-<div class="screenshot-caption">
-Kollokationen: Attribut, Fenster, Richtung und Score bestimmen, welche Nachbarschaften als auffällig erscheinen. Screenshot: deployed TextLab, 11.05.2026.
-</div>
-</div>
-<div class="syntax-reference">
-<p>Kollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”. Gute Beispiele brauchen deshalb Korpus, Query, Fenster, Attribut und Score.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="att/collocation-commit.png" height="350"></p>
+<figcaption>Kollokationen für <em>commit</em> im englischen Reddit-Korpus.</figcaption>
+</figure>
 </div>
 <div class="caption-note">
 <p>Kollokation als korpuslinguistische Grundoperation: <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>.</p>
@@ -1159,18 +1138,9 @@ UI-Frage
 </section>
 <section id="embedding-clustering-beispiel" class="slide level2">
 <h2>Embedding-/Clustering-Beispiel</h2>
-<div class="semantic-example">
-<div class="syntax-reference">
-<p>TextLab projiziert Trefferkontexte als semantischen Raum: Cluster sind nur dann interpretierbar, wenn man die Belege darunter mitliest.</p>
-</div>
-<div class="screenshot-frame screenshot-crop screenshot-semantic-space-crop">
-<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-semantic-space-demokratie-v3.png" alt="TextLab semantic space with embedding model, cluster count and example concordances" class="screenshot-wide">
-<div class="screenshot-caption">
-Semantic Space: Embeddings → Projektion → Cluster → Rückbindung an KWIC-Beispiele. Screenshot: deployed TextLab, 11.05.2026.
-</div>
-</div>
-</div>
-</section>
+<p>TextLab analysiert und visualisiert Treffer in ihrem <strong>semantischen Raum</strong>.</p>
+
+<img data-src="att/semantic-space-schloss.png" class="r-stretch quarto-figure-center"><p class="caption">Semantic Space des Wortes <em>Schloss</em>: Embeddings → Projektion → Cluster</p></section>
 <section id="embedding-workflow" class="slide level2">
 <h2>Embedding-Workflow</h2>
 <div class="pipeline-flow">
@@ -1275,10 +1245,8 @@ Ziel
 </section>
 <section id="abschluss" class="slide level2">
 <h2>Abschluss</h2>
-<div class="analysis-loop-slide">
-<p><img src="assets/img/textlab-analyse-loop.svg" alt="Analyse-Loop in TextLab: Fragestellung, Korpus und Query, Modul und Parameter, Belege und Export, Rückbindung an Belege" class="analysis-loop-img"></p>
-</div>
-</section>
+
+<img data-src="att/analyse-loop.png" class="r-stretch"></section>
 <section id="reproduzierbare-analyse-pipeline" class="slide level2">
 <h2>Reproduzierbare Analyse-Pipeline</h2>
 <div class="documentation-grid">
@@ -1308,13 +1276,13 @@ Ziel
 <h2>Takeaway</h2>
 <div class="takeaway-lines">
 <div class="takeaway">
-<p>TextLab zeigt, wie aus Textsammlungen untersuchbare Daten werden.</p>
+<p>TextLab kann aus Text-Daten durchsuchbar und analysierbar machen.</p>
 </div>
 <div class="takeaway">
-<p>Jedes Modul hat zwei Seiten: eine intuitive Forschungsoperation und eine technische Implementierung.</p>
+<p>Jedes Modul hat zwei Seiten: eine Forschungsoperation und eine technische Implementierung.</p>
 </div>
 <div class="takeaway">
-<p>Für DH ist genau diese Verbindung spannend: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird.</p>
+<p>Für DH relevant: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird.</p>
 </div>
 </div>
 </section>
