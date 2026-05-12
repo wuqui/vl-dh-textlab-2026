@@ -32,7 +32,7 @@
     "href": "index.html#architektur-der-app",
     "title": "TextLab in den Digital Humanities",
     "section": "Architektur der App",
-    "text": "Architektur der App\n\nDie zentrale Designidee: Einmal sauber kompilierte Korpora sollen viele Analyseoperationen tragen.\n\n\n\n1 Rohdaten XML, csv, json, txt\n\n\n→\n\n\n2 Korpusmodell Dokumente, Chunks, Metadaten\n\n\n→\n\n\n3 NLP Token, Lemma, POS, Dependencies, NER\n\n\n→\n\n\n4 Suchindex BlackLab, BCQL, KWIC, Groups\n\n\n→\n\n\n5 Anwendung API, UI, Module, Jobs"
+    "text": "Architektur der App\n\n\n\n\nDie zentrale Designidee: Einmal sauber kompilierte Korpora tragen viele Analyseoperationen; die Backend-API vermittelt zwischen UI, Index, Datenbank, Jobs und semantischen Schichten."
   },
   {
     "objectID": "index.html#textlab-als-software-system",
@@ -60,21 +60,14 @@
     "href": "index.html#korpuslinguistik",
     "title": "TextLab in den Digital Humanities",
     "section": "Korpuslinguistik",
-    "text": "Korpuslinguistik\n\n\n\nKorpus\n\nEine dokumentierte, maschinenlesbare Textsammlung mit Auswahlkriterien und Metadaten.\n\n\n\nAnnotation\n\nZusätzliche Schichten über dem Text: Token, Lemma, Wortart, syntaktische Relation, Entität.\n\n\n\nTrefferraum\n\nEine Query erzeugt nicht einfach “die Antwort”, sondern eine Menge von Treffern, die weiter analysiert wird.\n\n\n\nGrundlagen: Sinclair (1991); Biber u. a. (1998); McEnery und Hardie (2011); Hunston (2002)."
-  },
-  {
-    "objectID": "index.html#korpuslinguistik-hintergrund",
-    "href": "index.html#korpuslinguistik-hintergrund",
-    "title": "TextLab in den Digital Humanities",
-    "section": "Korpuslinguistik: Hintergrund",
-    "text": "Korpuslinguistik: Hintergrund\n\n\nEmpirie\nKorpora machen viele authentische Belege systematisch zugänglich.\n\n\nVariation\nZeit, Genre, Register, Region oder Community werden vergleichbar.\n\n\nOperationalisierung\nBegriffe werden zu Suchmustern, Trefferräumen und kontrollierbaren Aggregationen.\n\n\n\nSinclair 1991 Biber, Conrad & Reppen 1998 Hunston 2002 McEnery & Hardie 2011"
+    "text": "Korpuslinguistik\n\n\n\n\nKorpus\n\nEine dokumentierte, maschinenlesbare Textsammlung mit Auswahlkriterien und Metadaten.\n\n\n\nAnnotation\n\nZusätzliche Schichten über dem Text: Token, Lemma, Wortart, syntaktische Relation, Entität.\n\n\n\nTrefferraum\n\nEine Query erzeugt nicht einfach “die Antwort”, sondern eine Menge von Treffern, die weiter analysiert wird.\n\n\n\n\nEmpirie\nKorpora machen viele authentische Belege systematisch zugänglich.\n\n\nVariation\nZeit, Genre, Register, Region oder Community werden vergleichbar.\n\n\nOperationalisierung\nBegriffe werden zu Suchmustern, Trefferräumen und kontrollierbaren Aggregationen.\n\n\n\n\nKorpuslinguistische Grundlagen: Sinclair (1991); Biber u. a. (1998); Hunston (2002); McEnery und Hardie (2011)."
   },
   {
     "objectID": "index.html#text-wird-zur-datenstruktur",
     "href": "index.html#text-wird-zur-datenstruktur",
     "title": "TextLab in den Digital Humanities",
     "section": "Text wird zur Datenstruktur",
-    "text": "Text wird zur Datenstruktur\n\n\n&lt;TEI&gt;\n  &lt;teiHeader&gt;\n    &lt;titleStmt&gt;\n      &lt;title&gt;Die Freiheit bleibt umkämpft&lt;/title&gt;\n    &lt;/titleStmt&gt;\n    &lt;profileDesc&gt;\n      &lt;creation&gt;&lt;date when=\"1848\"/&gt;&lt;/creation&gt;\n    &lt;/profileDesc&gt;\n  &lt;/teiHeader&gt;\n  &lt;text&gt;\n    &lt;body&gt;\n      &lt;p&gt;Die Freiheit bleibt umkämpft.&lt;/p&gt;\n    &lt;/body&gt;\n  &lt;/text&gt;\n&lt;/TEI&gt;\n\nTEI/XML beschreibt Text, Struktur und Metadaten. Für die Suche wird daraus ein Tokenstrom mit Annotationen.\n\n\n\n\n\n\npos\nword\nlemma\npos_tag\ndep_rel\nmetadata\n\n\n\n\n1\nDie\nder\nART\nnk\nyear=1848\n\n\n2\nFreiheit\nFreiheit\nNN\nsb\nyear=1848\n\n\n3\nbleibt\nbleiben\nVVFIN\nroot\nyear=1848\n\n\n4\numkämpft\numkämpft\nADJD\npd\nyear=1848\n\n\n\n\nKorpussuche heißt: über Wortform, Lemma, Wortart, syntaktische Relation oder Metadaten filtern."
+    "text": "Text wird zur Datenstruktur\n\n\n&lt;TEI&gt;\n  &lt;teiHeader&gt;\n    &lt;titleStmt&gt;\n      &lt;title&gt;Die Freiheit bleibt umkämpft&lt;/title&gt;\n    &lt;/titleStmt&gt;\n    &lt;profileDesc&gt;\n      &lt;creation&gt;&lt;date when=\"1848\"/&gt;&lt;/creation&gt;\n    &lt;/profileDesc&gt;\n  &lt;/teiHeader&gt;\n  &lt;text&gt;\n    &lt;body&gt;\n      &lt;p&gt;Die Freiheit bleibt umkämpft.&lt;/p&gt;\n    &lt;/body&gt;\n  &lt;/text&gt;\n&lt;/TEI&gt;\n\nTEI/XML beschreibt Text, Struktur und Metadaten. Für die Suche wird daraus ein Tokenstrom mit Annotationen.\n\n\n\n\n\n\npos\nword\nlemma\npos_tag\ndep_rel\nmetadata\n\n\n\n\n1\nDie\ndie\nART\nnk\nyear=1848\n\n\n2\nFreiheit\nFreiheit\nNN\nsb\nyear=1848\n\n\n3\nbleibt\nbleiben\nVVFIN\nroot\nyear=1848\n\n\n4\numkämpft\numkämpfen\nADJD\npd\nyear=1848\n\n\n\n\nKorpussuche heißt: über Wortform, Lemma, Wortart, syntaktische Relation oder Metadaten filtern."
   },
   {
     "objectID": "index.html#grundoperationen",
@@ -98,11 +91,11 @@
     "text": "Daten im TextLab\n\n\n\n\n\n\n\n\n\n\nKorpus\nGröße\nStärken für die Demo\nTypische Frage\n\n\n\n\nEnglish Reddit\n41.3M Tokens\nregionale Communities, Variation im Englischen\nWelche Themen und Wörter markieren Regionen?\n\n\nGerman Reddit\n61.2M Tokens\nGegenwartssprache, Subreddits, Plattformkommunikation\nWie unterscheiden sich Communities?\n\n\nDTA\n238.3M Tokens\nhistorisches Deutsch, Jahresmetadaten, stabile Belegarbeit\nWie verschieben sich politische Begriffe?\n\n\nCOHA\nca. 470M Tokens\nhistorisches Englisch, Genres, 1820-2019\nWie verändert sich Wortgebrauch über Dekaden?\n\n\n\n\n\nCOHA als diachrones Referenzkorpus: Davies (2012)."
   },
   {
-    "objectID": "index.html#drei-korpuslogiken",
-    "href": "index.html#drei-korpuslogiken",
+    "objectID": "index.html#drei-ausgewählte-korpora",
+    "href": "index.html#drei-ausgewählte-korpora",
     "title": "TextLab in den Digital Humanities",
-    "section": "Drei Korpuslogiken",
-    "text": "Drei Korpuslogiken\n\n\nDTA\nKanonisierte historische Texte, lange Dokumente, gute Zeitachse.\nBeispiel: [lemma=\"Demokratie\"] nach year.\n\n\nReddit\nViele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur.\nBeispiel: Servus, Oida, wos nach subreddit.\n\n\nCOHA\nHistorisches Englisch, Genre- und Dekadenvergleich.\nBeispiel: computer, radio, telephone nach decade.\n\n\n\nDie Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Beispiele überzeugend sind."
+    "section": "Drei ausgewählte Korpora",
+    "text": "Drei ausgewählte Korpora\n\n\nDTA\nKanonisierte historische Texte, lange Dokumente, gute Zeitachse.\nBeispiel: [lemma=\"Demokratie\"] nach year.\n\n\nReddit\nViele kurze Dokumente, soziale Plattformmetadaten, Community-Struktur.\nBeispiel: Servus, Oida, wos nach subreddit.\n\n\nCOHA\nHistorisches Englisch, Genre- und Dekadenvergleich.\nBeispiel: computer, radio, telephone nach decade.\n\n\n\nDie Korpuslogik entscheidet mit, welche Methoden gut funktionieren und welche Beispiele überzeugend sind."
   },
   {
     "objectID": "index.html#korpuskompilierung",
@@ -116,14 +109,14 @@
     "href": "index.html#was-in-den-suchindex-geht",
     "title": "TextLab in den Digital Humanities",
     "section": "Was in den Suchindex geht",
-    "text": "Was in den Suchindex geht\n&lt;doc id=\"dta_1848_...\" year=\"1848\" genre=\"political\"&gt;\nword        lemma       pos     dep_rel\nDie         der         ART     nk\nFreiheit    Freiheit    NN      sb\nbleibt      bleiben     VVFIN   root\numkämpft    umkämpft    ADJD    pd\n&lt;/doc&gt;\n\nDas ist ein vereinfachtes Lehrformat für den Import. BlackLab baut daraus einen Lucene-basierten Index mit Tokenannotationen, Vorwärtsindex für Kontext/KWIC und Dokumentmetadaten."
+    "text": "Was in den Suchindex geht\n&lt;doc id=\"dta_1848_...\" year=\"1848\" genre=\"political\"&gt;\nword        lemma       pos     dep_rel\nDie         die         ART     nk\nFreiheit    Freiheit    NN      sb\nbleibt      bleiben     VVFIN   root\numkämpft    umkämpfen   ADJD    pd\n&lt;/doc&gt;\n\nDas ist ein vereinfachtes Beispiel für den Import. BlackLab baut aus solchen Formaten einen Lucene-basierten Index mit Tokenannotationen, Vorwärtsindex für Kontext/KWIC und Dokumentmetadaten."
   },
   {
     "objectID": "index.html#suchen",
     "href": "index.html#suchen",
     "title": "TextLab in den Digital Humanities",
     "section": "Suchen",
-    "text": "Suchen\n\n\n\n\n\n\n\n\n\nQuery\nWas gefunden wird\nBeispiel\n\n\n\n\n[word=\"Haus\"]\nexakte Wortform\nSchreibweise im Text\n\n\n[lemma=\"Freiheit\"]\nalle Flexionsformen eines Lemmas\nFreiheit, Freiheiten\n\n\n[lemma=\"politisch\"] [lemma=\"Freiheit\"]\nSequenz aus zwei Tokenmustern\npolitische Freiheit\n\n\n[word=\"Teutsch.*\"]\nregulärer Ausdruck\nTeutsch, Teutsche\n\n\n[pos=\"ADJA\"] [lemma=\"Demokratie\"]\nWortart + Lemma\ndemokratische Demokratie?\n\n\n[lemma=\"Demokratie\" & dep_rel=\"sb\"]\nLemma mit syntaktischer Rolle\nDemokratie als Subjekt\n\n\n\n\n\nBCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa genre = Zeitung oder subreddit = ich_iel.\n\n\nBCQL/CQL BlackLab BlackLab Query Language Multi-Token · Regex · POS · Dependencies · Texttypen"
+    "text": "Suchen\n\n\n\n\n\n\n\n\n\nQuery\nWas gefunden wird\nBeispiel\n\n\n\n\n[word=\"Haus\"]\nexakte Wortform\nSchreibweise im Text\n\n\n[lemma=\"Freiheit\"]\nalle Flexionsformen eines Lemmas\nFreiheit, Freiheiten\n\n\n[lemma=\"politisch\"] [lemma=\"Freiheit\"]\nSequenz aus zwei Tokenmustern\npolitische Freiheit\n\n\n[word=\"Teutsch.*\"]\nregulärer Ausdruck\nTeutsch, Teutsche\n\n\n[pos=\"ADJA\"] [lemma=\"Demokratie\"]\nWortart + Lemma\ndemokratische Demokratie?\n\n\n[lemma=\"Demokratie\" & dep_rel=\"sb\"]\nLemma mit syntaktischer Rolle\nDemokratie als Subjekt\n\n\n\n\n\nBCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa genre = Zeitung oder subreddit = ich_iel.\n\n\n\nDokumentation: BlackLab · BCQL/CQL Query Language\n\n\nSuchmuster: Multi-Token, Regex, POS, Dependencies und Texttypen"
   },
   {
     "objectID": "index.html#code-query-builder",
@@ -144,7 +137,7 @@
     "href": "index.html#textlab-query-setup",
     "title": "TextLab in den Digital Humanities",
     "section": "TextLab: Query Setup",
-    "text": "TextLab: Query Setup\n\n\n\nDer Query Builder macht Tokenattribute, Operatoren und Werte auswählbar; daraus entsteht die BCQL-Query für den Index."
+    "text": "TextLab: Query Setup\n\nDer Query Builder macht Tokenattribute, Operatoren und Werte auswählbar; daraus entsteht die BCQL-Query für den Index."
   },
   {
     "objectID": "index.html#topic-modeling-als-modellierungsschicht",
@@ -189,11 +182,11 @@
     "text": "Concordance / KWIC\n\n\n\nWas macht es?\n\nKWIC zeigt Treffer mit linkem und rechtem Kontext. Das macht viele Belege schnell lesbar.\n\n\n\nWie gebaut?\n\nDie Suche liefert Trefferpositionen; der Index gibt für jede Position Kontexttokens zurück.\n\n\n\nWofür gut?\n\nBedeutungsvarianten, typische Konstruktionen, ungewöhnliche Treffer und Fehler schnell erkennen."
   },
   {
-    "objectID": "index.html#concordance-beispiel-coha",
-    "href": "index.html#concordance-beispiel-coha",
+    "objectID": "index.html#concordance-beispiel-reddit-kwic",
+    "href": "index.html#concordance-beispiel-reddit-kwic",
     "title": "TextLab in den Digital Humanities",
-    "section": "Concordance-Beispiel: COHA",
-    "text": "Concordance-Beispiel: COHA\n\n\n\nQuery\n\n[lemma=\"computer\"] in COHA.\n\n\n\nLesefrage\n\nMeint computer einen rechnenden Menschen, eine Maschine oder eine digitale Infrastruktur?\n\n\n\nNER-Highlights\n\nFarbliche Entitäts-Spans sind ein Anzeige-Layer über der KWIC-Zeile: Sie markieren erkannte Personen, Orte oder Organisationen, wenn der Korpus solche Span-Annotationen enthält.\n\n\n\nKWIC ist die Brücke zwischen Query und einzelner Textstelle: Eine diachrone Frequenzkurve wird erst interpretierbar, wenn man konkrete Kontexte liest."
+    "section": "Concordance-Beispiel: Reddit-KWIC",
+    "text": "Concordance-Beispiel: Reddit-KWIC\n\n\nEnglish Reddit: [word=\"London\"]. KWIC zeigt konkrete Belege; vorhandene Span-Annotationen können darüber als Entity-/NER-Layer sichtbar gemacht werden.\n\n\n\n\nKonkordanz: Query → KWIC-Zeilen → interpretierbare Einzelkontexte; zusätzliche Annotationen bleiben als Layer anzeigbar."
   },
   {
     "objectID": "index.html#frequency",
@@ -203,11 +196,11 @@
     "text": "Frequency\n\n\n\nWas macht es?\n\nTreffer werden nach Jahr, Genre, Subreddit, Lemma, POS oder anderen Feldern gruppiert.\n\n\n\nWie gebaut?\n\nBackend gruppiert Treffer über BlackLab-Felder oder Metadaten; UI zeigt absolute Counts und, wo sinnvoll, Raten pro Million Tokens.\n\n\n\nWofür gut?\n\nVariation, Wandel und Unterschiede zwischen Korpusteilen werden sichtbar."
   },
   {
-    "objectID": "index.html#frequency-beispiel-coha-diachron",
-    "href": "index.html#frequency-beispiel-coha-diachron",
+    "objectID": "index.html#frequency-von-metadaten-diachrone-entwicklungen",
+    "href": "index.html#frequency-von-metadaten-diachrone-entwicklungen",
     "title": "TextLab in den Digital Humanities",
-    "section": "Frequency-Beispiel: COHA diachron",
-    "text": "Frequency-Beispiel: COHA diachron\n\n\n\n\n\n\n\n\n\nSchritt\nEinstellung\nWarum\n\n\n\n\nKorpus\nCOHA\nhistorisches Englisch, lange Zeitachse\n\n\nQuery\n[lemma=\"computer\"]\nlexikalischer Bedeutungswandel\n\n\nGroup by\ndecade\nBuckets chronologisch sortieren\n\n\nRückbindung\nKWIC pro auffälliger Dekade\nBedeutung nicht aus Counts allein ableiten\n\n\n\n\n\nEine Gruppierung macht aus Treffern ein Muster. Bei COHA ist die Reihenfolge der Buckets selbst Teil der Aussage: 1820s → 1830s → … → 2010s.\n\n\nFrequenzinterpretation und Normalisierung in Korpora: Brezina (2018)."
+    "section": "Frequency von Metadaten: diachrone Entwicklungen",
+    "text": "Frequency von Metadaten: diachrone Entwicklungen\n\nFrequenz von [lemma=\"phone\"] im COHA.\nFrequenzinterpretation und Normalisierung in Korpora: Brezina (2018)."
   },
   {
     "objectID": "index.html#beispielpfade-für-eigene-fragen",
@@ -242,14 +235,14 @@
     "href": "index.html#kollokationen-als-algorithmus",
     "title": "TextLab in den Digital Humanities",
     "section": "Kollokationen als Algorithmus",
-    "text": "Kollokationen als Algorithmus\n\n\n1 Treffer\n[lemma=\"Demokratie\"]\n\n\n2 Fenster\n\nB. 5 Tokens links und rechts.\n\n\n\n3 Kandidaten\nNachbarlemmata zählen.\n\n\n4 Score\nHäufigkeit + Auffälligkeit bewerten.\n\n\n5 Belege\nJeden Kandidaten zurück in KWIC prüfen."
+    "text": "Kollokationen als Algorithmus\n\n\n1 Treffer\n[lemma=\"Demokratie\"]\n\n\n2 Fenster\nz.B. 5 Tokens links und rechts.\n\n\n3 Kandidaten\nNachbarlemmata zählen.\n\n\n4 Score\nHäufigkeit + Auffälligkeit bewerten.\n\n\n5 Belege\nJeden Kandidaten zurück in KWIC prüfen."
   },
   {
     "objectID": "index.html#collocation-beispiel",
     "href": "index.html#collocation-beispiel",
     "title": "TextLab in den Digital Humanities",
     "section": "Collocation-Beispiel",
-    "text": "Collocation-Beispiel\n\n\n\n\n\n\n\n\n\nKorpus\nQuery\nKollokationsfrage\n\n\n\n\nCOHA\n[lemma=\"computer\"]\nWelche Nachbarwörter zeigen den Übergang vom Beruf zur Maschine?\n\n\nCOHA\n[lemma=\"radio\"]\nWelche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum?\n\n\nEnglish Reddit\ncolour / color\nWelche Community-Kontexte begleiten Schreibvarianten?\n\n\n\n\n\nKollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”. Gute Beispiele brauchen deshalb Korpus, Query, Fenster, Attribut und Score.\n\n\nKollokation als korpuslinguistische Grundoperation: Sinclair (1991)."
+    "text": "Collocation-Beispiel\n\n\n\n\n\n\n\n\n\nKorpus\nQuery\nKollokationsfrage\n\n\n\n\nDTA\n[lemma=\"Demokratie\"]\nWelche Nachbarlemmata markieren historische Textsorten und politische Kontexte?\n\n\nCOHA\n[lemma=\"radio\"]\nWelche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum?\n\n\nEnglish Reddit\ncolour / color\nWelche Community-Kontexte begleiten Schreibvarianten?\n\n\n\n\n\n\n\nKollokationen: Attribut, Fenster, Richtung und Score bestimmen, welche Nachbarschaften als auffällig erscheinen. Screenshot: deployed TextLab, 11.05.2026.\n\n\n\nKollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”. Gute Beispiele brauchen deshalb Korpus, Query, Fenster, Attribut und Score.\n\n\nKollokation als korpuslinguistische Grundoperation: Sinclair (1991)."
   },
   {
     "objectID": "index.html#word-sketches",
@@ -278,6 +271,13 @@
     "title": "TextLab in den Digital Humanities",
     "section": "Embeddings und Clustering",
     "text": "Embeddings und Clustering\n\n\n\nEmbeddings\n\nTexte, Trefferkontexte oder Queries werden von einem Modell in numerische Vektoren übersetzt.\n\n\n\nClustering\n\nÄhnliche Vektoren werden per Distanzmaß verglichen, gruppiert oder als nächste Nachbarn gesucht.\n\n\n\nUI-Frage\n\nWie zeigt man semantische Nähe so, dass Nutzerinnen wieder zu Belegen zurückkommen?"
+  },
+  {
+    "objectID": "index.html#embedding-clustering-beispiel",
+    "href": "index.html#embedding-clustering-beispiel",
+    "title": "TextLab in den Digital Humanities",
+    "section": "Embedding-/Clustering-Beispiel",
+    "text": "Embedding-/Clustering-Beispiel\n\n\nTextLab projiziert Trefferkontexte als semantischen Raum: Cluster sind nur dann interpretierbar, wenn man die Belege darunter mitliest.\n\n\n\n\nSemantic Space: Embeddings → Projektion → Cluster → Rückbindung an KWIC-Beispiele. Screenshot: deployed TextLab, 11.05.2026."
   },
   {
     "objectID": "index.html#embedding-workflow",
@@ -319,7 +319,7 @@
     "href": "index.html#abschluss",
     "title": "TextLab in den Digital Humanities",
     "section": "Abschluss",
-    "text": "Abschluss\n\n\n1 Daten wählen\nKorpuslogik, Zeitraum, Genre, Community.\n\n\n2 Suche formulieren\nQuery, Filter, Trefferraum.\n\n\n3 Modul wechseln\nKWIC, Frequency, Collocation, Sketch, Semantic, LLM.\n\n\n4 nächste Frage\nBelege prüfen, Vergleich bauen, Parameter dokumentieren."
+    "text": "Abschluss"
   },
   {
     "objectID": "index.html#reproduzierbare-analyse-pipeline",

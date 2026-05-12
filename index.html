@@ -302,37 +302,11 @@ Interface
 </section>
 <section id="architektur-der-app" class="slide level2">
 <h2>Architektur der App</h2>
-<div class="callout-fragment">
-<p>Die zentrale Designidee: Einmal sauber kompilierte Korpora sollen viele Analyseoperationen tragen.</p>
+<div class="architecture-diagram-slide">
+<p><img src="assets/img/textlab-gesamtaufbau-notitle.png" alt="TextLab Gesamtaufbau: Browser, Frontend, Backend API, BlackLab Index, Semantic Layer, Datenbank, Vektoren, Import und Indexierung" class="architecture-diagram-img"></p>
 </div>
-<div class="architecture-flow">
-<div class="architecture-step">
-<p><strong>1 Rohdaten</strong><br> XML, csv, json, txt</p>
-</div>
-<div class="architecture-arrow">
-<p>→</p>
-</div>
-<div class="architecture-step">
-<p><strong>2 Korpusmodell</strong><br> Dokumente, Chunks, Metadaten</p>
-</div>
-<div class="architecture-arrow">
-<p>→</p>
-</div>
-<div class="architecture-step">
-<p><strong>3 NLP</strong><br> Token, Lemma, POS, Dependencies, NER</p>
-</div>
-<div class="architecture-arrow">
-<p>→</p>
-</div>
-<div class="architecture-step">
-<p><strong>4 Suchindex</strong><br> BlackLab, BCQL, KWIC, Groups</p>
-</div>
-<div class="architecture-arrow">
-<p>→</p>
-</div>
-<div class="architecture-step is-dark">
-<p><strong>5 Anwendung</strong><br> API, UI, Module, Jobs</p>
-</div>
+<div class="caption-note">
+<p>Die zentrale Designidee: Einmal sauber kompilierte Korpora tragen viele Analyseoperationen; die Backend-API vermittelt zwischen UI, Index, Datenbank, Jobs und semantischen Schichten.</p>
 </div>
 </section>
 <section id="textlab-als-software-system" class="slide level2">
@@ -400,48 +374,44 @@ Interface
 </section>
 <section id="korpuslinguistik" class="slide level2">
 <h2>Korpuslinguistik</h2>
-<div class="method-detail">
-<div class="detail-panel">
+<div class="corpus-basics">
+<div class="corpus-terms">
+<div class="corpus-term">
 <div class="panel-title">
 Korpus
 </div>
 <p>Eine dokumentierte, maschinenlesbare Textsammlung mit Auswahlkriterien und Metadaten.</p>
 </div>
-<div class="detail-panel">
+<div class="corpus-term">
 <div class="panel-title">
 Annotation
 </div>
 <p>Zusätzliche Schichten über dem Text: Token, Lemma, Wortart, syntaktische Relation, Entität.</p>
 </div>
-<div class="example-panel">
+<div class="corpus-term">
 <div class="panel-title">
 Trefferraum
 </div>
 <p>Eine Query erzeugt nicht einfach “die Antwort”, sondern eine Menge von Treffern, die weiter analysiert wird.</p>
 </div>
 </div>
-<div class="caption-note">
-<p>Grundlagen: <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>; <span class="citation" data-cites="biberConradReppen1998">Biber u.&nbsp;a. (<a href="#/literatur" role="doc-biblioref" onclick="">1998</a>)</span>; <span class="citation" data-cites="mceneryHardie2011">McEnery und Hardie (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span>; <span class="citation" data-cites="hunston2002">Hunston (<a href="#/literatur" role="doc-biblioref" onclick="">2002</a>)</span>.</p>
-</div>
-</section>
-<section id="korpuslinguistik-hintergrund" class="slide level2">
-<h2>Korpuslinguistik: Hintergrund</h2>
-<div class="tool-facts">
-<div class="tool-fact">
+<div class="corpus-why">
+<div class="corpus-why-item">
 <p><strong>Empirie</strong></p>
 <p>Korpora machen viele authentische Belege systematisch zugänglich.</p>
 </div>
-<div class="tool-fact">
+<div class="corpus-why-item">
 <p><strong>Variation</strong></p>
 <p>Zeit, Genre, Register, Region oder Community werden vergleichbar.</p>
 </div>
-<div class="tool-fact">
+<div class="corpus-why-item">
 <p><strong>Operationalisierung</strong></p>
 <p>Begriffe werden zu Suchmustern, Trefferräumen und kontrollierbaren Aggregationen.</p>
 </div>
 </div>
-<div class="reference-pills">
-<p><span>Sinclair 1991</span> <span>Biber, Conrad &amp; Reppen 1998</span> <span>Hunston 2002</span> <span>McEnery &amp; Hardie 2011</span></p>
+</div>
+<div class="caption-note">
+<p>Korpuslinguistische Grundlagen: <span class="citation" data-cites="sinclair1991">Sinclair (<a href="#/literatur" role="doc-biblioref" onclick="">1991</a>)</span>; <span class="citation" data-cites="biberConradReppen1998">Biber u.&nbsp;a. (<a href="#/literatur" role="doc-biblioref" onclick="">1998</a>)</span>; <span class="citation" data-cites="hunston2002">Hunston (<a href="#/literatur" role="doc-biblioref" onclick="">2002</a>)</span>; <span class="citation" data-cites="mceneryHardie2011">McEnery und Hardie (<a href="#/literatur" role="doc-biblioref" onclick="">2011</a>)</span>.</p>
 </div>
 </section>
 <section id="text-wird-zur-datenstruktur" class="slide level2">
@@ -483,7 +453,7 @@ Trefferraum
 <tr class="odd">
 <td style="text-align: right;">1</td>
 <td>Die</td>
-<td>der</td>
+<td>die</td>
 <td>ART</td>
 <td>nk</td>
 <td>year=1848</td>
@@ -507,7 +477,7 @@ Trefferraum
 <tr class="even">
 <td style="text-align: right;">4</td>
 <td>umkämpft</td>
-<td>umkämpft</td>
+<td>umkämpfen</td>
 <td>ADJD</td>
 <td>pd</td>
 <td>year=1848</td>
@@ -619,8 +589,8 @@ Trefferraum
 <p>COHA als diachrones Referenzkorpus: <span class="citation" data-cites="davies2012coha">Davies (<a href="#/literatur" role="doc-biblioref" onclick="">2012</a>)</span>.</p>
 </div>
 </section>
-<section id="drei-korpuslogiken" class="slide level2">
-<h2>Drei Korpuslogiken</h2>
+<section id="drei-ausgewählte-korpora" class="slide level2">
+<h2>Drei ausgewählte Korpora</h2>
 <div class="tool-facts">
 <div class="tool-fact">
 <p><strong>DTA</strong></p>
@@ -675,13 +645,13 @@ Trefferraum
 <h2>Was in den Suchindex geht</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>&lt;doc id="dta_1848_..." year="1848" genre="political"&gt;</span>
 <span id="cb3-2"><a></a>word        lemma       pos     dep_rel</span>
-<span id="cb3-3"><a></a>Die         der         ART     nk</span>
+<span id="cb3-3"><a></a>Die         die         ART     nk</span>
 <span id="cb3-4"><a></a>Freiheit    Freiheit    NN      sb</span>
 <span id="cb3-5"><a></a>bleibt      bleiben     VVFIN   root</span>
-<span id="cb3-6"><a></a>umkämpft    umkämpft    ADJD    pd</span>
+<span id="cb3-6"><a></a>umkämpft    umkämpfen   ADJD    pd</span>
 <span id="cb3-7"><a></a>&lt;/doc&gt;</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="syntax-reference">
-<p>Das ist ein vereinfachtes Lehrformat für den Import. BlackLab baut daraus einen Lucene-basierten Index mit Tokenannotationen, Vorwärtsindex für Kontext/KWIC und Dokumentmetadaten.</p>
+<p>Das ist ein vereinfachtes Beispiel für den Import. BlackLab baut aus solchen Formaten einen Lucene-basierten Index mit Tokenannotationen, Vorwärtsindex für Kontext/KWIC und Dokumentmetadaten.</p>
 </div>
 </section>
 <section id="suchen" class="slide level2">
@@ -738,7 +708,12 @@ Trefferraum
 <p>BCQL/CQL beschreibt Tokenmuster; TextLab ergänzt Metadatenfilter, etwa <code>genre = Zeitung</code> oder <code>subreddit = ich_iel</code>.</p>
 </div>
 <div class="search-docs">
-<p><span>BCQL/CQL</span> <a href="https://blacklab.ivdnt.org/">BlackLab</a> <a href="https://blacklab.ivdnt.org/guide/query-language/">BlackLab Query Language</a> <span>Multi-Token · Regex · POS · Dependencies · Texttypen</span></p>
+<div>
+<strong>Dokumentation:</strong> <a href="https://blacklab.ivdnt.org/">BlackLab</a> · <a href="https://blacklab.ivdnt.org/guide/query-language/">BCQL/CQL Query Language</a>
+</div>
+<div>
+<strong>Suchmuster:</strong> Multi-Token, Regex, POS, Dependencies und Texttypen
+</div>
 </div>
 </section>
 <section id="code-query-builder" class="slide level2 code-slide">
@@ -784,13 +759,8 @@ Kontextspeicher
 </section>
 <section id="textlab-query-setup" class="slide level2">
 <h2>TextLab: Query Setup</h2>
-<div class="screenshot-frame screenshot-crop screenshot-query-crop">
-<img src="assets/screenshots/textlab/01-query-setup.png" alt="TextLab query setup with DTA corpus and a Demokratie query" class="screenshot-wide">
-<div class="screenshot-caption">
-Der Query Builder macht Tokenattribute, Operatoren und Werte auswählbar; daraus entsteht die BCQL-Query für den Index.
-</div>
-</div>
-</section>
+
+<img data-src="att/query-setup.png" class="r-stretch quarto-figure-center"><p class="caption">Der Query Builder macht Tokenattribute, Operatoren und Werte auswählbar; daraus entsteht die BCQL-Query für den Index.</p></section>
 <section id="topic-modeling-als-modellierungsschicht" class="slide level2">
 <h2>Topic Modeling als Modellierungsschicht</h2>
 <div class="method-detail">
@@ -823,8 +793,8 @@ COHA-Beispiel
 <div class="syntax-reference">
 <p>Beispiel aus TextLab: Topic Modeling arbeitet auf Trefferlisten und macht Themen, Modellparameter und Qualitätsindikatoren sichtbar.</p>
 </div>
-<div class="screenshot-frame screenshot-full">
-<img src="assets/screenshots/textlab/08-topic-modeling-crop.png" alt="TextLab topic modeling module with topic map, terms and metadata controls" class="screenshot-wide">
+<div class="screenshot-frame screenshot-crop screenshot-topic-crop">
+<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-topics-demokratie.png" alt="TextLab topic modeling module with topic map, topic terms and metadata over time" class="screenshot-wide">
 <div class="screenshot-caption">
 Topic Modeling: Query-konditionierte Topics, relevante Terme, Modellparameter und Metadata-/Time-Ansicht.
 </div>
@@ -860,8 +830,8 @@ Trade-off
 <div class="syntax-reference">
 <p>Beispiel: Statt <code>[lemma="Maschine"]</code> sucht die Frage nach ähnlichen Passage-Vektoren. Das Ergebnis bleibt aber wieder als Belegliste lesbar.</p>
 </div>
-<div class="screenshot-frame">
-<img src="assets/screenshots/textlab/07-semantic-search-results.png" alt="Semantic search results in TextLab" class="screenshot-wide">
+<div class="screenshot-frame screenshot-crop screenshot-semantic-crop">
+<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-semantic-search.png" alt="Semantic search results in TextLab with backend metadata and KWIC-like result table" class="screenshot-wide">
 <div class="screenshot-caption">
 Semantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht.
 </div>
@@ -897,30 +867,18 @@ Wofür gut?
 </div>
 </div>
 </section>
-<section id="concordance-beispiel-coha" class="slide level2">
-<h2>Concordance-Beispiel: COHA</h2>
-<div class="method-detail">
-<div class="detail-panel">
-<div class="panel-title">
-Query
-</div>
-<p><code>[lemma="computer"]</code> in COHA.</p>
-</div>
-<div class="detail-panel">
-<div class="panel-title">
-Lesefrage
-</div>
-<p>Meint <code>computer</code> einen rechnenden Menschen, eine Maschine oder eine digitale Infrastruktur?</p>
-</div>
-<div class="example-panel">
-<div class="panel-title">
-NER-Highlights
-</div>
-<p>Farbliche Entitäts-Spans sind ein Anzeige-Layer über der KWIC-Zeile: Sie markieren erkannte Personen, Orte oder Organisationen, wenn der Korpus solche Span-Annotationen enthält.</p>
-</div>
-</div>
+<section id="concordance-beispiel-reddit-kwic" class="slide level2">
+<h2>Concordance-Beispiel: Reddit-KWIC</h2>
+<div class="semantic-example">
 <div class="syntax-reference">
-<p>KWIC ist die Brücke zwischen Query und einzelner Textstelle: Eine diachrone Frequenzkurve wird erst interpretierbar, wenn man konkrete Kontexte liest.</p>
+<p>English Reddit: <code>[word="London"]</code>. KWIC zeigt konkrete Belege; vorhandene Span-Annotationen können darüber als Entity-/NER-Layer sichtbar gemacht werden.</p>
+</div>
+<div class="screenshot-frame screenshot-crop screenshot-kwic-crop">
+<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-kwic-reddit-london-v2.png" alt="TextLab concordance view for London in English Reddit" class="screenshot-wide">
+<div class="screenshot-caption">
+Konkordanz: Query → KWIC-Zeilen → interpretierbare Einzelkontexte; zusätzliche Annotationen bleiben als Layer anzeigbar.
+</div>
+</div>
 </div>
 </section>
 <section id="frequency" class="slide level2">
@@ -946,50 +904,10 @@ Wofür gut?
 </div>
 </div>
 </section>
-<section id="frequency-beispiel-coha-diachron" class="slide level2">
-<h2>Frequency-Beispiel: COHA diachron</h2>
-<div class="frequency-example">
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Schritt</th>
-<th>Einstellung</th>
-<th>Warum</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Korpus</td>
-<td>COHA</td>
-<td>historisches Englisch, lange Zeitachse</td>
-</tr>
-<tr class="even">
-<td>Query</td>
-<td><code>[lemma="computer"]</code></td>
-<td>lexikalischer Bedeutungswandel</td>
-</tr>
-<tr class="odd">
-<td>Group by</td>
-<td><code>decade</code></td>
-<td>Buckets chronologisch sortieren</td>
-</tr>
-<tr class="even">
-<td>Rückbindung</td>
-<td>KWIC pro auffälliger Dekade</td>
-<td>Bedeutung nicht aus Counts allein ableiten</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="syntax-reference">
-<p>Eine Gruppierung macht aus Treffern ein Muster. Bei COHA ist die Reihenfolge der Buckets selbst Teil der Aussage: 1820s → 1830s → … → 2010s.</p>
-</div>
-<div class="caption-note">
+<section id="frequency-von-metadaten-diachrone-entwicklungen" class="slide level2">
+<h2>Frequency von Metadaten: diachrone Entwicklungen</h2>
+
+<img data-src="assets/screenshots/textlab/2026-05-11-21-05-36.png" class="r-stretch quarto-figure-center"><p class="caption">Frequenz von <code>[lemma="phone"]</code> im COHA.</p><div class="caption-note">
 <p>Frequenzinterpretation und Normalisierung in Korpora: <span class="citation" data-cites="brezina2018">Brezina (<a href="#/literatur" role="doc-biblioref" onclick="">2018</a>)</span>.</p>
 </div>
 </section>
@@ -1084,9 +1002,7 @@ Wofür gut?
 </div>
 <div class="workflow-step">
 <p><strong>2 Fenster</strong></p>
-<ol start="26" type="a">
-<li>B. 5 Tokens links und rechts.</li>
-</ol>
+<p>z.B. 5 Tokens links und rechts.</p>
 </div>
 <div class="workflow-step">
 <p><strong>3 Kandidaten</strong></p>
@@ -1120,9 +1036,9 @@ Wofür gut?
 </thead>
 <tbody>
 <tr class="odd">
-<td>COHA</td>
-<td><code>[lemma="computer"]</code></td>
-<td>Welche Nachbarwörter zeigen den Übergang vom Beruf zur Maschine?</td>
+<td>DTA</td>
+<td><code>[lemma="Demokratie"]</code></td>
+<td>Welche Nachbarlemmata markieren historische Textsorten und politische Kontexte?</td>
 </tr>
 <tr class="even">
 <td>COHA</td>
@@ -1136,6 +1052,12 @@ Wofür gut?
 </tr>
 </tbody>
 </table>
+</div>
+<div class="screenshot-frame screenshot-crop screenshot-collocation-crop">
+<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-collocations-demokratie.png" alt="TextLab collocation module with ranked collocates and KWIC examples" class="screenshot-wide">
+<div class="screenshot-caption">
+Kollokationen: Attribut, Fenster, Richtung und Score bestimmen, welche Nachbarschaften als auffällig erscheinen. Screenshot: deployed TextLab, 11.05.2026.
+</div>
 </div>
 <div class="syntax-reference">
 <p>Kollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”. Gute Beispiele brauchen deshalb Korpus, Query, Fenster, Attribut und Score.</p>
@@ -1232,6 +1154,20 @@ Clustering
 UI-Frage
 </div>
 <p>Wie zeigt man semantische Nähe so, dass Nutzerinnen wieder zu Belegen zurückkommen?</p>
+</div>
+</div>
+</section>
+<section id="embedding-clustering-beispiel" class="slide level2">
+<h2>Embedding-/Clustering-Beispiel</h2>
+<div class="semantic-example">
+<div class="syntax-reference">
+<p>TextLab projiziert Trefferkontexte als semantischen Raum: Cluster sind nur dann interpretierbar, wenn man die Belege darunter mitliest.</p>
+</div>
+<div class="screenshot-frame screenshot-crop screenshot-semantic-space-crop">
+<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-semantic-space-demokratie-v3.png" alt="TextLab semantic space with embedding model, cluster count and example concordances" class="screenshot-wide">
+<div class="screenshot-caption">
+Semantic Space: Embeddings → Projektion → Cluster → Rückbindung an KWIC-Beispiele. Screenshot: deployed TextLab, 11.05.2026.
+</div>
 </div>
 </div>
 </section>
@@ -1339,23 +1275,8 @@ Ziel
 </section>
 <section id="abschluss" class="slide level2">
 <h2>Abschluss</h2>
-<div class="pipeline-flow">
-<div class="pipeline-step">
-<p><strong>1 Daten wählen</strong></p>
-<p>Korpuslogik, Zeitraum, Genre, Community.</p>
-</div>
-<div class="pipeline-step">
-<p><strong>2 Suche formulieren</strong></p>
-<p>Query, Filter, Trefferraum.</p>
-</div>
-<div class="pipeline-step">
-<p><strong>3 Modul wechseln</strong></p>
-<p>KWIC, Frequency, Collocation, Sketch, Semantic, LLM.</p>
-</div>
-<div class="pipeline-step">
-<p><strong>4 nächste Frage</strong></p>
-<p>Belege prüfen, Vergleich bauen, Parameter dokumentieren.</p>
-</div>
+<div class="analysis-loop-slide">
+<p><img src="assets/img/textlab-analyse-loop.svg" alt="Analyse-Loop in TextLab: Fragestellung, Korpus und Query, Modul und Parameter, Belege und Export, Rückbindung an Belege" class="analysis-loop-img"></p>
 </div>
 </section>
 <section id="reproduzierbare-analyse-pipeline" class="slide level2">
