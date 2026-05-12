@@ -619,19 +619,14 @@ Mehr Exploration, weniger exakt kontrollierbare Trefferdefinition.
 :::
 :::
 
-## Semantic-Search-Beispiel
+## Beispiel für semantische Suche
 
+Suchanfrage: `In welchen Texten spielt Wetter eine Rolle?`
 
-::: {.semantic-example}
-::: {.syntax-reference}
-Beispiel: Statt `[lemma="Maschine"]` sucht die Frage nach ähnlichen Passage-Vektoren. Das Ergebnis bleibt aber wieder als Belegliste lesbar.
-:::
+Statt z.B. `[lemma="Wetter"]` sucht die Frage nach semantisch ähnlichen Passagen im Korpus.
 
-<div class="screenshot-frame screenshot-crop screenshot-semantic-crop">
-<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-semantic-search.png" alt="Semantic search results in TextLab with backend metadata and KWIC-like result table" class="screenshot-wide">
-<div class="screenshot-caption">Semantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht.</div>
-</div>
-:::
+![Semantische Suche: Frage → Embedding → ähnliche Korpuspassagen → Belegansicht.](att/semantische-suche-wetter.png)
+
 
 ## Analyse I: Konkordanzen und Frequenzen
 
@@ -665,17 +660,12 @@ Bedeutungsvarianten, typische Konstruktionen, ungewöhnliche Treffer und Fehler 
 
 ## Concordance-Beispiel: Reddit-KWIC
 
+English Reddit: `[word="London"]`.
 
-::: {.semantic-example}
-::: {.syntax-reference}
-English Reddit: `[word="London"]`. KWIC zeigt konkrete Belege; vorhandene Span-Annotationen können darüber als Entity-/NER-Layer sichtbar gemacht werden.
-:::
+KWIC zeigt konkrete Belege; vorhandene Span-Annotationen können darüber als Entity-/NER-Layer sichtbar gemacht werden.
 
-<div class="screenshot-frame screenshot-crop screenshot-kwic-crop">
-<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-kwic-reddit-london-v2.png" alt="TextLab concordance view for London in English Reddit" class="screenshot-wide">
-<div class="screenshot-caption">Konkordanz: Query → KWIC-Zeilen → interpretierbare Einzelkontexte; zusätzliche Annotationen bleiben als Layer anzeigbar.</div>
-</div>
-:::
+![Konkordanz: Query → KWIC-Zeilen → interpretierbare Einzelkontexte; zusätzliche Annotationen bleiben als Layer anzeigbar.](att/concordance-london.png)
+
 
 ## Frequency
 
@@ -845,32 +835,23 @@ Jeden Kandidaten zurück in KWIC prüfen.
 :::
 :::
 
+
 ## Collocation-Beispiel
 
+| Korpus         | Query                  | Kollokationsfrage                                                                  |
+|:---------------|:-----------------------|:-----------------------------------------------------------------------------------|
+| DTA            | `[lemma="Demokratie"]` | Welche Nachbarlemmata markieren historische Textsorten und politische Kontexte?    |
+| COHA           | `[lemma="radio"]`      | Welche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum? |
+| English Reddit | `colour` / `color`     | Welche Community-Kontexte begleiten Schreibvarianten?                              |
 
-::: {.frequency-example}
-| Korpus | Query | Kollokationsfrage |
-|---|---|---|
-| DTA | `[lemma="Demokratie"]` | Welche Nachbarlemmata markieren historische Textsorten und politische Kontexte? |
-| COHA | `[lemma="radio"]` | Welche technischen, häuslichen oder medialen Kontexte dominieren je nach Zeitraum? |
-| English Reddit | `colour` / `color` | Welche Community-Kontexte begleiten Schreibvarianten? |
-:::
-
-<div class="screenshot-frame screenshot-crop screenshot-collocation-crop">
-<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-collocations-demokratie.png" alt="TextLab collocation module with ranked collocates and KWIC examples" class="screenshot-wide">
-<div class="screenshot-caption">Kollokationen: Attribut, Fenster, Richtung und Score bestimmen, welche Nachbarschaften als auffällig erscheinen. Screenshot: deployed TextLab, 11.05.2026.</div>
-</div>
-
-::: {.syntax-reference}
-Kollokationen sind eine Zählung über lokale Kontexte, nicht nur eine Liste “wichtiger Wörter”. Gute Beispiele brauchen deshalb Korpus, Query, Fenster, Attribut und Score.
-:::
+![Kollokationen für *commit* im englischen Reddit-Korpus.](att/collocation-commit.png){height="350px"}
 
 ::: {.caption-note}
 Kollokation als korpuslinguistische Grundoperation: @sinclair1991.
 :::
 
-## Word Sketches
 
+## Word Sketches
 
 ::: {.method-detail}
 ::: {.detail-panel}
@@ -938,17 +919,10 @@ Wie zeigt man semantische Nähe so, dass Nutzerinnen wieder zu Belegen zurückko
 
 ## Embedding-/Clustering-Beispiel
 
+TextLab analysiert und visualisiert Treffer in ihrem **semantischen Raum**.
 
-::: {.semantic-example}
-::: {.syntax-reference}
-TextLab projiziert Trefferkontexte als semantischen Raum: Cluster sind nur dann interpretierbar, wenn man die Belege darunter mitliest.
-:::
+![Semantic Space des Wortes *Schloss*: Embeddings → Projektion → Cluster](att/semantic-space-schloss.png)
 
-<div class="screenshot-frame screenshot-crop screenshot-semantic-space-crop">
-<img src="assets/screenshots/textlab/live-deployed-2026-05-11/slide-semantic-space-demokratie-v3.png" alt="TextLab semantic space with embedding model, cluster count and example concordances" class="screenshot-wide">
-<div class="screenshot-caption">Semantic Space: Embeddings → Projektion → Cluster → Rückbindung an KWIC-Beispiele. Screenshot: deployed TextLab, 11.05.2026.</div>
-</div>
-:::
 
 ## Embedding-Workflow
 
@@ -1067,13 +1041,10 @@ Agentische Hilfe darf den Workflow beschleunigen, muss aber Belege und Parameter
 
 ## Abschluss
 
+![](att/analyse-loop.png)
 
-<div class="analysis-loop-slide">
-<img src="assets/img/textlab-analyse-loop.svg" alt="Analyse-Loop in TextLab: Fragestellung, Korpus und Query, Modul und Parameter, Belege und Export, Rückbindung an Belege" class="analysis-loop-img">
-</div>
 
 ## Reproduzierbare Analyse-Pipeline
-
 
 ::: {.documentation-grid}
 ::: {.documentation-card}
@@ -1112,20 +1083,20 @@ Beispielkontexte, Trefferlisten, Exporte.
 
 ::: {.takeaway-lines}
 ::: {.takeaway}
-TextLab zeigt, wie aus Textsammlungen untersuchbare Daten werden.
+TextLab kann aus Text-Daten durchsuchbar und analysierbar machen.
 :::
 
 ::: {.takeaway}
-Jedes Modul hat zwei Seiten: eine intuitive Forschungsoperation und eine technische Implementierung.
+Jedes Modul hat zwei Seiten: eine Forschungsoperation und eine technische Implementierung.
 :::
 
 ::: {.takeaway}
-Für DH ist genau diese Verbindung spannend: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird.
+Für DH relevant: Korpusdesign, Interface und Methode bestimmen gemeinsam, was sichtbar wird.
 :::
 :::
+
 
 ## Literatur {.smaller}
-
 
 **Korpuslinguistische Methode:** @sinclair1991; @biberConradReppen1998; @mceneryHardie2011
 
